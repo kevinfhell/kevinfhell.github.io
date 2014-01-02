@@ -1,0 +1,938 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Product improvement proposal </title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="Product improvement proposal "/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-10-17T09:31+0800"/>
+<meta name="author" content="Kevin Gao"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" type="text/css" href="http://kevinfhell.github.io/worg.css">
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
+ <a accesskey="h" href="#"> UP </a>
+ |
+ <a accesskey="H" href="theindex.html"> HOME </a>
+</div>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Product improvement proposal </h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Overview CR list</a></li>
+<li><a href="#sec-2">Performance related</a>
+<ul>
+<li><a href="#sec-2-1">warming performance improvement  &ndash; Need to check, whether the current performance is ok for trunk.</a></li>
+<li><a href="#sec-2-2">Profiling and tunning performance.</a></li>
+<li><a href="#sec-2-3">performance improvement in SDK3.0</a></li>
+<li><a href="#sec-2-4">by pass VNB in slowpath packet Tx phase</a>
+<ul>
+<li><a href="#sec-2-4-1">In VNB slowpath tx processing</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-3">Trouble shooting</a>
+<ul>
+<li><a href="#sec-3-1">Take TRA in use, improve the bug tracing efficiency.</a>
+<ul>
+<li><a href="#sec-3-1-1">Features in TRA</a></li>
+<li><a href="#sec-3-1-2">What can we get from TRA</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-2">Add one thin memory management layer for Simple executive enviroment.</a></li>
+<li><a href="#sec-3-3">In SDK 3.0, there are new feature that support core-dump in simple excutive enviroment.</a></li>
+<li><a href="#sec-3-4">Enhance the troubleshooting framework, for fast problem location.</a>
+<ul>
+<li><a href="#sec-3-4-1">The current situation</a></li>
+<li><a href="#sec-3-4-2">What we should do</a>
+<ul>
+<li><a href="#sec-3-4-2-1">Clear up</a></li>
+<li><a href="#sec-3-4-2-2">re-factory</a></li>
+<li><a href="#sec-3-4-2-3">Build the relationship between the tools</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-3-5">Call creation/deletion simulator on TT level(internal EITP)</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">Traffic handling</a>
+<ul>
+<li><a href="#sec-4-1">Defects in current warming logic</a></li>
+<li><a href="#sec-4-2">Dirty data need to be clean up during switch over</a></li>
+<li><a href="#sec-4-3">Current GTP buffering mechanism lead huge traffic burst</a></li>
+<li><a href="#sec-4-4">NAPI in fastpath</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">Common</a>
+<ul>
+<li><a href="#sec-5-1">Hotpatching</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Overview <a href="./PIP">CR list</a></h2>
+<div class="outline-text-2" id="text-1">
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="right" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">ID</th><th scope="col" class="left">Name</th><th scope="col" class="left">Status</th><th scope="col" class="right">Effort(in unit of hour)</th><th scope="col" class="left">Priority</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">CR E0001</td><td class="left">Remove the lock for normal service in warming mechanism on EIPU</td><td class="left">Under evaluation by PO</td><td class="right">1000</td><td class="left">medium</td></tr>
+<tr><td class="left">CR E0003</td><td class="left">Performance tunning in EIPU fastpath</td><td class="left">Under evaluation by PO</td><td class="right">400</td><td class="left">medium</td></tr>
+<tr><td class="left">CR E0004</td><td class="left">Warming data refactory in EIPU</td><td class="left">Under implementation</td><td class="right">100</td><td class="left">high</td></tr>
+<tr><td class="left">CR E0005</td><td class="left">Bypass VNB in TX direction on EIPU slowpath</td><td class="left">Under evaluation by PO</td><td class="right">400</td><td class="left">medium</td></tr>
+<tr><td class="left">CR E0007</td><td class="left">Coredump support on EIPU fastpath</td><td class="left">Under evaluation by PO</td><td class="right">500</td><td class="left">low</td></tr>
+<tr><td class="left">CR E0008</td><td class="left">Add one thin layer for memory management in simple executive enviroment</td><td class="left">Under evaluation by PO</td><td class="right">500</td><td class="left">low</td></tr>
+<tr><td class="left">CR E0009</td><td class="left">Call creation_deletion simulator on EIPU</td><td class="left">Under evaluation by PO</td><td class="right">300</td><td class="left">low</td></tr>
+<tr><td class="left">CR E0010</td><td class="left">Enhanced troubleshooting framework for intelligente and fast troubleshooting</td><td class="left">Under evaluation by PO</td><td class="right"></td><td class="left"></td></tr>
+<tr><td class="left">CR E00012</td><td class="left">Dirty data need to be clean up during switch over</td><td class="left">under planing in backlog</td><td class="right">100</td><td class="left">high</td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Performance related</h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">warming performance improvement  &ndash; Need to check, whether the current performance is ok for trunk.</h3>
+<div class="outline-text-3" id="text-2-1">
+
+<p>     Currently, normal service is blocked by the warming, take an example, on EIPU, if the warming
+in process, all the call creation/deletion request is blocked, till the warming is finished.  and
+the warming will cost more than 2 seconds. this time is depend on the TCP handling performance, and
+the size of the share memory on EIPU. so we have three possible solutions on this
+</p><ol>
+<li>Improve the TCP handling performance
+<ol>
+<li>Currently, the performance of TCP transmission is improved compare FPT2.3 with
+      FPT1.40. <a href="./VNB_slowpath.html">result</a>. currenty, RU40 is using FPT 1.40, so we need to digout, what is the change
+      with latest FPT release for TCP handling performance.
+</li>
+<li>There is still performance gap between CSPU and EIPU, what lead this difference? only two
+      condition check?
+</li>
+<li>From kernel 2.6 to 3.4, there are many patches for performance optimization
+<ul>
+<li><a href="http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=c6e1a0d12ca7b4f22c58e55a16beacfb7d3d8462">Allow no-cache copy from user on transmit</a>
+          <a href="http://blog.jauu.net/no-cache-copy.html">some more introduction</a>
+</li>
+<li><a href="https://lwn.net/Articles/458610/">TCP Proportional Rate Reduction</a>
+</li>
+<li><a href="http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=fcf634098c00dd9cd247447368495f0b79be12d1">Cross memory attach</a>
+</li>
+<li><a href="http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=37a1c49a91ad55f917a399ef2174b5ebda4283f9">mremap support THP and TLB optimization</a>
+</li>
+<li><a href="http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=2f53384424251c06038ae612e56231b96ab610ee">Allow splice() syscall to build full TSO packets</a>
+</li>
+</ul>
+
+</li>
+</ol>
+
+</li>
+<li>Decrease the share memory usage
+<ul>
+<li>structure refactory
+</li>
+<li>memory hole
+</li>
+</ul>
+
+</li>
+<li>Change the warming mechanism, don't block the normal service during
+   warming. 
+<ul>
+<li>Currently, during warming, there is a big lock that will block
+     the all the call creation/deletion service
+</li>
+<li>We can handle warming based on content,entry by entry. Wih this
+     change we can remove the big lock, but just apply lock on entry
+     level. 
+</li>
+</ul>
+
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2">Profiling and tunning performance.</h3>
+<div class="outline-text-3" id="text-2-2">
+
+<p>     Currently, there is a big performance gap on EIPU, it's not
+     possible to reach the target in RU50. so , what we can do?
+</p><ol>
+<li>Profiling from archtecture of view, tunning
+<ol>
+<li>Cache usage
+</li>
+<li>improve parallel
+<ol>
+<li>lock usage
+<ol>
+<li>Implement the RCU in simple executive
+</li>
+<li>we can consider to use ticket lock instead of spin lock. Octeon+, we have got a test result, the performance is not improved, we still need to check this in OcteonII.
+</li>
+<li>Send packet lock usage on octeon PKO. (atomic lock &ndash;&gt; command queue lock)
+</li>
+</ol>
+
+</li>
+<li>Take per core variable in use in statistic
+</li>
+</ol>
+
+</li>
+</ol>
+
+</li>
+<li>Re-design the statistic structure on EIPU, currently, there are some duplicate statistic in
+   fastpath packet handling process, this increased the cycle cost of one single packet. based on
+   the first analysis, there are many statistic can be removed, and the data can be calculated off
+   the fast path process.
+</li>
+<li>In UDP handling process, there is a blocker, during get handler for different port range. we can
+   optimize this part. Based on previous profiling data, 100cyles can
+   be saved with this optimization
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-3" class="outline-3">
+<h3 id="sec-2-3">performance improvement in SDK3.0</h3>
+<div class="outline-text-3" id="text-2-3">
+
+<p>     Kernel changed from 2.6 to 3.0 in SDK3.0, many features are taken in with the new kernel. this
+will increase the performance for packet handling.  if we can improve the performance in slow path,
+we can deploy more core into fast path for better performance on EIPU level.
+</p></div>
+
+</div>
+
+<div id="outline-container-2-4" class="outline-3">
+<h3 id="sec-2-4">by pass VNB in slowpath packet Tx phase</h3>
+<div class="outline-text-3" id="text-2-4">
+
+
+</div>
+
+<div id="outline-container-2-4-1" class="outline-4">
+<h4 id="sec-2-4-1">In VNB slowpath tx processing</h4>
+<div class="outline-text-4" id="text-2-4-1">
+
+<p> the main routine is adding vlan header. this decrease the overall
+performance compare with CSPU we can use the original method in linux
+kernel to adding this vlan interface. and this will improve the
+performance of packet sending in slowpath.
+</p></div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Trouble shooting</h2>
+<div class="outline-text-2" id="text-3">
+
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1">Take TRA in use, improve the bug tracing efficiency.</h3>
+<div class="outline-text-3" id="text-3-1">
+
+
+</div>
+
+<div id="outline-container-3-1-1" class="outline-4">
+<h4 id="sec-3-1-1">Features in TRA</h4>
+<div class="outline-text-4" id="text-3-1-1">
+
+<p>The trace control unit (TRA) is a trace buffer for CN68XX's coherent
+memory interconnect (CMI).  There are four TRAs (TRA0-TRA3), one for
+each section of the CMI. TRA can be useful in many debug situations.
+When enabled, the TRA captures bus requests. Software can later read
+out the requests and generate a trace of the sequence of events on the
+CMI
+</p><ol>
+<li>1024 tracing buffer
+<ol>
+<li>requests originating from cores or IOI devices
+</li>
+<li>address, command, and time information
+</li>
+</ol>
+
+</li>
+<li>Interrupt generation
+</li>
+<li>Programmable filter
+<ol>
+<li>partial or full match
+</li>
+</ol>
+
+</li>
+<li>Programmable triggering
+<ol>
+<li>partial or full match
+</li>
+<li>start and stop triggering
+</li>
+</ol>
+
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-3-1-2" class="outline-4">
+<h4 id="sec-3-1-2">What can we get from TRA</h4>
+<div class="outline-text-4" id="text-3-1-2">
+
+<p>TRA can trace problem on instructio level. it can buffer the
+instructions that have been issued from core or IOI devices. 
+We can eveluate, how much benifit would we got based on the problem
+history in our area. 
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2">Add one thin memory management layer for Simple executive enviroment.</h3>
+<div class="outline-text-3" id="text-3-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-3-3" class="outline-3">
+<h3 id="sec-3-3">In SDK 3.0, there are new feature that support core-dump in simple excutive enviroment.</h3>
+<div class="outline-text-3" id="text-3-3">
+
+<ol>
+<li>The whole core-dump file is very useful in locating core-dump
+      related problems, it can accelerate the fixing on this kind of
+      problems. Both during future development and in bugfix. 
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-3-4" class="outline-3">
+<h3 id="sec-3-4">Enhance the troubleshooting framework, for fast problem location.</h3>
+<div class="outline-text-3" id="text-3-4">
+
+<ol>
+<li>Technical support can use it more easily.
+</li>
+<li>Problem can be resovled more quickly
+</li>
+</ol>
+
+
+</div>
+
+<div id="outline-container-3-4-1" class="outline-4">
+<h4 id="sec-3-4-1">The current situation</h4>
+<div class="outline-text-4" id="text-3-4-1">
+
+<p> Currently, there are huge commands, that can be used for
+ troubleshooting for traffic related problems. These commands may be
+ made from the following reasons
+</p><ol>
+<li>Made together with the feature, work for tracing some feature
+      related configuration, data structure, and statistic
+</li>
+<li>During handling some prontos or cases, we find some needs on
+      on tracing something, so we add commands for locating the problem
+</li>
+<li>We got some requirment from A&amp;S or product level
+      troubleshooting, we need to add some commands to support there
+      special need for collecting some informations. so we add
+      commands here and there for this purpose. 
+</li>
+</ol>
+
+<p>We have implemented many commands, in fact, too many
+commands, but after survery on the usage of these commands, we can
+see, only less of the very basic commands are frequently used, most of
+them are made and never used again. maybe only the autor re-call it
+someday and use it.  
+<b>So, what brought this on?</b>
+</p>
+<p>
+The troubleshooting is very important, especially in our carrier-class
+equipment. Our customer concern the quality very much.  If one critial
+case happend on site, The customer usually chalenge us:
+</p><ul>
+<li>why did this happen?
+</li>
+<li>How could we prevent this happen again?
+</li>
+<li>Could we fix it as soon as possible.
+</li>
+<li>Is there some walkaround for a quick fix.
+</li>
+</ul>
+
+<p>In fact, most of customer case is very difficult to be fixed asap,
+especially the traffic related problems. From my point of view, I see
+the following reasons:
+</p><ul>
+<li>For debug the traffic related problem, we usually need more
+      information, we may need the problem happen and happen again,
+      and we can collect more and more information, we even need to
+      apply test patch in our customer's equipment. This will cost a
+      lot of time.
+<ul>
+<li>Communication is a huge part
+</li>
+<li>The technical support usually can't collect the right
+        information at the right time(usually this is very difficult,
+        even we do it by ourself)
+</li>
+<li>Apply any critial operation need a application process for
+        the operator. we need to wait for these approve.
+</li>
+</ul>
+
+</li>
+<li>A lot of traffic related problem can't be located as traffic related
+      problem at the very first phase, it is usually be analyzed by
+      application, or OPE, and after days or weeks investigation, we
+      got the change to see and analyze the problem.
+</li>
+<li>A lot of traffic related problem can't be reproduced easily,
+      especially on customer site. In fact most customer don't want
+      to see the problem again, but not reproduce it, so what
+      customer concern more is, they need a analyze report for the
+      problem.
+<ul>
+<li>We don't have the chance to collect the information we need
+        during problem happend
+</li>
+<li>We don't have the change to add debug information in the enviroment
+</li>
+<li>We don't have the change to control the equipment step by
+        step for debuging
+</li>
+<li>We even don't have the change to see it again. 
+</li>
+</ul>
+
+</li>
+</ul>
+
+<p>  But, we need to give the analyze report for the problem. Usually the
+ report have the following content
+</p><ul>
+<li>What should be the reason for the problem?
+<ul>
+<li>is there some patch to prevent it happen again?
+</li>
+<li>Is there some workaround if it happen again
+</li>
+</ul>
+
+</li>
+<li>If we can't locate the root cause, what should we do for better
+    analyzing the problem if it happen again?
+</li>
+<li>Is there some side effect of the operations
+<ul>
+<li>such as patchs?
+</li>
+<li>walk-around?
+</li>
+<li>commands?
+</li>
+</ul>
+
+</li>
+</ul>
+
+<p>All in all, the analysing above can be summarize in two parts
+</p><ol>
+<li>The weapons we have
+<ul>
+<li>We have many weapons, but they are not well orgnized
+<ul>
+<li>Many information are duplicated in different commands
+</li>
+<li>Many commands are not easy to be found. So they are not
+       popular used
+</li>
+<li>We have commands for different purpose, but they can't
+       communicate with each other, in another word, most of  the commands
+       are close. They are not designed to support each other for
+       fighting with the enemy.
+</li>
+</ul>
+
+</li>
+<li>We don't have very pratical user manual for the commands.
+</li>
+<li>During we design the weapon, we didn't consider our emeny very
+     much. That means our weapon can't work powerfully.
+<ul>
+<li>Detect traffic releated problem at the very first time
+</li>
+<li>Collect relevant information needed for different problem automatically.
+</li>
+<li>Make some inteligent analysing before and after the problem happend.
+</li>
+<li>Give out recovery proposal at the very first time, like our
+       alarm system, and do better. 
+</li>
+</ul>
+
+</li>
+</ul>
+
+</li>
+<li>The enemy we meet
+     We have state above more detailly. 
+</li>
+</ol>
+
+<p>More and more mcRNC are shipping to our customer. we may meet more
+and more enemy in future release. If we contitnue make new release,
+new development on this product, case will be worse. So we really need to
+enhance our weapon for the coming war. 
+</p></div>
+
+</div>
+
+<div id="outline-container-3-4-2" class="outline-4">
+<h4 id="sec-3-4-2">What we should do</h4>
+<div class="outline-text-4" id="text-3-4-2">
+
+
+</div>
+
+<div id="outline-container-3-4-2-1" class="outline-5">
+<h5 id="sec-3-4-2-1">Clear up</h5>
+<div class="outline-text-5" id="text-3-4-2-1">
+
+<ul>
+<li>Summarize all the current commands, ensure there is no duplicate on command level.
+<ol>
+<li>Write manual for these basic commands, for each commands, define the purpose
+          and the scope. put them together with the code.
+</li>
+</ol>
+
+</li>
+<li>Summarize the pevious prontos, seperate the prontos into different catelog from
+       the following aspects
+<ol>
+<li>phenomenon &ndash; This is the input for early detect the problem is traffic
+          realted, such as syslog, error counter, register, alarm
+</li>
+<li>information needed. &ndash; This is used to collect neccessary information in
+          the live enviroment as much as possible.
+</li>
+</ol>
+
+</li>
+<li>Summarize all the solutions, all the walkaround, connect them with phenomenon,
+       define each one as one prescription
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-3-4-2-2" class="outline-5">
+<h5 id="sec-3-4-2-2">re-factory</h5>
+<div class="outline-text-5" id="text-3-4-2-2">
+
+<ul>
+<li>Check each command should be open, that means, these command can read normal
+          text stream as input and output normal text stream for other commands.
+       Currently, we design the tools, with a assemption, the user should be a
+       engineer, change this mindset, think about, the user could also be another tool.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-3-4-2-3" class="outline-5">
+<h5 id="sec-3-4-2-3">Build the relationship between the tools</h5>
+<div class="outline-text-5" id="text-3-4-2-3">
+
+<ul>
+<li>Tools should talk with each other. Based on the analyzing of the phenomenon and
+        information needed.
+</li>
+<li>There should be a daemon, observing each phenomenon, collecting neccesarry
+        information continually. Once one problem happend, daemon will wake up neccessary
+        tools for handling different kind of phenomenon. And each neccessary snapshoot
+        will be recored into disk. The new awake tool will handle this problem then
+<ul>
+<li>Collect neccessary information,
+</li>
+<li>Make inteligent analysing
+</li>
+<li>Take or give out recovery proposal based one each prescription
+</li>
+</ul>
+
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3-5" class="outline-3">
+<h3 id="sec-3-5">Call creation/deletion simulator on TT level(internal EITP)</h3>
+<div class="outline-text-3" id="text-3-5">
+
+<ol>
+<li>Decrease the integration time in new feature development
+</li>
+<li>More easy to reproduce problem in EITP.
+</li>
+<li>Can be used in module level testing. The needed resource can be
+      configured easily. that means each module can test themself
+      independently. All the requirement can be seperated in more
+      detailed level. And problem is more easily to be located then. 
+</li>
+</ol>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Traffic handling</h2>
+<div class="outline-text-2" id="text-4">
+
+
+</div>
+
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1">Defects in current warming logic</h3>
+<div class="outline-text-3" id="text-4-1">
+
+<ul>
+<li>During warming, only data structure for each entry is warmed,
+     there is many status information in the data structure, such as
+     error indication, and echo request sent, accompany with these
+     status, there should be some timer, that are used to handle the
+     timeout case. but these timer is not warmed to SP unit, that
+     means, if switch over happen, these status change will not be
+     handled, even if we can't receive the ack message for ever.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-2" class="outline-3">
+<h3 id="sec-4-2">Dirty data need to be clean up during switch over</h3>
+<div class="outline-text-3" id="text-4-2">
+
+<ul>
+<li>After the WO unit changed to SP unit, there are many data is
+     sitll in the SP unit, such as the GTP bufferred data, the
+     timer.These data is expected to be clean up by the leg release
+     message, if the unit is switch back before the leg released,
+     these data will be available again. this will lead three possible error
+<ul>
+<li>Packet misorder
+       The bufferred packet is very old for this GTP tunnel, these
+       data will be sent out right after the switch over, this will
+       make packet misorder. but in fact, the very old data is not
+       useful anymore right after the switch over. 
+</li>
+<li>status error
+       Because there are many timer may timeout and report many error
+       in syslog.
+</li>
+<li>These resource is wasted before the leg is released. 
+</li>
+</ul>
+
+</li>
+</ul>
+
+<p>j** Hotplug on EIPU/CSPU/USPU
+</p><ol>
+<li>Increase the load balance on fastpath and slowpath.
+   if the load on slowpath is high, we can 
+</li>
+<li>Increase the performance in overload case
+</li>
+</ol>
+
+<p>Got the information from Xiaobo, that, there is a defect in 6wind,
+the hotplug can't be supported on the noDE with 6wind deployed, Based
+on current knowlege of the 6wind, we still don't know the root cause
+on this, we may need to get contact with 6wind for more details
+</p></div>
+
+</div>
+
+<div id="outline-container-4-3" class="outline-3">
+<h3 id="sec-4-3">Current GTP buffering mechanism lead huge traffic burst</h3>
+<div class="outline-text-3" id="text-4-3">
+
+<p>   In GTP buffering feature, If the buffered packet take mass buffer,
+   once GTPU module got stop buffer message, Huge traffic will be sent out, this
+   lead terrible burst and may lead other normal traffic lost. 
+   Based on the current testing result, the dropping of normal traffic
+   has been verified. 
+I need to dig this more detail, about the following aspects
+</p><ul>
+<li>What kind of normal traffic will be effected
+<ul>
+<li>Currently, BE,AF1,AF2 is sharing the same priority, that
+        means only these three phb class will be effected, if there
+        is huge burst from GTP buffering traffic
+</li>
+</ul>
+
+</li>
+<li>What kind of behavior will be monitored by operator if these
+      traffic is lost
+<ul>
+<li>There will be a short time burst that lead short time packet lost on BE,AF1,AF2
+        traffic class. because these three phb class means low priority traffic, so the
+        operator may don't care about this lost very much.
+</li>
+</ul>
+
+</li>
+<li>Is there some other effect because of this huge burst, such as
+      lead some unrecoverable hurt on the system.
+<ul>
+<li>Based on current testing, only packet lost is the direct result because of this burst
+</li>
+</ul>
+
+</li>
+<li>What could we do to fix this.
+<ul>
+<li>We may need to add one mechanism in GTP buffering. to shape the traffic toward
+        PKO at one time slot. This is a bit complex based on current implementation.
+</li>
+<li>Based on the analysing about, there is minor problem that is visible to our
+        customer, so I proposal don't change this part currently. 
+</li>
+</ul>
+
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-4" class="outline-3">
+<h3 id="sec-4-4">NAPI in fastpath</h3>
+<div class="outline-text-3" id="text-4-4">
+
+<ol>
+<li>If we can have a NAPI similar mechanism in fastpath, we can have less core running if the load is very low.
+</li>
+<li>In case the load is very high, more core can be wake up
+</li>
+<li>This can save the power consumption
+</li>
+</ol>
+
+<p>Take an user case, there is very little work at night for a RNC, so most of the core is
+also sleeping as the pepole in the city.  in this mode, only very little power consumed in
+the whole night.  Then the morning comes, people alive and more traffic comes to RNC, more
+and more core also wake up for handling traffic in best effort mode.  If the power
+consumption is really a valueable point for our customer, we can make some PoC to
+evaluate, how many power can we save and is there some side effect with this change.
+<img src="./product_improvement/NAPI_FASTPATH.png"  alt="./product_improvement/NAPI_FASTPATH.png" />
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">Common</h2>
+<div class="outline-text-2" id="text-5">
+
+
+</div>
+
+<div id="outline-container-5-1" class="outline-3">
+<h3 id="sec-5-1">Hotpatching</h3>
+<div class="outline-text-3" id="text-5-1">
+
+<ol>
+<li>upgrade image with zero downtime
+</li>
+<li>Apply troubleshooting patches in a live enviroment.
+</li>
+</ol>
+
+
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-10-17T09:31+0800</p>
+<p class="author">Author: Kevin Gao</p>
+<p class="email"><a href="mailto:leijia.gao@nsn.com">leijia.gao@nsn.com</a></p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

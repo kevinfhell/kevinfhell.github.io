@@ -1,0 +1,20 @@
+#navigator-bar {
+  background-color:#FFFFDD;
+  border-bottom-color:#FFFFDD;
+}
+
+#navigator-bar a {
+  color:#000000 !important;
+}
+
+#navigator-bar li:hover {
+  background-color:#F7DF92;
+  text-decoration:none;
+}
+
+#navigator-bar .yourhere {
+  background-color:#F7DF92;
+}
+#navigator-bar .yourhere a {
+  color: #000000 !important;  
+}

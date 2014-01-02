@@ -1,0 +1,268 @@
+/* General Styles for NSN EE Jira 2.0 Confluence */
+
+/* ------------------------ */
+/* ------- GENERAL -------- */
+/* ------------------------ */
+
+html, body[id~="com-atlassian-confluence"], body {
+	border: none;
+	background: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	height: 100%; 
+	}
+
+/* --- header --- */
+#header {
+	position: relative;
+	width: auto;
+	z-index: 5;
+	padding: 0;
+	margin: 0;
+	}
+
+#header #header-menu-bar { color: #333; font-size: 12px; margin-top: 1px; }
+#header #header-menu-bar li .ajs-drop-down { border: 1px solid #ddd; }
+#header .ajs-menu-item .trigger span { background-image: url(/images/decoration/menu_indicator.gif); }
+#header .opened .trigger span { background-image: url(/images/decoration/white_menu_indicator.gif); }
+
+#header #quick-search-query {
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ccc #ddd #ddd #ccc;
+	background: #fff;
+	color: #666;
+	font-size: 12px;
+	margin-right: 15px;
+	padding: 1px;
+	}
+
+/* --- nsn header --- */
+#nsnHeader { position: relative; padding: 0; z-index: 2; height: auto}
+
+#com-atlassian-confluence.login h1, #nsnHeader h1 { position: relative; margin: 0; padding: 0; z-index: 1; }
+	#nsnHeader h1 a#logo { display: block; margin: 2px 0 8px 15px; width: 212px; height: 22px; background: transparent url(images/nsn-logo.png) top left no-repeat; overflow: hidden; text-indent: -10000px; }
+	#com-atlassian-confluence.login h1.pagetitle {margin: 0 auto; width: 560px;}
+#nsnHeader span#toolVersion { position: absolute; top: 6px; right: 15px; padding: 1px 0 0 0; font-size: 14px; font-weight: bold; color: #FFD308; width: auto; z-index: 2; }
+	#nsnHeader span#toolVersion span#overlayText { position: absolute; top: 0px; right: 0px; color: #000; z-index: 3; }
+	#nsnHeader span#toolVersion span#overlayText a { color: #000; text-decoration: none; }
+	#nsnHeader span#toolVersion span#overlayText a:hover { text-decoration: underline; }
+	
+#nsnHeader #crumbs { position: relative; border-top: 6px solid #FFD308; border-bottom: 1px dotted #ccc; padding: 0 15px; margin: 0; }
+	#nsnHeader #crumbs ol#breadcrumbs { font-size: 11px; }
+	#nsnHeader #crumbs ol#breadcrumbs li { margin: 0; background-image: url(images/breadcrumbs-li.gif); background-position: 6px 7px; color: #666; }
+		#nsnHeader #crumbs ol#breadcrumbs li.first { margin: 0; background-image: none; }
+	#nsnHeader #crumbs ol#breadcrumbs li a { color: #666; }
+
+/* --- top navigation --- */
+div#topNavigation { display: none; position: relative; margin: 0; padding: 0 16px 1px; background: #DEDEDE url(images/topnavigation-bg.gif) top left repeat-x; z-index: 2; }
+div#topNavigation ul { position: relative; list-style-type: none; padding: 3px 0; margin: 0; z-index: 2; }
+div#topNavigation ul li { position: relative; float: left; padding: 0; margin: 0; background: transparent; z-index: 3; }
+div#topNavigation ul li a { display: block; margin: 0; padding: 6px; color: #999; font-size: 11px; font-weight: bold; background: transparent; text-decoration: none; }
+	div#topNavigation ul li a:hover { text-decoration: underline; }
+div#topNavigation ul li.selected a { color: #333; background: #FFD616 url(images/topnavigation-li-a-bg.gif) top left repeat-x; padding: 5px; border: 1px solid #fff; }
+div#topNavigation ul ul { display: none; }
+
+/* --- main --- */
+body.login.nsneejira #main, #main {
+	position: relative;
+	background: transparent;
+	padding: 0 15px;
+	margin: 0;
+	border: none;
+	z-index: 3;
+	min-height: 530px;
+	}
+body.login.nsneejira #full-height-container, body.login.nsneejira {
+	background: transparent;
+	margin: 0;
+	border: none;
+	z-index: 3;
+	min-height: 530px;
+	}
+body.edit.nsneejira {
+	overflow:auto!important;
+}
+body.edit.nsneejira #com-atlassian-confluence h1 img {
+	float: left;
+}
+
+#main ul.quick-nav-drop-down { right: 0px; top: 2em; }
+#main ul.quick-nav-drop-down li.active { background-color: #63A513; }
+
+/* --- navigation --- */
+#navigation { position: relative; float: right; margin: -12px 0 0; font-size: 12px; z-index: 4; }
+
+/* --- space admin --- */
+#tab-navigation { margin: 10px 0; padding: 0; }
+
+/* --- title heading --- */
+/*h1#title-heading { line-height: 24px; margin: 15px 0 8px; font-weight: normal; }*/
+h1#title-heading { line-height: 2; margin: 15px 0 8px; font-weight: normal; }
+h1#title-heading a { color: #000; }
+	h1#title-heading a:hover { color: #333; }
+h1#title-heading img, h1#title-heading a.userLogoLink { float:left; }
+
+h1#title-heading > div.editable-title { margin-left: 0 !important; margin-right: 14em; }
+#main-header h1#title-heading { display: none; }
+.dashboard h1.pagetitle{ border-bottom: 4px solid #FFAF00; }
+.dashboard #main-header h1#title-heading { display: block; }
+
+/* --- metadata --- */
+div.page-metadata { font-size: 11px; color: #999; margin: 0; padding: 0 0 5px; border-bottom: 4px solid #FFAF00; }
+	div.page-metadata a { color: #999 !important; }
+	
+/* --- footer --- */
+div.footer {
+	padding: 7px 0 0;
+	margin-top: 5px;
+	text-align: left;
+	border-top: 1px dashed #ccc;
+	font-family: Arial, Helvetica, Verdana, Geneva, sans-serif !important;
+	font-size: 11px;
+	color: #ccc;
+	height: auto;
+	}
+
+	div.footer a { color: #000; background: #fff; text-decoration: none; margin: 0 4px; padding: 2px 4px; text-decoration: underline; }
+		div.footer a:hover { background: #ffeb9a; color: #900; }
+		div.footer a.first { margin-left: 10px; }
+	div.footer span#toolInfo { float: right; margin-right: 10px; color: #000; }
+	
+	div.footer div#copy { clear: right; background: #ccc; color: #000; padding: 6px 10px; margin-top: 8px; }
+
+/* --- popup style changes --- */
+body.popup { background: #fff; }
+body.popup #main { background: transparent; }
+body.popup #footer { display: none; }
+
+/* --- editor --- */
+#editorDiv #markup textarea#markupTextarea.monospaceInput { font-family: "Courier New", monospace !important; }
+#wiki-editor #content-title-div input { font-weight: normal; color: #000; }
+
+
+/* --- general --- */
+.clearing { clear: both; }
+
+
+/* ------------------------ */
+/* -- DECORATOR SPECIFIC -- */
+/* ------------------------ */
+
+/* --- global --- */
+table.dashboard h1#dashboardHeader { font-weight: normal; margin: 10px 0; padding: 0 0 5px; border-bottom: 4px solid #FFAF00; line-height: 1em; }
+
+table.dashboard td.left, table.dashboard td.right { margin: 0; padding: 0; }
+
+table.dashboard div.dashboardContent {
+	position: relative;
+	padding: 15px 20px;
+	margin: 0;
+	border-style: solid;
+	border-width: 0 1px;
+	border-color: #BFCCA5;
+	background: #fff;
+	}
+
+table.dashboard div.dashboardUpdates { padding: 0; margin: 0 0 15px 0; }
+	div.dashboardUpdates h1 { position: relative; margin: 0 !important; padding: 0 !important; font-size: 22px !important; }
+		div.dashboardUpdates h1 a { color: #63A513; text-decoration: none; }
+			div.dashboardUpdates h1 a:hover { text-decoration: underline; }
+		div.dashboardUpdates h1 span.addContent { float: right; font-size: 12px; font-weight: normal; padding-top: 12px; }
+	div.dashboardUpdates .tabletitle { display: none; }
+	div.dashboardUpdates td { border: none; padding: 8px 0; }
+		div.dashboardUpdates td a { color: #001B1E; font-size: 13px; }
+	div.dashboardUpdates td div.smalltext { font-size: 11px; color: #666; padding-top: 3px; }
+		div.dashboardUpdates td div.smalltext a { font-size: 11px; color: #666; }
+		div.dashboardUpdates td span.smalltext { display: block; font-size: 11px; color: #179AD1; padding: 1px 0 0 10px; }
+
+table.dashboard div#bigLinks { margin: 0 0 20px 0; padding: 0; }
+table.dashboard div#bigLinks ul { list-style-type: none; padding: 0; margin: 0; }
+table.dashboard div#bigLinks ul li { margin: 0 0 11px 0; padding: 0; }
+table.dashboard div#bigLinks ul li a { display: block; background: #559FBA url(images/biglinks-li-a-bg.gif) top left repeat-x; font-size: 18px; line-height: 16px; font-weight: bold; color: #fff; padding: 13px 11px 11px 11px; margin: 0; text-decoration: none; }
+	table.dashboard div#bigLinks ul li a:hover { background-color: #38ABCE; background-position: bottom left; }
+
+/* --- page --- */
+div#comments-section .comment { margin-right: 0; }
+
+table#contentWrapper { width: 100%; border-collapse: collapse; }
+	table#contentWrapper td#navigationCell { vertical-align: top; width: 180px; padding: 0; }
+	table#contentWrapper td#spacerCell { vertical-align: top; width: 25px; padding: 0; }
+	table#contentWrapper td#contentCell { vertical-align: top; padding: 0; }
+
+td#navigationCell ul { margin: 15px 0 0; padding: 0; list-style-type: none;  width: 180px; word-wrap: break-word;}
+	td#navigationCell ul li { margin: 0 0 9px; padding: 0 0 0 14px; background: transparent url(images/navigationcell-ul-li-a.gif) 0px 3px no-repeat; }
+	td#navigationCell ul li a { display: block; padding: 0 0 9px; font-size: 11px; font-weight: bold; border-bottom: 1px dotted #ccc; color: #333; text-decoration: none; }
+	td#navigationCell ul li.selected { background: transparent url(images/navigationcell-ul-li-a-sel.gif) 0px 3px no-repeat; border-bottom: 1px dotted #ccc; padding-bottom: 9px; }
+	td#navigationCell ul li.selected a { color: #999; border-bottom: none; padding: 0; }
+	td#navigationCell ul li a:hover { text-decoration: underline; color: #999; }
+
+td#navigationCell ul ul { padding-left: 14px; margin-top: 5px; margin-bottom: 9px; padding-bottom: 2px; border-bottom: 1px dotted #ccc; }
+	td#navigationCell ul ul li { padding-left: 8px; margin-bottom: 7px; background: transparent url(images/navigationcell-ul-ul-li-a.gif) 0px 5px no-repeat; }
+	td#navigationCell ul ul li a { border-bottom: none; padding-bottom: 0; }
+	td#navigationCell ul ul li.selected { background: transparent url(images/navigationcell-ul-ul-li-a-sel.gif) 0px 5px no-repeat; border-bottom: none; padding-bottom: 0; }
+	td#navigationCell ul ul li.selected a {  }
+	
+td#navigationCell ul ul ul { margin-left: 10px; margin-bottom: 0; padding-left: 0; border-bottom: none; }
+
+td#contentCell div.wiki-content { margin-top: 15px; }
+
+/* --- blogpost --- */
+#sidebar .sidebar-content { margin-top: 3em; }
+
+/* --- search --- */
+#main div#search-container { margin-top: 10px; }
+
+/* --- user info / login.vm --- */
+div#userInfo { position: absolute; top: 2px; left: 10px; padding: 5px 12px; width: 215px; height: auto; background: #FFEB9A; border: 1px solid #EECC66; color: #333333; font-size: 11px; z-index: 5; margin-top:30px;}
+	div#userInfo a { font-weight: bold; color: #900; text-decoration: underline; }
+	div#userInfo a:hover { color: #000; }
+	
+form div.form-header { margin-top: 20px; }
+
+/* ------------------------ */
+/* ------- OVERRIDE ------- */
+/* ------------------------ */
+#contentWrapper #content, #contentWrapper table { clear: none; }
+body div.calendar { z-index: 10 !important; }
+#quick-nav-drop-down { z-index: 10; }
+
+/* --- clearings --- */
+.clearing { clear: both; position: absolute; height: 0px; overflow: hidden; margin: 0; padding: 0; }
+.softClear { clear: both; height: 0; }
+
+
+#login-container, #login-container form.aui {color: #666666;}
+form.aui .field-group label{text-align: left;}
+
+body#tinymce, body.content-preview { background-image: none; background-color: #fff; }
+
+/*iframe#wysiwygTextarea_ifr{overflow:hidden;position: relative; z-index: 3;} For fix richtext bug of edit page, can not show all content*/
+iframe#wysiwygTextarea_ifr{position: relative; z-index: 3;}
+
+div#login-language {padding: 5px}
+
+
+.noteMessage, .warningMessage ,.infoMessage, .tipMessage { background: none repeat scroll 0 0 #FFFFCE; border-color: #F0C000; }
+
+.noteMessage, .warningMessage, .infoMessage, .tipMessage { border-style: solid; border-width: 1px; overflow: hidden; padding: 5px; text-align: center; }
+
+.warningMessage, .warningMacro { background-color: #FFCCCC; border-color: #CC0000; }
+
+#full-height-container { height: 100%; position: relative; width: 100%; }
+.cell ol#breadcrumbs {display:none;}
+#header-menu-bar #notifications-anchor {background-color: #FFAF00; margin-left: 5px;}
+.mw-anchor.unread .badge{border-color:#666;background-color:#FFAF00;color:#666;}
+#header .ajs-menu-bar li.ajs-menu-item { padding: 1px 0;}
+#header .quick-search {padding: 2px 0;}
+body.login #header, body.login #websudo {display: block;}
+.contenteditor #full-height-container > div#nsnHeader { display: block; }
+#sidebar-container #personal-info-sidebar {margin-right: -15px;margin-top: 100px;}
+body.nsneejira.contenteditor.edit > div#page,
+body.nsneejira.contenteditor.create > div#page {
+	overflow:auto!important;
+}
+
+body.nsneejira.contenteditor.create div#rte,
+body.nsneejira.contenteditor.edit div#rte {
+	height:100%;
+}

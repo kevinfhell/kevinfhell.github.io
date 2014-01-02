@@ -1,0 +1,1215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- saved from url=(0073)https://confluence.inside.nsn.com/display/EECloud/Firewalling+in+EE+Cloud -->
+<html class=" clickberry-extension clickberry-extension-standalone"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <title>Firewalling in EE Cloud - EE Cloud - EE Jira 5.3</title>
+    
+        
+
+                        
+    
+                        
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE,chrome=IE7">
+<meta charset="UTF-8">
+<!-- Deprecated since 3.4. To be removed in a future version of Confluence; use AJS.Confluence.getContextPath() -->
+<meta id="confluence-context-path" name="confluence-context-path" content="">
+<meta id="confluence-base-url" name="confluence-base-url" content="https://confluence.inside.nsn.com">
+
+<meta id="atlassian-token" name="atlassian-token" content="80ef23a86ea702480c6eb7b7659cb9b1b4d96cc7">
+
+<meta id="confluence-space-key" name="confluence-space-key" content="EECloud">
+<script type="text/javascript">
+    // Deprecated global variables. To be removed in a future version of Confluence.
+    var contextPath = '';
+</script>
+
+    
+
+<!-- include system css resources -->
+
+
+    <!--[if lt IE 9]>
+<link data-atlassian-webresource-contents="confluence.web.resources:userlink[1.0],confluence.web.resources:master-styles[1.0],com.atlassian.auiplugin:ajs-gadgets-base[3.6.5],confluence.web.resources:page-ordering-tree[1.0],confluence.web.resources:aui-forms[1.0],com.atlassian.auiplugin:ajs[3.6.5],confluence.web.resources:icons[1.0],confluence.macros.profile:profile-macro-styles[1.0],confluence.web.resources:page-permissions-editor[1.0]" type="text/css" rel="stylesheet" href="/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/231/_/download/superbatch/css/batch.css?conditionalComment=lt+IE+9" media="all">
+<![endif]-->
+<link data-atlassian-webresource-contents="confluence.web.resources:print-styles[1.0],confluence.macros.advanced:get-more[2.1.2]" type="text/css" rel="stylesheet" href="./Firewalling in EE Cloud - EE Cloud - EE Jira 5.3_files/batch.css" media="print">
+<link data-atlassian-webresource-contents="confluence.web.resources:master-styles[1.0],confluence.web.resources:fancy-box[1.0],confluence.web.resources:content-styles[1.0],confluence.web.resources:page-move-resources[1.0],confluence.macros.advanced:get-more[2.1.2],confluence.web.resources:labels-editor[1.0],confluence.web.components:core[1.0],com.atlassian.auiplugin:ajs[3.6.5],com.atlassian.auiplugin:ajs-html5shim[3.6.5],confluence.macros.profile:network-resources-css[1.0],confluence.macros.profile:profile-macro-styles[1.0],confluence.web.resources:create-space[1.0],confluence.web.resources:panel-styles[1.0],com.atlassian.plugins.shortcuts.atlassian-shortcuts-module:shortcuts[1.0],com.atlassian.confluence.keyboardshortcuts:confluence-keyboard-shortcuts[4.3.7],confluence.web.resources:userlink[1.0],confluence.web.resources:view-content[1.0],confluence.web.resources:search-results-grid[1.0],confluence.web.resources:aui-forms[1.0],com.atlassian.confluence.plugins.gadgets:css[4.3.7],confluence.content.action.menu:linkpopup-resources[1.0],com.atlassian.auiplugin:ajs-gadgets-base[3.6.5],confluence.userstatus:userstatus-resources[1.0],confluence.web.resources:page-ordering-tree[1.0],confluence.web.resources:jquery-autocomplete[1.0],confluence.web.components:property-panel-css[1.0],confluence.web.resources:tooltip[1.0],com.atlassian.confluence.whatsnew:whats-new-resources[4.3.7],confluence.web.resources:ajs[1.0],confluence.macros.advanced:recently-updated-sidebar-resources[2.1.2],confluence.web.resources:icons[1.0],confluence.web.resources:dashboard-resources[1.0],confluence.web.resources:page-permissions-editor[1.0]" type="text/css" rel="stylesheet" href="./Firewalling in EE Cloud - EE Cloud - EE Jira 5.3_files/batch(1).css" media="all">
+<!--[if lte IE 9]>
+<link data-atlassian-webresource-contents="com.atlassian.auiplugin:ajs[3.6.5]" type="text/css" rel="stylesheet" href="/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/231/_/download/superbatch/css/batch.css?conditionalComment=lte+IE+9" media="all">
+<![endif]-->
+<!--[if IE 9]>
+<link data-atlassian-webresource-contents="com.atlassian.auiplugin:ajs-gadgets-base[3.6.5]" type="text/css" rel="stylesheet" href="/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/231/_/download/superbatch/css/batch.css?conditionalComment=IE+9" media="all">
+<![endif]-->
+<link data-atlassian-webresource-contents="net.customware.confluence.plugin.scaffolding:view-content-resources[4.5.1],com.atlassian.confluence.plugins.confluence-inline-tasks:inline-tasks-styles[4.3.7],com.adaptavist.confluence.contentFormattingMacros:inline-fix[3.0.0],com.atlassian.confluence.plugins.share-page:share-keyboard-shortcut-js-resources[1.26],com.atlassian.confluence.plugins.doctheme:splitter[4.3.7],com.adaptavist.confluence.contentFormattingMacros:clickable-resources[3.0.0],confluence.macros.core:flash-autosize[4.3.7],com.atlassian.confluence.plugins.share-page:mail-page-resources[1.26],com.atlassian.plugins.navigation-link-plugin:rotp-menu[1.2],com.atlassian.confluence.plugins.view-storage-format:view-storage-menu-resources[4.3.7],de.communardo.confluence.plugins.subspace:subspace-breadcrumbs-resource[2.1],com.atlassian.confluence.plugins.jira.jira-connector:help-dialog-extension[1.4.2],com.atlassian.confluence.plugins.view-source:view-source-menu-resources[4.3.7],com.gliffy.integration.confluence:gliffy-global-resources[5.1],de.communardo.confluence.plugins.subspace:subspace-resource[2.1],nl.tweeenveertig.navigator-plugin:navigator-resources[2.0.1],com.atlassian.confluence.plugins.confluence-mentions-plugin:help-dialog-extension[1.5.9],de.communardo.confluence.plugins.subspace:subspace-search-resource[2.1]" data-atlassian-webresource-contexts="page,main,atl.general" type="text/css" rel="stylesheet" href="./Firewalling in EE Cloud - EE Cloud - EE Jira 5.3_files/batch(2).css" media="all">
+<!--[if lt IE 9]>
+<link data-atlassian-webresource-contents="com.atlassian.confluence.plugins.confluence-inline-tasks:inline-tasks-resources[4.3.7],com.atlassian.confluence.plugins.jira.jira-connector:help-dialog-extension[1.4.2],com.atlassian.confluence.plugins.drag-and-drop:drag-and-drop-for-view-content[4.3.7],com.atlassian.confluence.plugins.view-storage-format:view-comment-storage-resources[4.3.7],confluence.web.resources:view-comment[1.0],com.atlassian.confluence.plugins.confluence-like:content-like-resources[4.3.7],com.atlassian.auiplugin:jquery-ui-other[3.6.5],com.atlassian.confluence.plugins.confluence-mentions-plugin:help-dialog-extension[1.5.9],com.atlassian.confluence.plugins.confluence-sortable-tables:sortable-table-resources[4.3.7],com.atlassian.confluence.plugins.drag-and-drop:support[4.3.7]" data-atlassian-webresource-contexts="viewcontent" type="text/css" rel="stylesheet" href="/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/bd23c5a3bc97fb00610e72d7753ce55f/_/download/contextbatch/css/viewcontent/batch.css?conditionalComment=lt+IE+9" media="all">
+<![endif]-->
+<link data-atlassian-webresource-contents="com.atlassian.confluence.plugins.confluence-inline-tasks:inline-tasks-resources[4.3.7],com.atlassian.confluence.plugins.jira.jira-connector:help-dialog-extension[1.4.2],com.atlassian.confluence.plugins.drag-and-drop:drag-and-drop-for-view-content[4.3.7],com.atlassian.confluence.plugins.view-storage-format:view-comment-storage-resources[4.3.7],confluence.web.resources:view-comment[1.0],com.atlassian.confluence.plugins.confluence-like:content-like-resources[4.3.7],com.atlassian.auiplugin:jquery-ui-other[3.6.5],com.atlassian.confluence.plugins.confluence-mentions-plugin:help-dialog-extension[1.5.9],com.atlassian.confluence.plugins.confluence-sortable-tables:sortable-table-resources[4.3.7],com.atlassian.confluence.plugins.drag-and-drop:support[4.3.7]" data-atlassian-webresource-contexts="viewcontent" type="text/css" rel="stylesheet" href="./Firewalling in EE Cloud - EE Cloud - EE Jira 5.3_files/batch(3).css" media="all">
+<link data-atlassian-webresource-contents="com.atlassian.mywork.mywork-confluence-host-plugin:mw-header-anchor[1.1.10]" type="text/css" rel="stylesheet" href="./Firewalling in EE Cloud - EE Cloud - EE Jira 5.3_files/com.atlassian.mywork.mywork-confluence-host-plugin-mw-header-anchor.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Firewalling in EE Cloud - EE Cloud - EE Jira 5.3_files/colors.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Firewalling in EE Cloud - EE Cloud - EE Jira 5.3_files/default-theme.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Firewalling in EE Cloud - EE Cloud - EE Jira 5.3_files/wiki-content.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Firewalling in EE Cloud - EE Cloud - EE Jira 5.3_files/style.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Firewalling in EE Cloud - EE Cloud - EE Jira 5.3_files/custom.css" media="all">
+
+<!-- end system css resources -->
+
+    <meta name="confluence-request-time" content="1386842166142">
+<!-- Deprecated since 3.4. To be removed in a future version of Confluence; use atl.header -->
+        
+            <script type="text/x-template" title="share-content-popup">
+    <form action="#" method="post" class="aui share-content-popup">
+        <fieldset>
+            <label for="users">User name or email</label>
+            <div class="autocomplete-user-target">
+                <input class="text autocomplete-sharepage" id="users" data-max="10" data-dropdown-target=".autocomplete-user-target" data-none-message="No matching user or email found"/>
+            </div>
+            <ol class="recipients">
+            </ol>
+            <div><label for="note">Note</label></div>
+            <textarea class="textarea" id="note" placeholder="Add an optional note"/>
+        </fieldset>
+        <div class="button-panel">
+            <div class="progress-messages-icon"></div>
+            <div class="progress-messages">
+            </div>
+            <input class="button submit" type="submit" value="Share" disabled/>
+            <a class="close-dialog" href="#">Cancel</a>
+        </div>
+    </form>
+</script>
+
+<script type="text/x-template" title="share-content-popup-recipient-username">
+    <li data-username="{username}" style="display: none">
+        <span>
+            <img src="{thumbnailLink.href}" title="{title}">
+            <span>{title}</span>
+            <span class="remove-recipient"/>
+        </span>
+    </li>
+</script>
+
+<script type="text/x-template" title="share-content-popup-recipient-email">
+    <li data-email="{email}" style="display: none">
+        <span>
+            <img src="{icon}" title="{email}">
+            <span>{email}</span>
+            <span class="remove-recipient"/>
+        </span>
+    </li>
+</script>
+            <script type="text/x-template" title="gliffy-footer-webpanel">
+    <div class="gliffy-footer-webpanel"><span></span></div>
+</script>
+
+<meta name="gliffy-license-type" content="false">
+<meta name="gliffy-license-quantity" content="10000000">
+
+
+
+    
+        
+            <meta name="ajs-use-keyboard-shortcuts" content="true">
+            <meta name="ajs-keyboardshortcut-hash" content="bf1b0045018bdda6f1d2529a9fe26f90">
+            <meta id="team-calendars-has-jira-link" content="true">
+            <meta id="team-calendars-user-timezone" content="Europe/Mariehamn">
+            <script type="text/x-template" id="team-calendars-messages" title="team-calendars-messages">
+    <fieldset class="i18n hidden">
+                    <input type="hidden" name="calendar3.month.short.april" value="Apr">
+                    <input type="hidden" name="calendar3.month.short.november" value="Nov">
+                    <input type="hidden" name="calendar3.month.long.november" value="November">
+                    <input type="hidden" name="calendar3.day.short.friday" value="Fri">
+                    <input type="hidden" name="calendar3.month.long.february" value="February">
+                    <input type="hidden" name="calendar3.month.short.february" value="Feb">
+                    <input type="hidden" name="calendar3.day.long.wednesday" value="Wednesday">
+                    <input type="hidden" name="calendar3.month.long.december" value="December">
+                    <input type="hidden" name="calendar3.day.short.sunday" value="Sun">
+                    <input type="hidden" name="calendar3.month.long.april" value="April">
+                    <input type="hidden" name="calendar3.month.long.july" value="July">
+                    <input type="hidden" name="calendar3.month.short.august" value="Aug">
+                    <input type="hidden" name="calendar3.month.long.september" value="September">
+                    <input type="hidden" name="calendar3.month.short.june" value="Jun">
+                    <input type="hidden" name="calendar3.month.short.may" value="May">
+                    <input type="hidden" name="calendar3.day.short.tuesday" value="Tue">
+                    <input type="hidden" name="calendar3.day.short.wednesday" value="Wed">
+                    <input type="hidden" name="calendar3.day.long.thursday" value="Thursday">
+                    <input type="hidden" name="calendar3.month.long.march" value="March">
+                    <input type="hidden" name="calendar3.month.long.october" value="October">
+                    <input type="hidden" name="calendar3.day.short.saturday" value="Sat">
+                    <input type="hidden" name="calendar3.month.short.january" value="Jan">
+                    <input type="hidden" name="calendar3.month.long.may" value="May">
+                    <input type="hidden" name="calendar3.month.long.january" value="January">
+                    <input type="hidden" name="calendar3.month.short.october" value="Oct">
+                    <input type="hidden" name="calendar3.day.short.thursday" value="Thu">
+                    <input type="hidden" name="calendar3.day.long.friday" value="Friday">
+                    <input type="hidden" name="calendar3.day.long.sunday" value="Sunday">
+                    <input type="hidden" name="calendar3.month.long.june" value="June">
+                    <input type="hidden" name="calendar3.month.long.august" value="August">
+                    <input type="hidden" name="calendar3.day.long.tuesday" value="Tuesday">
+                    <input type="hidden" name="calendar3.day.long.saturday" value="Saturday">
+                    <input type="hidden" name="calendar3.month.short.september" value="Sep">
+                    <input type="hidden" name="calendar3.day.long.monday" value="Monday">
+                    <input type="hidden" name="calendar3.month.short.july" value="Jul">
+                    <input type="hidden" name="calendar3.month.short.march" value="Mar">
+                    <input type="hidden" name="calendar3.day.short.monday" value="Mon">
+                    <input type="hidden" name="calendar3.month.short.december" value="Dec">
+            </fieldset>
+</script>
+
+            
+    
+            
+    
+    
+            <meta name="ajs-page-id" content="116566976">
+            <meta name="ajs-page-title" content="Firewalling in EE Cloud">
+            <meta name="ajs-parent-page-title" content="Using EE Cloud Features">
+            <meta name="ajs-parent-page-id" content="190390278">
+            <meta name="ajs-space-key" content="EECloud">
+            <meta name="ajs-space-name" content="EE Cloud">
+            <meta name="ajs-from-page-title" content="">
+            <meta name="ajs-context-path" content="">
+            <meta name="ajs-base-url" content="https://confluence.inside.nsn.com">
+            <meta name="ajs-version-number" content="4.3.7">
+            <meta name="ajs-build-number" content="3398">
+            <meta name="ajs-remote-user" content="">
+            <meta name="ajs-static-resource-url-prefix" content="/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/_">
+            <meta name="ajs-global-settings-attachment-max-size" content="1048576000">
+            <meta name="ajs-user-locale" content="en_GB">
+            <meta name="ajs-enabled-dark-features" content="">
+            <meta name="ajs-atl-token" content="80ef23a86ea702480c6eb7b7659cb9b1b4d96cc7">
+            <meta name="ajs-confluence-flavour" content="VANILLA">
+            <meta name="ajs-editor.loader.resources" content="&lt;!--[if IE]&gt;
+&lt;link data-atlassian-webresource-excluded-contexts=&quot;viewcontent&quot; data-atlassian-webresource-contents=&quot;com.atlassian.confluence.plugins.confluence-paste:autoconvert-youtu.be-rewrite[4.3.7],com.atlassian.plugins.editor:atlassian-rte-javascript-translations[4.3.7],com.atlassian.confluence.extra.team-calendars:macro-button-panel-resources[3.1.5],com.atlassian.confluence.plugins.profile-picture:profile-picture-editor_resources[1.6],confluence.web.resources:page-editor-css[1.0],com.atlassian.confluence.plugins.status-macro:editor_status[1.14],com.atlassian.applinks.applinks-plugin:applinks-util-js[3.8.0],com.atlassian.auiplugin:jquery-autocomplete[3.6.5],com.atlassian.plugins.editor:atlassian-rte-javascript-tinymce-core[4.3.7],com.atlassian.confluence.plugins.confluence-paste:autoconvert-core[4.3.7],com.atlassian.confluence.extra.officeconnector:macro-browser-smart-fields[2.1.12],confluence.extra.jira:macro-browser-resources[4.0.29],com.atlassian.confluence.extra.team-calendars:autoconvert-resources[3.1.5],com.atlassian.confluence.plugins.jira.jira-connector:proxy-js[1.4.2],com.atlassian.confluence.plugins.gadgets:macro-browser-for-gadgetsplugin[4.3.7],com.atlassian.confluence.plugins.confluence-paste:autoconvert-skitch[4.3.7],com.atlassian.gadgets.embedded:gadget-core-resources[3.2.0-m3],com.atlassian.confluence.plugins.confluence-templates:template-editor-variables-resources[4.3.7],com.atlassian.confluence.tinymceplugin:editor-resources[4.3.7],nl.avisi.confluence.plugins.numberedheadings:nh-tinymce-js-resources[2.3.1],com.atlassian.confluence.plugins.confluence-paste:autoconvert-cloudapp[4.3.7],net.customware.confluence.plugin.linking:editor_linkmacros[3.0.2],com.atlassian.confluence.plugins.confluence-mentions-plugin:editor-autocomplete-mentions-no-dependencies[1.5.9],com.atlassian.confluence.plugins.confluence-sortable-tables:ConfluenceSortableTablesEditorPlugin[4.3.7],com.atlassian.applinks.applinks-plugin:applinks-oauth-ui[3.8.0],com.atlassian.confluence.plugins.confluence-templates:template-editor-variables-template-resources[4.3.7],com.atlassian.confluence.plugins.confluence-paste:autoconvert-openphoto[4.3.7],confluence.web.resources:page-editor-js[1.0],com.atlassian.confluence.ext.newcode-macro-plugin:editor-scripts[2.0.16],com.atlassian.confluence.image.effects.ImageEffectsPlugin:propertiespanel[1.0.1],confluence.web.resources:draft-changes-js[1.0],confluence.macros.advanced:editor_includemacro[2.1.2],com.atlassian.confluence.tinymceplugin:editor-javascript-resources[4.3.7],com.atlassian.confluence.tinymceplugin:editor-autocomplete-resources-only[4.3.7],com.atlassian.confluence.plugins.confluence-paste:autoconvert-google-redirect[4.3.7],com.atlassian.confluence.tinymceplugin:editor-css-resources[4.3.7],com.atlassian.plugins.editor:atlassian-rte-javascript[4.3.7],com.atlassian.plugins.editor:atlassian-rte-css[4.3.7],confluence.web.components:editor-notifications[1.0],com.atlassian.confluence.extra.team-calendars:calendar-resources[3.1.5],confluence.web.resources:jira-controls[1.0],confluence.web.resources:draft-changes[1.0],com.atlassian.confluence.plugins.drag-and-drop:drop-zone-for-image-dialog[4.3.7],com.atlassian.confluence.tinymceplugin:editor-autocomplete-resources[4.3.7],com.atlassian.plugins.editor:atlassian-rte-resources[4.3.7],com.atlassian.confluence.keyboardshortcuts:confluence-tinymce-keyboard-shortcuts[4.3.7],com.atlassian.confluence.plugins.jira.jira-connector:dialogsJs[1.4.2],nl.avisi.confluence.plugins.numberedheadings:nh-macro-browser-fields[2.3.1],com.atlassian.confluence.plugins.confluence-paste:paste-resources[4.3.7],confluence.web.resources:draft-changes-css[1.0],com.atlassian.confluence.plugins.confluence-paste:autoconvert-jira[4.3.7],confluence.web.resources:page-editor[1.0],com.atlassian.confluence.plugins.confluence-paste:autoconvert-confluence[4.3.7],com.atlassian.confluence.plugins.confluence-paste:autoconvert-widget-connector[4.3.7],com.atlassian.confluence.extra.team-calendars:timeline-resources[3.1.5],com.atlassian.confluence.plugins.confluence-paste:autoconvert-shortcut-links[4.3.7],com.atlassian.confluence.plugins.confluence-mentions-plugin:editor-autocomplete-mentions[1.5.9],com.atlassian.confluence.extra.team-calendars:macro-browser-web-resources[3.1.5],com.atlassian.confluence.plugins.drag-and-drop:drag-and-drop-for-editor[4.3.7],confluence.macros.core:macro-browser-smart-fields[4.3.7],com.atlassian.plugins.editor:atlassian-rte-javascript-tinymce-extensions[4.3.7],confluence.editor.actions:editor-macro-browser[1.0],com.atlassian.confluence.extra.team-calendars:helptip-resources[3.1.5],com.atlassian.confluence.extra.officeconnector:officeconnector-editor-resources[2.1.12]&quot; data-atlassian-webresource-contexts=&quot;editor,macro-browser&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/dccd25dd1cf017610ae67c18c5996ad3/_/download/contextbatch/css/editor,macro-browser,-viewcontent/batch.css?ieonly=true&quot; media=&quot;all&quot;&gt;
+&lt;![endif]--&gt;
+&lt;!--[if lt IE 9]&gt;
+&lt;link data-atlassian-webresource-excluded-contexts=&quot;viewcontent&quot; data-atlassian-webresource-contents=&quot;com.atlassian.confluence.plugins.confluence-paste:autoconvert-youtu.be-rewrite[4.3.7],com.atlassian.plugins.editor:atlassian-rte-javascript-translations[4.3.7],com.atlassian.confluence.extra.team-calendars:macro-button-panel-resources[3.1.5],com.atlassian.confluence.plugins.profile-picture:profile-picture-editor_resources[1.6],confluence.web.resources:page-editor-css[1.0],com.atlassian.confluence.plugins.status-macro:editor_status[1.14],com.atlassian.applinks.applinks-plugin:applinks-util-js[3.8.0],com.atlassian.auiplugin:jquery-autocomplete[3.6.5],com.atlassian.plugins.editor:atlassian-rte-javascript-tinymce-core[4.3.7],com.atlassian.confluence.plugins.confluence-paste:autoconvert-core[4.3.7],com.atlassian.confluence.extra.officeconnector:macro-browser-smart-fields[2.1.12],confluence.extra.jira:macro-browser-resources[4.0.29],com.atlassian.confluence.extra.team-calendars:autoconvert-resources[3.1.5],com.atlassian.confluence.plugins.jira.jira-connector:proxy-js[1.4.2],com.atlassian.confluence.plugins.gadgets:macro-browser-for-gadgetsplugin[4.3.7],com.atlassian.confluence.plugins.confluence-paste:autoconvert-skitch[4.3.7],com.atlassian.gadgets.embedded:gadget-core-resources[3.2.0-m3],com.atlassian.confluence.plugins.confluence-templates:template-editor-variables-resources[4.3.7],com.atlassian.confluence.tinymceplugin:editor-resources[4.3.7],nl.avisi.confluence.plugins.numberedheadings:nh-tinymce-js-resources[2.3.1],com.atlassian.confluence.plugins.confluence-paste:autoconvert-cloudapp[4.3.7],net.customware.confluence.plugin.linking:editor_linkmacros[3.0.2],com.atlassian.confluence.plugins.confluence-mentions-plugin:editor-autocomplete-mentions-no-dependencies[1.5.9],com.atlassian.confluence.plugins.confluence-sortable-tables:ConfluenceSortableTablesEditorPlugin[4.3.7],com.atlassian.applinks.applinks-plugin:applinks-oauth-ui[3.8.0],com.atlassian.confluence.plugins.confluence-templates:template-editor-variables-template-resources[4.3.7],com.atlassian.confluence.plugins.confluence-paste:autoconvert-openphoto[4.3.7],confluence.web.resources:page-editor-js[1.0],com.atlassian.confluence.ext.newcode-macro-plugin:editor-scripts[2.0.16],com.atlassian.confluence.image.effects.ImageEffectsPlugin:propertiespanel[1.0.1],confluence.web.resources:draft-changes-js[1.0],confluence.macros.advanced:editor_includemacro[2.1.2],com.atlassian.confluence.tinymceplugin:editor-javascript-resources[4.3.7],com.atlassian.confluence.tinymceplugin:editor-autocomplete-resources-only[4.3.7],com.atlassian.confluence.plugins.confluence-paste:autoconvert-google-redirect[4.3.7],com.atlassian.confluence.tinymceplugin:editor-css-resources[4.3.7],com.atlassian.plugins.editor:atlassian-rte-javascript[4.3.7],com.atlassian.plugins.editor:atlassian-rte-css[4.3.7],confluence.web.components:editor-notifications[1.0],com.atlassian.confluence.extra.team-calendars:calendar-resources[3.1.5],confluence.web.resources:jira-controls[1.0],confluence.web.resources:draft-changes[1.0],com.atlassian.confluence.plugins.drag-and-drop:drop-zone-for-image-dialog[4.3.7],com.atlassian.confluence.tinymceplugin:editor-autocomplete-resources[4.3.7],com.atlassian.plugins.editor:atlassian-rte-resources[4.3.7],com.atlassian.confluence.keyboardshortcuts:confluence-tinymce-keyboard-shortcuts[4.3.7],com.atlassian.confluence.plugins.jira.jira-connector:dialogsJs[1.4.2],nl.avisi.confluence.plugins.numberedheadings:nh-macro-browser-fields[2.3.1],com.atlassian.confluence.plugins.confluence-paste:paste-resources[4.3.7],confluence.web.resources:draft-changes-css[1.0],com.atlassian.confluence.plugins.confluence-paste:autoconvert-jira[4.3.7],confluence.web.resources:page-editor[1.0],com.atlassian.confluence.plugins.confluence-paste:autoconvert-confluence[4.3.7],com.atlassian.confluence.plugins.confluence-paste:autoconvert-widget-connector[4.3.7],com.atlassian.confluence.extra.team-calendars:timeline-resources[3.1.5],com.atlassian.confluence.plugins.confluence-paste:autoconvert-shortcut-links[4.3.7],com.atlassian.confluence.plugins.confluence-mentions-plugin:editor-autocomplete-mentions[1.5.9],com.atlassian.confluence.extra.team-calendars:macro-browser-web-resources[3.1.5],com.atlassian.confluence.plugins.drag-and-drop:drag-and-drop-for-editor[4.3.7],confluence.macros.core:macro-browser-smart-fields[4.3.7],com.atlassian.plugins.editor:atlassian-rte-javascript-tinymce-extensions[4.3.7],confluence.editor.actions:editor-macro-browser[1.0],com.atlassian.confluence.extra.team-calendars:helptip-resources[3.1.5],com.atlassian.confluence.extra.officeconnector:officeconnector-editor-resources[2.1.12]&quot; data-atlassian-webresource-contexts=&quot;editor,macro-browser&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/dccd25dd1cf017610ae67c18c5996ad3/_/download/contextbatch/css/editor,macro-browser,-viewcontent/batch.css?conditionalComment=lt+IE+9&quot; media=&quot;all&quot;&gt;
+&lt;![endif]--&gt;
+&lt;link data-atlassian-webresource-excluded-contexts=&quot;viewcontent&quot; data-atlassian-webresource-contents=&quot;com.atlassian.confluence.plugins.confluence-paste:autoconvert-youtu.be-rewrite[4.3.7],com.atlassian.plugins.editor:atlassian-rte-javascript-translations[4.3.7],com.atlassian.confluence.extra.team-calendars:macro-button-panel-resources[3.1.5],com.atlassian.confluence.plugins.profile-picture:profile-picture-editor_resources[1.6],confluence.web.resources:page-editor-css[1.0],com.atlassian.confluence.plugins.status-macro:editor_status[1.14],com.atlassian.applinks.applinks-plugin:applinks-util-js[3.8.0],com.atlassian.auiplugin:jquery-autocomplete[3.6.5],com.atlassian.plugins.editor:atlassian-rte-javascript-tinymce-core[4.3.7],com.atlassian.confluence.plugins.confluence-paste:autoconvert-core[4.3.7],com.atlassian.confluence.extra.officeconnector:macro-browser-smart-fields[2.1.12],confluence.extra.jira:macro-browser-resources[4.0.29],com.atlassian.confluence.extra.team-calendars:autoconvert-resources[3.1.5],com.atlassian.confluence.plugins.jira.jira-connector:proxy-js[1.4.2],com.atlassian.confluence.plugins.gadgets:macro-browser-for-gadgetsplugin[4.3.7],com.atlassian.confluence.plugins.confluence-paste:autoconvert-skitch[4.3.7],com.atlassian.gadgets.embedded:gadget-core-resources[3.2.0-m3],com.atlassian.confluence.plugins.confluence-templates:template-editor-variables-resources[4.3.7],com.atlassian.confluence.tinymceplugin:editor-resources[4.3.7],nl.avisi.confluence.plugins.numberedheadings:nh-tinymce-js-resources[2.3.1],com.atlassian.confluence.plugins.confluence-paste:autoconvert-cloudapp[4.3.7],net.customware.confluence.plugin.linking:editor_linkmacros[3.0.2],com.atlassian.confluence.plugins.confluence-mentions-plugin:editor-autocomplete-mentions-no-dependencies[1.5.9],com.atlassian.confluence.plugins.confluence-sortable-tables:ConfluenceSortableTablesEditorPlugin[4.3.7],com.atlassian.applinks.applinks-plugin:applinks-oauth-ui[3.8.0],com.atlassian.confluence.plugins.confluence-templates:template-editor-variables-template-resources[4.3.7],com.atlassian.confluence.plugins.confluence-paste:autoconvert-openphoto[4.3.7],confluence.web.resources:page-editor-js[1.0],com.atlassian.confluence.ext.newcode-macro-plugin:editor-scripts[2.0.16],com.atlassian.confluence.image.effects.ImageEffectsPlugin:propertiespanel[1.0.1],confluence.web.resources:draft-changes-js[1.0],confluence.macros.advanced:editor_includemacro[2.1.2],com.atlassian.confluence.tinymceplugin:editor-javascript-resources[4.3.7],com.atlassian.confluence.tinymceplugin:editor-autocomplete-resources-only[4.3.7],com.atlassian.confluence.plugins.confluence-paste:autoconvert-google-redirect[4.3.7],com.atlassian.confluence.tinymceplugin:editor-css-resources[4.3.7],com.atlassian.plugins.editor:atlassian-rte-javascript[4.3.7],com.atlassian.plugins.editor:atlassian-rte-css[4.3.7],confluence.web.components:editor-notifications[1.0],com.atlassian.confluence.extra.team-calendars:calendar-resources[3.1.5],confluence.web.resources:jira-controls[1.0],confluence.web.resources:draft-changes[1.0],com.atlassian.confluence.plugins.drag-and-drop:drop-zone-for-image-dialog[4.3.7],com.atlassian.confluence.tinymceplugin:editor-autocomplete-resources[4.3.7],com.atlassian.plugins.editor:atlassian-rte-resources[4.3.7],com.atlassian.confluence.keyboardshortcuts:confluence-tinymce-keyboard-shortcuts[4.3.7],com.atlassian.confluence.plugins.jira.jira-connector:dialogsJs[1.4.2],nl.avisi.confluence.plugins.numberedheadings:nh-macro-browser-fields[2.3.1],com.atlassian.confluence.plugins.confluence-paste:paste-resources[4.3.7],confluence.web.resources:draft-changes-css[1.0],com.atlassian.confluence.plugins.confluence-paste:autoconvert-jira[4.3.7],confluence.web.resources:page-editor[1.0],com.atlassian.confluence.plugins.confluence-paste:autoconvert-confluence[4.3.7],com.atlassian.confluence.plugins.confluence-paste:autoconvert-widget-connector[4.3.7],com.atlassian.confluence.extra.team-calendars:timeline-resources[3.1.5],com.atlassian.confluence.plugins.confluence-paste:autoconvert-shortcut-links[4.3.7],com.atlassian.confluence.plugins.confluence-mentions-plugin:editor-autocomplete-mentions[1.5.9],com.atlassian.confluence.extra.team-calendars:macro-browser-web-resources[3.1.5],com.atlassian.confluence.plugins.drag-and-drop:drag-and-drop-for-editor[4.3.7],confluence.macros.core:macro-browser-smart-fields[4.3.7],com.atlassian.plugins.editor:atlassian-rte-javascript-tinymce-extensions[4.3.7],confluence.editor.actions:editor-macro-browser[1.0],com.atlassian.confluence.extra.team-calendars:helptip-resources[3.1.5],com.atlassian.confluence.extra.officeconnector:officeconnector-editor-resources[2.1.12]&quot; data-atlassian-webresource-contexts=&quot;editor,macro-browser&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/dccd25dd1cf017610ae67c18c5996ad3/_/download/contextbatch/css/editor,macro-browser,-viewcontent/batch.css&quot; media=&quot;all&quot;&gt;
+&lt;link data-atlassian-webresource-contents=&quot;com.gliffy.integration.confluence:gliffy-rte-html5-resources[5.1]&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/5.1/_/download/batch/com.gliffy.integration.confluence:gliffy-rte-html5-resources/com.gliffy.integration.confluence:gliffy-rte-html5-resources.css&quot; media=&quot;all&quot;&gt;
+&lt;script data-atlassian-webresource-excluded-contexts=&quot;viewcontent&quot; data-atlassian-webresource-contents=&quot;com.atlassian.confluence.plugins.confluence-paste:autoconvert-youtu.be-rewrite[4.3.7],com.atlassian.plugins.editor:atlassian-rte-javascript-translations[4.3.7],com.atlassian.confluence.extra.team-calendars:macro-button-panel-resources[3.1.5],com.atlassian.confluence.plugins.profile-picture:profile-picture-editor_resources[1.6],confluence.web.resources:page-editor-css[1.0],com.atlassian.confluence.plugins.status-macro:editor_status[1.14],com.atlassian.applinks.applinks-plugin:applinks-util-js[3.8.0],com.atlassian.auiplugin:jquery-autocomplete[3.6.5],com.atlassian.plugins.editor:atlassian-rte-javascript-tinymce-core[4.3.7],com.atlassian.confluence.plugins.confluence-paste:autoconvert-core[4.3.7],com.atlassian.confluence.extra.officeconnector:macro-browser-smart-fields[2.1.12],confluence.extra.jira:macro-browser-resources[4.0.29],com.atlassian.confluence.extra.team-calendars:autoconvert-resources[3.1.5],com.atlassian.confluence.plugins.jira.jira-connector:proxy-js[1.4.2],com.atlassian.confluence.plugins.gadgets:macro-browser-for-gadgetsplugin[4.3.7],com.atlassian.confluence.plugins.confluence-paste:autoconvert-skitch[4.3.7],com.atlassian.gadgets.embedded:gadget-core-resources[3.2.0-m3],com.atlassian.confluence.plugins.confluence-templates:template-editor-variables-resources[4.3.7],com.atlassian.confluence.tinymceplugin:editor-resources[4.3.7],nl.avisi.confluence.plugins.numberedheadings:nh-tinymce-js-resources[2.3.1],com.atlassian.confluence.plugins.confluence-paste:autoconvert-cloudapp[4.3.7],net.customware.confluence.plugin.linking:editor_linkmacros[3.0.2],com.atlassian.confluence.plugins.confluence-mentions-plugin:editor-autocomplete-mentions-no-dependencies[1.5.9],com.atlassian.confluence.plugins.confluence-sortable-tables:ConfluenceSortableTablesEditorPlugin[4.3.7],com.atlassian.applinks.applinks-plugin:applinks-oauth-ui[3.8.0],com.atlassian.confluence.plugins.confluence-templates:template-editor-variables-template-resources[4.3.7],com.atlassian.confluence.plugins.confluence-paste:autoconvert-openphoto[4.3.7],confluence.web.resources:page-editor-js[1.0],com.atlassian.confluence.ext.newcode-macro-plugin:editor-scripts[2.0.16],com.atlassian.confluence.image.effects.ImageEffectsPlugin:propertiespanel[1.0.1],confluence.web.resources:draft-changes-js[1.0],confluence.macros.advanced:editor_includemacro[2.1.2],com.atlassian.confluence.tinymceplugin:editor-javascript-resources[4.3.7],com.atlassian.confluence.tinymceplugin:editor-autocomplete-resources-only[4.3.7],com.atlassian.confluence.plugins.confluence-paste:autoconvert-google-redirect[4.3.7],com.atlassian.confluence.tinymceplugin:editor-css-resources[4.3.7],com.atlassian.plugins.editor:atlassian-rte-javascript[4.3.7],com.atlassian.plugins.editor:atlassian-rte-css[4.3.7],confluence.web.components:editor-notifications[1.0],com.atlassian.confluence.extra.team-calendars:calendar-resources[3.1.5],confluence.web.resources:jira-controls[1.0],confluence.web.resources:draft-changes[1.0],com.atlassian.confluence.plugins.drag-and-drop:drop-zone-for-image-dialog[4.3.7],com.atlassian.confluence.tinymceplugin:editor-autocomplete-resources[4.3.7],com.atlassian.plugins.editor:atlassian-rte-resources[4.3.7],com.atlassian.confluence.keyboardshortcuts:confluence-tinymce-keyboard-shortcuts[4.3.7],com.atlassian.confluence.plugins.jira.jira-connector:dialogsJs[1.4.2],nl.avisi.confluence.plugins.numberedheadings:nh-macro-browser-fields[2.3.1],com.atlassian.confluence.plugins.confluence-paste:paste-resources[4.3.7],confluence.web.resources:draft-changes-css[1.0],com.atlassian.confluence.plugins.confluence-paste:autoconvert-jira[4.3.7],confluence.web.resources:page-editor[1.0],com.atlassian.confluence.plugins.confluence-paste:autoconvert-confluence[4.3.7],com.atlassian.confluence.plugins.confluence-paste:autoconvert-widget-connector[4.3.7],com.atlassian.confluence.extra.team-calendars:timeline-resources[3.1.5],com.atlassian.confluence.plugins.confluence-paste:autoconvert-shortcut-links[4.3.7],com.atlassian.confluence.plugins.confluence-mentions-plugin:editor-autocomplete-mentions[1.5.9],com.atlassian.confluence.extra.team-calendars:macro-browser-web-resources[3.1.5],com.atlassian.confluence.plugins.drag-and-drop:drag-and-drop-for-editor[4.3.7],confluence.macros.core:macro-browser-smart-fields[4.3.7],com.atlassian.plugins.editor:atlassian-rte-javascript-tinymce-extensions[4.3.7],confluence.editor.actions:editor-macro-browser[1.0],com.atlassian.confluence.extra.team-calendars:helptip-resources[3.1.5],com.atlassian.confluence.extra.officeconnector:officeconnector-editor-resources[2.1.12]&quot; data-atlassian-webresource-contexts=&quot;editor,macro-browser&quot; type=&quot;text/javascript&quot; src=&quot;/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/dccd25dd1cf017610ae67c18c5996ad3/_/download/contextbatch/js/editor,macro-browser,-viewcontent/batch.js&quot; &gt;&lt;/script&gt;
+&lt;script data-atlassian-webresource-contents=&quot;com.gliffy.integration.confluence:gliffy-rte-html5-resources[5.1]&quot; type=&quot;text/javascript&quot; src=&quot;/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/5.1/_/download/batch/com.gliffy.integration.confluence:gliffy-rte-html5-resources/com.gliffy.integration.confluence:gliffy-rte-html5-resources.js&quot; &gt;&lt;/script&gt;
+">
+            <meta name="ajs-date.format" content="MMM dd, yyyy">
+    
+    <link rel="shortcut icon" href="https://confluence.inside.nsn.com/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="https://confluence.inside.nsn.com/favicon.ico">
+
+<link rel="search" type="application/opensearchdescription+xml" href="https://confluence.inside.nsn.com/opensearch/osd.action" title="EE Jira 5.3">
+
+        <!-- include system javascript resources -->
+                        
+    
+    <!--[if lt IE 9]>
+<script data-atlassian-webresource-contents="com.atlassian.auiplugin:ajs-html5shim[3.6.5]" type="text/javascript" src="/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/231/_/download/superbatch/js/batch.js?conditionalComment=lt+IE+9" ></script>
+<![endif]-->
+<script data-atlassian-webresource-contents="confluence.web.resources:contentnamesearch[1.0],confluence.web.resources:fancy-box[1.0],confluence.web.resources:page-move-resources[1.0],confluence.macros.advanced:get-more[2.1.2],confluence.web.resources:labels-editor[1.0],confluence.web.resources:atlassian-effects[1.0],confluence.web.components:core[1.0],com.atlassian.auiplugin:ajs[3.6.5],confluence.aui.staging:storage-manager[4.3.7],confluence.web.resources:safe-ajax[1.0],confluence.aui.staging:dark-features[4.3.7],confluence.macros.profile:profile-macro-styles[1.0],com.atlassian.auiplugin:jquery-compatibility[3.6.5],confluence.web.resources:animation[1.0],confluence.web.resources:create-personal-space[1.0],com.atlassian.soy.soy-template-plugin:soy-deps[1.1.5],confluence.macros.advanced:get-more-helper[2.1.2],confluence.web.resources:create-space[1.0],com.atlassian.plugins.shortcuts.atlassian-shortcuts-module:shortcuts[1.0],com.atlassian.confluence.keyboardshortcuts:confluence-keyboard-shortcuts[4.3.7],com.atlassian.confluence.restplugin:confluence-rest[4.3.7],confluence.web.resources:userlink[1.0],com.atlassian.confluence.extra.officeconnector:editinoffice[2.1.12],confluence.web.resources:keygen[1.0],confluence.web.resources:view-content[1.0],confluence.web.components:property-panel-js[1.0],confluence.web.resources:search-results-grid[1.0],com.atlassian.auiplugin:jquery-lib[3.6.5],confluence.web.resources:jquery-json[1.0],confluence.web.resources:raphael[1.0],confluence.content.action.menu:linkpopup-resources[1.0],com.atlassian.confluence.plugins.gadgets:gadget-directory-resources[4.3.7],com.atlassian.auiplugin:ajs-gadgets-base[3.6.5],confluence.userstatus:userstatus-resources[1.0],confluence.web.resources:page-ordering-tree[1.0],confluence.web.resources:master-scripts[1.0],confluence.web.resources:breadcrumbs[1.0],confluence.web.resources:tooltip[1.0],com.atlassian.confluence.whatsnew:whats-new-resources[4.3.7],confluence.web.resources:ajs[1.0],confluence.aui.staging:meta[4.3.7],com.atlassian.auiplugin:aui-core[3.6.5],confluence.web.resources:page-permissions-editor[1.0]" type="text/javascript" src="./Firewalling in EE Cloud - EE Cloud - EE Jira 5.3_files/batch.js"></script><style type="text/css"></style>
+<!--[if lte IE 8]>
+<script data-atlassian-webresource-contents="com.atlassian.auiplugin:ajs[3.6.5]" type="text/javascript" src="/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/231/_/download/superbatch/js/batch.js?conditionalComment=lte+IE+8" ></script>
+<![endif]-->
+<script data-atlassian-webresource-contents="com.atlassian.confluence.plugins.confluence-inline-tasks:inline-tasks-resources[4.3.7],com.atlassian.confluence.plugins.confluence-inline-tasks:inline-tasks-styles[4.3.7],com.adaptavist.confluence.contentFormattingMacros:inline-fix[3.0.0],com.atlassian.confluence.plugins.drag-and-drop:drag-and-drop-for-view-content[4.3.7],com.atlassian.confluence.plugins.doctheme:splitter[4.3.7],confluence.macros.core:flash-autosize[4.3.7],com.atlassian.confluence.plugins.share-page:mail-page-resources[1.26],com.atlassian.confluence.plugins.confluence-like:content-like-resources[4.3.7],com.atlassian.confluence.plugins.view-storage-format:view-storage-menu-resources[4.3.7],de.communardo.confluence.plugins.subspace:subspace-resource[2.1],confluence.web.resources:view-comment[1.0],com.atlassian.confluence.plugins.confluence-mentions-plugin:help-dialog-extension[1.5.9],com.atlassian.confluence.plugins.confluence-sortable-tables:sortable-table-resources[4.3.7],com.atlassian.auiplugin:jquery-ui-other[3.6.5],de.communardo.confluence.plugins.subspace:subspace-search-resource[2.1],com.atlassian.confluence.plugins.drag-and-drop:support[4.3.7],net.customware.confluence.plugin.scaffolding:view-content-resources[4.5.1],com.atlassian.confluence.plugins.share-page:share-keyboard-shortcut-js-resources[1.26],com.atlassian.confluence.plugins.view-storage-format:view-comment-storage-resources[4.3.7],com.adaptavist.confluence.contentFormattingMacros:clickable-resources[3.0.0],com.atlassian.plugins.navigation-link-plugin:rotp-menu[1.2],de.communardo.confluence.plugins.subspace:subspace-breadcrumbs-resource[2.1],com.atlassian.confluence.plugins.jira.jira-connector:help-dialog-extension[1.4.2],com.atlassian.confluence.plugins.view-source:view-source-menu-resources[4.3.7],com.gliffy.integration.confluence:gliffy-global-resources[5.1],nl.tweeenveertig.navigator-plugin:navigator-resources[2.0.1]" data-atlassian-webresource-contexts="page,main,atl.general,viewcontent" type="text/javascript" src="./Firewalling in EE Cloud - EE Cloud - EE Jira 5.3_files/batch(4).js"></script><link rel="stylesheet" type="text/css" href="./Firewalling in EE Cloud - EE Cloud - EE Jira 5.3_files/navigator.css">
+<script data-atlassian-webresource-contents="com.atlassian.confluence.plugins.quickcomments:quick-comment-hide-traditional[4.3.7]" data-atlassian-webresource-contexts="atl.comments" type="text/javascript" src="./Firewalling in EE Cloud - EE Cloud - EE Jira 5.3_files/batch(5).js"></script>
+<script data-atlassian-webresource-contents="com.atlassian.mywork.mywork-confluence-host-plugin:mw-header-anchor[1.1.10]" type="text/javascript" src="./Firewalling in EE Cloud - EE Cloud - EE Jira 5.3_files/com.atlassian.mywork.mywork-confluence-host-plugin-mw-header-anchor.js"></script>
+
+    
+    <!-- end system javascript resources -->
+    <script type="text/javascript">
+AJS.toInit(function () {
+ AJS.$('#markupTextarea').attr('cols', '700');
+});
+</script>
+
+    
+                <link rel="canonical" href="./Firewalling in EE Cloud - EE Cloud - EE Jira 5.3_files/Firewalling in EE Cloud - EE Cloud - EE Jira 5.3.htm">
+        <link rel="shortlink" href="https://confluence.inside.nsn.com/x/wKvyBg">
+    <meta name="wikilink" content="[EECloud:Firewalling in EE Cloud]">
+    <meta name="page-version" content="11">
+
+	 
+<!--[if IE 7]>
+	<link rel="stylesheet" type="text/css" media="screen" href="/download/resources/com.atlassian.confluence.themes.nsneejira:nsneejira/style/nsneejira-ie7.css" />
+<![endif]-->
+	 
+<!--[if lt IE 7]>
+	<link rel="stylesheet" type="text/css" media="screen" href="/download/resources/com.atlassian.confluence.themes.nsneejira:nsneejira/style/nsneejira-ie6.css" />
+
+	<script type='text/javascript'>
+		jQuery(document).ready(function(){
+			var commentsCheckValue = jQuery("div#comments-section").length;
+			var preCheckValue = jQuery("textarea#markupTextarea").length;
+			if(commentsCheckValue < 1 && preCheckValue > 0) {
+				var markUpWidth = jQuery("textarea#markupTextarea").width() - 220;
+				jQuery("textarea#markupTextarea").css({"width" : markUpWidth + "px"});
+			};
+		});
+	</script>
+<![endif]-->
+<meta content="clickberry-extension-here"><link type="text/css" rel="stylesheet" href="chrome-extension://cpngackimfmofbokmjmljamhdncknpmg/style.css"><script type="text/javascript" charset="utf-8" src="chrome-extension://cpngackimfmofbokmjmljamhdncknpmg/js/page_context.js"></script><style>[touch-action="none"]{ -ms-touch-action: none; touch-action: none; }[touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; }[touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }[touch-action="scroll"],[touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }</style><script id="clickberry-standalone-script" src="chrome-extension://lfmhcpmkbdkbgbmkjoiopeeegenkdikp/modules/clickberry/ChromeStdInjector.js?v=prod&addonType=fvd"></script></head>
+    
+<body onload="placeFocus()" id="com-atlassian-confluence" class="nsneejira " screen_capture_injected="true">
+
+        
+    <ul id="assistive-skip-links" class="assistive">
+    <li><a href="https://confluence.inside.nsn.com/display/EECloud/Firewalling+in+EE+Cloud#title-heading">Skip to content</a></li>
+    <li><a href="https://confluence.inside.nsn.com/display/EECloud/Firewalling+in+EE+Cloud#breadcrumbs">Skip to breadcrumbs</a></li>
+    <li><a href="https://confluence.inside.nsn.com/display/EECloud/Firewalling+in+EE+Cloud#header-menu-bar">Skip to header menu</a></li>
+    <li><a href="https://confluence.inside.nsn.com/display/EECloud/Firewalling+in+EE+Cloud#navigation">Skip to action menu</a></li>
+    <li><a href="https://confluence.inside.nsn.com/display/EECloud/Firewalling+in+EE+Cloud#quick-search-query">Skip to quick search</a></li>
+</ul>
+<div id="page">
+<div id="full-height-container">
+    <div id="header-precursor">
+        <div class="cell">
+            
+                        </div>
+    </div>
+            <div id="header" class="">
+    <div class="cell">
+                          
+    <form id="quick-search" class="quick-search" method="get" action="https://confluence.inside.nsn.com/dosearchsite.action">
+        <fieldset>
+            <label class="assistive" for="quick-search-query">Quick Search</label>
+            <input id="quick-search-query" class="quick-search-query" type="search" accesskey="q" autocomplete="off" name="queryString" size="25" title="Quick Search ( Type &#39;/&#39; )" results="10" placeholder="Search">
+            <input id="quick-search-submit" class="quick-search-submit" type="submit" value="Search">
+            <div class="aui-dd-parent quick-nav-drop-down"></div>
+        </fieldset>
+        <div class="hidden parameters">
+                                        <!-- putMetadata failed to add value for key "quick-nav-enabled" so rendering metadata inline - see server debug log for details -->
+        <meta name="ajs-quick-nav-enabled" content="true">
+                                                    </div>
+    </form>
+        <ul id="header-menu-bar" class="ajs-menu-bar">
+                                                                
+            
+            <li class="normal ajs-menu-item">
+        <a id="browse-menu-link" class="browse trigger ajs-menu-title" href="https://confluence.inside.nsn.com/display/EECloud/Firewalling+in+EE+Cloud#"><span><span>Browse</span></span></a>         <div class="ajs-drop-down assistive" hidden="" style="">
+                        <ul id="browse-menu-link-leading" class="section-leading first">
+                                        <li>
+    
+        
+    
+    <a id="space-pages-link" href="https://confluence.inside.nsn.com/pages/listpages.action?key=EECloud" class="" title="Browse pages in the EE Cloud space ( Type &#39;g&#39; then &#39;s&#39; )">
+                   <span>Pages</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-blogposts-link" href="https://confluence.inside.nsn.com/pages/viewrecentblogposts.action?key=EECloud" class="" title="Browse blogs in the EE Cloud space">
+                   <span>Blog</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-templates-link" href="https://confluence.inside.nsn.com/pages/templates2/listpagetemplates.action?key=EECloud" class="" title="Browse and edit templates in the EE Cloud space">
+                   <span>Templates</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-labels-link" href="https://confluence.inside.nsn.com/labels/listlabels-heatmap.action?key=EECloud" class="" title="Browse labels in the EE Cloud space">
+                   <span>Labels</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-attachments-link" href="https://confluence.inside.nsn.com/spaces/listattachmentsforspace.action?key=EECloud" class="" title="Browse attachments in the EE Cloud space">
+                   <span>Attachments</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-mail-link" href="https://confluence.inside.nsn.com/mail/archive/viewmailarchive.action?key=EECloud" class="" title="Browse mail in the EE Cloud space">
+                   <span>Mail</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a href="https://confluence.inside.nsn.com/spaces/forums/spaceForums.action?key=EECloud" class="" title="">
+                   <span>Forums</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a href="https://confluence.inside.nsn.com/spaces/usage/report.action?key=EECloud" class="" title="">
+                   <span>Activity</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-advanced-link" href="https://confluence.inside.nsn.com/spaces/viewspacesummary.action?key=EECloud" class="" title="Browse additional space functions in the EE Cloud space">
+                   <span>Advanced</span></a>        </li>
+                            </ul>
+                        <ul id="browse-menu-link-global" class="section-global">
+                                        <li>
+    
+        
+    
+    <a id="whats-new-menu-link" href="http://docs.atlassian.com/confluence/docs-43/whatsnew/iframe" class="" title="">
+                   <span>What’s New</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-directory-link" href="https://confluence.inside.nsn.com/spacedirectory/view.action" class="" title="Browse the Confluence space directory">
+                   <span>Space Directory</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="feed-builder-link" href="https://confluence.inside.nsn.com/dashboard/configurerssfeed.action" class="" title="Create your custom RSS feed.">
+                   <span>Feed Builder</span></a>        </li>
+                                        <li>
+    
+            
+    
+    <a id="keyboard-shortcuts-link" href="https://confluence.inside.nsn.com/display/EECloud/Firewalling+in+EE+Cloud#" class="" title="View available keyboard shortcuts ( Type &#39;?&#39; )">
+                   <span>Keyboard Shortcuts</span></a>        </li>
+                                        <li>
+    
+            
+    
+    <a id="gadget-directory-link" href="https://confluence.inside.nsn.com/display/EECloud/Firewalling+in+EE+Cloud#" class="user-item administration-link" title="Browse gadgets provided by Confluence">
+                   <span>Confluence Gadgets</span></a>        </li>
+                            </ul>
+                        <ul id="browse-menu-link-subspace-section" class="section-subspace-section">
+                                        <li>
+    
+            
+    
+    <a id="subspace-webitem-template-link" href="https://confluence.inside.nsn.com/display/EECloud/Firewalling+in+EE+Cloud#" class="" title="">
+                   <span><style>
+
+    #browse-menu-link-subspace-section,
+    #subspace-webitem-template-link {
+    	display: none !important;
+    }
+
+</style>
+
+<table>
+    <tbody><tr>
+        <td>
+			<div id="subspace-configuration">
+                
+
+
+
+			</div>
+        </td>
+    </tr>
+</tbody></table>
+</span></a>        </li>
+                            </ul>
+                    </div>
+    </li>
+            
+                                                                 <li class="ajs-menu-item normal">
+        
+        
+    
+    <a id="login-link" href="https://confluence.inside.nsn.com/login.action?os_destination=%2Fdisplay%2FEECloud%2FFirewalling%2Bin%2BEE%2BCloud" class="user-item login-link" title="">
+                   <span>Log In</span></a>        </li>
+                                </ul>
+        
+    
+    <ol id="breadcrumbs">
+                    
+                        
+        <li class="first">
+                                    <span><a href="https://confluence.inside.nsn.com/dashboard.action" title="Go to Dashboard ( Type &#39;g&#39; then &#39;d&#39; )">Dashboard</a></span>
+                </li>
+                    
+                
+        <li>
+                                    <span><a href="https://confluence.inside.nsn.com/display/EECloud">EE Cloud</a></span>
+                </li>
+                                        <li id="ellipsis" title="Show all breadcrumbs"><span><strong>…</strong></span></li>
+                                    
+                
+        <li class="hidden-crumb">
+                                    <span><a href="https://confluence.inside.nsn.com/display/EECloud/EE+Cloud">EE Cloud</a></span>
+                </li>
+                                
+                
+        <li class="hidden-crumb">
+                                    <span><a href="https://confluence.inside.nsn.com/display/EECloud/Instructions+and+Guides">Instructions and Guides</a></span>
+                </li>
+                                
+                
+        <li class="hidden-crumb">
+                                    <span><a href="https://confluence.inside.nsn.com/display/EECloud/Using+EE+Cloud+Features">Using EE Cloud Features</a></span>
+                </li>
+                    
+                
+        <li>
+                                    <span><a href="./Firewalling in EE Cloud - EE Cloud - EE Jira 5.3_files/Firewalling in EE Cloud - EE Cloud - EE Jira 5.3.htm">Firewalling in EE Cloud</a></span>
+                </li>
+        </ol>
+
+    </div>
+</div>
+<!-- \#header -->    
+        <!-- \#header -->
+
+        <div id="nsnHeader">
+	<h1>
+		<a id="logo" href="https://inside.nsn.com/" target="_blank">Nokia Solutions and Networks</a>
+	</h1>
+
+	<span id="toolVersion">
+		<span id="overlayText"><a href="https://confluence.inside.nsn.com/dashboard.action">EE Jira 5.3</a></span>
+		EE Jira 5.3
+	</span>
+
+	<div id="crumbs">
+		
+    
+    <ol id="breadcrumbs">
+                    
+                        
+        <li class="first">
+                                    <span><a href="https://confluence.inside.nsn.com/dashboard.action" title="Go to Dashboard ( Type &#39;g&#39; then &#39;d&#39; )">Dashboard</a></span>
+                </li>
+                    
+                
+        <li>
+                                    <span><a href="https://confluence.inside.nsn.com/display/EECloud">EE Cloud</a></span>
+                </li>
+                                        <li id="ellipsis" title="Show all breadcrumbs"><span><strong>…</strong></span></li>
+                                    
+                
+        <li class="hidden-crumb">
+                                    <span><a href="https://confluence.inside.nsn.com/display/EECloud/EE+Cloud">EE Cloud</a></span>
+                </li>
+                                
+                
+        <li class="hidden-crumb">
+                                    <span><a href="https://confluence.inside.nsn.com/display/EECloud/Instructions+and+Guides">Instructions and Guides</a></span>
+                </li>
+                                
+                
+        <li class="hidden-crumb">
+                                    <span><a href="https://confluence.inside.nsn.com/display/EECloud/Using+EE+Cloud+Features">Using EE Cloud Features</a></span>
+                </li>
+                    
+                
+        <li>
+                                    <span><a href="./Firewalling in EE Cloud - EE Cloud - EE Jira 5.3_files/Firewalling in EE Cloud - EE Cloud - EE Jira 5.3.htm">Firewalling in EE Cloud</a></span>
+                </li>
+        </ol>
+
+		<div class="clearing"><!-- --></div>
+	</div>
+	
+	
+ 		<div id="topNavigation">
+			<ul>
+<li class="selected"><a href="https://confluence.inside.nsn.com/display/EECloud/EE+Cloud">EE Cloud</a></li>
+<li><a href="https://confluence.inside.nsn.com/display/EECloud/User+community">User community</a></li>
+<li><a href="https://confluence.inside.nsn.com/display/EECloud/Service+community">Service community</a></li>
+<li><a href="https://confluence.inside.nsn.com/display/EECloud/Trainings">Trainings</a></li>
+<li><a href="https://confluence.inside.nsn.com/display/EECloud/FAQ">FAQ</a></li>
+<li><a href="https://confluence.inside.nsn.com/display/EECloud/Eucalyptus+Community">Eucalyptus Community</a></li>
+<li><a href="https://confluence.inside.nsn.com/pages/viewpage.action?pageId=199656051">Compute as a Service(CaaS)</a></li>
+</ul>
+		<div class="softClear"><!-- --></div>
+	 </div>
+ 
+<br class="clear" style="display:none">
+</div>
+
+    <div id="main" class="">
+        <div id="main-header">
+            
+    <div id="navigation" class="content-navigation view">
+                    <ul class="ajs-menu-bar">
+                                
+                        
+            <li class="normal ajs-menu-item">
+        <a id="action-menu-link" class="action trigger ajs-menu-title" href="https://confluence.inside.nsn.com/display/EECloud/Firewalling+in+EE+Cloud#"><span><span>Tools</span></span></a>         <div class="ajs-drop-down most-right-menu-item assistive" hidden="">
+                        <ul id="action-menu-link-primary" class="section-primary first">
+                                        <li>
+    
+        
+    
+    <a id="view-attachments-link" href="https://confluence.inside.nsn.com/pages/viewpageattachments.action?pageId=116566976" class="action-view-attachments" accesskey="a" title="View Attachments ( Type &#39;t&#39; )">
+                   <span><u>A</u>ttachments (1)</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="action-view-history-link" href="https://confluence.inside.nsn.com/pages/viewpreviousversions.action?pageId=116566976" class="action-view-history" title="">
+                   <span>Page History</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="action-page-permissions-link" href="https://confluence.inside.nsn.com/pages/viewinfo.action?pageId=116566976" class="action-page-permissions" title="Edit restrictions">
+                   <span>Restrictions</span></a>        </li>
+                            </ul>
+                        <ul id="action-menu-link-secondary" class="section-secondary">
+                                        <li>
+    
+        
+    
+    <a id="view-page-info-link" href="https://confluence.inside.nsn.com/pages/viewinfo.action?pageId=116566976" class="action-view-info" title="">
+                   <span>Info</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="link-to-page-link" href="https://confluence.inside.nsn.com/pages/viewinfo.action?pageId=116566976" class="" title="Link to this Page ( Type &#39;k&#39; )">
+                   <span>Link to this Page…</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="view-in-hierarchy-link" href="https://confluence.inside.nsn.com/pages/listpages-dirview.action?key=EECloud&openId=116566976#selectedPageInHierarchy" class="" title="">
+                   <span>View in Hierarchy</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="action-view-source-link" href="https://confluence.inside.nsn.com/plugins/viewsource/viewpagesrc.action?pageId=116566976" class="action-view-source popup-link" title="">
+                   <span>View Source</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="org.randombits.confluence.metadata.viewmetadata" href="https://confluence.inside.nsn.com/pages/metadata/viewxml.action?pageId=116566976" class="" title="">
+                   <span>View Scaffolding XML</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a href="https://confluence.inside.nsn.com/pages/favourites/pagefavourites.action?pageId=116566976" class="" title="">
+                   <span>Favourites</span></a>        </li>
+                            </ul>
+                        <ul id="action-menu-link-modify" class="section-modify">
+                                        <li>
+    
+        
+    
+    <a id="treecopy-action" href="https://confluence.inside.nsn.com/plugins/treecopy/setnames.action?pageId=116566976" class="" title="">
+                   <span>Copy Page Tree</span></a>        </li>
+                            </ul>
+                    </div>
+    </li>
+            </ul>
+    </div>
+
+            
+            <h1 id="title-heading" class="pagetitle">
+                                    <a href="https://confluence.inside.nsn.com/display/EECloud"><img class="logo space custom" src="./Firewalling in EE Cloud - EE Cloud - EE Jira 5.3_files/EECloud" alt=""></a>                
+                <span id="title-text">
+                                                <a href="./Firewalling in EE Cloud - EE Cloud - EE Jira 5.3_files/Firewalling in EE Cloud - EE Cloud - EE Jira 5.3.htm">Firewalling in EE Cloud</a>
+                                    </span>
+            </h1>
+        </div><!-- \#main-header -->
+
+        
+
+        <div id="sidebar-container">
+                                                </div><!-- \#sidebar-container -->
+
+        
+    
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+
+
+
+
+        
+
+    
+    
+        
+    
+    
+ 
+
+
+                    
+    
+
+    
+
+
+<div id="content" class="page view">
+    
+
+<div id="action-messages">
+                        </div>
+
+
+
+    
+<script type="text/x-template" title="movePageDialog">
+    <div class="row information">
+        <div class="inner">
+            <div class="element">
+                Specify the new parent page for this page and its children by space and title.
+            </div>
+        </div>
+    </div>
+    <div class="form">
+        <fieldset>
+                
+
+    <legend class="assistive"><span>Change the Parent Page to a Known Page</span></legend>
+            <div class="row">
+                <label for="new-space">New space:</label>
+                <div class="value new-space-value">
+                    <input id="new-space-key" name="new-space-key" type="hidden" value="EECloud">
+                                            <span class="space-input">
+                            <input id="new-space" name="new-space" value="EE Cloud" disabled="disabled">
+                        </span>
+                        <span class="description warning">You cannot move this page to another space because you do not have permission to remove it from this space.</span>
+                                        <div class="new-space-dropdown aui-dd-parent autocomplete"></div>
+                </div>
+            </div>
+            <div class="row">
+                <label for="new-parent-page">New parent page:</label>
+                <div class="value new-parent-page-value">
+                    <span class="page-input">
+                        <input id="new-parent-page" name="new-parent-page" value="Using EE Cloud Features">
+                    </span>
+                    <span class="description">Start typing a page title to see a list of suggestions.</span>
+                    <div class="new-parent-page-dropdown aui-dd-parent autocomplete"></div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="location-info">
+        <div class="row">
+            <label>Current location:</label>
+            <div class="value breadcrumbs-container">
+                <div class="breadcrumbs-line">
+                    <ul id="current-parent-breadcrumbs" class="breadcrumbs">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <label>New location:</label>
+            <div class="value breadcrumbs-container">
+                <div class="breadcrumbs-line">
+                    <ul id="new-parent-breadcrumbs" class="breadcrumbs">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/x-template" title="movePageSearchPanel">
+    <div class="row information">
+        <div class="inner">
+            <div class="element">
+                Search for and select the new parent page for this page and its children.
+            </div>
+        </div>
+    </div>
+    <div id="move-page-search-container" class="row">
+        <div class="search-form">
+            <fieldset>
+                    
+
+    <legend class="assistive"><span>Search for a New Parent Page</span></legend>
+                    
+
+    <label  for="move-page-search-query" class="assistive">Search keywords</label>
+                <input class="search-query" id="move-page-search-query">
+                    
+
+    <label  for="move-page-search-space" class="assistive">Search in space</label>
+                                    <select id="move-page-search-space" class="search-space" disabled="disabled">
+                        <option value="EECloud" selected="selected">EE Cloud</option>
+                    </select>
+                                <input type="button" value="Search">
+                                    <div class="description warning">You cannot move this page to another space because you do not have permission to remove it from this space.</div>
+                            </fieldset>
+        </div>
+        <div class="search-results">
+        </div>
+    </div>
+</script>
+<script type="text/x-template" title="searchResultsGrid">
+    <table>
+        <thead>
+            <tr class="header">
+                <th class="search-result-title">Page Title</th>
+                <th class="search-result-space">Space</th>
+                <th class="search-result-date">Updated</th>
+            </tr>
+        </thead>
+    </table>
+</script>
+<script type="text/x-template" title="searchResultsGridCount">
+    <p class="search-result-count">{0}</p>
+</script>
+<script type="text/x-template" title="searchResultsGridRow">
+    <tr class="search-result">
+        <th class="search-result-title"><a href="{1}" class="content-type-{2}"><span>{0}</span></a></th>
+        <td class="search-result-space"><a class="space" href="/display/{4}/" title="{3}">{3}</a></td>
+        <td class="search-result-date"><span class="date" title="{6}">{5}</span></td>
+    </tr>
+</script><!-- Start restrictions section -->
+<script type="text/x-template" title="page-permissions-div">
+<div id="page-permissions-div">
+    <div id="page-permissions-editor-form">
+
+                <div id="page-permissions-error-div" class="hidden">
+            <a href="#" id="permissions-error-div-close">Ok</a>
+            <div></div>
+        </div>
+
+                <div id="page-permissions-type-radios" class="page-permissions-label-rows">
+            <div>
+                <input id="restrictViewRadio" type="radio" checked="checked" name="pagePermissionTypeRadio" value="view"/>
+                <label for="restrictViewRadio">Restrict viewing of this page</label>
+                <input id="restrictEditRadio" type="radio" name="pagePermissionTypeRadio" value="edit"/>
+                <label for="restrictEditRadio">Restrict editing of this page</label>
+            </div>
+        </div>
+        <div id="page-permissions-input" class="page-permissions-label-rows">
+            <div class="page-permissions-label">To:</div>
+            <div id="page-permissions-chooser-box">
+                                <span id="page-permissions-choose-user" class="ajs-button">
+                    
+
+
+
+    
+
+
+
+<a href="#" id='userpicker-popup-link-image' onClick="var picker = window.open('/spaces/openuserpicker.action?key=EECloud&amp;startIndex=0&amp;onPopupSubmit=AJS.PagePermissions.addUserPermissions', 'EntitiesPicker', 'status=yes,resizable=yes,top=100,left=200,width=700,height=680,scrollbars=yes'); picker.focus(); return false;"><img src="/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/_/images/icons/user_16.gif" height=16 width=16 border=0 align="absmiddle"  title="Choose users" /></a>
+<a href="#" id='userpicker-popup-link-text' onClick="var picker = window.open('/spaces/openuserpicker.action?key=EECloud&amp;startIndex=0&amp;onPopupSubmit=AJS.PagePermissions.addUserPermissions', 'EntitiesPicker', 'status=yes,resizable=yes,top=100,left=200,width=700,height=680,scrollbars=yes'); picker.focus(); return false;">Person...</a>
+
+
+                </span>
+                <span id="page-permissions-choose-group" class="ajs-button">
+                    
+
+
+
+    
+
+ 
+
+<a href="#" id='grouppicker-popup-link-image' onClick="var picker = window.open('/spaces/opengrouppicker.action?key=EECloud&amp;startIndex=0&amp;actionName=dosearchgroups.action&amp;onPopupSubmit=AJS.PagePermissions.addGroupPermissions', 'EntitiesPicker', 'status=yes,resizable=yes,top=100,left=200,width=580,height=550,scrollbars=yes'); picker.focus(); return false;"><img src="/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/_/images/icons/group_16.gif" height=16 width=16 border=0 align="absmiddle"  title="Choose groups" /></a>
+<a href="#" id='grouppicker-popup-link-text' onClick="var picker = window.open('/spaces/opengrouppicker.action?key=EECloud&amp;startIndex=0&amp;actionName=dosearchgroups.action&amp;onPopupSubmit=AJS.PagePermissions.addGroupPermissions', 'EntitiesPicker', 'status=yes,resizable=yes,top=100,left=200,width=580,height=550,scrollbars=yes'); picker.focus(); return false;">Group...</a>
+
+
+                </span>
+            </div>
+            <div id="page-permissions-input-box">
+                <input type="text" id="page-permissions-names-input" name="permissionNames"
+                    placeholder="Enter user or group name" class="autocomplete-user"
+                    data-max="10" data-none-message="No matches"
+                    data-target="#page-permissions-names-hidden" data-template="{username}"
+                    data-dropdown-target="#page-perms-name-dropdown-wrapper" data-resize-to-input="true"
+                    size="30"/>
+                <input
+    type="hidden"
+                            id="page-permissions-names-hidden"           />                <img height="16px" width="1px" src="/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/_/images/border/spacer.gif"/>
+                <input type="button" id="add-typed-names" value="Restrict">
+                <div id="page-perms-name-dropdown-wrapper" class="aui-dd-parent autocomplete"></div>
+            </div>
+        </div>
+    </div>
+    <div id="page-permissions-tables">
+        <div id="page-permissions-table-div">
+                        <table id="page-permissions-table" class="page-permissions-table">
+                <tr id="page-permissions-no-views" class="marker-row">
+                    <td colspan="3" class="page-permissions-marker-cell"><span>No view restrictions are defined for this page</span></td>
+                </tr>
+                <tr id="page-permissions-no-edits" class="marker-row">
+                    <td colspan="3" class="page-permissions-marker-cell"><span>No edit restrictions are defined for this page</span></td>
+                </tr>
+            </table>
+        </div>
+        <div id="page-inherited-permissions-table-div" class="hidden">
+            <span id="page-inherited-permissions-table-desc">
+                <a class="icon twisty-closed">Show/Hide</a>
+                <a id="toggle-inherited-permissions" title="Click to see inherited restrictions">This page has restricted parent pages. It can only be seen by users who can see those parent pages.</a>
+            </span>
+            <div id="page-inherited-permissions-tables" class="hidden page-inheritance-togglable"></div>
+        </div>
+    </div>
+</div>
+</script>
+
+<!-- End restrictions section -->
+
+        
+    
+    
+	<style>
+		#navigation { position: absolute; top: 2px; right: 15px; margin: 0; }
+		#nsnHeader #topNavigation { display: block; }
+		h1#title-heading span#title-text { display: block; margin-right: 10em; }
+	</style>
+     	
+                            
+    
+
+                    
+
+        
+<table id="contentWrapper">
+	<tbody><tr>
+									<style>
+				td#navigationCell ul li.selected { border-bottom: none; padding-bottom: 0; }
+			</style>
+							<td id="navigationCell">
+			<ul>
+<li><a href="https://confluence.inside.nsn.com/display/EECloud/Introduction">Introduction</a></li>
+<li class="selected"><a href="https://confluence.inside.nsn.com/display/EECloud/Instructions+and+Guides">Instructions and Guides</a></li>
+<ul>
+<li><a href="https://confluence.inside.nsn.com/display/EECloud/How+to+start+using+EE+Cloud+services">How to start using EE Cloud services</a></li>
+<li><a href="https://confluence.inside.nsn.com/display/EECloud/Image+and+instance+management">Image and instance management</a></li>
+<li><a href="https://confluence.inside.nsn.com/display/EECloud/EBS+instructions">EBS instructions</a></li>
+<li class="selected"><a href="https://confluence.inside.nsn.com/display/EECloud/Using+EE+Cloud+Features">Using EE Cloud Features</a></li>
+<ul>
+<li><a href="https://confluence.inside.nsn.com/display/EECloud/How+to+create+eucalyptus+server+from+command+line">How to create eucalyptus server from command line</a></li>
+<li><a href="https://confluence.inside.nsn.com/display/EECloud/Connect+Jenkins+or+Hudson+to+Eucalyptus">Connect Jenkins or Hudson to Eucalyptus</a></li>
+<li><a href="https://confluence.inside.nsn.com/display/EECloud/Architecting+a+continually+running+system+for+the+cloud">Architecting a continually running system for the cloud</a></li>
+<li><a href="https://confluence.inside.nsn.com/display/EECloud/How+to+use+Robot+in+EE+Cloud">How to use Robot in EE Cloud</a></li>
+<li class="selected"><a href="./Firewalling in EE Cloud - EE Cloud - EE Jira 5.3_files/Firewalling in EE Cloud - EE Cloud - EE Jira 5.3.htm">Firewalling in EE Cloud</a></li>
+<li><a href="https://confluence.inside.nsn.com/display/EECloud/Using+accounts">Using accounts</a></li>
+<li><a href="https://confluence.inside.nsn.com/display/EECloud/Installing+euca2ools">Installing euca2ools</a></li>
+<li><a href="https://confluence.inside.nsn.com/display/EECloud/NFSv4+Protocol+in+EE+Cloud">NFSv4 Protocol in EE Cloud</a></li>
+<li><a href="https://confluence.inside.nsn.com/display/EECloud/Using+Euca2ools+to+create+an+instance+-+Step+by+Step">Using Euca2ools to create an instance - Step by Step</a></li>
+</ul>
+<li><a href="https://confluence.inside.nsn.com/display/EECloud/Troubleshooting+and+fault+fixing+guide">Troubleshooting and fault fixing guide</a></li>
+<li><a href="https://confluence.inside.nsn.com/display/EECloud/Requesting+Support">Requesting Support</a></li>
+</ul>
+<li><a href="https://confluence.inside.nsn.com/display/EECloud/Support+and+Contacts">Support and Contacts</a></li>
+<li><a href="https://confluence.inside.nsn.com/display/EECloud/Releases">Releases</a></li>
+<li><a href="https://confluence.inside.nsn.com/display/EECloud/Q+et+A+Call+Info+and+Log">Q et A Call Info and Log</a></li>
+<li><a href="https://confluence.inside.nsn.com/display/EECloud/Developer+Area">Developer Area</a></li>
+</ul>
+			<div style="width: 180px;"></div>
+		</td>
+		<td id="spacerCell"><div style="width: 25px;"></div></td>
+			<td id="contentCell">
+			<h1 id="title-heading" class="pagetitle">
+									<a href="https://confluence.inside.nsn.com/display/EECloud"><img class="logo space custom" src="./Firewalling in EE Cloud - EE Cloud - EE Jira 5.3_files/EECloud" alt=""></a>							
+				<span id="title-text">
+											Firewalling in EE Cloud
+									</span>
+			</h1>
+			
+			<a href="https://confluence.inside.nsn.com/display/EECloud/Firewalling+in+EE+Cloud#page-metadata-end" class="assistive">Skip to end of metadata</a>
+<div id="page-metadata-start" class="assistive"></div>
+
+    <div class="page-metadata">
+        <ul>
+                            <li class="page-metadata-item noprint">
+    
+            
+    
+    <a id="content-metadata-page-restrictions" href="https://confluence.inside.nsn.com/display/EECloud/Firewalling+in+EE+Cloud#" class="page-metadata-icon page-restrictions hidden" title="Page restrictions apply. Click the lock icon to view or edit the restriction.">
+                   <span>Page restrictions apply</span></a>        </li>
+                            <li class="page-metadata-item noprint">
+    
+        
+    
+    <a id="content-metadata-attachments" href="https://confluence.inside.nsn.com/pages/viewpageattachments.action?pageId=116566976&metadataLink=true" class="page-metadata-icon action-view-attachments" accesskey="a" title="Attachments: 1">
+                   <span><span class="page-metadata-attachments-text">Attachments:</span><span class="page-metadata-attachments-count">1</span></span></a>        </li>
+                        <li class="page-metadata-modification-info">
+                                    Added by <a href="https://confluence.inside.nsn.com/display/~delarue">delarue</a>, last edited by <a href="https://confluence.inside.nsn.com/display/~delarue">delarue</a> on May 29, 2013
+                                                                <span class="noprint">&nbsp;(<a id="view-change-link" href="https://confluence.inside.nsn.com/pages/diffpages.action?pageId=116566976&originalId=201921566">view change</a>)</span>
+                                                </li>
+                            <li class="show-hide-comment-link">
+                    <a id="show-version-comment" class="inline-control-link" href="https://confluence.inside.nsn.com/display/EECloud/Firewalling+in+EE+Cloud#">show comment</a>
+                    <a id="hide-version-comment" class="inline-control-link" style="display:none;" href="https://confluence.inside.nsn.com/display/EECloud/Firewalling+in+EE+Cloud#">hide comment</a>
+                </li>
+                    </ul>
+                <div id="version-comment" class="noteMacro" style="display: none;">
+        <strong>Comment:</strong>
+        better page link / typo fix<br>
+    </div>
+        </div>
+
+
+<a href="https://confluence.inside.nsn.com/display/EECloud/Firewalling+in+EE+Cloud#page-metadata-start" class="assistive">Go to start of metadata</a>
+<div id="page-metadata-end" class="assistive"></div>
+			
+	        <div class="wiki-content">
+	                           <h2 id="FirewallinginEECloud-FirewallinginEECloud">Firewalling in EE Cloud</h2><p>This diagram shows the firewalling related to the EE Cloud</p><p><img class="confluence-embedded-image confluence-content-image-border" src="./Firewalling in EE Cloud - EE Cloud - EE Jira 5.3_files/security-groups-and-firewalls.png" data-image-src="/download/attachments/116566976/security-groups-and-firewalls.png?version=1&amp;modificationDate=1329322612000&amp;api=v2"></p><p>In EE cloud your cloud instances are grouped into "security groups". There is a virtual firewall between your security group and the outside world which you are able to configure freely. The settings of this security group are your responsibility and are the only thing between your instances and the other instances in the cloud. For this reason you must ensure that they are set correctly and allow exactly the traffic you want to allow.</p><h3 id="FirewallinginEECloud-NSNfirewall">NSN firewall</h3><p>Between EE Cloud environments in DHN and the rest of the NSN networks there are IT firewalls. The aim is that most traffic that you would normally need with the intranet will be allowed by default by these firewalls. If you find that some basic traffic is missing then please make a firewall request <strong>together with the EE Cloud team</strong> to add that traffic for all security groups.</p><p>For information about production environments and which network segment they are located, please see the page <a href="https://confluence.inside.nsn.com/display/EECloud/Which+cloud+suits+my+purpose">Which cloud suits my purpose</a><a href="https://confluence.inside.nsn.com/display/EECloud/Using+Hybridfox"><span>&nbsp;</span></a>.</p><p><strong>Current list of opened ports in DHN firewall:</strong></p><div class="table-wrap"><table class="confluenceTable tablesorter"><thead><tr class="sortableHeader"><th class="confluenceTh sortableHeader" data-column="0"><div class="tablesorter-header-inner"><p>Port</p></div></th><th class="confluenceTh sortableHeader" data-column="1"><div class="tablesorter-header-inner"><p>TCP</p></div></th><th class="confluenceTh sortableHeader" data-column="2"><div class="tablesorter-header-inner"><p>UDP</p></div></th></tr></thead><tbody><tr><td class="confluenceTd"><p>22</p></td><td class="confluenceTd"><p>tcp</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>80</p></td><td class="confluenceTd"><p>tcp</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>443</p></td><td class="confluenceTd"><p>tcp</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>3389</p></td><td class="confluenceTd"><p>tcp</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>389</p></td><td class="confluenceTd"><p>tcp</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>8443</p></td><td class="confluenceTd"><p>tcp</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>8773</p></td><td class="confluenceTd"><p>tcp</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>8774</p></td><td class="confluenceTd"><p>tcp</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>8775</p></td><td class="confluenceTd"><p>tcp</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>5950-5952</p></td><td class="confluenceTd"><p>tcp</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>8140</p></td><td class="confluenceTd"><p>tcp</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>8080</p></td><td class="confluenceTd"><p>tcp</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>8098</p></td><td class="confluenceTd"><p>tcp</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>53</p></td><td class="confluenceTd"><p>tcp</p></td><td class="confluenceTd"><p>udp</p></td></tr><tr><td class="confluenceTd"><p>1812-1820</p></td><td class="confluenceTd"><p>tcp</p></td><td class="confluenceTd"><p>udp</p></td></tr><tr><td class="confluenceTd"><p>5999-6002</p></td><td class="confluenceTd"><p>tcp</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>8001</p></td><td class="confluenceTd"><p>tcp</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>8030</p></td><td class="confluenceTd"><p>tcp</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>8031</p></td><td class="confluenceTd"><p>tcp</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>1248</p></td><td class="confluenceTd"><p>tcp</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>2408-2911</p></td><td class="confluenceTd"><p>tcp</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>9080</p></td><td class="confluenceTd"><p>tcp</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>9990</p></td><td class="confluenceTd"><p>tcp</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr></tbody></table></div><p>(<em>these are "end-user ports" i.e. from NSN intranet -&gt; virtual instance running in DHN</em>)</p><h3 id="FirewallinginEECloud-Specialrules">Special rules</h3><p>If you need special rules for your security group only, you should allocate yourself an "elastic IP" which is an IP address that will remain with your account independent of the addresses of your instances. You may then make firewall requests to NSN IT Firewall team for that IP address.</p><p>When you have finished with the elastic IP address, please request the NSN firewall team to remove your special rules and then afterwards deallocate it.</p>
+    
+	        </div>
+
+        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://confluence.inside.nsn.com/display/EECloud/Firewalling+in+EE+Cloud"
+    dc:identifier="https://confluence.inside.nsn.com/display/EECloud/Firewalling+in+EE+Cloud"
+    dc:title="Firewalling in EE Cloud"
+    trackback:ping="https://confluence.inside.nsn.com/rpc/trackback/116566976"/>
+</rdf:RDF>
+-->
+
+                    <script type="text/x-template" title="labels-dialog-div">
+        <div id="labels-dialog">
+        <div class="labels-editor">
+            <form method="GET" action="" id="add-labels-form">
+                <div id="labelOperationErrorContainer">
+                    <span class="error"><span class="errorMessage" id="labelOperationErrorMessage"></span></span>
+                </div>
+    
+                <div id="label-input-fields">
+                    <input autocomplete="off" id="labelsString" name="labelsString" value="">
+                    <input id="add-labels-editor-button" type="submit" class="add-labels" value="Add">
+                </div>
+                <div id="labelsAutocompleteList" class="aui-dd-parent resize-to-input" style="width: 417px"></div>
+                <div id="dialog-label-list">
+                    <!-- DIV placeholder for labels list, is copied into in labels-dialog.js -->
+                </div>
+                <div id="waitImageAndStatus">
+                    <img class="waiting" alt="Please wait" src="/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/_/images/icons/wait.gif">&nbsp;
+                    <span id="labelOperationStatus" class="smalltext"></span>
+                </div>
+                <div class="labels-tip"></div>
+            </form>
+        </div>
+        <div style="display: none;">
+            <div class="labels-section-content content-column"
+    	    		entityid="116566976" entitytype="Page"
+    		>
+	<div class="labels-content">
+		
+
+<ul class="label-list">
+    <li class="no-labels-message-container">
+        <span id="labels-section-title-none" class="no-labels-message">
+            None
+        </span>
+    </li>
+        </ul>
+    </div>
+</div>        </div>
+    </div>
+</script>
+                
+    
+
+
+<div id="likes-and-labels-container"><div id="likes-section" style="display: none;"><span class="like-summary"></span></div><div id="labels-section" class="pageSection group">
+    <div class="labels-editor">
+        <span id="labels-section-title" class="label-title">Labels</span>
+        <div class="labels-section-content content-column" entityid="116566976" entitytype="Page">
+	<div class="labels-content">
+		
+
+<ul class="label-list">
+    <li class="no-labels-message-container">
+        <span id="labels-section-title-none" class="no-labels-message">
+            None
+        </span>
+    </li>
+        </ul>
+    </div>
+</div>    </div>
+</div></div>
+        
+            
+            
+
+
+
+
+            
+    
+
+
+
+
+
+
+
+
+                    
+    
+<div id="comments-section" class="pageSection group">
+            <div class="section-header ">
+            <h2 id="comments-section-title" class="section-title">
+                <a href="https://confluence.inside.nsn.com/display/EECloud/Firewalling+in+EE+Cloud#" class="comments-show-hide comments-showing" name="comments">
+                                            1 Comment
+                                    </a>
+            </h2>
+            <a title="Hide/Show Comments" href="https://confluence.inside.nsn.com/display/EECloud/Firewalling+in+EE+Cloud#" class="comments-show-hide icon comments-showing icon-section-opened">
+                Hide/Show Comments
+            </a>
+        </div>    
+    
+    
+    
+                            <ol class="comment-threads top-level " id="page-comments">
+                        <li id="comment-thread-201319408" class="comment-thread">
+                                <div class="comment  " id="comment-201319408">
+                <p class="comment-user-logo">
+                    <img class="userLogo logo anonymous" src="./Firewalling in EE Cloud - EE Cloud - EE Jira 5.3_files/anonymous.png" alt="User icon: rotter" title="rotter">                </p>
+                <p class="date" title="May 24, 2013 11:37">
+                    May 24, 2013
+                </p>
+                <div class="comment-header">
+                    <h4 class="author"><a href="https://confluence.inside.nsn.com/display/~rotter" class="url fn">Rotter, Csaba (NSN - HU/Budapest)</a></h4>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>Why this strict rules are needed in this firewall? Why not all ports are accessible from intranet? There are several applications (Hadoop, Zookeeper for example) using really strange port numbers for GUI/data access....</p>
+                    </div>
+                    <div class="comment-actions">
+                                                      <ul class="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="https://confluence.inside.nsn.com/display/EECloud/Firewalling+in+EE+Cloud?focusedCommentId=201319408#comment-201319408" id="comment-permalink-201319408"><span>Permalink</span></a></li>
+            </ul>
+                                <ul class="comment-actions-primary">
+            <li class="comment-action-like"><span class="like-summary"><span class="small-like-icon"></span><a href="" class="likes" data-content-id="201319408">2 people</a> like this.</span></li></ul>
+                      </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://confluence.inside.nsn.com/display/EECloud/Firewalling+in+EE+Cloud?focusedCommentId=201319408#comment-201319408"
+    dc:identifier="https://confluence.inside.nsn.com/display/EECloud/Firewalling+in+EE+Cloud?focusedCommentId=201319408#comment-201319408"
+    dc:title="Firewalling in EE Cloud"
+    trackback:ping="https://confluence.inside.nsn.com/rpc/trackback/201319408"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                </ol>
+    
+            <div class="bottom-comment-panels comment-panels">
+                
+            </div>
+    
+    </div>
+
+		</td>
+	</tr>
+</tbody></table>
+
+            
+</div>
+
+
+<script type="text/javascript">
+	jQuery(document).ready(function(){
+		var restrictWidth = false;
+		
+		var checkValue = jQuery("td#navigationCell").length;
+ 		var controlValue = jQuery("div#topNavigation").width() + 32;
+ 		var bodyValue = jQuery("body").width();
+		
+		var commentsSize = 1;
+		
+		if (controlValue > bodyValue) {
+			var controlValue = bodyValue;
+		}
+
+		if (checkValue == 0 || checkValue == null) {
+			var tableControlWidth = controlValue - 32;
+			var panelControlWidth = controlValue - 74;
+		} else if (checkValue > 0) {
+			var tableControlWidth = controlValue - 237;
+			var panelControlWidth = controlValue - 279;
+		};
+
+		var tableElemCount = jQuery("div.wiki-content table").length;
+		var panelElemCount = jQuery("div.wiki-content div.panel").length;
+		var tableTDElemCount = jQuery("div.wiki-content table td").length;
+		
+		
+//		alert("checkValue == " + checkValue + "\ncontrolValue == " + controlValue + "\nThe window width == " + bodyValue + "\ntableElemCount == " + tableElemCount + "\ntableControlWidth == " + tableControlWidth + "\npanelElemCount == " + panelElemCount + "\npanelControlWidth == " + panelControlWidth);
+
+		if (tableElemCount > 0) {
+			jQuery("div.wiki-content table").each(function () {
+				if (jQuery(this).width() > tableControlWidth) {
+//					alert("controlValue == " + controlValue + "\ntableControlWidth == " + tableControlWidth + "\n\n" + bodyValue + "px - " + jQuery(this).width() + "px = " + (bodyValue - jQuery(this).width()) + "px");
+					jQuery(this).css({ "width" : tableControlWidth + "px"});
+					if(restrictWidth == false) {
+						restrictWidth = true;
+					}
+				}
+			});
+		};
+
+		if (panelElemCount > 0) {
+			jQuery("div.wiki-content div.panel").each(function () {
+				if (jQuery(this).width() > panelControlWidth) {
+					jQuery(this).css({ "width" : panelControlWidth + "px"});
+					if(restrictWidth == false) {
+						restrictWidth = true;
+					}
+				}
+			});
+		};
+		
+		if (restrictWidth != false && (tableTDElemCount < 2)) {
+			jQuery("div.wiki-content").css({ "width" : tableControlWidth + "px", "overflow" : "hidden"});
+			if (commentsSize > 0) {
+				jQuery("div#comments-section").css({ "width" : tableControlWidth + "px"});
+			}
+		}else if(tableTDElemCount >= 2){
+			jQuery("div.wiki-content table td").each(function(){
+					jQuery(this).find(".wiki-content:first").css({"width" : parseInt(this.width) * 0.01 * tableControlWidth + "px", "overflow" : "hidden"});
+				}
+			);
+		}//width = (parseInt(this.width) * 0.01 * 1000);
+		
+	});
+</script>
+
+    
+
+
+
+    
+    
+
+    
+    
+    
+
+
+            
+    
+
+
+
+
+
+
+        <br class="clear">
+    </div><!-- \#main -->
+    
+<div class="footer">
+	<span id="toolInfo">Atlassian Confluence 4.3.7</span>
+	<a class="first" href="https://confluence.inside.nsn.com/display/EEJS" target="_blank">Read EE Jira service wikipages</a> | 
+	<a href="https://confluence.inside.nsn.com/pages/viewpage.action?pageId=18022479" target="_blank">Contact EE Jira Support</a>
+	
+	<div id="copy">
+		© Nokia Solutions and Networks
+	</div>
+	<br class="clear" style="display:none">
+</div>
+
+</div><!-- \#full-height-container -->
+</div><!-- \#page -->
+
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><div id="content-hover-shadow" style="display: none;"><div class="tl"></div><div class="tr"></div><div class="l"></div><div class="r"></div><div class="bl"></div><div class="br"></div><div class="b"></div></div><div id="fileuploadShim" style="position: relative; z-index: 0;"></div><div id="p18bj3oajnqgbmi3en117k17710_html5_container" style="position: absolute; background-color: transparent; width: 1423px; height: 0px; overflow: hidden; z-index: -1; opacity: 0; top: 799px; left: 0px; background-position: initial initial; background-repeat: initial initial;" class="plupload html5"><input id="p18bj3oajnqgbmi3en117k17710_html5" style="font-size: 999px; position: absolute; width: 100%; height: 100%;" type="file" accept="" multiple="multiple"></div><div><object id="ClCache" click="sendMsg" host="" width="0" height="0"></object></div><iframe id="rdbIndicator" width="100%" height="270" border="0" src="./Firewalling in EE Cloud - EE Cloud - EE Jira 5.3_files/indicator.htm" style="display: none; border: 0; position: fixed; left: 0; top: 0; z-index: 2147483647"></iframe></body></html>

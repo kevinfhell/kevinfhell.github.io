@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Notes about time management </title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="Notes about time management "/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-10-17T09:31+0800"/>
+<meta name="author" content="Kevin Gao"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" type="text/css" href="http://kevinfhell.github.io/worg.css">
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
+ <a accesskey="h" href="#"> UP </a>
+ |
+ <a accesskey="H" href="theindex.html"> HOME </a>
+</div>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Notes about time management </h1>
+
+
+
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">时间管理</a>
+<ul>
+<li><a href="#sec-1-1">提升个人工作效率的最佳和段之一就是拥有你乐于使用的管理工具。</a></li>
+<li><a href="#sec-1-2"><b>你有多少时间完成工作，工作就会自动变成需要那么多时间。</b></a></li>
+<li><a href="#sec-1-3">谁背上了猴子</a></li>
+<li><a href="#sec-1-4">GTD</a>
+<ul>
+<li><a href="#sec-1-4-1">六个高度的愿景视图</a></li>
+<li><a href="#sec-1-4-2">周回顾</a></li>
+<li><a href="#sec-1-4-3">决策行动的优先级</a></li>
+<li><a href="#sec-1-4-4">My way to GTD</a>
+<ul>
+<li><a href="#sec-1-4-4-1">install emacs 24.3.1</a></li>
+<li><a href="#sec-1-4-4-2">configure emacs for org</a></li>
+<li><a href="#sec-1-4-4-3">configure emacs for GTD</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-4-5">notes on the usage of org templates</a>
+<ul>
+<li><a href="#sec-1-4-5-1">TAGS</a></li>
+<li><a href="#sec-1-4-5-2">ToDo states</a></li>
+<li><a href="#sec-1-4-5-3">Used view in work</a></li>
+<li><a href="#sec-1-4-5-4">the caputre templates usage</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-4-6">从跑道到五万英尺，从五万英尺到跑道</a></li>
+<li><a href="#sec-1-4-7">一定要明晰当前工作的目的</a></li>
+<li><a href="#sec-1-4-8">加工处理方法指导</a></li>
+<li><a href="#sec-1-4-9">工作蓝是一个处理问题的站点，而非存储容器</a></li>
+<li><a href="#sec-1-4-10"></a></li>
+</ul>
+</li>
+<li><a href="#sec-1-5">番茄工作法</a>
+<ul>
+<li><a href="#sec-1-5-1">有节奏的工作</a></li>
+<li><a href="#sec-1-5-2">节奏是一个番茄</a></li>
+<li><a href="#sec-1-5-3">tools</a>
+<ul>
+<li><a href="#sec-1-5-3-1">Pomodoro</a></li>
+<li><a href="#sec-1-5-3-2">Alloy timer</a></li>
+<li><a href="#sec-1-5-3-3">larrys clock</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-1-6">碎片化工作</a>
+<ul>
+<li><a href="#sec-1-6-1">BooguNote？ as I see, ORG is better, no better and better.</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-7">大脑放空心法&ndash;唵字诀</a>
+<ul>
+<li><a href="#sec-1-7-1">中午睡一小时，晚上最少可以少睡两个小时</a></li>
+<li><a href="#sec-1-7-2">每天五分钟，</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-8">10000小时</a>
+<ul>
+<li><a href="#sec-1-8-1">从无知,到卓越,需要10000小时</a></li>
+<li><a href="#sec-1-8-2">Moleskine notebook</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-9">困难的路越走越容易，容易的路越走越难</a></li>
+<li><a href="#sec-1-10">熟能生巧</a></li>
+<li><a href="#sec-1-11">瞄定 </a></li>
+<li><a href="#sec-1-12">我认为，日程安排是一块神圣的领地。一旦在那里做下了标记，你就必须予以落实，或者根本不去碰它。</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">时间管理</h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">提升个人工作效率的最佳和段之一就是拥有你乐于使用的管理工具。</h3>
+<div class="outline-text-3" id="text-1-1">
+
+<p>如果你的归档系统无法达到快速、有效、妙趣横生，那么你就会对整个过程产生抵触情结。 
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-09-08 周日 15:50</span></span>
+</p></div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2"><b>你有多少时间完成工作，工作就会自动变成需要那么多时间。</b></h3>
+<div class="outline-text-3" id="text-1-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3">谁背上了猴子</h3>
+<div class="outline-text-3" id="text-1-3">
+
+<p>管理工作中有三种时间：受上司支配的时间、受组织支配的时间和个人支配的时间。前两种是身为管理者或中层经理必须去做的，否则必将受到惩罚，
+或早或晚而已。而第三种时间，则很不幸的包含了“受下属支配的时间”，更加不幸的是，由于管理者的管理不当，这部分时间甚至可能完全占据了
+“个人支配时间”。
+</p><ul>
+<li>当下属向你寻求解决办法，而您没有充分信息立刻给出结论时，
+</li>
+</ul>
+
+<p>    您必须消耗时间去了解情况，然后给出答复，在这个过程中，问题已经在无形之中从下属身上跑到了你的身上！——作者称之为“猴子”。
+</p><ul>
+<li>当你要求下属完成某项任务，却没有规定完成时间和汇报进展情况的期限时，你需要不断想着这件事情，并且不断主动了解进展情况，
+</li>
+</ul>
+
+<p>    你的时间再次被消耗了！
+</p><ul>
+<li>当你告诉下属，我要思考一个初步的方案，然后我们再进行讨论时，下属将无所事事，而你则忙忙碌碌——猴子再次跳到你的肩上！
+</li>
+</ul>
+
+<p>   _当你希望挖掘下属主动性的时候，你是否想过，上面三个情景，是在扼杀下属的主动性。你已经在无形中把主动性拿到了自己身上，而
+   非归还给应该具有的人&ndash;下属身上_。这就是问题的核心，最关键的部分。
+身为管理者，重要任务之一是帮助下属，为下属解决问题，但是帮助并不代表代替，当您选择代替时，主动性就已经被转移到您自己身上，
+下属的主动性就已经被您剥夺！当您希望发掘下属主动性前，看一看自己，您是否夺走了这种主动性！
+“任何时候我帮助你解决这个或那个问题，你的问题都不会变成我的问题。在你的问题变成我的问题的那一刻，你就不再有问题了。
+我不能帮助一个没有问题的人。”
+“在这次会面结束时，你的问题将与进来时一样由你背着离开办公室。你可以在任何约定的时间来请求我的帮助，我们会共同确定我俩
+中谁来采取下一步行动。”
+“一般情况下采取下一步行动的人不会是我，万一是我的话，你也要和我一起做出决定。我是不会单独采取任何行动的。”
+</p></div>
+
+</div>
+
+<div id="outline-container-1-4" class="outline-3">
+<h3 id="sec-1-4">GTD</h3>
+<div class="outline-text-3" id="text-1-4">
+
+
+</div>
+
+<div id="outline-container-1-4-1" class="outline-4">
+<h4 id="sec-1-4-1">六个高度的愿景视图</h4>
+<div class="outline-text-4" id="text-1-4-1">
+
+<ul>
+<li>5万英尺+：人生终极目的和原则（面临重大变化和转折时检视Life）
+
+</li>
+<li>4万英尺：3~5年的展望（建议每年检视Vista）
+
+</li>
+<li>3万英尺：1~2年的目标（建议每季检视Year）
+
+</li>
+<li>2万英尺：责任范围（建议每月检视Duty）
+
+</li>
+<li>1万英尺：当前的项目（建议每周检视Goal）
+
+</li>
+<li>跑道：下一步行动（建议每日检视Quotidian）
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-4-2" class="outline-4">
+<h4 id="sec-1-4-2">周回顾</h4>
+<div class="outline-text-4" id="text-1-4-2">
+
+<p><b>记住，你不能在周回顾的时候花时间来工作——只能回顾</b>
+周回顾是每周保留一段时间，通常一个或两个小时，用于组织未来一周（的任务），以确保没有事情被遗漏掉。稍后我们会讲到怎么来做，现在要记住的最重要的是：
+每周回顾是留给你的时间，用来规划你的个人和职业生涯，组织你的任务，制作你的人际清单，安排优先顺序，从而使你总是可以专注于真正重要的事。
+</p><ul>
+<li>变得清晰。花些时间清理你的工作场所，清空你的收件箱。然后回顾你的项目，哪一个是最重要的？哪些项目里程碑下周即将到期？
+</li>
+</ul>
+
+<p>按优先级和紧急程度组织它们。这样当你开始新的一周时，你就知道该从哪里开始而不用再思索了。
+</p><ul>
+<li>掌控当下。检视你的日程表。也许下周你和老板有一个很重要的关于软件更新的会议，但你忘记打电话给供应商了解细节了。
+</li>
+</ul>
+
+<p>把这个电话放进下周（日程中），并在和老板开会前给你自己留下足够的时间研究。最后，检查你在等待的任何邮件，
+在下周制订一个备注或约会来检查一下它们。
+</p><ul>
+<li>获得创造力。看看那些你总是想解决的项目，比如重新设计你的个人网站，思考那些项目中哪些小的部分可能放进你的日程表。
+</li>
+</ul>
+
+<p>思考你如何能变得更有效率——也许你是一名系统管理员，有一个新工具可以降低你每周向服务器推送补丁所花费的时间。
+花些时间从眼前的生活中跳出来，而不是仅仅坐在乘客的座位上。
+</p><ol>
+<li>收集和加工处理所有的“材料”。
+</li>
+<li>回顾和检查你的系统。
+</li>
+<li>更新各类清单。
+</li>
+<li>做到清洁、清楚、实时和完整。
+</li>
+</ol>
+
+<p><span style="text-decoration:underline;">你建立的系统越完备，你就越信赖它；你越信赖它，你就越发具有坚持运行这 个系统的内在动力。而每周的回顾和查阅即是达到这个目标的关键所在。</span>
+</p></div>
+
+</div>
+
+<div id="outline-container-1-4-3" class="outline-4">
+<h4 id="sec-1-4-3">决策行动的优先级</h4>
+<div class="outline-text-4" id="text-1-4-3">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-4-4" class="outline-4">
+<h4 id="sec-1-4-4">My way to GTD</h4>
+<div class="outline-text-4" id="text-1-4-4">
+
+
+</div>
+
+<div id="outline-container-1-4-4-1" class="outline-5">
+<h5 id="sec-1-4-4-1">install emacs 24.3.1</h5>
+<div class="outline-text-5" id="text-1-4-4-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-4-4-2" class="outline-5">
+<h5 id="sec-1-4-4-2">configure emacs for org</h5>
+<div class="outline-text-5" id="text-1-4-4-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-4-4-3" class="outline-5">
+<h5 id="sec-1-4-4-3">configure emacs for GTD</h5>
+<div class="outline-text-5" id="text-1-4-4-3">
+
+<ol>
+<li>环境
+</li>
+<li>有多少时间
+</li>
+<li>精力如何
+</li>
+<li>重要性
+</li>
+</ol>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-4-5" class="outline-4">
+<h4 id="sec-1-4-5">notes on the usage of org templates</h4>
+<div class="outline-text-4" id="text-1-4-5">
+
+
+</div>
+
+<div id="outline-container-1-4-5-1" class="outline-5">
+<h5 id="sec-1-4-5-1">TAGS</h5>
+<div class="outline-text-5" id="text-1-4-5-1">
+
+<p>Office
+Work that takes place in my office in North Sydney.
+Home
+Activites that take place at home or in my personal time. For example I might have a task "Deliver package to Bill" in the "Home" context.
+Computer
+Tasks that require use of the home computer.
+Reading
+Books, magazines and other reading material for my breakfast reading or commute reading.
+Lunchtime
+Errands and other activities I do in my lunch break at North Sydney. This also includes activites I may do before or after work, for example, buying something at a shop.
+Project
+I use this tag to identify the heading of a project in order to display a list of active projects.
+</p></div>
+
+</div>
+
+<div id="outline-container-1-4-5-2" class="outline-5">
+<h5 id="sec-1-4-5-2">ToDo states</h5>
+<div class="outline-text-5" id="text-1-4-5-2">
+
+<p>TODO
+The item is ready to be done at the earliest opportunity or at the date (and maybe time) indicated in the SCHEDULED tag. Some tasks are given a DEADLINE date which is useful for scheduling the tasks during my daily planning.
+STARTED
+I should use this tag when I start on a task, but if I clock in to a TODO item, I don't really need this task.
+WAITING
+I did some work on this task but I am waiting for a response. If I use this task I schedule the task into the future as a reminder to follow up with some notes in the body of the task.
+APPT
+Used to tag an activity that can only be done at the specified time and date, instead of tasks that can be completed at any time.
+DONE
+The task is completed.
+CANCELLED
+I decided not to do this task but have left the task on file with this status.
+DEFERRED
+Used to identify a task that will not be activated just yet. The reason will be included in the task notes.
+I set the org-use-fast-todo-selection variable to true for fast selection of tags. The C-c C-t command displays the following selections:
+</p></div>
+
+</div>
+
+<div id="outline-container-1-4-5-3" class="outline-5">
+<h5 id="sec-1-4-5-3">Used view in work</h5>
+<div class="outline-text-5" id="text-1-4-5-3">
+
+<p>Agenda view - identify items marked with Scheduled or Deadline dates
+Tag view - show tems marked with a tag (my GTD contexts, eg HOME, OFFICE, FINANCE, READING, DVD)
+Reviewing this weeks nodes - Each day I quickly scan the items added since the beginning of the week.
+</p></div>
+
+</div>
+
+<div id="outline-container-1-4-5-4" class="outline-5">
+<h5 id="sec-1-4-5-4">the caputre templates usage</h5>
+<div class="outline-text-5" id="text-1-4-5-4">
+
+<p>The Notes template prompts for a headline text then positions the cursor under the headline to type or paste text.
+</p>
+<p>
+The Task templates prompts for a headline text as well as a category tag. The TODO keyword is included in part of the template.
+</p>
+<p>
+In both templates I add the date and time created as this provides useful tracking information, especially when items are refiled.
+</p>
+<p>
+I could have captured notes in one file and To Do items in another file, but I wanted notes and tasks to coexist "on the same page". Sometimes I will convert a note into a TODO item and it is easier to do this when the item is stored in the same file.
+</p>
+<p>
+The Journal template is used to record information for long term storage such as diary entries, details of books I have read and things I have done. Once an item is in the Journal file I don't move it. I only use the Journal file on my home computer.
+</p>
+<p>
+The Log Time entry is something I started this week to track what I do all day at work. Every time I start a new task or have a break I log a a brief description. 
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-09-01 周日 23:50</span></span>
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-1-4-6" class="outline-4">
+<h4 id="sec-1-4-6">从跑道到五万英尺，从五万英尺到跑道</h4>
+<div class="outline-text-4" id="text-1-4-6">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-4-7" class="outline-4">
+<h4 id="sec-1-4-7">一定要明晰当前工作的目的</h4>
+<div class="outline-text-4" id="text-1-4-7">
+
+<p>如果在动脑筋、挖点子这一阶段思路模糊不清、混乱不堪，就有必要重新回顾一下既定的预期效果了。倘若预期效果或者前景含糊不明确，你必须回过头来，重新分析一下你当前工作的目的何在。
+</p></div>
+
+</div>
+
+<div id="outline-container-1-4-8" class="outline-4">
+<h4 id="sec-1-4-8">加工处理方法指导</h4>
+<div class="outline-text-4" id="text-1-4-8">
+
+<ol>
+<li>从最上面的一项开始处理。
+</li>
+<li>一次只处理一件事情。 
+</li>
+<li>永远不要把任何事情再次放回工作篮
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-4-9" class="outline-4">
+<h4 id="sec-1-4-9">工作蓝是一个处理问题的站点，而非存储容器</h4>
+<div class="outline-text-4" id="text-1-4-9">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-4-10" class="outline-4">
+<h4 id="sec-1-4-10"></h4>
+<div class="outline-text-4" id="text-1-4-10">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-5" class="outline-3">
+<h3 id="sec-1-5">番茄工作法</h3>
+<div class="outline-text-3" id="text-1-5">
+
+
+</div>
+
+<div id="outline-container-1-5-1" class="outline-4">
+<h4 id="sec-1-5-1">有节奏的工作</h4>
+<div class="outline-text-4" id="text-1-5-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-5-2" class="outline-4">
+<h4 id="sec-1-5-2">节奏是一个番茄</h4>
+<div class="outline-text-4" id="text-1-5-2">
+
+<p>使用道具3样东西：纸、笔和番茄钟。
+3种表格，每种表格一张纸：任务清单、今日待办和记录，分别用于记录一段时
+间内的任务、今日要完成的任务以及每日总结。
+实际方法 任务计划：先填完任务清单，接着每天从任务清单中抽取出今天要完
+成的任务，从而形成今日待办。
+一般来讲，任务清单每隔一个阶段做一次，今日待办则是每天都要进行。
+任务执行：从今日待办中选出优先级最高的任务，开启番茄钟，工作，番茄钟响
+铃，立即休息。
+以此循环序列依次完成今日待办中的任务，每次番茄钟结束时，需进行记录。
+任务检查：每日结束时，检查完成的番茄钟数，了解自己任务执行的情况。
+</p></div>
+
+</div>
+
+<div id="outline-container-1-5-3" class="outline-4">
+<h4 id="sec-1-5-3">tools</h4>
+<div class="outline-text-4" id="text-1-5-3">
+
+
+</div>
+
+<div id="outline-container-1-5-3-1" class="outline-5">
+<h5 id="sec-1-5-3-1">Pomodoro</h5>
+<div class="outline-text-5" id="text-1-5-3-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-5-3-2" class="outline-5">
+<h5 id="sec-1-5-3-2">Alloy timer</h5>
+<div class="outline-text-5" id="text-1-5-3-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-5-3-3" class="outline-5">
+<h5 id="sec-1-5-3-3">larrys clock</h5>
+<div class="outline-text-5" id="text-1-5-3-3">
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-6" class="outline-3">
+<h3 id="sec-1-6">碎片化工作</h3>
+<div class="outline-text-3" id="text-1-6">
+
+
+</div>
+
+<div id="outline-container-1-6-1" class="outline-4">
+<h4 id="sec-1-6-1">BooguNote？ as I see, ORG is better, no better and better.</h4>
+<div class="outline-text-4" id="text-1-6-1">
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-7" class="outline-3">
+<h3 id="sec-1-7">大脑放空心法&ndash;唵字诀</h3>
+<div class="outline-text-3" id="text-1-7">
+
+
+</div>
+
+<div id="outline-container-1-7-1" class="outline-4">
+<h4 id="sec-1-7-1">中午睡一小时，晚上最少可以少睡两个小时</h4>
+<div class="outline-text-4" id="text-1-7-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-7-2" class="outline-4">
+<h4 id="sec-1-7-2">每天五分钟，</h4>
+<div class="outline-text-4" id="text-1-7-2">
+
+<ol>
+<li>静坐，放松，站着也可以，双脚与肩同宽，膝盖略弯，尾椎向下。
+</li>
+<li>双手交叉，左手按住右手内劳宫(男左女右)
+</li>
+<li>闭眼,想象一个字==唵,不绝于耳
+</li>
+<li>持续5分钟,结束后摩擦双手,待掌心微热后由内向外按摩脸部5圈.
+</li>
+</ol>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-8" class="outline-3">
+<h3 id="sec-1-8">10000小时</h3>
+<div class="outline-text-3" id="text-1-8">
+
+
+</div>
+
+<div id="outline-container-1-8-1" class="outline-4">
+<h4 id="sec-1-8-1">从无知,到卓越,需要10000小时</h4>
+<div class="outline-text-4" id="text-1-8-1">
+
+<p>感觉10000小时不是重点,重点是长久持续的目标,已经为了目标的坚持.
+</p></div>
+
+</div>
+
+<div id="outline-container-1-8-2" class="outline-4">
+<h4 id="sec-1-8-2">Moleskine notebook</h4>
+<div class="outline-text-4" id="text-1-8-2">
+
+<p>for better 10000 hours plan
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-1-9" class="outline-3">
+<h3 id="sec-1-9">困难的路越走越容易，容易的路越走越难</h3>
+<div class="outline-text-3" id="text-1-9">
+
+<p>如果选择总是问别人的话，下次你还得继续问别人，每次直接问到问题的答案的同时，意味着你永远都要靠别人的大脑来获得答案
+</p></div>
+
+</div>
+
+<div id="outline-container-1-10" class="outline-3">
+<h3 id="sec-1-10">熟能生巧</h3>
+<div class="outline-text-3" id="text-1-10">
+
+<p>有时总想找到最正确，最适合自己的方法以后再去做事，但实际上这些最正确、最适合自己的方法都是在做事中打磨出来的。
+</p>
+<p>
+如果认为没有错，那就只管去做，熟能生巧 
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-09-02 周一 15:50</span></span>
+</p></div>
+
+</div>
+
+<div id="outline-container-1-11" class="outline-3">
+<h3 id="sec-1-11"><a href="http://www.gtdlife.com/2013/3164/【投稿】瞄定事件说他很淡定/ ">瞄定 </a></h3>
+<div class="outline-text-3" id="text-1-11">
+
+
+<p>
+Added: [2013-09-02 周一 15:55
+</p></div>
+
+</div>
+
+<div id="outline-container-1-12" class="outline-3">
+<h3 id="sec-1-12">我认为，日程安排是一块神圣的领地。一旦在那里做下了标记，你就必须予以落实，或者根本不去碰它。</h3>
+<div class="outline-text-3" id="text-1-12">
+
+
+<p> 
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-09-05 周四 20:55</span></span>
+</p></div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-10-17T09:31+0800</p>
+<p class="author">Author: Kevin Gao</p>
+<p class="email"><a href="mailto:leijia.gao@nsn.com">leijia.gao@nsn.com</a></p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

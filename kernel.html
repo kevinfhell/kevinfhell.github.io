@@ -1,0 +1,1505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Notes about kernel</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="Notes about kernel"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-10-23T15:18+0800"/>
+<meta name="author" content="Kevin Gao"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" type="text/css" href="http://kevinfhell.github.io/worg.css">
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
+ <a accesskey="h" href="#"> UP </a>
+ |
+ <a accesskey="H" href="theindex.html"> HOME </a>
+</div>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Notes about kernel</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">kernel</a>
+<ul>
+<li><a href="#sec-1-1">configuration</a>
+<ul>
+<li><a href="#sec-1-1-1">check config macro in kernel</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2">Networking</a>
+<ul>
+<li><a href="#sec-1-2-1">MTU</a></li>
+<li><a href="#sec-1-2-2">VLAN</a></li>
+<li><a href="#sec-1-2-3">splice()</a></li>
+<li><a href="#sec-1-2-4">TCP</a>
+<ul>
+<li><a href="#sec-1-2-4-1">General introduction</a></li>
+<li><a href="#sec-1-2-4-2">ECN</a></li>
+<li><a href="#sec-1-2-4-3">cwnd congestion window size</a></li>
+<li><a href="#sec-1-2-4-4">TCP timers</a></li>
+<li><a href="#sec-1-2-4-5">TCP segmentation offload (TSO)</a></li>
+<li><a href="#sec-1-2-4-6">Generic Segmentation offload(GSO)</a></li>
+<li><a href="#sec-1-2-4-7">TCP checksum offload</a></li>
+<li><a href="#sec-1-2-4-8">Large receive offload(LRO) and the Generic receive offload(GRO)</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2-5">Route</a>
+<ul>
+<li><a href="#sec-1-2-5-1">routing cache and fib_trie</a></li>
+<li><a href="#sec-1-2-5-2">LPM (Longest Prefix Match) is the lookup algorithm</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2-6">Receive a packet</a>
+<ul>
+<li><a href="#sec-1-2-6-1">Interrupt handler</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2-7">Send a packet</a></li>
+<li><a href="#sec-1-2-8">GRO(Generic receive offload)</a></li>
+<li><a href="#sec-1-2-9">Multipath routing</a></li>
+<li><a href="#sec-1-2-10">Multicast multicast routing</a>
+<ul>
+<li><a href="#sec-1-2-10-1">IGMP</a></li>
+<li><a href="#sec-1-2-10-2">multicast routing</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2-11">Netfilter</a>
+<ul>
+<li><a href="#sec-1-2-11-1">nat table</a></li>
+<li><a href="#sec-1-2-11-2">mangle table</a></li>
+<li><a href="#sec-1-2-11-3">raw table</a></li>
+<li><a href="#sec-1-2-11-4">filter table</a></li>
+<li><a href="#sec-1-2-11-5">security table</a></li>
+<li><a href="#sec-1-2-11-6">Xtables2</a></li>
+<li><a href="#sec-1-2-11-7">squid and transparent proxy</a></li>
+<li><a href="#sec-1-2-11-8">netfilter hooks</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2-12">Neighboring</a>
+<ul>
+<li><a href="#sec-1-2-12-1">ARP</a></li>
+<li><a href="#sec-1-2-12-2">ND(neighbor discovery)</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2-13">Network namespaces</a></li>
+<li><a href="#sec-1-2-14">Bonding Driver (Link aggregation)</a></li>
+<li><a href="#sec-1-2-15">Teaming network device</a></li>
+<li><a href="#sec-1-2-16">Tracing with kernel events</a></li>
+<li><a href="#sec-1-2-17">Socket</a>
+<ul>
+<li><a href="#sec-1-2-17-1">From userspace</a></li>
+<li><a href="#sec-1-2-17-2">From kernel</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-1-3">IO</a>
+<ul>
+<li><a href="#sec-1-3-1">Scatter-gather</a>
+<ul>
+<li><a href="#sec-1-3-1-1">Scatter-gather DMA</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">kernel</h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">configuration</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+</div>
+
+<div id="outline-container-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1">check config macro in kernel</h4>
+<div class="outline-text-4" id="text-1-1-1">
+
+<p> zcat /proc/config.gz
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-09-09 周一 16:25</span></span>
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">Networking</h3>
+<div class="outline-text-3" id="text-1-2">
+
+<p><img src="./kernel/Network_data_flow.png"  alt="./kernel/Network_data_flow.png" />
+</p>
+</div>
+
+<div id="outline-container-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1">MTU</h4>
+<div class="outline-text-4" id="text-1-2-1">
+
+<p>MTU stands for Maximum Transfer Unit (or sometimes also Maximum Transfer Unit).  MTU is symmetrical and
+applies both to receive and transmit.  Layer 3 should not pass pass an skb which has payload bigger than an
+MTU.  GSO and TSO are exceptions; in such cases, the device will separate the packet into smaller packets,
+which are smaller than the MTU.
+</p></div>
+
+</div>
+
+<div id="outline-container-1-2-2" class="outline-4">
+<h4 id="sec-1-2-2">VLAN</h4>
+<div class="outline-text-4" id="text-1-2-2">
+
+<p>VLAN (Virtual LAN) enables us to partition a physical network. Thus, different broadcast domains are
+created. This is achieved by inserting VLAN tag into the packet.  The VLAN tag is 4 bytes: 2 bytes are Tag
+Protocol Identifier (TPID), which has a value of 0x8100; 2 bytes are the Tag Control Identifier (TCI). (In
+linux documentation, TCI is termed "tag control information", see vlan_tci in sk_buff struct,
+include/linux/sk_buff) The VLAN tag is inserted between the source mac address and ethertype of the eth
+header. The vlan_insert_tag() method implements this tag insertion (include/linux/if_vlan.h).  struct
+vlan_ethhdr represents vlan ethernet header (ethhdr + vlan_hdr).  h_vlan_proto in this struct will get always
+0x8100 value.  h_vlan_TCI in this struct is the TCI, composed from priority and VLAN ID.  vlan_insert_tag() is
+invoked from the vlan rx handler, vlan_do_receive().  VLAN supports almost everything a regular ethernet
+interface does, including firewalling, bridging, and of course IP traffic.  You will need the 'vconfig' tool
+from the VLAN project in order to effectively use VLANs.
+</p>
+
+
+<pre class="example">You can also set vlan/macvlan with "ip" utility:
+ip link add link p2p1 name p2p1.100 type vlan id 5
+ip link add link p2p1 name p2p1#101 address
+00:aa:bb:cc:dd:ee type macvlan
+You can get some info about vlan devices in procfs under:
+/proc/net/vlan
+/proc/net/vlan/config (this includes info about vlan id).
+
+
+</pre>
+
+<p>
+For network devices which do not support VLAN TX HW acceleration (the NETIF_F_HW_VLAN_TX flag is not set), we
+insert the VLAN tag by calling __vlan_put_tag() in dev_hard_start_xmit().  __vlan_put_tag() is a wrapper which
+calls vlan_insert_tag() (both are in include/linux/if_vlan.h).
+</p>
+
+
+
+<pre class="example">Helper methods:
+int is_vlan_dev(struct net_device *dev) : checks whether the
+device is a vlan device, by checking the priv_flags of net_device.
+Defined in include/linux/if_vlan.h
+bool vlan_uses_dev(const struct net_device *dev) : checks
+whether is device is used by vlan (by checking whether vlan_info
+member of the device is null or not).
+vlan_tx_tag_present(skb) : checks whether the VLAN_TAG_PRESENT
+flag is set. (Defined in include/linux/if_vlan.h).
+When we encounter in the RX path packets with vlan tag, the VLAN
+packets are handled by vlan_do_receive() which is invoked
+from __netif_receive_skb().
+vlan_do_receive() is implemented in net/8021q/vlan_core.c.
+There are some adapters which support VLAN hardware acceleration
+offloading. You can get info about VLAN hardware acceleration
+offloading with ethtool:
+ethtool -k p2p1
+</pre>
+
+
+<p>
+Linux的协议栈自身是不认vlan tag的，vlan tag由8021q部分代码(net/8021q/)做专门处理，这些代
+码主要实现了：
+</p>
+<ol>
+<li>若干供vlan用户态配置工具vconfig使用的ioctl 
+</li>
+<li>RX时剔除vlan tag，然后递交上层协议栈 
+</li>
+<li>TX时添加适当的vlan tag，然后递交硬件驱动
+</li>
+</ol>
+
+
+<p>
+RX处理如下：
+</p>
+<p>
+eth0 RX -&gt; eth0 netif_rx -&gt; 8021q代码处理开始 -&gt; 分析vlan tag得vid=n -&gt; 剔除vlan tag -&gt; "skb-&gt;dev"指定为eth0.n -&gt; netif_rx -&gt; 8021q代码处理结束 -&gt; packet由eth0.n接收，递交上层协议栈
+</p>
+<p>
+TX处理如下： 
+eth0.n TX -&gt; 8021q代码处理开始 -&gt; 添加vlan tag，vid=n -&gt; "skb-&gt;dev"指定为eth0 -&gt; dev_queue_xmit -&gt; 8021q代码处理结束 -&gt; packet由eth0接收，递交硬件驱动投递
+</p>
+<p>
+其中eth0.n乃是8021q代码所建立的虚拟接口。比方说把eth0加入vlan3: 
+vconfig add eth0 3 
+完成后就会出现一个新的接口eth0.3
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-3" class="outline-4">
+<h4 id="sec-1-2-3">splice()</h4>
+<div class="outline-text-4" id="text-1-2-3">
+
+<p>    With splice(), one can move data from one file descriptor to another without incurring
+    any copies from user space into kernel space, which is usually required to enforce
+    system security and also to keep a simple interface for processes to read and write to
+    files. splice() works by using the pipe buffer. A pipe buffer is an in-kernel memory
+    buffer that is opaque to the user space process. A user process can splice the
+    contents of a source file into this pipe buffer, then splice the pipe buffer into the
+    destination file, all without moving any data through userspace.
+<a href="http://en.wikipedia.org/wiki/Splice_(system_call)">wiki</a>
+</p></div>
+
+</div>
+
+<div id="outline-container-1-2-4" class="outline-4">
+<h4 id="sec-1-2-4">TCP</h4>
+<div class="outline-text-4" id="text-1-2-4">
+
+
+</div>
+
+<div id="outline-container-1-2-4-1" class="outline-5">
+<h5 id="sec-1-2-4-1">General introduction</h5>
+<div class="outline-text-5" id="text-1-2-4-1">
+
+<p>RFC 793: <a href="http://www.ietf.org/rfc/rfc793.txt">http://www.ietf.org/rfc/rfc793.txt</a>
+MSS = Maximum segment size
+tcp_sendmsg() is the main handler in the TX path
+tcp_v4_init_sock(): initialization of the TCP socket is done in net/ipv4/tcp_ipv4.c;
+invokes tcp_init(). The the congestion sending window size is initialized to 10 (TCP_INIT_CWND).
+tcp_v4_connect(): create a TCP connection. (net/ipv4/tcp_ipv4.c)
+</p>
+
+
+<pre class="example">u32 snd_cwnd - the congestion sending window size.
+u8 ecn_flags - ECN status bits.
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-4-2" class="outline-5">
+<h5 id="sec-1-2-4-2">ECN</h5>
+<div class="outline-text-5" id="text-1-2-4-2">
+
+<p>ECN stands for Explicit Congestion Notification.
+</p><ol>
+<li>TCP_ECN_OK
+</li>
+<li>TCP_ECN_QUEUE_CWR
+</li>
+<li>TCP_ECN_DEMAND_CWR
+</li>
+<li>TCP_ECN_SEEN
+</li>
+</ol>
+
+<p>There is a configurable procfs tcp_ecn entry:
+/proc/sys/net/ipv4/tcp_ecn
+Possible values are:
+0 Disable ECN. Neither initiate nor accept ECN.
+1 Always request ECN on outgoing connection attempts.
+2 Enable ECN when requested by incoming connections
+but do not request ECN on outgoing connections.
+Default: 2
+see more in Documentation/networking/ip-sysctl.txt
+</p></div>
+
+</div>
+
+<div id="outline-container-1-2-4-3" class="outline-5">
+<h5 id="sec-1-2-4-3">cwnd congestion window size</h5>
+<div class="outline-text-5" id="text-1-2-4-3">
+
+<p>You can change the TCP initcwnd thus:
+</p>
+
+
+<pre class="example">ip route change 192.168.1.101 via 192.168.1.10 dev em1 initcwnd 11
+Then:
+ip route
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-4-4" class="outline-5">
+<h5 id="sec-1-2-4-4">TCP timers</h5>
+<div class="outline-text-5" id="text-1-2-4-4">
+
+<ol>
+<li>Keep Alive timer - implemented in tcp_keepalive_timer() in net/ipv4/tcp_timer
+</li>
+<li>TCP retransmit timer - implemented in tcp_retransmit_timer() in net/ipv4/tcp_timer
+</li>
+<li>RTO - retransmission timeout.
+</li>
+<li>RTT - round trip time.
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-4-5" class="outline-5">
+<h5 id="sec-1-2-4-5">TCP segmentation offload (TSO)</h5>
+<div class="outline-text-5" id="text-1-2-4-5">
+
+<p>When data greater than the supported maximum transmission unit (MTU)
+is sent to the network adapter, the data should be divided into MTU
+sized packets. The adapter takes care of that on behalf of the kernel.
+</p>
+<p>
+The following command can check the status of this configuration
+</p>
+
+
+<pre class="example">ethtool -k eth0
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-4-6" class="outline-5">
+<h5 id="sec-1-2-4-6">Generic Segmentation offload(GSO)</h5>
+<div class="outline-text-5" id="text-1-2-4-6">
+
+<p><a href="http://lwn.net/Articles/188489/">introduction on GSO</a>
+Gnerially speaking. GSO is focusing on postpone the segamentation to
+very late phase, just before transmit the packet to driver. 
+</p></div>
+
+</div>
+
+<div id="outline-container-1-2-4-7" class="outline-5">
+<h5 id="sec-1-2-4-7">TCP checksum offload</h5>
+<div class="outline-text-5" id="text-1-2-4-7">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-4-8" class="outline-5">
+<h5 id="sec-1-2-4-8">Large receive offload(LRO) and the Generic receive offload(GRO)</h5>
+<div class="outline-text-5" id="text-1-2-4-8">
+
+<p>GRO is the enhancement on LRO. 
+With GRO mode, napi_gro_receive is used to handling received packet,
+but not netif_receive_skb or netif_rx
+分片报文会被组好以后统一提交给协议栈，而不是一片一片给。这个就是优化。
+<a href="http://www.pagefault.info/?p=159">linux kernel 网络协议栈之GRO(Generic receive offload)</a>
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-5" class="outline-4">
+<h4 id="sec-1-2-5">Route</h4>
+<div class="outline-text-4" id="text-1-2-5">
+
+
+</div>
+
+<div id="outline-container-1-2-5-1" class="outline-5">
+<h5 id="sec-1-2-5-1">routing cache and fib_trie</h5>
+<div class="outline-text-5" id="text-1-2-5-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-5-2" class="outline-5">
+<h5 id="sec-1-2-5-2">LPM (Longest Prefix Match) is the lookup algorithm</h5>
+<div class="outline-text-5" id="text-1-2-5-2">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-6" class="outline-4">
+<h4 id="sec-1-2-6">Receive a packet</h4>
+<div class="outline-text-4" id="text-1-2-6">
+
+<p>When working in interrupt driven model, the nic registers an interrupt handler with the
+IRQ with which the device works by calling request_irq().
+</p>
+</div>
+
+<div id="outline-container-1-2-6-1" class="outline-5">
+<h5 id="sec-1-2-6-1">Interrupt handler</h5>
+<div class="outline-text-5" id="text-1-2-6-1">
+
+<ul>
+<li id="sec-1-2-6-1-1">Will be called in case<br/>
+<ul>
+<li>This interrupt handler will be called when a frame is received
+</li>
+<li>The same interrupt handler will be called when transmission of a frame is finished
+</li>
+<li>other conditions. (depends on the NIC;sometimes, the interrupt handler will be called when there is some error).
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-6-1-2">process in the handler<br/>
+<ul>
+<li>Alloc sk_buff by calling dev_alloc_skb()
+</li>
+<li>eth_type_trans, advance 14bytes for ip header by skb_pull(skb, ETH_HLEN)
+</li>
+<li>then ip_rcv() in net/ipv4/ip_input.c, this is registed by dev_add_pack or the ipv6_rcv for ipv4 handling
+</li>
+<li>Handle the protocols registed at init phase like arp_rcv
+</li>
+<li>in ip_rcv perform sanity check first and then call ip_rcv_finish by NF_HOOK(PF_INET, NF_IP_PRE_ROUTING, skb, dev, NULL,ip_rcv_finish);
+</li>
+<li>in ip_rcv_finish, 
+</li>
+</ul>
+
+
+
+
+<pre class="example">if (skb-&gt;dst == NULL)
+{
+    int err = ip_route_input(skb, iph-&gt;daddr, iph-&gt;saddr,
+    iph-&gt;tos,skb-&gt;dev);
+…
+}
+...
+return dst_input(skb);
+
+</pre>
+
+<ul>
+<li>ip_route_input
+<ol>
+<li>Check routing cache
+</li>
+<li>Call ip_route_input_slow() if not match in cache
+</li>
+<li>done by fib_lookup()
+</li>
+<li>return 0 if cache match or successful lookup in routing table
+</li>
+<li>with the result of fib_lookup, we know the packet is for
+</li>
+</ol>
+
+</li>
+</ul>
+
+
+
+
+
+<pre class="example">1) local delivery  
+rth-&gt;u.dst.input=ip_local_deliver;
+ip_local_deliver(struct sk_buff *skb) (net/ipv4/ip_input.c).
+--&gt;NF_HOOK(PF_INET, NF_IP_LOCAL_IN, skb,skb-&gt;dev,NULL,ip_local_deliver_finish);
+in ip_local_deliver_finish
+ ipprot-&gt;handler(skb);
+//Deliver the packet to higher protocol according to the type
+2) forward 
+rth-&gt;u.dst.input = ip_forward;
+int ip_forward(struct sk_buff *skb) (net/ipv4/ip_forward.c)
+{
+
+    if(ttl &lt;=1) 
+    {
+        send_icmp_msg(ICMP_EXC_TTL);
+        drop;
+    }
+    decrease ttl;
+    Calls NF_HOOK(PF_INET,NF_IP_FORWARD,skb, skb-&gt;dev,rt-&gt;u.dst.dev, ip_forward_finish);
+    ip_forward_finish();
+    --&gt;dst_output(skb)
+}
+dst_output(skb)
+--&gt;skb-&gt;dst-&gt;output(skb).(see include/net/dst.h)
+//stats in 
+"netstat -s | grep forwarded"
+"cat /proc/net/snmp (IPv4) and cat /proc/net/snmp6 (IPV6), and
+look in ForwDatagrams column (IPv4)/Ip6OutForwDatagrams (IPv6)."
+</pre>
+
+
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-7" class="outline-4">
+<h4 id="sec-1-2-7">Send a packet</h4>
+<div class="outline-text-4" id="text-1-2-7">
+
+
+
+
+<pre class="example">ip_route_output_key();
+if(cache miss)
+{
+ip_route_output_slow()
+}
+ip_route_output_slow()
+--&gt;fib_lookup
+//if the packet is for remote host, set 
+dst-&gt;output = ip_output()
+ip_output()
+--&gt;ip_finish_output()
+{
+//dst-&gt;neighbour-&gt;output(skb)  arp_bind_neighbour() sees to it that the L2 address of the next hop will be known. (net/ipv4/arp.c)
+}
+//if the packet is for local machine, set
+dst-&gt;output = ip_output;
+dst-&gt;input = ip_local_deliver;
+//ip_output() will send the packet on the loopback device,
+//Then we will go into ip_rcv() and ip_rcv_finish(), but this time dst is NOT null; so we will end in ip_local_deliver().
+// See net/ipv4/route.c
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-8" class="outline-4">
+<h4 id="sec-1-2-8">GRO(Generic receive offload)</h4>
+<div class="outline-text-4" id="text-1-2-8">
+
+<ul>
+<li>Set NETIF_F_GRO to enable it
+</li>
+<li>napi_gro_receive() is called
+</li>
+<li>Replace LRO(large receive offload)
+</li>
+<li>works conjunction with GSO
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-9" class="outline-4">
+<h4 id="sec-1-2-9">Multipath routing</h4>
+<div class="outline-text-4" id="text-1-2-9">
+
+<p>CONFIG_IP_ROUTE_MULTIPATH need to be set in kernel building
+CONFIG_IP_ROUTE_MULTIPATH_CACHED. for multi-path caching
+</p></div>
+
+</div>
+
+<div id="outline-container-1-2-10" class="outline-4">
+<h4 id="sec-1-2-10">Multicast multicast routing</h4>
+<div class="outline-text-4" id="text-1-2-10">
+
+
+</div>
+
+<div id="outline-container-1-2-10-1" class="outline-5">
+<h5 id="sec-1-2-10-1">IGMP</h5>
+<div class="outline-text-5" id="text-1-2-10-1">
+
+<ul>
+<li>for IPV4 is supported in net/ipv4/igmp.c
+</li>
+</ul>
+
+<p>There are three kinds of message 
+</p>
+
+
+<pre class="example">Membership Query (Type: 0x11)
+Membership Report (Version 2) (Type: 0x16)
+Leave Group (Type: 0x17)
+
+</pre>
+
+<p>
+To add a multicast address at MAC level, you can use "ip maddr add".
+</p>
+
+
+<pre class="example">Note that "ip maddr add" expects a MAC address, not an IP address!
+So this is ok:
+ip maddr add 01:00:5e:01:01:25 dev eth0
+but this is wrong: (pay attention, you will not get any error message!)
+ip maddr add 226.1.2.3
+</pre>
+
+<p>
+All Mulitcast addresses in mac presentations start with 01:00:5E according to IANA requirements.  Multicast addresses are translated from IP notation
+to mac address by a formula; see ip_eth_mc_map() in include/net/ip.h.  This is needed for example in arp translation, arp_mc_map() in net/ipv4/arp.c.
+The handler for multicast RX is ip_mr_input() in net/ipv4/ipmr.c.
+</p></div>
+
+</div>
+
+<div id="outline-container-1-2-10-2" class="outline-5">
+<h5 id="sec-1-2-10-2">multicast routing</h5>
+<div class="outline-text-5" id="text-1-2-10-2">
+
+<p>IP_MROUTE=y. in kernel buidling
+one userspace daemon is also needed, such as pimd, xorp
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-11" class="outline-4">
+<h4 id="sec-1-2-11">Netfilter</h4>
+<div class="outline-text-4" id="text-1-2-11">
+
+<p>Netfilter is the kernel layer to support applying iptables rules
+</p><ul>
+<li>Filtering
+</li>
+<li>Changing packets (masquerading)
+</li>
+<li>Connection Tracking
+</li>
+</ul>
+
+<p>xtables modules are prefixd with xt, eg: net/netfilter/xt_REDIRECT.c
+Xtables match are always lowercase
+Xtables targes are always upercase
+<a href="http://jengelh.medozas.de/documents/ Netfilter Modules .pdf">writing netfilter modules</a>
+we have 5 iptables in use for ipv4
+</p>
+</div>
+
+<div id="outline-container-1-2-11-1" class="outline-5">
+<h5 id="sec-1-2-11-1">nat table</h5>
+<div class="outline-text-5" id="text-1-2-11-1">
+
+<p>implemented in net/ipv4/netfilter/iptable_nat.c
+</p><ol>
+<li>NF_INET_PRE_ROUTING
+</li>
+<li>NF_INET_POST_ROUTING
+</li>
+<li>NF_INET_LOCAL_OUT
+</li>
+<li>NF_INET_LOCAL_IN
+</li>
+</ol>
+
+<p>REDIRECT is a NAT table target; implemented in net/netfilter/xt_REDIRECT.c
+</p></div>
+
+</div>
+
+<div id="outline-container-1-2-11-2" class="outline-5">
+<h5 id="sec-1-2-11-2">mangle table</h5>
+<div class="outline-text-5" id="text-1-2-11-2">
+
+<p>implemented in net/ipv4/netfilter/iptable_mangle.c  
+</p><ol>
+<li>NF_INET_PRE_ROUTING
+</li>
+<li>NF_INET_LOCAL_IN
+</li>
+<li>NF_INET_FORWARD
+</li>
+<li>NF_INET_LOCAL_OUT
+</li>
+<li>NF_INET_POST_ROUTING
+</li>
+</ol>
+
+<p>TPROXY is a mangle table target; implemented in net/netfilter/xt_TPROXY.c
+</p></div>
+
+</div>
+
+<div id="outline-container-1-2-11-3" class="outline-5">
+<h5 id="sec-1-2-11-3">raw table</h5>
+<div class="outline-text-5" id="text-1-2-11-3">
+
+<p>implemented in net/ipv4/netfilter/iptable_raw.c
+</p><ol>
+<li>NF_INET_PRE_ROUTING
+</li>
+<li>NF_INET_LOCAL_OUT
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-11-4" class="outline-5">
+<h5 id="sec-1-2-11-4">filter table</h5>
+<div class="outline-text-5" id="text-1-2-11-4">
+
+<p>net/ipv4/netfilter/iptable_filter.c
+</p><ol>
+<li>NF_INET_LOCAL_IN
+</li>
+<li>NF_INET_FORWARD
+</li>
+<li>NF_INET_LOCAL_OUT
+</li>
+</ol>
+
+<p>REJECT is example of a filter table target. It is implemented in net/ipv4/netfilter/ipt_REJECT.c.  DROP is also a filter table target.  Both in DROP
+and in REJECT we drop the packet. The difference is that with REJECT target we send ICMP packet (port-unreachable is the default) You can set the ICMP
+type with &ndash;reject-with type: it can be icmp-netunreachable, icmp-host-unreach-able, icmp-port-unreachable, icmpproto- unreachable,
+icmp-net-prohibited, icmp-host-prohibited or icmpadmin- prohibited.
+</p></div>
+
+</div>
+
+<div id="outline-container-1-2-11-5" class="outline-5">
+<h5 id="sec-1-2-11-5">security table</h5>
+<div class="outline-text-5" id="text-1-2-11-5">
+
+<p>net/ipv4/netfilter/iptable_security.c
+</p><ol>
+<li>NF_INET_LOCAL_IN
+</li>
+<li>NF_INET_FORWARD
+</li>
+<li>NF_INET_LOCAL_OUT
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-11-6" class="outline-5">
+<h5 id="sec-1-2-11-6">Xtables2</h5>
+<div class="outline-text-5" id="text-1-2-11-6">
+
+<p>Xt2 replaces the classic iptables setsockopt usage with the new Netlink-based interface
+<a href="http://xtables.de/Xtables2_Userdoc.pdf">user doc</a>
+<a href="http://inai.de/documents/Love_for_blobs.pdf">about</a>
+<a href="http://lwn.net/Articles/531752/">Xtables2 vs. nftables</a>
+nftables
+<a href="http://workshop.netfilter.org/2013/wiki/images/e/ee/Nftables-osd-2013-developer.pdf">what is</a>
+<a href="http://lwn.net/Articles/564095/">the return of nftables</a>
+<a href="https://home.regit.org/netfilter-en/nftables-quick-howto/">nftables quick howto</a>
+Linux Advanced Routing &amp; Traffic Control
+HOWTO: <a href="http://www.lartc.org/lartc.html">http://www.lartc.org/lartc.html</a>
+</p></div>
+
+</div>
+
+<div id="outline-container-1-2-11-7" class="outline-5">
+<h5 id="sec-1-2-11-7">squid and transparent proxy</h5>
+<div class="outline-text-5" id="text-1-2-11-7">
+
+<p><a href="http://www.squid-cache.org/Intro/">squid</a>
+</p>
+
+
+<pre class="example">An iptables rule to work with TPROXY can be for example:
+iptables -t mangle -A PREROUTING -p tcp --dport 80 -j TPROXY
+--tproxy-mark 0x1/0x1 --on-port 3128
+--tproxy-mark 0x1/0x1 is for setting skb-&gt;mark in the TPROXY
+module
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-11-8" class="outline-5">
+<h5 id="sec-1-2-11-8">netfilter hooks</h5>
+<div class="outline-text-5" id="text-1-2-11-8">
+
+<p>registe by nf_register_hook() in net/netfilter/core.c
+</p>
+
+
+<pre class="example">example of iptables
+Applying the following iptables rule:
+iptables A INPUT p udp dport 9999 j DROP
+ This is NF_IP_LOCAL_IN rule;
+ The packet will go to:
+ ip_rcv()
+ and then: ip_rcv_finish()
+ And then ip_local_deliver()
+ but it will NOT proceed to ip_local_deliver_finish() as in the usual
+ase, without this rule.
+ As a result of applying this rule it reaches nf_hook_slow() with
+verdict == NF_DROP (calls skb_free() to free the packet)
+ See net/netfilter/core.c.
+ iptables -t mangle A PREROUTING -p udp -dport 9999 -j MARK -setmark 5
+ Applying this rule will set skb-&gt;mark to 0x05 in ip_rcv_finish().
+</pre>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-12" class="outline-4">
+<h4 id="sec-1-2-12">Neighboring</h4>
+<div class="outline-text-4" id="text-1-2-12">
+
+
+</div>
+
+<div id="outline-container-1-2-12-1" class="outline-5">
+<h5 id="sec-1-2-12-1">ARP</h5>
+<div class="outline-text-5" id="text-1-2-12-1">
+
+
+
+
+<pre class="example">cat /proc/net/arp
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-12-2" class="outline-5">
+<h5 id="sec-1-2-12-2">ND(neighbor discovery)</h5>
+<div class="outline-text-5" id="text-1-2-12-2">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-13" class="outline-4">
+<h4 id="sec-1-2-13">Network namespaces</h4>
+<div class="outline-text-4" id="text-1-2-13">
+
+<p>A network namespace is logically another copy of the network stack, with it's own routing tables, neighboring tables, firewall rules, sockets and
+network devices
+see include/net/net_namespace.h
+<a href="http://media.wix.com/ugd//295986_d73d8d6087ed430c34c21f90b0b607fd.pdf">introduction on namespace</a>
+</p></div>
+
+</div>
+
+<div id="outline-container-1-2-14" class="outline-4">
+<h4 id="sec-1-2-14">Bonding Driver (Link aggregation)</h4>
+<div class="outline-text-4" id="text-1-2-14">
+
+<p>The bonding network driver is for putting multiple physical ethernet devices into one logical one, what is
+often termed link aggregation/trunking/Link bundling/Ethernet/network/NIC bonding. (these terms can be
+considered as synonyms).  The new generation of the bonding driver is called teaming. It has also a user space
+part called libteam.
+</p>
+
+
+<pre class="example">ifenslave is an iputils package.
+You can set link aggregation with ifenslave like in the following
+example:
+modprobe bonding mode=balance-alb miimon=100
+ifconfig bond0 192.168.1.1
+ifenslave bond0 eth0
+ifenslave bond0 eth1
+You can set vlan device over a bonding interface;
+For example, on the bond0 you created, you configure a vlan thus:
+vconfig add bond0 100
+</pre>
+
+<p>
+code at drivers/net/bonding, maintained by Jay Vosburgh and Andy Gospodarek
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-15" class="outline-4">
+<h4 id="sec-1-2-15">Teaming network device</h4>
+<div class="outline-text-4" id="text-1-2-15">
+
+<p>at drivers/net/team 
+</p>
+<p>
+Teaming network device is in fact the new bonding driver.  Teaming network device is for putting multiple
+physical ethernet devices into one logical one, what is often termed link aggregation/trunking/Link
+bundling/Ethernet/network/NIC bonding.  (these terms can be considered as synonyms).  Team has also a
+user-space util, libteam.  The team driver registers an RX handler by netdev_rx_handler_register().  The
+handler is team_handle_frame().  This is common in a virtual driver; also the bonding driver registers an RX
+handler named bond_handle_frame() and also the bridge driver registers a handler named
+br_handle_frame(). These handlers are invoked in __netif_receive_skb() (net/core/dev.c)
+</p></div>
+
+</div>
+
+<div id="outline-container-1-2-16" class="outline-4">
+<h4 id="sec-1-2-16">Tracing with kernel events</h4>
+<div class="outline-text-4" id="text-1-2-16">
+
+<p>Enabling tracing via kernel events
+</p>
+
+
+<pre class="example">Example:
+In dev_hard_start_xmit() there are two identical calls to trace_net_dev_xmit().
+In case we want a log with these traces, we should do the following;
+ /sys/kernel/debug should be mounted with debugfs.
+echo 1 &gt; /sys/kernel/debug/tracing/tracing_enabled
+echo 1 &gt; events/net/net_dev_xmit/enable
+The traced calls will appear in /sys/kernel/debug/tracing
+We can stop the tracing of net_dev_xmit() by
+echo 0 &gt; events/net/net_dev_xmit/enable
+Note: you can add a stacktrace to the trace log by
+echo stacktrace &gt; /sys/kernel/debug/tracing/trace_options
+More info in http://lxr.free-electrons.com/source/Documentation/trace/events.txt
+</pre>
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Debugfs">debugfs</a>
+</p></div>
+
+</div>
+
+<div id="outline-container-1-2-17" class="outline-4">
+<h4 id="sec-1-2-17">Socket</h4>
+<div class="outline-text-4" id="text-1-2-17">
+
+
+</div>
+
+<div id="outline-container-1-2-17-1" class="outline-5">
+<h5 id="sec-1-2-17-1">From userspace</h5>
+<div class="outline-text-5" id="text-1-2-17-1">
+
+<p>Creating a socket from user space is done by the socket() system call.  On success, a file descriptor for the
+new socket is returned.  The first parameter, family, is also sometimes referred to as “domain”.  The family
+is PF_INET for IPV4 or PF_INET6 for IPV6.  The family is PF_PACKET for Packet sockets, which operate at the
+device driver layer. (Layer 2).  
+</p><ul>
+<li>PF_PACKET sockets are used, for example, in pcap library for Linux.  pcap library is in use by sniffers such as tcpdump or wireshark.
+</li>
+<li>SOCK_STREAM for TCP, SCTP
+</li>
+<li>SOCK_DGRAM for UDP
+</li>
+<li>SOCK_RAW for RAW sockets
+</li>
+</ul>
+
+<p>For every socket which is created by a userspace application, there is a corresponding socket struct and sock
+struct in the kernel. This system call eventually invokes the sock_create() method in the kernel.
+</p><ul>
+<li id="sec-1-2-17-1-1">struct socket and sock<br/>
+include/linux/net.h 
+
+<p>
+struct socket has only 8 members; struct sock has more than 20, and is one of the biggest
+structures in the networking stack. You can easily be confused between them. So the convention is this:
+</p>
+<ul>
+<li>sock always refers to struct socket.
+</li>
+<li>sk always refers to struct sock.
+</li>
+</ul>
+
+<p>The sk_protocol member of struct sock equals to the third parameter (protocol) of the socket() system call.
+struct sock has three queues:
+</p><ul>
+<li>sk_receive_queue for rx
+</li>
+<li>sk_write_queue for tx
+</li>
+<li>sk_error_queue for errors
+</li>
+<li>skb_queue_tail() : Adding to the queue
+</li>
+<li>skb_dequeue() : removing from the queue
+</li>
+<li>For the error queue: sock_queue_err_skb() adds to its tail (include/net/sock.h). Eventually, it also
+      calls skb_queue_tail().
+</li>
+</ul>
+
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-17-1-2">UDP&amp;TCP<br/>
+
+<ul>
+<li id="sec-1-2-17-1-2-1">Receive<br/>
+Most of the Internet traffic is TCP (like http, ssh).
+UDP is for audio/video (RTP)/streaming
+Note:
+<ul>
+<li>streaming with VLC is by UDP (RTP)
+</li>
+<li>streaming via YouTube is tcp (http)
+</li>
+</ul>
+
+<p>For DHCP, it is quite natural to be UDP (Since many times with DHCP, you don't have a source address, which is
+a must for TCP)
+</p>
+
+
+<pre class="example">recv() (when the socket is connected)
+recvfrom()
+recvmsg()
+All three are handled by udp_recvmsg() in the kernel.
+
+For example, suppose you have a client-server udp applications, 
+and  the server sends a packets which is longer then what the client had
+allocated for input buffer. The kernel then truncates the packet, and set MSG_TRUNC flag. In order to
+retrieve it, you should use something like:
+recvmsg(udpSocket, &amp;msg, flags);
+if (msg.msg_flags &amp; MSG_TRUNC)
+printf("MSG_TRUNC\n");
+
+</pre>
+
+<p>
+There was a suggestion recently for recvmmsg() system call for receiving multiple messages (By Arnaldo
+Carvalho de Melo).  The recvmmsg() meant to reduce the overhead caused by multiple system calls of recvmsg()
+in the usual case.  
+udp_rcv() is the handler for all UDP packets. It handles all incoming packets in which the
+protocol field in the ip header is IPPROTO_UDP (17).
+</p>
+
+
+<pre class="example">See the udp_protocol definition: (net/ipv4/af_inet.c)
+struct net_protocol udp_protocol = {
+.handler = udp_rcv,
+.err_handler = udp_err,
+};
+
+</pre>
+
+<p>
+In the same way we have:
+</p><ul>
+<li>raw_rcv() as a handler for raw packets
+</li>
+<li>tcp_v4_rcv() as a handler for TCP packets
+</li>
+<li>icmp_rcv() as a handler for ICMP packets
+</li>
+<li>igmp_rcv as a handler for igmp packet 
+</li>
+</ul>
+
+
+
+
+<pre class="example">    /*
+     *  Add all the base protocols.
+     */
+
+    if (inet_add_protocol(&amp;icmp_protocol, IPPROTO_ICMP) &lt; 0)
+        printk(KERN_CRIT "inet_init: Cannot add ICMP protocol\n");
+    if (inet_add_protocol(&amp;udp_protocol, IPPROTO_UDP) &lt; 0)
+        printk(KERN_CRIT "inet_init: Cannot add UDP protocol\n");
+    if (inet_add_protocol(&amp;tcp_protocol, IPPROTO_TCP) &lt; 0)
+        printk(KERN_CRIT "inet_init: Cannot add TCP protocol\n");
+#ifdef CONFIG_IP_MULTICAST
+    if (inet_add_protocol(&amp;igmp_protocol, IPPROTO_IGMP) &lt; 0)
+        printk(KERN_CRIT "inet_init: Cannot add IGMP protocol\n");
+#endif
+
+
+</pre>
+
+<p>
+protocol handler is registed with proto_register()
+</p>
+
+
+<pre class="example">static int __init inet_init(void)
+{
+      .
+      .
+      .
+    rc = proto_register(&amp;tcp_prot, 1);
+    if (rc)
+        goto out_free_reserved_ports;
+
+    rc = proto_register(&amp;udp_prot, 1);
+    if (rc)
+        goto out_unregister_tcp_proto;
+
+    rc = proto_register(&amp;raw_prot, 1);
+    if (rc)
+        goto out_unregister_udp_proto;
+
+    rc = proto_register(&amp;ping_prot, 1);
+    if (rc)
+        goto out_unregister_raw_proto;
+
+struct proto udp_prot = {
+    .name          = "UDP",
+    .owner         = THIS_MODULE,
+    .close         = udp_lib_close,
+    .connect       = ip4_datagram_connect,
+    .disconnect    = udp_disconnect,
+    .ioctl         = udp_ioctl,
+    .destroy       = udp_destroy_sock,
+    .setsockopt    = udp_setsockopt,
+    .getsockopt    = udp_getsockopt,
+    .sendmsg       = udp_sendmsg,
+    .recvmsg       = udp_recvmsg,
+    .sendpage      = udp_sendpage,
+    .backlog_rcv       = __udp_queue_rcv_skb,
+    .hash          = udp_lib_hash,
+    .unhash        = udp_lib_unhash,
+    .rehash        = udp_v4_rehash,
+    .get_port      = udp_v4_get_port,
+    .memory_allocated  = &amp;udp_memory_allocated,
+    .sysctl_mem    = sysctl_udp_mem,
+    .sysctl_wmem       = &amp;sysctl_udp_wmem_min,
+    .sysctl_rmem       = &amp;sysctl_udp_rmem_min,
+    .obj_size      = sizeof(struct udp_sock),
+    .slab_flags    = SLAB_DESTROY_BY_RCU,
+    .h.udp_table       = &amp;udp_table,
+#ifdef CONFIG_COMPAT
+    .compat_setsockopt = compat_udp_setsockopt,
+    .compat_getsockopt = compat_udp_getsockopt,
+#endif
+    .clear_sk      = sk_prot_clear_portaddr_nulls,
+};
+EXPORT_SYMBOL(udp_prot);
+
+</pre>
+
+
+<p>
+Stats about UDP
+</p>
+
+
+<pre class="example">netstat -s
+.....
+Udp:
+35 packets to unknown port received
+
+or 
+cat /proc/net/snmp | grep Udp:
+Udp: InDatagrams NoPorts InErrors
+OutDatagrams RcvbufErrors SndbufErrors
+Udp: 14 35 0 30 0 0
+</pre>
+
+<p>
+If there is a sock listening on the destination port, Call udp_queue_rcv_skb().  Eventually calls
+sock_queue_rcv_skb(). Which adds the packet to the sk_receive_queue by skb_queue_tail().
+</p>
+
+
+
+<pre class="example">udp_recvmsg():
+--&gt; __skb_recv_datagram() , for receiving one sk_buff.
+
+</pre>
+
+<p>
+ The __skb_recv_datagram() may block.  Eventually, what __skb_recv_datagram() does is read one sk_buff from
+ the sk_receive_queue queue
+memcpy_toiovec() performs the actual copy to user space by invoking copy_to_user().
+</p>
+<p>
+Receive summarize
+</p>
+
+
+<pre class="example">ip_rcv
+--&gt;...ip_local_deliver_finish //this has been traced in the section receive packet
+--&gt;udp_rcv
+--&gt;__udp_queue_rcv_skb
+--&gt;ip_queue_rcv_skb
+--&gt;sock_queue_rcv_skb
+--&gt;__skb_queue_tail
+//packet is added at the tail of the sk_receive_queue
+
+</pre>
+
+
+<hr/>
+
+
+
+<pre class="example">udp_recvmsg
+--&gt;__skb_recv_datagram
+--&gt;skb_peek
+//read one sk_buff from the sk_receive_queue
+</pre>
+
+
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-17-1-2-2">Send<br/>
+From user space, you can send udp traffic with three system calls:
+<ul>
+<li>send() (when the socket is connected).
+</li>
+<li>sendto()
+</li>
+<li>sendmsg()
+</li>
+</ul>
+
+<p>All these system calls are handled by udp_sendmsg in kernel udp_sendmsg() is much simpler than the tcp
+parallel method , tcp_sendmsg().
+</p>
+<p>
+udp_sendpage() is called when user space calls sendfile() (to copy a file into a udp socket).  – sendfile()
+can be used also to copy data between one file descriptor and another.  udp_sendpage() invokes udp_sendmsg()
+</p>
+
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-17-2" class="outline-5">
+<h5 id="sec-1-2-17-2">From kernel</h5>
+<div class="outline-text-5" id="text-1-2-17-2">
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3">IO</h3>
+<div class="outline-text-3" id="text-1-3">
+
+
+</div>
+
+<div id="outline-container-1-3-1" class="outline-4">
+<h4 id="sec-1-3-1">Scatter-gather</h4>
+<div class="outline-text-4" id="text-1-3-1">
+
+
+</div>
+
+<div id="outline-container-1-3-1-1" class="outline-5">
+<h5 id="sec-1-3-1-1">Scatter-gather DMA</h5>
+<div class="outline-text-5" id="text-1-3-1-1">
+
+<p>scatter gather DMA is a way compare with block DMA to transmit data.
+In DMA mode to transmit data, the phsical address is needed to be
+continuasly, if the phsical address is not continously, the
+transmision will be divided into many parts. Interrupt will be trigger
+to host for next piece of memory transmission.  Scatter gather don't
+need this interrupt, DMA engine can transmit packet with a list of
+memory pieces.
+The feature flag is NETIF_F_SG
+</p>
+
+
+<pre class="example"># cat /sys/devices/virtual/net/rnchanet/features
+0x803
+</pre>
+
+
+
+<div style="height:200px;overflow:auto;border-style:solid;border-width:1px">
+
+<pre class="example">#define NETIF_F_SG              1       /* Scatter/gather IO. */
+#define NETIF_F_IP_CSUM         2       /* Can checksum TCP/UDP over IPv4. */
+#define NETIF_F_NO_CSUM         4       /* Does not require checksum. F.e. loopack. */
+#define NETIF_F_HW_CSUM         8       /* Can checksum all the packets. */
+#define NETIF_F_IPV6_CSUM       16      /* Can checksum TCP/UDP over IPV6 */
+#define NETIF_F_HIGHDMA         32      /* Can DMA to high memory. */
+#define NETIF_F_FRAGLIST        64      /* Scatter/gather IO. */
+#define NETIF_F_HW_VLAN_TX      128     /* Transmit VLAN hw acceleration */
+#define NETIF_F_HW_VLAN_RX      256     /* Receive VLAN hw acceleration */
+#define NETIF_F_HW_VLAN_FILTER  512     /* Receive filtering on VLAN */
+#define NETIF_F_VLAN_CHALLENGED 1024    /* Device cannot handle VLAN packets */
+#define NETIF_F_GSO             2048    /* Enable software GSO. */
+#define NETIF_F_LLTX            4096    /* LockLess TX - deprecated. Please */
+                                        /* do not use LLTX in new drivers */
+#define NETIF_F_NETNS_LOCAL     8192    /* Does not change network namespaces */
+#define NETIF_F_GRO             16384   /* Generic receive offload */
+#define NETIF_F_LRO             32768   /* large receive offload */
+
+/* the GSO_MASK reserves bits 16 through 23 */
+#define NETIF_F_FCOE_CRC        (1 &lt;&lt; 24) /* FCoE CRC32 */
+#define NETIF_F_SCTP_CSUM       (1 &lt;&lt; 25) /* SCTP checksum offload */
+#define NETIF_F_FCOE_MTU        (1 &lt;&lt; 26) /* Supports max FCoE MTU, 2158 bytes*/
+
+        /* Segmentation offload features */
+#define NETIF_F_GSO_SHIFT       16
+#define NETIF_F_GSO_MASK        0x00ff0000
+#define NETIF_F_TSO             (SKB_GSO_TCPV4 &lt;&lt; NETIF_F_GSO_SHIFT)
+#define NETIF_F_UFO             (SKB_GSO_UDP &lt;&lt; NETIF_F_GSO_SHIFT)
+#define NETIF_F_GSO_ROBUST      (SKB_GSO_DODGY &lt;&lt; NETIF_F_GSO_SHIFT)
+#define NETIF_F_TSO_ECN         (SKB_GSO_TCP_ECN &lt;&lt; NETIF_F_GSO_SHIFT)
+#define NETIF_F_TSO6            (SKB_GSO_TCPV6 &lt;&lt; NETIF_F_GSO_SHIFT)
+#define NETIF_F_FSO             (SKB_GSO_FCOE &lt;&lt; NETIF_F_GSO_SHIFT)
+
+        /* List of features with software fallbacks. */
+#define NETIF_F_GSO_SOFTWARE    (NETIF_F_TSO | NETIF_F_TSO_ECN | NETIF_F_TSO6)
+
+
+#define NETIF_F_GEN_CSUM        (NETIF_F_NO_CSUM | NETIF_F_HW_CSUM)
+#define NETIF_F_V4_CSUM         (NETIF_F_GEN_CSUM | NETIF_F_IP_CSUM)
+#define NETIF_F_V6_CSUM         (NETIF_F_GEN_CSUM | NETIF_F_IPV6_CSUM)
+#define NETIF_F_ALL_CSUM        (NETIF_F_V4_CSUM | NETIF_F_V6_CSUM)
+
+        /*
+         * If one device supports one of these features, then enable them
+         * for all in netdev_increment_features.
+         */
+#define NETIF_F_ONE_FOR_ALL     (NETIF_F_GSO_SOFTWARE | NETIF_F_GSO_ROBUST | \
+                                 NETIF_F_SG | NETIF_F_HIGHDMA |         \
+                                 NETIF_F_FRAGLIST)
+
+</pre>
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-10-23T15:18+0800</p>
+<p class="author">Author: Kevin Gao</p>
+<p class="email"><a href="mailto:leijia.gao@nsn.com">leijia.gao@nsn.com</a></p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

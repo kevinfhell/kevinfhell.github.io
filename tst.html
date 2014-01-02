@@ -1,0 +1,2619 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>notes</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="notes"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-10-17T09:31+0800"/>
+<meta name="author" content="Kevin Gao"/>
+<meta name="description" content=""/>
+<meta name="keywords" content="emacs, personal notes"/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" type="text/css" href="http://kevinfhell.github.io/worg.css">
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
+ <a accesskey="h" href="#"> UP </a>
+ |
+ <a accesskey="H" href="theindex.html"> HOME </a>
+</div>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">notes</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">hehe</a></li>
+<li><a href="#sec-2">Shell</a>
+<ul>
+<li><a href="#sec-2-1">Tips</a>
+<ul>
+<li><a href="#sec-2-1-1">during using "if"</a></li>
+<li><a href="#sec-2-1-2">string operation</a>
+<ul>
+<li><a href="#sec-2-1-2-1">abstract sub string</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-2-2">Functions</a></li>
+<li><a href="#sec-2-3">ORG mode 介绍</a>
+<ul>
+<li><a href="#sec-2-3-1">ORG mode 是一种emacs下的编写模式，可以支持高效的输入文字</a></li>
+<li><a href="#sec-2-3-2">是一种所想即所得的记录方式</a></li>
+<li><a href="#sec-2-3-3">可以支持多格式输出。</a></li>
+<li><a href="#sec-2-3-4">编写过程有很多快捷键，用来提高编写效率以及编写的舒适度。</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-4">ORG mode 规矩</a>
+<ul>
+<li><a href="#sec-2-4-1">顶格*后跟空格，*的个数决定了该行的级别，最多支持10级</a></li>
+<li><a href="#sec-2-4-2">常用命令整理</a></li>
+<li><a href="#sec-2-4-3">练习</a>
+<ul>
+<li><a href="#sec-2-4-3-1">TABLE</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-4-4">commands reference</a></li>
+<li><a href="#sec-2-4-5">new task 3</a></li>
+<li><a href="#sec-2-4-6">new task</a></li>
+<li><a href="#sec-2-4-7">new task 2</a></li>
+<li><a href="#sec-2-4-8">How to export Chinese in PDF format from org file</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-5">org export to html</a>
+<ul>
+<li><a href="#sec-2-5-1">example/src is too long</a>
+<ul>
+<li><a href="#sec-2-5-1-1">solution 1</a></li>
+<li><a href="#sec-2-5-1-2">solution 2</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-3">Tips</a>
+<ul>
+<li><a href="#sec-3-1">时间管理</a>
+<ul>
+<li><a href="#sec-3-1-1"><b>你有多少时间完成工作，工作就会自动变成需要那么多时间。</b></a></li>
+<li><a href="#sec-3-1-2">谁背上了猴子</a></li>
+<li><a href="#sec-3-1-3">GTD</a>
+<ul>
+<li><a href="#sec-3-1-3-1">六个高度的愿景视图</a></li>
+<li><a href="#sec-3-1-3-2">周回顾</a></li>
+<li><a href="#sec-3-1-3-3">决策行动的优先级</a></li>
+<li><a href="#sec-3-1-3-4">My way to GTD</a></li>
+<li><a href="#sec-3-1-3-5">notes on the usage of org templates</a></li>
+<li><a href="#sec-3-1-3-6">从跑道到五万英尺，从五万英尺到跑道</a></li>
+<li><a href="#sec-3-1-3-7">一定要明晰当前工作的目的</a></li>
+<li><a href="#sec-3-1-3-8">加工处理方法指导</a></li>
+<li><a href="#sec-3-1-3-9">工作蓝是一个处理问题的站点，而非存储容器</a></li>
+<li><a href="#sec-3-1-3-10"></a></li>
+</ul>
+</li>
+<li><a href="#sec-3-1-4">番茄工作法</a>
+<ul>
+<li><a href="#sec-3-1-4-1">有节奏的工作</a></li>
+<li><a href="#sec-3-1-4-2">节奏是一个番茄</a></li>
+<li><a href="#sec-3-1-4-3">tools</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-1-5">碎片化工作</a>
+<ul>
+<li><a href="#sec-3-1-5-1">BooguNote？ as I see, ORG is better, no better and better.</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-1-6">大脑放空心法&ndash;唵字诀</a>
+<ul>
+<li><a href="#sec-3-1-6-1">中午睡一小时，晚上最少可以少睡两个小时</a></li>
+<li><a href="#sec-3-1-6-2">每天五分钟，</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-1-7">10000小时</a>
+<ul>
+<li><a href="#sec-3-1-7-1">从无知,到卓越,需要10000小时</a></li>
+<li><a href="#sec-3-1-7-2">Moleskine notebook</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-1-8">困难的路越走越容易，容易的路越走越难</a></li>
+<li><a href="#sec-3-1-9">熟能生巧</a></li>
+<li><a href="#sec-3-1-10">瞄定 </a></li>
+</ul>
+</li>
+<li><a href="#sec-3-2">Read GTD through</a></li>
+<li><a href="#sec-3-3">ubuntu</a>
+<ul>
+<li><a href="#sec-3-3-1">font</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-4">code</a></li>
+<li><a href="#sec-5">Tips</a>
+<ul>
+<li><a href="#sec-5-1">时间管理</a>
+<ul>
+<li><a href="#sec-5-1-1"><b>你有多少时间完成工作，工作就会自动变成需要那么多时间。</b></a></li>
+<li><a href="#sec-5-1-2">谁背上了猴子</a></li>
+<li><a href="#sec-5-1-3">GTD</a>
+<ul>
+<li><a href="#sec-5-1-3-1">六个高度的愿景视图</a></li>
+<li><a href="#sec-5-1-3-2">周回顾</a></li>
+<li><a href="#sec-5-1-3-3">决策行动的优先级</a></li>
+<li><a href="#sec-5-1-3-4">My way to GTD</a></li>
+<li><a href="#sec-5-1-3-5">notes on the usage of org templates</a></li>
+<li><a href="#sec-5-1-3-6">从跑道到五万英尺，从五万英尺到跑道</a></li>
+<li><a href="#sec-5-1-3-7">一定要明晰当前工作的目的</a></li>
+<li><a href="#sec-5-1-3-8">加工处理方法指导</a></li>
+<li><a href="#sec-5-1-3-9">工作蓝是一个处理问题的站点，而非存储容器</a></li>
+<li><a href="#sec-5-1-3-10"></a></li>
+</ul>
+</li>
+<li><a href="#sec-5-1-4">番茄工作法</a>
+<ul>
+<li><a href="#sec-5-1-4-1">有节奏的工作</a></li>
+<li><a href="#sec-5-1-4-2">节奏是一个番茄</a></li>
+<li><a href="#sec-5-1-4-3">tools</a></li>
+</ul>
+</li>
+<li><a href="#sec-5-1-5">碎片化工作</a>
+<ul>
+<li><a href="#sec-5-1-5-1">BooguNote？ as I see, ORG is better, no better and better.</a></li>
+</ul>
+</li>
+<li><a href="#sec-5-1-6">大脑放空心法&ndash;唵字诀</a>
+<ul>
+<li><a href="#sec-5-1-6-1">中午睡一小时，晚上最少可以少睡两个小时</a></li>
+<li><a href="#sec-5-1-6-2">每天五分钟，</a></li>
+</ul>
+</li>
+<li><a href="#sec-5-1-7">10000小时</a>
+<ul>
+<li><a href="#sec-5-1-7-1">从无知,到卓越,需要10000小时</a></li>
+<li><a href="#sec-5-1-7-2">Moleskine notebook</a></li>
+</ul>
+</li>
+<li><a href="#sec-5-1-8">困难的路越走越容易，容易的路越走越难</a></li>
+<li><a href="#sec-5-1-9">熟能生巧</a></li>
+<li><a href="#sec-5-1-10">瞄定 </a></li>
+</ul>
+</li>
+<li><a href="#sec-5-2">Read GTD through</a></li>
+<li><a href="#sec-5-3">ubuntu</a>
+<ul>
+<li><a href="#sec-5-3-1">font</a></li>
+<li><a href="#sec-5-3-2">rtorrent</a></li>
+</ul>
+</li>
+<li><a href="#sec-5-4">kernel</a>
+<ul>
+<li><a href="#sec-5-4-1">Networking</a>
+<ul>
+<li><a href="#sec-5-4-1-1">VLAN</a></li>
+<li><a href="#sec-5-4-1-2">splice()</a></li>
+<li><a href="#sec-5-4-1-3">TCP</a></li>
+<li><a href="#sec-5-4-1-4">Route</a></li>
+<li><a href="#sec-5-4-1-5">Receive a packet</a></li>
+<li><a href="#sec-5-4-1-6">Send a packet</a></li>
+<li><a href="#sec-5-4-1-7">GRO(Generic receive offload)</a></li>
+<li><a href="#sec-5-4-1-8">Multipath routing</a></li>
+<li><a href="#sec-5-4-1-9">Multicast multicast routing</a></li>
+<li><a href="#sec-5-4-1-10">Netfilter</a></li>
+<li><a href="#sec-5-4-1-11">Neighboring</a></li>
+<li><a href="#sec-5-4-1-12">Network namespaces</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">hehe</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>a_b_c__d
+</p></div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Shell</h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">Tips</h3>
+<div class="outline-text-3" id="text-2-1">
+
+
+</div>
+
+<div id="outline-container-2-1-1" class="outline-4">
+<h4 id="sec-2-1-1">during using "if"</h4>
+<div class="outline-text-4" id="text-2-1-1">
+
+<ul>
+<li>there should be enough space in "if" condition check
+     eg: if [ $a = $b ]
+</li>
+<li>if the compare elements are string,  add "" for each element
+     eg: if [ "stringa" = "stringb" ]
+</li>
+<li>for checking a file
+<ul>
+<li>check a file ,whether it's empty
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+
+
+<pre class="example">eg: if test -s file; then 
+        echo "hi"
+     else
+        echo "empty"
+     fi
+</pre>
+
+<ul>
+<li>check a file, whether it's exist
+</li>
+</ul>
+
+
+
+
+<pre class="example">eg: if test -e file; then
+      echo " exsit"
+      else
+        echo " I can't find it"
+      fi
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-2" class="outline-4">
+<h4 id="sec-2-1-2">string operation</h4>
+<div class="outline-text-4" id="text-2-1-2">
+
+
+</div>
+
+<div id="outline-container-2-1-2-1" class="outline-5">
+<h5 id="sec-2-1-2-1">abstract sub string</h5>
+<div class="outline-text-5" id="text-2-1-2-1">
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">${#string}</th><th scope="col" class="left">get the string length</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">${string:position}</td><td class="left">sub string from position to the end</td></tr>
+<tr><td class="left">${string:position:length}</td><td class="left">sub string from position to length</td></tr>
+<tr><td class="left">${string#substring}</td><td class="left">delete from start to the first match</td></tr>
+<tr><td class="left">${string#substring}</td><td class="left">delete from start to the last match</td></tr>
+<tr><td class="left">${string%substring}</td><td class="left">delete from the end to the first match</td></tr>
+<tr><td class="left">${string%%substring</td><td class="left">delete from the end to the last match</td></tr>
+<tr><td class="left">${string/substring/replacement}</td><td class="left">replace the first substring</td></tr>
+<tr><td class="left">${string//substring/replacement</td><td class="left">replace all the substring</td></tr>
+<tr><td class="left">${string/#substring/replacement}</td><td class="left"></td></tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2">Functions</h3>
+<div class="outline-text-3" id="text-2-2">
+
+<ul>
+<li>ORG
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-3" class="outline-3">
+<h3 id="sec-2-3">ORG mode 介绍</h3>
+<div class="outline-text-3" id="text-2-3">
+
+
+</div>
+
+<div id="outline-container-2-3-1" class="outline-4">
+<h4 id="sec-2-3-1">ORG mode 是一种emacs下的编写模式，可以支持高效的输入文字</h4>
+<div class="outline-text-4" id="text-2-3-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-3-2" class="outline-4">
+<h4 id="sec-2-3-2">是一种所想即所得的记录方式</h4>
+<div class="outline-text-4" id="text-2-3-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-3-3" class="outline-4">
+<h4 id="sec-2-3-3">可以支持多格式输出。</h4>
+<div class="outline-text-4" id="text-2-3-3">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-3-4" class="outline-4">
+<h4 id="sec-2-3-4">编写过程有很多快捷键，用来提高编写效率以及编写的舒适度。</h4>
+<div class="outline-text-4" id="text-2-3-4">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2-4" class="outline-3">
+<h3 id="sec-2-4">ORG mode 规矩</h3>
+<div class="outline-text-3" id="text-2-4">
+
+
+</div>
+
+<div id="outline-container-2-4-1" class="outline-4">
+<h4 id="sec-2-4-1">顶格*后跟空格，*的个数决定了该行的级别，最多支持10级</h4>
+<div class="outline-text-4" id="text-2-4-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-4-2" class="outline-4">
+<h4 id="sec-2-4-2">常用命令整理</h4>
+<div class="outline-text-4" id="text-2-4-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-4-3" class="outline-4">
+<h4 id="sec-2-4-3">练习</h4>
+<div class="outline-text-4" id="text-2-4-3">
+
+
+</div>
+
+<div id="outline-container-2-4-3-1" class="outline-5">
+<h5 id="sec-2-4-3-1">TABLE &nbsp;&nbsp;&nbsp;<span class="tag"><span class="__">编辑</span></span></h5>
+<div class="outline-text-5" id="text-2-4-3-1">
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">name</th><th scope="col" class="left">content</th><th scope="col" class="left">description</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">大纲编辑功能</td><td class="left"></td><td class="left"></td></tr>
+</tbody>
+<tbody>
+<tr><td class="left">S-TAB</td><td class="left">shift+tab</td><td class="left">循环切换整个文档的大纲状态</td></tr>
+<tr><td class="left">TAB</td><td class="left">tab</td><td class="left">循环切换光标所在大纲状态</td></tr>
+<tr><td class="left">C-c C-n/p</td><td class="left">ctl+n/p</td><td class="left">下/上标题</td></tr>
+<tr><td class="left">C-c C-f/b</td><td class="left">ctl+f/b</td><td class="left">下/上标题  同级标题跳转</td></tr>
+<tr><td class="left">C-c C-u</td><td class="left"></td><td class="left">跳到上一级标题</td></tr>
+<tr><td class="left">C-c C-j</td><td class="left"></td><td class="left">大纲模式浏览</td></tr>
+<tr><td class="left">M-RET</td><td class="left"></td><td class="left">插入同级</td></tr>
+<tr><td class="left">M-S-RET</td><td class="left"></td><td class="left">插入同级TODO标题</td></tr>
+<tr><td class="left">M-LEFT/RIGHT</td><td class="left"></td><td class="left">升降当前标题</td></tr>
+<tr><td class="left">M-S-LEFT/RIGHT</td><td class="left"></td><td class="left">子树升降级</td></tr>
+<tr><td class="left">M-S-UP/DOWN</td><td class="left"></td><td class="left">子树上下移动</td></tr>
+<tr><td class="left">C-c *</td><td class="left"></td><td class="left">本行设置为标题或者正文</td></tr>
+<tr><td class="left">C-c C-w</td><td class="left"></td><td class="left">将子树或区域移动到另外一个缓冲区</td></tr>
+<tr><td class="left">C-x n s/w</td><td class="left"></td><td class="left">只显示当前子树</td></tr>
+<tr><td class="left">C-c C-x b</td><td class="left"></td><td class="left">新缓冲区显示当前子树</td></tr>
+<tr><td class="left">C-c /</td><td class="left"></td><td class="left">只列出包含搜索结果的大纲，并高亮</td></tr>
+<tr><td class="left">C-c C-c</td><td class="left"></td><td class="left">取消高亮</td></tr>
+<tr><td class="left">C-c C-x C-h</td><td class="left"></td><td class="left">help</td></tr>
+<tr><td class="left">C-c l</td><td class="left"></td><td class="left">保存链接</td></tr>
+<tr><td class="left">C-c C-l</td><td class="left"></td><td class="left">创建或修改链接</td></tr>
+<tr><td class="left">C-c C-o</td><td class="left"></td><td class="left">打开链接</td></tr>
+<tr><td class="left">C-c %</td><td class="left"></td><td class="left">记录内部链接</td></tr>
+<tr><td class="left">C-c &amp;</td><td class="left"></td><td class="left">跳转内部链接</td></tr>
+</tbody>
+<tbody>
+<tr><td class="left">TAG</td><td class="left"></td><td class="left">Category</td></tr>
+</tbody>
+<tbody>
+<tr><td class="left">Catetory 是固定的，很少变化</td><td class="left"></td><td class="left">而TAG可以随时增加</td></tr>
+<tr><td class="left">ORG mode的标签是继承的</td><td class="left">元数据定义的标签整个文档继承</td><td class="left"></td></tr>
+</tbody>
+</table>
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="right" /><col class="right" /><col class="right" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="right">abc</th><th scope="col" class="right"><span class="timestamp-wrapper"> <span class="timestamp">2013-08-24 周六</span></span>def</th><th scope="col" class="right">gih</th></tr>
+</thead>
+<tbody>
+<tr><td class="right">1</td><td class="right">2</td><td class="right">3</td></tr>
+<tr><td class="right">4</td><td class="right">5</td><td class="right">6</td></tr>
+</tbody>
+</table>
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">abc</th><th scope="col" class="left">def</th><th scope="col" class="left">gih</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">777</td><td class="left">888888</td><td class="left">999</td></tr>
+</tbody>
+<tbody>
+<tr><td class="left">jflskdj</td><td class="left">jflkdsjfls</td><td class="left">fjdslfjs</td></tr>
+</tbody>
+<tbody>
+<tr><td class="left">fjsdkfjsdk</td><td class="left">fjdslfj</td><td class="left">jfdslfjs</td></tr>
+</tbody>
+<tbody>
+<tr><td class="left">jfdslfj</td><td class="left">jfdksjf</td><td class="left">fjdksjfslj</td></tr>
+</tbody>
+<tbody>
+<tr><td class="left">jfdsfjl</td><td class="left">fjdskfjsl</td><td class="left">fjksdfj</td></tr>
+</tbody>
+<tbody>
+<tr><td class="left">fjssdfjsl</td><td class="left">jfdsljfsl</td><td class="left">fjsldfjsl</td></tr>
+</tbody>
+<tbody>
+</tbody>
+<tbody>
+</tbody>
+</table>
+
+     <img src="file://c:/users/kevin/pictures/1.jpg"  alt="file://c:/users/kevin/pictures/1.jpg" />
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2-4-4" class="outline-4">
+<h4 id="sec-2-4-4">commands reference &nbsp;&nbsp;&nbsp;<span class="tag"><span class="__">编辑</span></span></h4>
+<div class="outline-text-4" id="text-2-4-4">
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">command</th><th scope="col" class="left">description</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">M x eval-buffer</td><td class="left">refresh the config</td></tr>
+<tr><td class="left">#<a name="A" class="target">锚点A</a></td><td class="left">~<a href="#A">锚点A</a>~</td></tr>
+<tr><td class="left"><a name="radio-B" class="target">radio B</a></td><td class="left"><a href="#radio-B">radio B</a></td></tr>
+<tr><td class="left">C c C x f</td><td class="left"></td></tr>
+<tr><td class="left">#+CAPTION</td><td class="left">title of table or pic</td></tr>
+<tr><td class="left">#+LABLE</td><td class="left">one lable, <a href="#lable-name">lable name</a></td></tr>
+<tr><td class="left">C c C a</td><td class="left">attachment</td></tr>
+<tr><td class="left">C c -</td><td class="left">head line&ndash;&gt;item</td></tr>
+<tr><td class="left">C c C u</td><td class="left">move to headline</td></tr>
+<tr><td class="left">S UP/DOWN</td><td class="left">move curse</td></tr>
+<tr><td class="left">M UP/DOWN</td><td class="left">move content</td></tr>
+</tbody>
+</table>
+
+    table related
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">C c bar</td><td class="left">convert to table</td></tr>
+<tr><td class="left">C 3 C c bar</td><td class="left">convert with 3 space</td></tr>
+<tr><td class="left">M a e</td><td class="left">move to the begin or end of the filed</td></tr>
+<tr><td class="left">M left right</td><td class="left">move the current column</td></tr>
+<tr><td class="left">M S left</td><td class="left">kill the current column</td></tr>
+<tr><td class="left">M S right</td><td class="left">insert new column to curse position or left</td></tr>
+<tr><td class="left">M UP DOWN</td><td class="left">move current row up/down</td></tr>
+<tr><td class="left">M S UP</td><td class="left">kill current row</td></tr>
+<tr><td class="left">M S DOWN</td><td class="left">insert new row above or current curse position</td></tr>
+<tr><td class="left">C u C c -</td><td class="left">insert headline above</td></tr>
+<tr><td class="left">C c -</td><td class="left">insert headline below</td></tr>
+<tr><td class="left">C c RET</td><td class="left">insert headline and move to the line below</td></tr>
+<tr><td class="left">C c ^</td><td class="left">sort lines in region</td></tr>
+<tr><td class="left">C u C c C c</td><td class="left">sort all table calculate with formual</td></tr>
+</tbody>
+</table>
+
+    region
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">C c '</td><td class="left">edit the current region in a new window</td></tr>
+<tr><td class="left">M x org-table-export</td><td class="left"></td></tr>
+<tr><td class="left">M x org-table-import</td><td class="left"></td></tr>
+<tr><td class="left">M h</td><td class="left">paragragh selection</td></tr>
+</tbody>
+</table>
+
+     tag
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">C c C c</td><td class="left">set tag</td></tr>
+<tr><td class="left">C c C q</td><td class="left">set tag</td></tr>
+<tr><td class="left">C c \</td><td class="left">search tag</td></tr>
+<tr><td class="left">C c / m</td><td class="left">search and view in tree mode</td></tr>
+<tr><td class="left">C c  a m</td><td class="left">create the list from the agenda file about one tag</td></tr>
+</tbody>
+</table>
+
+
+<p>
+    todo
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">C S RET</td><td class="left">TODO insert</td></tr>
+<tr><td class="left">C c C s</td><td class="left">scheduler</td></tr>
+<tr><td class="left">C c C t</td><td class="left">change the state</td></tr>
+<tr><td class="left">S Right</td><td class="left">change the state</td></tr>
+<tr><td class="left">S left</td><td class="left">change the state</td></tr>
+<tr><td class="left">C c C v C c / t</td><td class="left">view all TODO in tree mode</td></tr>
+<tr><td class="left">S M RET</td><td class="left">create an TODO with *</td></tr>
+<tr><td class="left">C c a t</td><td class="left">show all the TODO include the agenda file</td></tr>
+<tr><td class="left">C c C x C i/o</td><td class="left">start or start a timer</td></tr>
+<tr><td class="left">C c C x a/A</td><td class="left">archive in this file</td></tr>
+<tr><td class="left">C c C x C s</td><td class="left">archive  to some file</td></tr>
+</tbody>
+</table>
+
+
+<ol>
+<li>
+</li>
+<li>first
+</li>
+<li>second
+</li>
+</ol>
+
+
+
+<ol>
+<li>third
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-4-5" class="outline-4">
+<h4 id="sec-2-4-5"><span class="todo TODO">TODO</span> new task 3</h4>
+<div class="outline-text-4" id="text-2-4-5">
+
+<p>     <span class="timestamp-wrapper"><span class="timestamp-kwd">SCHEDULED: </span> <span class="timestamp">2013-08-25 周日</span></span><br/>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2-4-6" class="outline-4">
+<h4 id="sec-2-4-6"><span class="todo TODO">TODO</span> new task</h4>
+<div class="outline-text-4" id="text-2-4-6">
+
+<p>     <span class="timestamp-wrapper"><span class="timestamp-kwd">SCHEDULED: </span> <span class="timestamp">2013-09-15 周日</span></span><br/>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2-4-7" class="outline-4">
+<h4 id="sec-2-4-7"><span class="todo TODO">TODO</span> new task 2</h4>
+<div class="outline-text-4" id="text-2-4-7">
+
+<p>     <span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE: </span> <span class="timestamp">2013-08-28 周三</span></span><br/>
+</p></div>
+
+</div>
+
+<div id="outline-container-2-4-8" class="outline-4">
+<h4 id="sec-2-4-8">How to export Chinese in PDF format from org file</h4>
+<div class="outline-text-4" id="text-2-4-8">
+
+<p>    <a href="http://yzprofile.me/2013/01/14/emacs-org-mode-xelatex.html">click here</a>
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-2-5" class="outline-3">
+<h3 id="sec-2-5">org export to html</h3>
+<div class="outline-text-3" id="text-2-5">
+
+
+</div>
+
+<div id="outline-container-2-5-1" class="outline-4">
+<h4 id="sec-2-5-1">example/src is too long</h4>
+<div class="outline-text-4" id="text-2-5-1">
+
+
+</div>
+
+<div id="outline-container-2-5-1-1" class="outline-5">
+<h5 id="sec-2-5-1-1">solution 1</h5>
+<div class="outline-text-5" id="text-2-5-1-1">
+
+<p>当在#+begin_example #+end_example或者#+begin_src #+end_src环境中内容过
+多时会占用大量空间，一个解决办法是加上 -t 选项并配合 -h height -w
+width 选项来指定高宽，使它成为有滚动条的区域。但好像无法使用语法高亮并
+且此区域内容是可编辑的。
+</p></div>
+
+</div>
+
+<div id="outline-container-2-5-1-2" class="outline-5">
+<h5 id="sec-2-5-1-2">solution 2</h5>
+<div class="outline-text-5" id="text-2-5-1-2">
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Tips</h2>
+<div class="outline-text-2" id="text-3">
+
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1">时间管理</h3>
+<div class="outline-text-3" id="text-3-1">
+
+
+</div>
+
+<div id="outline-container-3-1-1" class="outline-4">
+<h4 id="sec-3-1-1"><b>你有多少时间完成工作，工作就会自动变成需要那么多时间。</b></h4>
+<div class="outline-text-4" id="text-3-1-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-3-1-2" class="outline-4">
+<h4 id="sec-3-1-2">谁背上了猴子</h4>
+<div class="outline-text-4" id="text-3-1-2">
+
+<p>管理工作中有三种时间：受上司支配的时间、受组织支配的时间和个人支配的时间。前两种是身为管理者或中层经理必须去做的，否则必将受到惩罚，
+或早或晚而已。而第三种时间，则很不幸的包含了“受下属支配的时间”，更加不幸的是，由于管理者的管理不当，这部分时间甚至可能完全占据了
+“个人支配时间”。
+</p><ul>
+<li>当下属向你寻求解决办法，而您没有充分信息立刻给出结论时，
+</li>
+</ul>
+
+<p>    您必须消耗时间去了解情况，然后给出答复，在这个过程中，问题已经在无形之中从下属身上跑到了你的身上！——作者称之为“猴子”。
+</p><ul>
+<li>当你要求下属完成某项任务，却没有规定完成时间和汇报进展情况的期限时，你需要不断想着这件事情，并且不断主动了解进展情况，
+</li>
+</ul>
+
+<p>    你的时间再次被消耗了！
+</p><ul>
+<li>当你告诉下属，我要思考一个初步的方案，然后我们再进行讨论时，下属将无所事事，而你则忙忙碌碌——猴子再次跳到你的肩上！
+</li>
+</ul>
+
+<p>   _当你希望挖掘下属主动性的时候，你是否想过，上面三个情景，是在扼杀下属的主动性。你已经在无形中把主动性拿到了自己身上，而
+   非归还给应该具有的人&ndash;下属身上_。这就是问题的核心，最关键的部分。
+身为管理者，重要任务之一是帮助下属，为下属解决问题，但是帮助并不代表代替，当您选择代替时，主动性就已经被转移到您自己身上，
+下属的主动性就已经被您剥夺！当您希望发掘下属主动性前，看一看自己，您是否夺走了这种主动性！
+“任何时候我帮助你解决这个或那个问题，你的问题都不会变成我的问题。在你的问题变成我的问题的那一刻，你就不再有问题了。
+我不能帮助一个没有问题的人。”
+“在这次会面结束时，你的问题将与进来时一样由你背着离开办公室。你可以在任何约定的时间来请求我的帮助，我们会共同确定我俩
+中谁来采取下一步行动。”
+“一般情况下采取下一步行动的人不会是我，万一是我的话，你也要和我一起做出决定。我是不会单独采取任何行动的。”
+</p></div>
+
+</div>
+
+<div id="outline-container-3-1-3" class="outline-4">
+<h4 id="sec-3-1-3">GTD</h4>
+<div class="outline-text-4" id="text-3-1-3">
+
+
+</div>
+
+<div id="outline-container-3-1-3-1" class="outline-5">
+<h5 id="sec-3-1-3-1">六个高度的愿景视图</h5>
+<div class="outline-text-5" id="text-3-1-3-1">
+
+<ul>
+<li>5万英尺+：人生终极目的和原则（面临重大变化和转折时检视Life）
+
+</li>
+<li>4万英尺：3~5年的展望（建议每年检视Vista）
+
+</li>
+<li>3万英尺：1~2年的目标（建议每季检视Year）
+
+</li>
+<li>2万英尺：责任范围（建议每月检视Duty）
+
+</li>
+<li>1万英尺：当前的项目（建议每周检视Goal）
+
+</li>
+<li>跑道：下一步行动（建议每日检视Quotidian）
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-3-1-3-2" class="outline-5">
+<h5 id="sec-3-1-3-2">周回顾</h5>
+<div class="outline-text-5" id="text-3-1-3-2">
+
+<p><b>记住，你不能在周回顾的时候花时间来工作——只能回顾</b>
+周回顾是每周保留一段时间，通常一个或两个小时，用于组织未来一周（的任务），以确保没有事情被遗漏掉。稍后我们会讲到怎么来做，现在要记住的最重要的是：
+每周回顾是留给你的时间，用来规划你的个人和职业生涯，组织你的任务，制作你的人际清单，安排优先顺序，从而使你总是可以专注于真正重要的事。
+</p><ul>
+<li>变得清晰。花些时间清理你的工作场所，清空你的收件箱。然后回顾你的项目，哪一个是最重要的？哪些项目里程碑下周即将到期？
+</li>
+</ul>
+
+<p>按优先级和紧急程度组织它们。这样当你开始新的一周时，你就知道该从哪里开始而不用再思索了。
+</p><ul>
+<li>掌控当下。检视你的日程表。也许下周你和老板有一个很重要的关于软件更新的会议，但你忘记打电话给供应商了解细节了。
+</li>
+</ul>
+
+<p>把这个电话放进下周（日程中），并在和老板开会前给你自己留下足够的时间研究。最后，检查你在等待的任何邮件，
+在下周制订一个备注或约会来检查一下它们。
+</p><ul>
+<li>获得创造力。看看那些你总是想解决的项目，比如重新设计你的个人网站，思考那些项目中哪些小的部分可能放进你的日程表。
+</li>
+</ul>
+
+<p>思考你如何能变得更有效率——也许你是一名系统管理员，有一个新工具可以降低你每周向服务器推送补丁所花费的时间。
+花些时间从眼前的生活中跳出来，而不是仅仅坐在乘客的座位上。
+</p><ol>
+<li>收集和加工处理所有的“材料”。
+</li>
+<li>回顾和检查你的系统。
+</li>
+<li>更新各类清单。
+</li>
+<li>做到清洁、清楚、实时和完整。
+</li>
+</ol>
+
+<p><span style="text-decoration:underline;">你建立的系统越完备，你就越信赖它；你越信赖它，你就越发具有坚持运行这 个系统的内在动力。而每周的回顾和查阅即是达到这个目标的关键所在。</span>
+</p></div>
+
+</div>
+
+<div id="outline-container-3-1-3-3" class="outline-5">
+<h5 id="sec-3-1-3-3">决策行动的优先级</h5>
+<div class="outline-text-5" id="text-3-1-3-3">
+
+</div>
+
+</div>
+
+<div id="outline-container-3-1-3-4" class="outline-5">
+<h5 id="sec-3-1-3-4">My way to GTD</h5>
+<div class="outline-text-5" id="text-3-1-3-4">
+
+<ul>
+<li id="sec-3-1-3-4-1">install emacs 24.3.1<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-3-1-3-4-2">configure emacs for org<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-3-1-3-4-3">configure emacs for GTD<br/>
+<ol>
+<li>环境
+</li>
+<li>有多少时间
+</li>
+<li>精力如何
+</li>
+<li>重要性
+</li>
+</ol>
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-3-1-3-5" class="outline-5">
+<h5 id="sec-3-1-3-5">notes on the usage of org templates</h5>
+<div class="outline-text-5" id="text-3-1-3-5">
+
+<ul>
+<li id="sec-3-1-3-5-1">TAGS<br/>
+Office
+Work that takes place in my office in North Sydney.
+Home
+Activites that take place at home or in my personal time. For example I might have a task "Deliver package to Bill" in the "Home" context.
+Computer
+Tasks that require use of the home computer.
+Reading
+Books, magazines and other reading material for my breakfast reading or commute reading.
+Lunchtime
+Errands and other activities I do in my lunch break at North Sydney. This also includes activites I may do before or after work, for example, buying something at a shop.
+Project
+I use this tag to identify the heading of a project in order to display a list of active projects.
+</li>
+</ul>
+<ul>
+<li id="sec-3-1-3-5-2">ToDo states<br/>
+TODO
+The item is ready to be done at the earliest opportunity or at the date (and maybe time) indicated in the SCHEDULED tag. Some tasks are given a DEADLINE date which is useful for scheduling the tasks during my daily planning.
+STARTED
+I should use this tag when I start on a task, but if I clock in to a TODO item, I don't really need this task.
+WAITING
+I did some work on this task but I am waiting for a response. If I use this task I schedule the task into the future as a reminder to follow up with some notes in the body of the task.
+APPT
+Used to tag an activity that can only be done at the specified time and date, instead of tasks that can be completed at any time.
+DONE
+The task is completed.
+CANCELLED
+I decided not to do this task but have left the task on file with this status.
+DEFERRED
+Used to identify a task that will not be activated just yet. The reason will be included in the task notes.
+I set the org-use-fast-todo-selection variable to true for fast selection of tags. The C-c C-t command displays the following selections:
+</li>
+</ul>
+<ul>
+<li id="sec-3-1-3-5-3">Used view in work<br/>
+Agenda view - identify items marked with Scheduled or Deadline dates
+Tag view - show tems marked with a tag (my GTD contexts, eg HOME, OFFICE, FINANCE, READING, DVD)
+Reviewing this weeks nodes - Each day I quickly scan the items added since the beginning of the week.
+</li>
+</ul>
+<ul>
+<li id="sec-3-1-3-5-4">the caputre templates usage<br/>
+The Notes template prompts for a headline text then positions the cursor under the headline to type or paste text.
+
+<p>
+The Task templates prompts for a headline text as well as a category tag. The TODO keyword is included in part of the template.
+</p>
+<p>
+In both templates I add the date and time created as this provides useful tracking information, especially when items are refiled.
+</p>
+<p>
+I could have captured notes in one file and To Do items in another file, but I wanted notes and tasks to coexist "on the same page". Sometimes I will convert a note into a TODO item and it is easier to do this when the item is stored in the same file.
+</p>
+<p>
+The Journal template is used to record information for long term storage such as diary entries, details of books I have read and things I have done. Once an item is in the Journal file I don't move it. I only use the Journal file on my home computer.
+</p>
+<p>
+The Log Time entry is something I started this week to track what I do all day at work. Every time I start a new task or have a break I log a a brief description. 
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-09-01 周日 23:50</span></span>
+</p></li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-3-1-3-6" class="outline-5">
+<h5 id="sec-3-1-3-6">从跑道到五万英尺，从五万英尺到跑道</h5>
+<div class="outline-text-5" id="text-3-1-3-6">
+
+</div>
+
+</div>
+
+<div id="outline-container-3-1-3-7" class="outline-5">
+<h5 id="sec-3-1-3-7">一定要明晰当前工作的目的</h5>
+<div class="outline-text-5" id="text-3-1-3-7">
+
+<p>如果在动脑筋、挖点子这一阶段思路模糊不清、混乱不堪，就有必要重新回顾一下既定的预期效果了。倘若预期效果或者前景含糊不明确，你必须回过头来，重新分析一下你当前工作的目的何在。
+</p></div>
+
+</div>
+
+<div id="outline-container-3-1-3-8" class="outline-5">
+<h5 id="sec-3-1-3-8">加工处理方法指导</h5>
+<div class="outline-text-5" id="text-3-1-3-8">
+
+<ol>
+<li>从最上面的一项开始处理。
+</li>
+<li>一次只处理一件事情。 
+</li>
+<li>永远不要把任何事情再次放回工作篮
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-3-1-3-9" class="outline-5">
+<h5 id="sec-3-1-3-9">工作蓝是一个处理问题的站点，而非存储容器</h5>
+<div class="outline-text-5" id="text-3-1-3-9">
+
+</div>
+
+</div>
+
+<div id="outline-container-3-1-3-10" class="outline-5">
+<h5 id="sec-3-1-3-10"></h5>
+<div class="outline-text-5" id="text-3-1-3-10">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3-1-4" class="outline-4">
+<h4 id="sec-3-1-4">番茄工作法</h4>
+<div class="outline-text-4" id="text-3-1-4">
+
+
+</div>
+
+<div id="outline-container-3-1-4-1" class="outline-5">
+<h5 id="sec-3-1-4-1">有节奏的工作</h5>
+<div class="outline-text-5" id="text-3-1-4-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-3-1-4-2" class="outline-5">
+<h5 id="sec-3-1-4-2">节奏是一个番茄</h5>
+<div class="outline-text-5" id="text-3-1-4-2">
+
+<p>使用道具3样东西：纸、笔和番茄钟。
+3种表格，每种表格一张纸：任务清单、今日待办和记录，分别用于记录一段时
+间内的任务、今日要完成的任务以及每日总结。
+实际方法 任务计划：先填完任务清单，接着每天从任务清单中抽取出今天要完
+成的任务，从而形成今日待办。
+一般来讲，任务清单每隔一个阶段做一次，今日待办则是每天都要进行。
+任务执行：从今日待办中选出优先级最高的任务，开启番茄钟，工作，番茄钟响
+铃，立即休息。
+以此循环序列依次完成今日待办中的任务，每次番茄钟结束时，需进行记录。
+任务检查：每日结束时，检查完成的番茄钟数，了解自己任务执行的情况。
+</p></div>
+
+</div>
+
+<div id="outline-container-3-1-4-3" class="outline-5">
+<h5 id="sec-3-1-4-3">tools</h5>
+<div class="outline-text-5" id="text-3-1-4-3">
+
+<ul>
+<li id="sec-3-1-4-3-1">Pomodoro<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-3-1-4-3-2">Alloy timer<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-3-1-4-3-3">larrys clock<br/>
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3-1-5" class="outline-4">
+<h4 id="sec-3-1-5">碎片化工作</h4>
+<div class="outline-text-4" id="text-3-1-5">
+
+
+</div>
+
+<div id="outline-container-3-1-5-1" class="outline-5">
+<h5 id="sec-3-1-5-1">BooguNote？ as I see, ORG is better, no better and better.</h5>
+<div class="outline-text-5" id="text-3-1-5-1">
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3-1-6" class="outline-4">
+<h4 id="sec-3-1-6">大脑放空心法&ndash;唵字诀</h4>
+<div class="outline-text-4" id="text-3-1-6">
+
+
+</div>
+
+<div id="outline-container-3-1-6-1" class="outline-5">
+<h5 id="sec-3-1-6-1">中午睡一小时，晚上最少可以少睡两个小时</h5>
+<div class="outline-text-5" id="text-3-1-6-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-3-1-6-2" class="outline-5">
+<h5 id="sec-3-1-6-2">每天五分钟，</h5>
+<div class="outline-text-5" id="text-3-1-6-2">
+
+<ol>
+<li>静坐，放松，站着也可以，双脚与肩同宽，膝盖略弯，尾椎向下。
+</li>
+<li>双手交叉，左手按住右手内劳宫(男左女右)
+</li>
+<li>闭眼,想象一个字==唵,不绝于耳
+</li>
+<li>持续5分钟,结束后摩擦双手,待掌心微热后由内向外按摩脸部5圈.
+</li>
+</ol>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3-1-7" class="outline-4">
+<h4 id="sec-3-1-7">10000小时</h4>
+<div class="outline-text-4" id="text-3-1-7">
+
+
+</div>
+
+<div id="outline-container-3-1-7-1" class="outline-5">
+<h5 id="sec-3-1-7-1">从无知,到卓越,需要10000小时</h5>
+<div class="outline-text-5" id="text-3-1-7-1">
+
+<p>感觉10000小时不是重点,重点是长久持续的目标,已经为了目标的坚持.
+</p></div>
+
+</div>
+
+<div id="outline-container-3-1-7-2" class="outline-5">
+<h5 id="sec-3-1-7-2">Moleskine notebook</h5>
+<div class="outline-text-5" id="text-3-1-7-2">
+
+<p>for better 10000 hours plan
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-3-1-8" class="outline-4">
+<h4 id="sec-3-1-8">困难的路越走越容易，容易的路越走越难</h4>
+<div class="outline-text-4" id="text-3-1-8">
+
+<p>如果选择总是问别人的话，下次你还得继续问别人，每次直接问到问题的答案的同时，意味着你永远都要靠别人的大脑来获得答案
+</p></div>
+
+</div>
+
+<div id="outline-container-3-1-9" class="outline-4">
+<h4 id="sec-3-1-9">熟能生巧</h4>
+<div class="outline-text-4" id="text-3-1-9">
+
+<p>有时总想找到最正确，最适合自己的方法以后再去做事，但实际上这些最正确、最适合自己的方法都是在做事中打磨出来的。
+</p>
+<p>
+如果认为没有错，那就只管去做，熟能生巧 
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-09-02 周一 15:50</span></span>
+</p></div>
+
+</div>
+
+<div id="outline-container-3-1-10" class="outline-4">
+<h4 id="sec-3-1-10"><a href="http://www.gtdlife.com/2013/3164/【投稿】瞄定事件说他很淡定/ ">瞄定 </a></h4>
+<div class="outline-text-4" id="text-3-1-10">
+
+
+<p>
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-09-02 周一 15:55</span></span>
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2">Read GTD through</h3>
+<div class="outline-text-3" id="text-3-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-3-3" class="outline-3">
+<h3 id="sec-3-3">ubuntu</h3>
+<div class="outline-text-3" id="text-3-3">
+
+
+</div>
+
+<div id="outline-container-3-3-1" class="outline-4">
+<h4 id="sec-3-3-1">font</h4>
+<div class="outline-text-4" id="text-3-3-1">
+
+<p>    sudo fc-cache -fv .fonts 
+</p></div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">code</h2>
+<div class="outline-text-2" id="text-4">
+
+
+<div style="height:200px;overflow:auto;border-style:solid;border-width:1px">
+
+<pre class="example"><span class="linenr"> 1:  </span>#define LLC_DEST_INVALID         0      /* Invalid LLC PDU type */
+<span class="linenr"> 2:  </span>#define LLC_DEST_SAP             1      /* Type 1 goes here */
+<span class="linenr"> 3:  </span>#define LLC_DEST_CONN            2      /* Type 2 goes here */
+<span class="linenr"> 4:  </span>
+<span class="linenr"> 5:  </span>extern struct list_head llc_sap_list;
+<span class="linenr"> 6:  </span>extern spinlock_t llc_sap_list_lock;
+<span class="linenr"> 7:  </span>
+<span class="linenr"> 8:  </span>extern int llc_rcv(struct sk_buff *skb, struct net_device *dev,
+<span class="linenr"> 9:  </span>           struct packet_type *pt, struct net_device *orig_dev);
+<span class="linenr">10:  </span>
+<span class="linenr">11:  </span>extern int llc_mac_hdr_init(struct sk_buff *skb,
+<span class="linenr">12:  </span>                const unsigned char *sa, const unsigned char *da);
+<span class="linenr">13:  </span>
+<span class="linenr">14:  </span>extern void llc_add_pack(int type, void (*handler)(struct llc_sap *sap,
+<span class="linenr">15:  </span>                           struct sk_buff *skb));
+<span class="linenr">16:  </span>extern void llc_remove_pack(int type);
+<span class="linenr">17:  </span>
+<span class="linenr">18:  </span>extern void llc_set_station_handler(void (*handler)(struct sk_buff *skb));
+<span class="linenr">19:  </span>
+<span class="linenr">20:  </span>extern struct llc_sap *llc_sap_open(unsigned char lsap,
+<span class="linenr">21:  </span>                    int (*rcv)(struct sk_buff *skb,
+<span class="linenr">22:  </span>                           struct net_device *dev,
+<span class="linenr">23:  </span>                           struct packet_type *pt,
+<span class="linenr">24:  </span>                           struct net_device *orig_dev));
+<span class="linenr">25:  </span>static inline void llc_sap_hold(struct llc_sap *sap)
+<span class="linenr">26:  </span>{
+<span class="linenr">27:  </span>    atomic_inc(&amp;sap-&gt;refcnt);
+<span class="linenr">28:  </span>}
+<span class="linenr">29:  </span>
+<span class="linenr">30:  </span>extern void llc_sap_close(struct llc_sap *sap);
+<span class="linenr">31:  </span>
+<span class="linenr">32:  </span>
+</pre>
+
+</div>
+
+<pre class="example">
+    +-----------+        +---------+
+    |    PLC    |        |         |
+    |  Network  +&lt;------&gt;+   PLC   +&lt;---=---------+
+    |    cRED   |        |  c707   |              |
+    +-----------+        +----+----+              |
+                              ^                   |
+                              |                   |
+                              |  +----------------|-----------------+
+                              |  |                |                 |
+                              v  v                v                 v
+      +----------+       +----+--+--+      +-------+---+      +-----+-----+       Windows clients
+      |          |       |          |      |           |      |           |      +----+      +----+
+      | Database +&lt;-----&gt;+  Shared  +&lt;----&gt;+ Executive +&lt;-=--&gt;+ Operator  +&lt;----&gt;|cYEL| . . .|cYEL|
+      |   c707   |       |  Memory  |      |   c707    |      | Server    |      |    |      |    |
+      +--+----+--+       |{d} cGRE  |      +------+----+      |   c707    |      +----+      +----+
+         ^    ^          +----------+             ^           +-------+---+
+         |    |                                   |
+         |    +--------=--------------------------+
+         v
++--------+--------+
+|                 |
+| Millwide System |            -------- Data ---------
+| cBLU            |            --=----- Signals ---=--
++-----------------+
+
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">Tips</h2>
+<div class="outline-text-2" id="text-5">
+
+
+</div>
+
+<div id="outline-container-5-1" class="outline-3">
+<h3 id="sec-5-1">时间管理</h3>
+<div class="outline-text-3" id="text-5-1">
+
+
+</div>
+
+<div id="outline-container-5-1-1" class="outline-4">
+<h4 id="sec-5-1-1"><b>你有多少时间完成工作，工作就会自动变成需要那么多时间。</b></h4>
+<div class="outline-text-4" id="text-5-1-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-5-1-2" class="outline-4">
+<h4 id="sec-5-1-2">谁背上了猴子</h4>
+<div class="outline-text-4" id="text-5-1-2">
+
+<p>管理工作中有三种时间：受上司支配的时间、受组织支配的时间和个人支配的时间。前两种是身为管理者或中层经理必须去做的，否则必将受到惩罚，
+或早或晚而已。而第三种时间，则很不幸的包含了“受下属支配的时间”，更加不幸的是，由于管理者的管理不当，这部分时间甚至可能完全占据了
+“个人支配时间”。
+</p><ul>
+<li>当下属向你寻求解决办法，而您没有充分信息立刻给出结论时，
+</li>
+</ul>
+
+<p>    您必须消耗时间去了解情况，然后给出答复，在这个过程中，问题已经在无形之中从下属身上跑到了你的身上！——作者称之为“猴子”。
+</p><ul>
+<li>当你要求下属完成某项任务，却没有规定完成时间和汇报进展情况的期限时，你需要不断想着这件事情，并且不断主动了解进展情况，
+</li>
+</ul>
+
+<p>    你的时间再次被消耗了！
+</p><ul>
+<li>当你告诉下属，我要思考一个初步的方案，然后我们再进行讨论时，下属将无所事事，而你则忙忙碌碌——猴子再次跳到你的肩上！
+</li>
+</ul>
+
+<p>   _当你希望挖掘下属主动性的时候，你是否想过，上面三个情景，是在扼杀下属的主动性。你已经在无形中把主动性拿到了自己身上，而
+   非归还给应该具有的人&ndash;下属身上_。这就是问题的核心，最关键的部分。
+身为管理者，重要任务之一是帮助下属，为下属解决问题，但是帮助并不代表代替，当您选择代替时，主动性就已经被转移到您自己身上，
+下属的主动性就已经被您剥夺！当您希望发掘下属主动性前，看一看自己，您是否夺走了这种主动性！
+“任何时候我帮助你解决这个或那个问题，你的问题都不会变成我的问题。在你的问题变成我的问题的那一刻，你就不再有问题了。
+我不能帮助一个没有问题的人。”
+“在这次会面结束时，你的问题将与进来时一样由你背着离开办公室。你可以在任何约定的时间来请求我的帮助，我们会共同确定我俩
+中谁来采取下一步行动。”
+“一般情况下采取下一步行动的人不会是我，万一是我的话，你也要和我一起做出决定。我是不会单独采取任何行动的。”
+</p></div>
+
+</div>
+
+<div id="outline-container-5-1-3" class="outline-4">
+<h4 id="sec-5-1-3">GTD</h4>
+<div class="outline-text-4" id="text-5-1-3">
+
+
+</div>
+
+<div id="outline-container-5-1-3-1" class="outline-5">
+<h5 id="sec-5-1-3-1">六个高度的愿景视图</h5>
+<div class="outline-text-5" id="text-5-1-3-1">
+
+<ul>
+<li>5万英尺+：人生终极目的和原则（面临重大变化和转折时检视Life）
+
+</li>
+<li>4万英尺：3~5年的展望（建议每年检视Vista）
+
+</li>
+<li>3万英尺：1~2年的目标（建议每季检视Year）
+
+</li>
+<li>2万英尺：责任范围（建议每月检视Duty）
+
+</li>
+<li>1万英尺：当前的项目（建议每周检视Goal）
+
+</li>
+<li>跑道：下一步行动（建议每日检视Quotidian）
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-5-1-3-2" class="outline-5">
+<h5 id="sec-5-1-3-2">周回顾</h5>
+<div class="outline-text-5" id="text-5-1-3-2">
+
+<p><b>记住，你不能在周回顾的时候花时间来工作——只能回顾</b>
+周回顾是每周保留一段时间，通常一个或两个小时，用于组织未来一周（的任务），以确保没有事情被遗漏掉。稍后我们会讲到怎么来做，现在要记住的最重要的是：
+每周回顾是留给你的时间，用来规划你的个人和职业生涯，组织你的任务，制作你的人际清单，安排优先顺序，从而使你总是可以专注于真正重要的事。
+</p><ul>
+<li>变得清晰。花些时间清理你的工作场所，清空你的收件箱。然后回顾你的项目，哪一个是最重要的？哪些项目里程碑下周即将到期？
+</li>
+</ul>
+
+<p>按优先级和紧急程度组织它们。这样当你开始新的一周时，你就知道该从哪里开始而不用再思索了。
+</p><ul>
+<li>掌控当下。检视你的日程表。也许下周你和老板有一个很重要的关于软件更新的会议，但你忘记打电话给供应商了解细节了。
+</li>
+</ul>
+
+<p>把这个电话放进下周（日程中），并在和老板开会前给你自己留下足够的时间研究。最后，检查你在等待的任何邮件，
+在下周制订一个备注或约会来检查一下它们。
+</p><ul>
+<li>获得创造力。看看那些你总是想解决的项目，比如重新设计你的个人网站，思考那些项目中哪些小的部分可能放进你的日程表。
+</li>
+</ul>
+
+<p>思考你如何能变得更有效率——也许你是一名系统管理员，有一个新工具可以降低你每周向服务器推送补丁所花费的时间。
+花些时间从眼前的生活中跳出来，而不是仅仅坐在乘客的座位上。
+</p><ol>
+<li>收集和加工处理所有的“材料”。
+</li>
+<li>回顾和检查你的系统。
+</li>
+<li>更新各类清单。
+</li>
+<li>做到清洁、清楚、实时和完整。
+</li>
+</ol>
+
+<p><span style="text-decoration:underline;">你建立的系统越完备，你就越信赖它；你越信赖它，你就越发具有坚持运行这 个系统的内在动力。而每周的回顾和查阅即是达到这个目标的关键所在。</span>
+</p></div>
+
+</div>
+
+<div id="outline-container-5-1-3-3" class="outline-5">
+<h5 id="sec-5-1-3-3">决策行动的优先级</h5>
+<div class="outline-text-5" id="text-5-1-3-3">
+
+</div>
+
+</div>
+
+<div id="outline-container-5-1-3-4" class="outline-5">
+<h5 id="sec-5-1-3-4">My way to GTD</h5>
+<div class="outline-text-5" id="text-5-1-3-4">
+
+<ul>
+<li id="sec-5-1-3-4-1">install emacs 24.3.1<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-5-1-3-4-2">configure emacs for org<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-5-1-3-4-3">configure emacs for GTD<br/>
+<ol>
+<li>环境
+</li>
+<li>有多少时间
+</li>
+<li>精力如何
+</li>
+<li>重要性
+</li>
+</ol>
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-5-1-3-5" class="outline-5">
+<h5 id="sec-5-1-3-5">notes on the usage of org templates</h5>
+<div class="outline-text-5" id="text-5-1-3-5">
+
+<ul>
+<li id="sec-5-1-3-5-1">TAGS<br/>
+Office
+Work that takes place in my office in North Sydney.
+Home
+Activites that take place at home or in my personal time. For example I might have a task "Deliver package to Bill" in the "Home" context.
+Computer
+Tasks that require use of the home computer.
+Reading
+Books, magazines and other reading material for my breakfast reading or commute reading.
+Lunchtime
+Errands and other activities I do in my lunch break at North Sydney. This also includes activites I may do before or after work, for example, buying something at a shop.
+Project
+I use this tag to identify the heading of a project in order to display a list of active projects.
+</li>
+</ul>
+<ul>
+<li id="sec-5-1-3-5-2">ToDo states<br/>
+TODO
+The item is ready to be done at the earliest opportunity or at the date (and maybe time) indicated in the SCHEDULED tag. Some tasks are given a DEADLINE date which is useful for scheduling the tasks during my daily planning.
+STARTED
+I should use this tag when I start on a task, but if I clock in to a TODO item, I don't really need this task.
+WAITING
+I did some work on this task but I am waiting for a response. If I use this task I schedule the task into the future as a reminder to follow up with some notes in the body of the task.
+APPT
+Used to tag an activity that can only be done at the specified time and date, instead of tasks that can be completed at any time.
+DONE
+The task is completed.
+CANCELLED
+I decided not to do this task but have left the task on file with this status.
+DEFERRED
+Used to identify a task that will not be activated just yet. The reason will be included in the task notes.
+I set the org-use-fast-todo-selection variable to true for fast selection of tags. The C-c C-t command displays the following selections:
+</li>
+</ul>
+<ul>
+<li id="sec-5-1-3-5-3">Used view in work<br/>
+Agenda view - identify items marked with Scheduled or Deadline dates
+Tag view - show tems marked with a tag (my GTD contexts, eg HOME, OFFICE, FINANCE, READING, DVD)
+Reviewing this weeks nodes - Each day I quickly scan the items added since the beginning of the week.
+</li>
+</ul>
+<ul>
+<li id="sec-5-1-3-5-4">the caputre templates usage<br/>
+The Notes template prompts for a headline text then positions the cursor under the headline to type or paste text.
+
+<p>
+The Task templates prompts for a headline text as well as a category tag. The TODO keyword is included in part of the template.
+</p>
+<p>
+In both templates I add the date and time created as this provides useful tracking information, especially when items are refiled.
+</p>
+<p>
+I could have captured notes in one file and To Do items in another file, but I wanted notes and tasks to coexist "on the same page". Sometimes I will convert a note into a TODO item and it is easier to do this when the item is stored in the same file.
+</p>
+<p>
+The Journal template is used to record information for long term storage such as diary entries, details of books I have read and things I have done. Once an item is in the Journal file I don't move it. I only use the Journal file on my home computer.
+</p>
+<p>
+The Log Time entry is something I started this week to track what I do all day at work. Every time I start a new task or have a break I log a a brief description. 
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-09-01 周日 23:50</span></span>
+</p></li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-5-1-3-6" class="outline-5">
+<h5 id="sec-5-1-3-6">从跑道到五万英尺，从五万英尺到跑道</h5>
+<div class="outline-text-5" id="text-5-1-3-6">
+
+</div>
+
+</div>
+
+<div id="outline-container-5-1-3-7" class="outline-5">
+<h5 id="sec-5-1-3-7">一定要明晰当前工作的目的</h5>
+<div class="outline-text-5" id="text-5-1-3-7">
+
+<p>如果在动脑筋、挖点子这一阶段思路模糊不清、混乱不堪，就有必要重新回顾一下既定的预期效果了。倘若预期效果或者前景含糊不明确，你必须回过头来，重新分析一下你当前工作的目的何在。
+</p></div>
+
+</div>
+
+<div id="outline-container-5-1-3-8" class="outline-5">
+<h5 id="sec-5-1-3-8">加工处理方法指导</h5>
+<div class="outline-text-5" id="text-5-1-3-8">
+
+<ol>
+<li>从最上面的一项开始处理。
+</li>
+<li>一次只处理一件事情。 
+</li>
+<li>永远不要把任何事情再次放回工作篮
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-5-1-3-9" class="outline-5">
+<h5 id="sec-5-1-3-9">工作蓝是一个处理问题的站点，而非存储容器</h5>
+<div class="outline-text-5" id="text-5-1-3-9">
+
+</div>
+
+</div>
+
+<div id="outline-container-5-1-3-10" class="outline-5">
+<h5 id="sec-5-1-3-10"></h5>
+<div class="outline-text-5" id="text-5-1-3-10">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5-1-4" class="outline-4">
+<h4 id="sec-5-1-4">番茄工作法</h4>
+<div class="outline-text-4" id="text-5-1-4">
+
+
+</div>
+
+<div id="outline-container-5-1-4-1" class="outline-5">
+<h5 id="sec-5-1-4-1">有节奏的工作</h5>
+<div class="outline-text-5" id="text-5-1-4-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-5-1-4-2" class="outline-5">
+<h5 id="sec-5-1-4-2">节奏是一个番茄</h5>
+<div class="outline-text-5" id="text-5-1-4-2">
+
+<p>使用道具3样东西：纸、笔和番茄钟。
+3种表格，每种表格一张纸：任务清单、今日待办和记录，分别用于记录一段时
+间内的任务、今日要完成的任务以及每日总结。
+实际方法 任务计划：先填完任务清单，接着每天从任务清单中抽取出今天要完
+成的任务，从而形成今日待办。
+一般来讲，任务清单每隔一个阶段做一次，今日待办则是每天都要进行。
+任务执行：从今日待办中选出优先级最高的任务，开启番茄钟，工作，番茄钟响
+铃，立即休息。
+以此循环序列依次完成今日待办中的任务，每次番茄钟结束时，需进行记录。
+任务检查：每日结束时，检查完成的番茄钟数，了解自己任务执行的情况。
+</p></div>
+
+</div>
+
+<div id="outline-container-5-1-4-3" class="outline-5">
+<h5 id="sec-5-1-4-3">tools</h5>
+<div class="outline-text-5" id="text-5-1-4-3">
+
+<ul>
+<li id="sec-5-1-4-3-1">Pomodoro<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-5-1-4-3-2">Alloy timer<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-5-1-4-3-3">larrys clock<br/>
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5-1-5" class="outline-4">
+<h4 id="sec-5-1-5">碎片化工作</h4>
+<div class="outline-text-4" id="text-5-1-5">
+
+
+</div>
+
+<div id="outline-container-5-1-5-1" class="outline-5">
+<h5 id="sec-5-1-5-1">BooguNote？ as I see, ORG is better, no better and better.</h5>
+<div class="outline-text-5" id="text-5-1-5-1">
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5-1-6" class="outline-4">
+<h4 id="sec-5-1-6">大脑放空心法&ndash;唵字诀</h4>
+<div class="outline-text-4" id="text-5-1-6">
+
+
+</div>
+
+<div id="outline-container-5-1-6-1" class="outline-5">
+<h5 id="sec-5-1-6-1">中午睡一小时，晚上最少可以少睡两个小时</h5>
+<div class="outline-text-5" id="text-5-1-6-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-5-1-6-2" class="outline-5">
+<h5 id="sec-5-1-6-2">每天五分钟，</h5>
+<div class="outline-text-5" id="text-5-1-6-2">
+
+<ol>
+<li>静坐，放松，站着也可以，双脚与肩同宽，膝盖略弯，尾椎向下。
+</li>
+<li>双手交叉，左手按住右手内劳宫(男左女右)
+</li>
+<li>闭眼,想象一个字==唵,不绝于耳
+</li>
+<li>持续5分钟,结束后摩擦双手,待掌心微热后由内向外按摩脸部5圈.
+</li>
+</ol>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5-1-7" class="outline-4">
+<h4 id="sec-5-1-7">10000小时</h4>
+<div class="outline-text-4" id="text-5-1-7">
+
+
+</div>
+
+<div id="outline-container-5-1-7-1" class="outline-5">
+<h5 id="sec-5-1-7-1">从无知,到卓越,需要10000小时</h5>
+<div class="outline-text-5" id="text-5-1-7-1">
+
+<p>感觉10000小时不是重点,重点是长久持续的目标,已经为了目标的坚持.
+</p></div>
+
+</div>
+
+<div id="outline-container-5-1-7-2" class="outline-5">
+<h5 id="sec-5-1-7-2">Moleskine notebook</h5>
+<div class="outline-text-5" id="text-5-1-7-2">
+
+<p>for better 10000 hours plan
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-5-1-8" class="outline-4">
+<h4 id="sec-5-1-8">困难的路越走越容易，容易的路越走越难</h4>
+<div class="outline-text-4" id="text-5-1-8">
+
+<p>如果选择总是问别人的话，下次你还得继续问别人，每次直接问到问题的答案的同时，意味着你永远都要靠别人的大脑来获得答案
+</p></div>
+
+</div>
+
+<div id="outline-container-5-1-9" class="outline-4">
+<h4 id="sec-5-1-9">熟能生巧</h4>
+<div class="outline-text-4" id="text-5-1-9">
+
+<p>有时总想找到最正确，最适合自己的方法以后再去做事，但实际上这些最正确、最适合自己的方法都是在做事中打磨出来的。
+</p>
+<p>
+如果认为没有错，那就只管去做，熟能生巧 
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-09-02 周一 15:50</span></span>
+</p></div>
+
+</div>
+
+<div id="outline-container-5-1-10" class="outline-4">
+<h4 id="sec-5-1-10"><a href="http://www.gtdlife.com/2013/3164/【投稿】瞄定事件说他很淡定/ ">瞄定 </a></h4>
+<div class="outline-text-4" id="text-5-1-10">
+
+
+<p>
+Added: [2013-09-02 周一 15:55
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-5-2" class="outline-3">
+<h3 id="sec-5-2">Read GTD through</h3>
+<div class="outline-text-3" id="text-5-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-5-3" class="outline-3">
+<h3 id="sec-5-3">ubuntu</h3>
+<div class="outline-text-3" id="text-5-3">
+
+
+</div>
+
+<div id="outline-container-5-3-1" class="outline-4">
+<h4 id="sec-5-3-1">font</h4>
+<div class="outline-text-4" id="text-5-3-1">
+
+<p>    sudo fc-cache -fv .fonts 
+</p></div>
+
+</div>
+
+<div id="outline-container-5-3-2" class="outline-4">
+<h4 id="sec-5-3-2">rtorrent</h4>
+<div class="outline-text-4" id="text-5-3-2">
+
+
+<div style="height:200px;overflow:auto;border-style:solid;border-width:1px">
+
+<pre class="example">#号后面的是注释，不用管他，蓝色标出的是比较重要的配置
+
+##################################     配置文件开始    ####################################
+# This is an example resource file for rTorrent. Copy to
+# ~/.rtorrent.rc and enable/modify the options as needed. Remember to
+# uncomment the options you wish to enable.
+
+# 每个torrent文件允许连接的最大以及最小的peer的数目
+min_peers = 40
+max_peers = 250
+
+# Same as above but for seeding completed torrents (-1 = same as downloading)
+#min_peers_seed = 10
+#max_peers_seed = 50
+
+# Maximum number of simultanious uploads per torrent.
+max_uploads = 15
+
+# 全局上传和下载速率，单位是KB. "0" 代表无限制
+download_rate = 75
+upload_rate = 28
+
+# 默认下载目录，下载好的文件会放到这里
+directory = /opt/downloads
+
+# Default session directory. Make sure you don't run multiple instance
+# of rtorrent using the same session directory. Perhaps using a
+# relative path?
+session = /opt/downloads/.session
+
+# 下面是一个非常有用的功能：监视目录
+# 放在/opt/torrent目录底下的torrent文件会自动开始下载
+# 配置好监视目录以后，只要通过samba或scp往这个目录传种子，就会自动开始下载
+schedule = watch_directory,5,5,load_start=/opt/torrent/*.torrent
+#schedule = untied_directory,5,5,stop_untied=
+
+# Close torrents when diskspace is low.
+#schedule = low_diskspace,5,60,close_low_diskspace=100M
+
+# Stop torrents when reaching upload ratio in percent,
+# when also reaching total upload in bytes, or when
+# reaching final upload ratio in percent.
+# example: stop at ratio 2.0 with at least 200 MB uploaded, or else ratio 20.0
+#schedule = ratio,60,60,stop_on_ratio=200,200M,2000
+
+# The ip address reported to the tracker.
+#ip = 127.0.0.1
+#ip = rakshasa.no
+
+# The ip address the listening socket and outgoing connections is
+# bound to.
+#bind = 127.0.0.1
+#bind = rakshasa.no
+
+# Port range to use for listening.
+#port_range = 6890-6999
+
+# Start opening ports at a random position within the port range.
+#port_random = no
+
+# Check hash for finished torrents. Might be usefull until the bug is
+# fixed that causes lack of diskspace not to be properly reported.
+#check_hash = no
+
+# 是否使用UDP trackers，建议选yes
+use_udp_trackers = yes
+
+# Alternative calls to bind and ip that should handle dynamic ip's.
+#schedule = ip_tick,0,1800,ip=rakshasa
+#schedule = bind_tick,0,1800,bind=rakshasa
+
+# 是否允许协议加密，建议改成allow_incoming,enable_retry,prefer_plaintext的组合体，具体原因就不解释了
+# allow_incoming, try_outgoing, require, require_RC4, enable_retry, prefer_plaintext
+#
+# The example value allows incoming encrypted connections, starts unencrypted
+# outgoing connections but retries with encryption if they fail, preferring
+# plaintext to RC4 encryption after the encrypted handshake
+#
+encryption = allow_incoming,enable_retry,prefer_plaintext
+
+#
+# Do not modify the following parameters unless you know what you're doing.
+#
+
+# Hash read-ahead controls how many MB to request the kernel to read
+# ahead. If the value is too low the disk may not be fully utilized,
+# while if too high the kernel might not be able to keep the read
+# pages in memory thus end up trashing.
+#hash_read_ahead = 10
+
+# Interval between attempts to check the hash, in milliseconds.
+#hash_interval = 100
+
+# Number of attempts to check the hash while using the mincore status,
+# before forcing. Overworked systems might need lower values to get a
+# decent hash checking rate.
+#hash_max_tries = 10
+
+# Max number of files to keep open simultaniously.
+#max_open_files = 128
+
+# Number of sockets to simultaneously keep open.
+#max_open_sockets = &lt;no default&gt;
+
+
+# Example of scheduling commands: Switch between two ip's every 5
+# seconds.
+#schedule = "ip_tick1,5,10,ip=torretta"
+#schedule = "ip_tick2,10,10,ip=lampedusa"
+
+# Remove a scheduled event.
+#schedule_remove = "ip_tick1"
+
+#选择utf-8可以在samba中看到中文
+encoding_list = UTF-8
+
+#rtorrent创建的文件夹(或文件)的权限，默认是0644，建议改成0000(感谢xuanwuhu)，使所有用户都能访问。
+#也只有这样在samba中才可以直接打开、拷贝、删除rtorrent创建的文件
+umask = 0000
+
+#下面两个选项打开dht的功能，照做即可，另外如果想让 rtorrent 在启动的时候就使用 DHT，可以把dht=auto改为dht=on
+dht = auto
+dht_port = 6778
+
+#允许peer交换，当然允许了，多多益善啊
+peer_exchange = yes
+
+#最后这个参数和web配置以及远程管理有关，稍后再介绍
+scgi_port = :5000
+</pre>
+
+</div>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5-4" class="outline-3">
+<h3 id="sec-5-4">kernel</h3>
+<div class="outline-text-3" id="text-5-4">
+
+
+</div>
+
+<div id="outline-container-5-4-1" class="outline-4">
+<h4 id="sec-5-4-1">Networking</h4>
+<div class="outline-text-4" id="text-5-4-1">
+
+
+</div>
+
+<div id="outline-container-5-4-1-1" class="outline-5">
+<h5 id="sec-5-4-1-1">VLAN</h5>
+<div class="outline-text-5" id="text-5-4-1-1">
+
+<p>Linux的协议栈自身是不认vlan tag的，vlan tag由8021q部分代码(net/8021q/)做专门处理，这些代码主要实现了：
+</p>
+<ol>
+<li>若干供vlan用户态配置工具vconfig使用的ioctl 
+</li>
+<li>RX时剔除vlan tag，然后递交上层协议栈 
+</li>
+<li>TX时添加适当的vlan tag，然后递交硬件驱动
+</li>
+</ol>
+
+
+<p>
+RX处理如下：
+</p>
+<p>
+eth0 RX -&gt; eth0 netif_rx -&gt; 8021q代码处理开始 -&gt; 分析vlan tag得vid=n -&gt; 剔除vlan tag -&gt; "skb-&gt;dev"指定为eth0.n -&gt; netif_rx -&gt; 8021q代码处理结束 -&gt; packet由eth0.n接收，递交上层协议栈
+</p>
+<p>
+TX处理如下： 
+eth0.n TX -&gt; 8021q代码处理开始 -&gt; 添加vlan tag，vid=n -&gt; "skb-&gt;dev"指定为eth0 -&gt; dev_queue_xmit -&gt; 8021q代码处理结束 -&gt; packet由eth0接收，递交硬件驱动投递
+</p>
+<p>
+其中eth0.n乃是8021q代码所建立的虚拟接口。比方说把eth0加入vlan3: 
+vconfig add eth0 3 
+完成后就会出现一个新的接口eth0.3
+</p></div>
+
+</div>
+
+<div id="outline-container-5-4-1-2" class="outline-5">
+<h5 id="sec-5-4-1-2">splice()</h5>
+<div class="outline-text-5" id="text-5-4-1-2">
+
+<p>    With splice(), one can move data from one file descriptor to another without incurring
+    any copies from user space into kernel space, which is usually required to enforce
+    system security and also to keep a simple interface for processes to read and write to
+    files. splice() works by using the pipe buffer. A pipe buffer is an in-kernel memory
+    buffer that is opaque to the user space process. A user process can splice the
+    contents of a source file into this pipe buffer, then splice the pipe buffer into the
+    destination file, all without moving any data through userspace.
+<a href="http://en.wikipedia.org/wiki/Splice_(system_call)">wiki</a>
+</p></div>
+
+</div>
+
+<div id="outline-container-5-4-1-3" class="outline-5">
+<h5 id="sec-5-4-1-3">TCP</h5>
+<div class="outline-text-5" id="text-5-4-1-3">
+
+<ul>
+<li id="sec-5-4-1-3-1">General introduction<br/>
+RFC 793: <a href="http://www.ietf.org/rfc/rfc793.txt">http://www.ietf.org/rfc/rfc793.txt</a>
+MSS = Maximum segment size
+tcp_sendmsg() is the main handler in the TX path
+tcp_v4_init_sock(): initialization of the TCP socket is done in net/ipv4/tcp_ipv4.c;
+invokes tcp_init(). The the congestion sending window size is initialized to 10 (TCP_INIT_CWND).
+tcp_v4_connect(): create a TCP connection. (net/ipv4/tcp_ipv4.c)
+
+
+
+<pre class="example">u32 snd_cwnd - the congestion sending window size.
+u8 ecn_flags - ECN status bits.
+</pre>
+
+</li>
+</ul>
+<ul>
+<li id="sec-5-4-1-3-2">ECN<br/>
+ECN stands for Explicit Congestion Notification.
+<ol>
+<li>TCP_ECN_OK
+</li>
+<li>TCP_ECN_QUEUE_CWR
+</li>
+<li>TCP_ECN_DEMAND_CWR
+</li>
+<li>TCP_ECN_SEEN
+</li>
+</ol>
+
+<p>There is a configurable procfs tcp_ecn entry:
+/proc/sys/net/ipv4/tcp_ecn
+Possible values are:
+0 Disable ECN. Neither initiate nor accept ECN.
+1 Always request ECN on outgoing connection attempts.
+2 Enable ECN when requested by incoming connections
+but do not request ECN on outgoing connections.
+Default: 2
+see more in Documentation/networking/ip-sysctl.txt
+</p></li>
+</ul>
+<ul>
+<li id="sec-5-4-1-3-3">cwnd congestion window size<br/>
+You can change the TCP initcwnd thus:
+
+
+
+<pre class="example">ip route change 192.168.1.101 via 192.168.1.10 dev em1 initcwnd 11
+Then:
+ip route
+</pre>
+
+</li>
+</ul>
+<ul>
+<li id="sec-5-4-1-3-4">TCP timers<br/>
+<ol>
+<li>Keep Alive timer - implemented in tcp_keepalive_timer() in net/ipv4/tcp_timer
+</li>
+<li>TCP retransmit timer - implemented in tcp_retransmit_timer() in net/ipv4/tcp_timer
+</li>
+<li>RTO - retransmission timeout.
+</li>
+<li>RTT - round trip time.
+</li>
+</ol>
+
+</li>
+</ul>
+<ul>
+<li id="sec-5-4-1-3-5">TCP segmentation offload (TSO)<br/>
+When data greater than the supported maximum transmission unit (MTU)
+is sent to the network adapter, the data should be divided into MTU
+sized packets. The adapter takes care of that on behalf of the kernel.
+
+<p>
+The following command can check the status of this configuration
+</p>
+
+
+<pre class="example">ethtool -k eth0
+</pre>
+
+</li>
+</ul>
+<ul>
+<li id="sec-5-4-1-3-6">Generic Segmentation offload(GSO)<br/>
+<a href="http://lwn.net/Articles/188489/">introduction on GSO</a>
+Gnerially speaking. GSO is focusing on postpone the segamentation to
+very late phase, just before transmit the packet to driver. 
+</li>
+</ul>
+<ul>
+<li id="sec-5-4-1-3-7">TCP checksum offload<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-5-4-1-3-8">Large receive offload(LRO) and the Generic receive offload(GRO)<br/>
+GRO is the enhancement on LRO. 
+With GRO mode, napi_gro_receive is used to handling received packet,
+but not netif_receive_skb or netif_rx
+分片报文会被组好以后统一提交给协议栈，而不是一片一片给。这个就是优化。
+<a href="http://www.pagefault.info/?p=159">linux kernel 网络协议栈之GRO(Generic receive offload)</a>
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-5-4-1-4" class="outline-5">
+<h5 id="sec-5-4-1-4">Route</h5>
+<div class="outline-text-5" id="text-5-4-1-4">
+
+<ul>
+<li id="sec-5-4-1-4-1">routing cache and fib_trie<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-5-4-1-4-2">LPM (Longest Prefix Match) is the lookup algorithm<br/>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-5-4-1-5" class="outline-5">
+<h5 id="sec-5-4-1-5">Receive a packet</h5>
+<div class="outline-text-5" id="text-5-4-1-5">
+
+<p>When working in interrupt driven model, the nic registers an interrupt handler with the
+IRQ with which the device works by calling request_irq().
+</p><ul>
+<li id="sec-5-4-1-5-1">Interrupt handler<br/>
+<ul>
+<li id="sec-5-4-1-5-1-1">Will be called in case<br/>
+<ul>
+<li>This interrupt handler will be called when a frame is received
+</li>
+<li>The same interrupt handler will be called when transmission of a frame is finished
+</li>
+<li>other conditions. (depends on the NIC;sometimes, the interrupt handler will be called when there is some error).
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-5-4-1-5-1-2">process in the handler<br/>
+<ul>
+<li>Alloc sk_buff by calling dev_alloc_skb()
+</li>
+<li>eth_type_trans, advance 14bytes for ip header by skb_pull(skb, ETH_HLEN)
+</li>
+<li>then ip_rcv() in net/ipv4/ip_input.c, this is registed by dev_add_pack or the ipv6_rcv for ipv4 handling
+</li>
+<li>Handle the protocols registed at init phase like arp_rcv
+</li>
+<li>in ip_rcv perform sanity check first and then call ip_rcv_finish by NF_HOOK(PF_INET, NF_IP_PRE_ROUTING, skb, dev, NULL,ip_rcv_finish);
+</li>
+<li>in ip_rcv_finish, 
+</li>
+</ul>
+
+
+
+
+<pre class="example">if (skb-&gt;dst == NULL)
+{
+    int err = ip_route_input(skb, iph-&gt;daddr, iph-&gt;saddr,
+    iph-&gt;tos,skb-&gt;dev);
+…
+}
+...
+return dst_input(skb);
+
+</pre>
+
+<ul>
+<li>ip_route_input
+<ol>
+<li>Check routing cache
+</li>
+<li>Call ip_route_input_slow() if not match in cache
+</li>
+<li>done by fib_lookup()
+</li>
+<li>return 0 if cache match or successful lookup in routing table
+</li>
+<li>with the result of fib_lookup, we know the packet is for
+</li>
+</ol>
+
+</li>
+</ul>
+
+
+
+
+
+<pre class="example">1) local delivery  
+rth-&gt;u.dst.input=ip_local_deliver;
+ip_local_deliver(struct sk_buff *skb) (net/ipv4/ip_input.c).
+--&gt;NF_HOOK(PF_INET, NF_IP_LOCAL_IN, skb,skb-&gt;dev,NULL,ip_local_deliver_finish);
+//Deliver the packet to higher protocol according to the type
+2) forward 
+rth-&gt;u.dst.input = ip_forward;
+int ip_forward(struct sk_buff *skb) (net/ipv4/ip_forward.c)
+{
+
+    if(ttl &lt;=1) 
+    {
+        send_icmp_msg(ICMP_EXC_TTL);
+        drop;
+    }
+    decrease ttl;
+    Calls NF_HOOK(PF_INET,NF_IP_FORWARD,skb, skb-&gt;dev,rt-&gt;u.dst.dev, ip_forward_finish);
+    ip_forward_finish();
+    --&gt;dst_output(skb)
+}
+dst_output(skb)
+--&gt;skb-&gt;dst-&gt;output(skb).(see include/net/dst.h)
+//stats in 
+"netstat -s | grep forwarded"
+"cat /proc/net/snmp (IPv4) and cat /proc/net/snmp6 (IPV6), and
+look in ForwDatagrams column (IPv4)/Ip6OutForwDatagrams (IPv6)."
+</pre>
+
+
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-5-4-1-6" class="outline-5">
+<h5 id="sec-5-4-1-6">Send a packet</h5>
+<div class="outline-text-5" id="text-5-4-1-6">
+
+
+
+
+<pre class="example">ip_route_output_key();
+if(cache miss)
+{
+ip_route_output_slow()
+}
+ip_route_output_slow()
+--&gt;fib_lookup
+//if the packet is for remote host, set 
+dst-&gt;output = ip_output()
+ip_output()
+--&gt;ip_finish_output()
+{
+//dst-&gt;neighbour-&gt;output(skb)  arp_bind_neighbour() sees to it that the L2 address of the next hop will be known. (net/ipv4/arp.c)
+}
+//if the packet is for local machine, set
+dst-&gt;output = ip_output;
+dst-&gt;input = ip_local_deliver;
+//ip_output() will send the packet on the loopback device,
+//Then we will go into ip_rcv() and ip_rcv_finish(), but this time dst is NOT null; so we will end in ip_local_deliver().
+// See net/ipv4/route.c
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5-4-1-7" class="outline-5">
+<h5 id="sec-5-4-1-7">GRO(Generic receive offload)</h5>
+<div class="outline-text-5" id="text-5-4-1-7">
+
+<ul>
+<li>Set NETIF_F_GRO to enable it
+</li>
+<li>napi_gro_receive() is called
+</li>
+<li>Replace LRO(large receive offload)
+</li>
+<li>works conjunction with GSO
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-5-4-1-8" class="outline-5">
+<h5 id="sec-5-4-1-8">Multipath routing</h5>
+<div class="outline-text-5" id="text-5-4-1-8">
+
+<p>CONFIG_IP_ROUTE_MULTIPATH need to be set in kernel building
+CONFIG_IP_ROUTE_MULTIPATH_CACHED. for multi-path caching
+</p></div>
+
+</div>
+
+<div id="outline-container-5-4-1-9" class="outline-5">
+<h5 id="sec-5-4-1-9">Multicast multicast routing</h5>
+<div class="outline-text-5" id="text-5-4-1-9">
+
+<ul>
+<li id="sec-5-4-1-9-1">IGMP<br/>
+<ul>
+<li>for IPV4 is supported in net/ipv4/igmp.c
+</li>
+</ul>
+
+<p>There are three kinds of message 
+</p>
+
+
+<pre class="example">Membership Query (Type: 0x11)
+Membership Report (Version 2) (Type: 0x16)
+Leave Group (Type: 0x17)
+
+</pre>
+
+<p>
+To add a multicast address at MAC level, you can use "ip maddr add".
+</p>
+
+
+<pre class="example">Note that "ip maddr add" expects a MAC address, not an IP address!
+So this is ok:
+ip maddr add 01:00:5e:01:01:25 dev eth0
+but this is wrong: (pay attention, you will not get any error message!)
+ip maddr add 226.1.2.3
+</pre>
+
+<p>
+All Mulitcast addresses in mac presentations start with 01:00:5E according to IANA requirements.  Multicast addresses are translated from IP notation
+to mac address by a formula; see ip_eth_mc_map() in include/net/ip.h.  This is needed for example in arp translation, arp_mc_map() in net/ipv4/arp.c.
+The handler for multicast RX is ip_mr_input() in net/ipv4/ipmr.c.
+</p></li>
+</ul>
+<ul>
+<li id="sec-5-4-1-9-2">multicast routing<br/>
+IP_MROUTE=y. in kernel buidling
+one userspace daemon is also needed, such as pimd, xorp
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-5-4-1-10" class="outline-5">
+<h5 id="sec-5-4-1-10">Netfilter</h5>
+<div class="outline-text-5" id="text-5-4-1-10">
+
+<p>Netfilter is the kernel layer to support applying iptables rules
+</p><ul>
+<li>Filtering
+</li>
+<li>Changing packets (masquerading)
+</li>
+<li>Connection Tracking
+</li>
+</ul>
+
+<p>xtables modules are prefixd with xt, eg: net/netfilter/xt_REDIRECT.c
+Xtables match are always lowercase
+Xtables targes are always upercase
+<a href="http://jengelh.medozas.de/documents/ Netfilter Modules .pdf">writing netfilter modules</a>
+we have 5 iptables in use for ipv4
+</p><ul>
+<li id="sec-5-4-1-10-1">nat table<br/>
+implemented in net/ipv4/netfilter/iptable_nat.c
+<ol>
+<li>NF_INET_PRE_ROUTING
+</li>
+<li>NF_INET_POST_ROUTING
+</li>
+<li>NF_INET_LOCAL_OUT
+</li>
+<li>NF_INET_LOCAL_IN
+</li>
+</ol>
+
+<p>REDIRECT is a NAT table target; implemented in net/netfilter/xt_REDIRECT.c
+</p></li>
+</ul>
+<ul>
+<li id="sec-5-4-1-10-2">mangle table<br/>
+implemented in net/ipv4/netfilter/iptable_mangle.c  
+<ol>
+<li>NF_INET_PRE_ROUTING
+</li>
+<li>NF_INET_LOCAL_IN
+</li>
+<li>NF_INET_LOCAL_IN
+</li>
+<li>NF_INET_LOCAL_IN
+</li>
+<li>NF_INET_POST_ROUTING
+</li>
+</ol>
+
+<p>TPROXY is a mangle table target; implemented in net/netfilter/xt_TPROXY.c
+</p></li>
+</ul>
+<ul>
+<li id="sec-5-4-1-10-3">raw table<br/>
+implemented in net/ipv4/netfilter/iptable_raw.c
+<ol>
+<li>NF_INET_PRE_ROUTING
+</li>
+<li>NF_INET_LOCAL_OUT
+</li>
+</ol>
+
+</li>
+</ul>
+<ul>
+<li id="sec-5-4-1-10-4">filter table<br/>
+net/ipv4/netfilter/iptable_filter.c
+<ol>
+<li>NF_INET_LOCAL_IN
+</li>
+<li>NF_INET_FORWARD
+</li>
+<li>NF_INET_LOCAL_OUT
+</li>
+</ol>
+
+<p>REJECT is example of a filter table target. It is implemented in net/ipv4/netfilter/ipt_REJECT.c.  DROP is also a filter table target.  Both in DROP
+and in REJECT we drop the packet. The difference is that with REJECT target we send ICMP packet (port-unreachable is the default) You can set the ICMP
+type with &ndash;reject-with type: it can be icmp-netunreachable, icmp-host-unreach-able, icmp-port-unreachable, icmpproto- unreachable,
+icmp-net-prohibited, icmp-host-prohibited or icmpadmin- prohibited.
+</p></li>
+</ul>
+<ul>
+<li id="sec-5-4-1-10-5">security table<br/>
+net/ipv4/netfilter/iptable_security.c
+<ol>
+<li>NF_INET_LOCAL_IN
+</li>
+<li>NF_INET_FORWARD
+</li>
+<li>NF_INET_LOCAL_OUT
+</li>
+</ol>
+
+</li>
+</ul>
+<ul>
+<li id="sec-5-4-1-10-6">Xtables2<br/>
+Xt2 replaces the classic iptables setsockopt usage with the new Netlink-based interface
+<a href="http://xtables.de/Xtables2_Userdoc.pdf">user doc</a>
+<a href="http://inai.de/documents/Love_for_blobs.pdf">about</a>
+<a href="http://lwn.net/Articles/531752/">Xtables2 vs. nftables</a>
+nftables
+<a href="http://workshop.netfilter.org/2013/wiki/images/e/ee/Nftables-osd-2013-developer.pdf">what is</a>
+<a href="http://lwn.net/Articles/564095/">the return of nftables</a>
+<a href="https://home.regit.org/netfilter-en/nftables-quick-howto/">nftables quick howto</a>
+Linux Advanced Routing &amp; Traffic Control
+HOWTO: <a href="http://www.lartc.org/lartc.html">http://www.lartc.org/lartc.html</a>
+</li>
+</ul>
+<ul>
+<li id="sec-5-4-1-10-7">squid and transparent proxy<br/>
+<a href="http://www.squid-cache.org/Intro/">squid</a>
+
+
+
+<pre class="example">An iptables rule to work with TPROXY can be for example:
+iptables -t mangle -A PREROUTING -p tcp --dport 80 -j TPROXY
+--tproxy-mark 0x1/0x1 --on-port 3128
+--tproxy-mark 0x1/0x1 is for setting skb-&gt;mark in the TPROXY
+module
+</pre>
+
+</li>
+</ul>
+<ul>
+<li id="sec-5-4-1-10-8">netfilter hooks<br/>
+registe by nf_register_hook() in net/netfilter/core.c
+
+
+
+<pre class="example">example of iptables
+Applying the following iptables rule:
+iptables A INPUT p udp dport 9999 j DROP
+ This is NF_IP_LOCAL_IN rule;
+ The packet will go to:
+ ip_rcv()
+ and then: ip_rcv_finish()
+ And then ip_local_deliver()
+ but it will NOT proceed to ip_local_deliver_finish() as in the usual
+ase, without this rule.
+ As a result of applying this rule it reaches nf_hook_slow() with
+verdict == NF_DROP (calls skb_free() to free the packet)
+ See net/netfilter/core.c.
+ iptables -t mangle A PREROUTING -p udp -dport 9999 -j MARK -setmark 5
+ Applying this rule will set skb-&gt;mark to 0x05 in ip_rcv_finish().
+</pre>
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-5-4-1-11" class="outline-5">
+<h5 id="sec-5-4-1-11">Neighboring</h5>
+<div class="outline-text-5" id="text-5-4-1-11">
+
+<ul>
+<li id="sec-5-4-1-11-1">ARP<br/>
+
+
+
+<pre class="example">cat /proc/net/arp
+</pre>
+
+</li>
+</ul>
+<ul>
+<li id="sec-5-4-1-11-2">ND(neighbor discovery)<br/>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-5-4-1-12" class="outline-5">
+<h5 id="sec-5-4-1-12">Network namespaces</h5>
+<div class="outline-text-5" id="text-5-4-1-12">
+
+<p>A network namespace is logically another copy of the network stack, with it's own routing tables, neighboring tables, firewall rules, sockets and
+network devices
+see include/net/net_namespace.h
+<a href="http://media.wix.com/ugd//295986_d73d8d6087ed430c34c21f90b0b607fd.pdf">introduction on namespace</a>
+</p>
+
+
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-10-17T09:31+0800</p>
+<p class="author">Author: Kevin Gao</p>
+<p class="email"><a href="mailto:leijia.gao@nsn.com">leijia.gao@nsn.com</a></p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

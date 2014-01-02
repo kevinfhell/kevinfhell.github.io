@@ -1,0 +1,803 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Agile</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="Agile"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-10-23T15:18+0800"/>
+<meta name="author" content="Kevin Gao"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" type="text/css" href="http://kevinfhell.github.io/worg.css">
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
+ <a accesskey="h" href="#"> UP </a>
+ |
+ <a accesskey="H" href="theindex.html"> HOME </a>
+</div>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Agile</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Agile</a>
+<ul>
+<li><a href="#sec-1-1">what we can do to make our agile more agile</a></li>
+<li><a href="#sec-1-2">Succeeding with agile    &ndash; Software Development use Scrum</a>
+<ul>
+<li><a href="#sec-1-2-1">Why becoming agile is hard</a>
+<ul>
+<li><a href="#sec-1-2-1-1">Changing practices is one thing; changing minds is quite another</a></li>
+<li><a href="#sec-1-2-1-2">Why transitioning is hard</a></li>
+<li><a href="#sec-1-2-1-3">Why the transition is worthwhile</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2-2">ADAPTing to scrum</a>
+<ul>
+<li><a href="#sec-1-2-2-1">Awareness</a></li>
+<li><a href="#sec-1-2-2-2">Desire</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2-3">New roles</a>
+<ul>
+<li><a href="#sec-1-2-3-1">The PO</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2-4">Product backlog</a>
+<ul>
+<li><a href="#sec-1-2-4-1">DEEP</a></li>
+<li><a href="#sec-1-2-4-2">Shift from documents to discussions</a></li>
+<li><a href="#sec-1-2-4-3">User story</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-1-3">Agile Estimating and Planing   &ndash;  Mike Cohn</a>
+<ul>
+<li><a href="#sec-1-3-1">规划的目的</a>
+<ul>
+<li><a href="#sec-1-3-1-1">减少风险</a></li>
+<li><a href="#sec-1-3-1-2">降低不确定性</a></li>
+<li><a href="#sec-1-3-1-3">提供更好的决策支持</a></li>
+<li><a href="#sec-1-3-1-4">在客户与开发之间建立信任</a></li>
+<li><a href="#sec-1-3-1-5">传递信息</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-3-2">规划失败的原因</a>
+<ul>
+<li><a href="#sec-1-3-2-1">基于项目进行中的活动而不是实现的功能进行规划</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-3-3">敏捷方法</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-4">impediments</a>
+<ul>
+<li><a href="#sec-1-4-1">Resource is a big one</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Agile</h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">what we can do to make our agile more agile</h3>
+<div class="outline-text-3" id="text-1-1">
+
+<ul>
+<li>Let's sit together to learn agile
+</li>
+<li>Review- what's the problem in our team
+</li>
+<li>Is there priority in them
+</li>
+<li>summarize into catelog?
+</li>
+<li>Let's try to make change
+</li>
+</ul>
+
+<p>*in fact, ususally, we can't know what is right, what is the purpose
+for each process, if we know this, thing will be clear, and this
+will guide us in daily work.* 
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-09-08 周日 15:15</span></span>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">Succeeding with agile    &ndash; Software Development use Scrum</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+
+</div>
+
+<div id="outline-container-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1">Why becoming agile is hard</h4>
+<div class="outline-text-4" id="text-1-2-1">
+
+
+</div>
+
+<div id="outline-container-1-2-1-1" class="outline-5">
+<h5 id="sec-1-2-1-1">Changing practices is one thing; changing minds is quite another</h5>
+<div class="outline-text-5" id="text-1-2-1-1">
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-1-2" class="outline-5">
+<h5 id="sec-1-2-1-2">Why transitioning is hard</h5>
+<div class="outline-text-5" id="text-1-2-1-2">
+
+<p>One failer example:
+Restrict the scope to development orgnization. build an agile office
+</p><ul>
+<li id="sec-1-2-1-2-1">Successful change is not entirely top-down or bottom-up.<br/>
+单纯的自上而下，或者自下而上，都无法成功实现改变
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-1-2-2">The end state is unpredictable.<br/>
+成功的模式不可复制，每个企业，都必须基于自己的情况，作出自己的改变方案。
+这个转变，看不到最终状态。所以瞄准然后达到的模式是不成立的。因为这个转
+变，是个持续改进的过程。在持续改进的过程中，需要一点一点的试探，再试探，
+组织在不断的试探中，不断产生变化，一点一点填补那些small gap，between
+current state and and the intermediate state.
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-1-2-3">Scrum is pervasive.<br/>
+Scrum不是孤立的一个变化，这种变化广泛蔓延在组织内部。它不像一个process
+的引入，比如review code，这种变化是一种孤立的事件，只发生在代码完成后
+的一段时间。而scrum广泛渗透在开发的整个过程。开发者甚至要去了解新的开
+发模式，TDD？为了pair programing，不得不摘掉耳机，离开和电脑之间的二元
+世界，转为多元的工作状态。不仅如此，scrum影响到组织的各个部门。经济预
+算要为scrum重新做开销评估；市场部门要重新开始考量发布计划，要更频繁的
+与研发进行沟通.
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-1-2-4">Scrum is dramatically different.<br/>
+改变不仅遍及开发的整个过程，而且很多改变是颠覆性的。对于开发者来说，完
+美的设计不再是必须的，有的时候甚至是多余和错误的。TDD式的开发在agile中
+扮演重要的角色，但是这对传统的开发者来说需要很长的适应过程。
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-1-2-5">Change is coming more quickly than ever before.<br/>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-1-2-6">Best practices are dangerous.<br/>
+Scrum的核心是持续改进。如果我们在转变过程中，去收集那些我们认为是最好
+的方法，这样就会失去持续改进的动力。持续改进，不断调整，才能让我们越来
+越好。
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-1-3" class="outline-5">
+<h5 id="sec-1-2-1-3">Why the transition is worthwhile</h5>
+<div class="outline-text-5" id="text-1-2-1-3">
+
+
+<ul>
+<li id="sec-1-2-1-3-1">Higher productivity and lower costs<br/>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-1-3-2">Improved employee engagement and job satisfaction<br/>
+一个是加班变少了，planing会尽可能的按照实际工作量做commitment，所以就
+不需要OT。还有就是team内合作和交互变多了。做出的产品能更快的看到成果，
+被客户使用，并得到反馈。
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-1-3-3">Faster time to market<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-1-3-4">Higher quality<br/>
+因为工程师都以一个合适的工作负荷在工作，不会因为赶进度而损害质量。另外，
+因为一些新的工程方法的引入，比如pairprograming，refactory，以及对提早
+测试的腔调，例如TDD。
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-1-3-5">Improved stakeholder satisfaction<br/>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-1-3-6">What we’ve been doing no longer works<br/>
+
+
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-2" class="outline-4">
+<h4 id="sec-1-2-2">ADAPTing to scrum</h4>
+<div class="outline-text-4" id="text-1-2-2">
+
+<p><img src="./notes/ADAPT.png"  alt="./notes/ADAPT.png" />
+</p>
+
+</div>
+
+<div id="outline-container-1-2-2-1" class="outline-5">
+<h5 id="sec-1-2-2-1">Awareness</h5>
+<div class="outline-text-5" id="text-1-2-2-1">
+
+
+<ul>
+<li id="sec-1-2-2-1-1">Communicate that, there is a problem<br/>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-2-1-2">Use metrics<br/>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-2-1-3">Encourage people to attend conference or training.<br/>
+Let people know, what is happening outside. Let them know the
+competitor's product. Let them know, what is real needs from customer
+by making them discussing. Hire people in different background. 
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-2-1-4">Run a pilot project<br/>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-2-1-5">Focus on the most important reasons to change<br/>
+There is many reasons, choose the most important and critical one,
+and use this reason to convince people and make them aware the Scrum. 
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-2-2" class="outline-5">
+<h5 id="sec-1-2-2-2">Desire</h5>
+<div class="outline-text-5" id="text-1-2-2-2">
+
+
+<ul>
+<li id="sec-1-2-2-2-1">Tools<br/>
+
+<ul>
+<li id="sec-1-2-2-2-1-1">Communicate, there is a better way<br/>
+In aware phase, we emphasis the most critical problem, that lead us
+aware the Scrum, then know, let's communicate for how Scrum can
+address these problems. 
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-2-2-1-2">Create a sense of urgency<br/>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-2-2-1-3">Build momentum<br/>
+这一点很有意思，腔调的是忽略那些反对者，关注那些支持者，让那些支持者更
+加狂热。避免去讨论哪些要做哪些不要做，找那些要做的团队去做，然后做出成
+功的例子，这样的目的，是为了在组织内部造成势不可挡的趋势，来推动整个转
+变的进行。
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-2-2-1-4">Get the team to take Scrum for a test driven.<br/>
+与其和team去抽象的讨论Scrum，不如先切实的尝试一些方法，比如test driven。
+以一个周期，比如3-6个月，开始一段尝试，完成后做retrospective。尝试的结
+论，不一定是决定要不要采用Scrum，可以是简单的，是继续这种方法，还是决
+定这种方法不适合team而放弃。
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-2-2-1-5">Align incentives<br/>
+激励是一个问题，从激励个人的角度转变为激励team，所有的衡量指标变为team。
+对team的贡献，team对你的feedback。
+
+
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-3" class="outline-4">
+<h4 id="sec-1-2-3">New roles</h4>
+<div class="outline-text-4" id="text-1-2-3">
+
+
+
+</div>
+
+<div id="outline-container-1-2-3-1" class="outline-5">
+<h5 id="sec-1-2-3-1">The PO</h5>
+<div class="outline-text-5" id="text-1-2-3-1">
+
+
+<ul>
+<li id="sec-1-2-3-1-1">Responsiblity<br/>
+<ul>
+<li id="sec-1-2-3-1-1-1">Providing vision<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-3-1-1-2">Providing boundaries<br/>
+<ol>
+<li>I need it  by  June.
+</li>
+<li>We need to reduce the per-unit cost by half.
+</li>
+<li>It needs to run at twice the speed.
+</li>
+<li>It can use only half the memory of the current  version.
+</li>
+</ol>
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-4" class="outline-4">
+<h4 id="sec-1-2-4">Product backlog</h4>
+<div class="outline-text-4" id="text-1-2-4">
+
+
+
+</div>
+
+<div id="outline-container-1-2-4-1" class="outline-5">
+<h5 id="sec-1-2-4-1">DEEP</h5>
+<div class="outline-text-5" id="text-1-2-4-1">
+
+<ul>
+<li id="sec-1-2-4-1-1">Detailed Appropriately.<br/>
+User stories on the product backlog that will be
+done soon need to be sufficiently well understood that they can be completed
+in the coming sprint. Stories that will not be developed for awhile
+should be described with less detail.
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-4-1-2">estimated.<br/>
+The product backlog is more than a list of all work to be done;
+it is also a useful planning tool. Because items further down the backlog
+are not as well understood (yet), the estimates associated with them will
+be less precise than estimates given items at the top.
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-4-1-3">emergent.<br/>
+A product backlog is not static. It will change over time. As
+more is learned, user stories on the product backlog will be added, removed,
+or reprioritized.
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-4-1-4">Prioritized.<br/>
+The product backlog should be sorted with the most valuable
+items at the top and the least valuable at the bottom. By always working
+in priority order, the team is able to maximize the value of the product
+or system being developed.
+
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-4-2" class="outline-5">
+<h5 id="sec-1-2-4-2">Shift from documents to discussions</h5>
+<div class="outline-text-5" id="text-1-2-4-2">
+
+<p>Written words are misleading
+One example, about <b>Booked</b>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-4-3" class="outline-5">
+<h5 id="sec-1-2-4-3">User story</h5>
+<div class="outline-text-5" id="text-1-2-4-3">
+
+<p>As a &lt;type of user&gt;, I want &lt;some goal&gt; so that &lt;some reason&gt;.
+</p>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3">Agile Estimating and Planing   &ndash;  Mike Cohn</h3>
+<div class="outline-text-3" id="text-1-3">
+
+
+
+</div>
+
+<div id="outline-container-1-3-1" class="outline-4">
+<h4 id="sec-1-3-1">规划的目的</h4>
+<div class="outline-text-4" id="text-1-3-1">
+
+<p>规划的目的寻找一个答案，用于回答“要构建什么”这一产品开发的总体问题。答
+案综合了功能，资源，进度。
+规划和计划的区别在于，计划是图表或者报告，是结果，而规划强调的是产生这
+个结果的过程。通过对过程的控制，提高结果的准确性。更好的达到以下提到的
+几个方面的目的。
+敏捷承认，规划不可能在一个项目的开始就对它进行完整的定义。敏捷规划是均
+衡分布在整个项目开发的过程中。以发布规划为基础，然后是一组迭代的规划。
+所以敏捷规划：
+</p><ol>
+<li>更关注规划而不是计划（过程而不是结果）
+</li>
+<li>鼓励修改
+</li>
+<li>产生易于修改的计划
+</li>
+<li>延续到真个项目过程
+</li>
+</ol>
+
+
+
+
+</div>
+
+<div id="outline-container-1-3-1-1" class="outline-5">
+<h5 id="sec-1-3-1-1">减少风险</h5>
+<div class="outline-text-5" id="text-1-3-1-1">
+
+<p>在规划的时候，把可能的风险考虑在内，这样就可以降低项目实施不能按照计划
+的风险。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-3-1-2" class="outline-5">
+<h5 id="sec-1-3-1-2">降低不确定性</h5>
+<div class="outline-text-5" id="text-1-3-1-2">
+
+<p>在开发过程中，开发小组不断的喜欢产品的图像，减少开发出的产品不是需求所
+要的风险。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-3-1-3" class="outline-5">
+<h5 id="sec-1-3-1-3">提供更好的决策支持</h5>
+<div class="outline-text-5" id="text-1-3-1-3">
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-3-1-4" class="outline-5">
+<h5 id="sec-1-3-1-4">在客户与开发之间建立信任</h5>
+<div class="outline-text-5" id="text-1-3-1-4">
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-3-1-5" class="outline-5">
+<h5 id="sec-1-3-1-5">传递信息</h5>
+<div class="outline-text-5" id="text-1-3-1-5">
+
+<p>传递对项目的期待。
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-3-2" class="outline-4">
+<h4 id="sec-1-3-2">规划失败的原因</h4>
+<div class="outline-text-4" id="text-1-3-2">
+
+<p>传统的项目规划会存在一些问题：
+</p><ol>
+<li>大约2/3的项目会显著超出预算。
+</li>
+<li>产品64%的功能很少或者从不会被使用。
+</li>
+<li>一般项目花费的时间会超出进度表100%。
+</li>
+</ol>
+
+
+
+
+</div>
+
+<div id="outline-container-1-3-2-1" class="outline-5">
+<h5 id="sec-1-3-2-1">基于项目进行中的活动而不是实现的功能进行规划</h5>
+<div class="outline-text-5" id="text-1-3-2-1">
+
+
+<ul>
+<li id="sec-1-3-2-1-1">客户并不能从活动中获得价值。功能才是客户价值的计量单位<br/>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-3-2-1-2">传统的进度表被建立和审阅之后，检查这个进度表时，我们实际上是在寻找被遗忘的活动而非功能。<br/>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-3-2-1-3">基于活动的计划常常导致项目的实际开发时间超出进度表。<br/>
+当面临这个问题时，开发小组容易寻求不恰当的降低质量手段来节省时间。
+
+<ul>
+<li id="sec-1-3-2-1-3-1">活动不会提前完成<br/>
+帕金森定律
+<b>工作总要是拖到最后一刻才完成</b>
+如果墙上有一张甘特图，预期一项活动要5天，分配给该活动的程序员通常会保
+证让这项目用完这5天，如果看起来可以提前完成，他可能会增加一些花哨的功
+能来达到这一目的(gold-plating),他也可能部分时间花在研究一些他觉得可能
+会有用的新技术上。在一些公司，如果一项工作被提前完成了，老板可能会责怪
+他估计不准确，或者觉得其他的功能也能提前完成。所以他干嘛要去冒这个险呢。
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-3-2-1-3-2">延误沿着进度表向下传递<br/>
+<img src="./notes/relationship_activity.png"  alt="./notes/relationship_activity.png" />
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-3-2-1-3-3">活动不是独立的<br/>
+当一项活动的时间范围不影响另一项活动的时间范围时，我们称这两个活动是独
+立的。
+软件开发中很多活动不是独立的。
+例如在开发一个程序的UI，第一个界面话费了比预期多50%的时间，很可能后面
+的开发都会比计划的时间要多。
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1-3-2-1-4">多任务处理导致更多延迟<br/>
+<img src="./notes/multi-task.png"  alt="./notes/multi-task.png" />
+</li>
+</ul>
+<ul>
+<li id="sec-1-3-2-1-5">不按优先级开发功能<br/>
+很多传统的计划实际上是假设所有的工作都会完成。这意味着一般是基于开发小
+组的方便来确定开发的优先级。
+</li>
+</ul>
+<ul>
+<li id="sec-1-3-2-1-6">忽略了不确定性<br/>
+传统规划方法忽略了不确定性的存在。假设最初的需求分析就可以产生对产品完
+整的完善的定义。假设用户在这个开发周期都不会改变想法。他们的观点不会更
+细化，不会提出新的需求。
+消除这种不确定性的方法就是迭代。
+</li>
+</ul>
+<ul>
+<li id="sec-1-3-2-1-7">把估计当承诺<br/>
+
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-3-3" class="outline-4">
+<h4 id="sec-1-3-3">敏捷方法</h4>
+<div class="outline-text-4" id="text-1-3-3">
+
+<p>敏捷宣言
+</p><ul>
+<li>个人与交互重于开发过程与工具。
+</li>
+<li>可用的软件重于复杂的文档。
+</li>
+<li>寻求客户的合作重于对合同的谈判。
+</li>
+<li>对变化的相应重于始终遵循固定的计划。
+</li>
+</ul>
+
+
+
+
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-4" class="outline-3">
+<h3 id="sec-1-4">impediments</h3>
+<div class="outline-text-3" id="text-1-4">
+
+
+
+</div>
+
+<div id="outline-container-1-4-1" class="outline-4">
+<h4 id="sec-1-4-1">Resource is a big one</h4>
+<div class="outline-text-4" id="text-1-4-1">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-10-23T15:18+0800</p>
+<p class="author">Author: Kevin Gao</p>
+<p class="email"><a href="mailto:leijia.gao@nsn.com">leijia.gao@nsn.com</a></p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

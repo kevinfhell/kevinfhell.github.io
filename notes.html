@@ -1,0 +1,1770 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Personal notes</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="Personal notes"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-12-09T10:46+0800"/>
+<meta name="author" content="Kevin Gao"/>
+<meta name="description" content=""/>
+<meta name="keywords" content="emacs, personal notes"/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" type="text/css" href="http://kevinfhell.github.io/worg.css">
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
+ <a accesskey="h" href="#"> UP </a>
+ |
+ <a accesskey="H" href="theindex.html"> HOME </a>
+</div>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Personal notes</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Shell</a>
+<ul>
+<li><a href="#sec-1-1">Tips</a>
+<ul>
+<li><a href="#sec-1-1-1">during using "if"</a></li>
+<li><a href="#sec-1-1-2">string operation</a>
+<ul>
+<li><a href="#sec-1-1-2-1">abstract sub string</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-1-2">Functions</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">ORG</a>
+<ul>
+<li><a href="#sec-2-1">ORG mode 介绍</a>
+<ul>
+<li><a href="#sec-2-1-1">ORG mode 是一种emacs下的编写模式，可以支持高效的输入文字</a></li>
+<li><a href="#sec-2-1-2">是一种所想即所得的记录方式</a></li>
+<li><a href="#sec-2-1-3">可以支持多格式输出。</a></li>
+<li><a href="#sec-2-1-4">编写过程有很多快捷键，用来提高编写效率以及编写的舒适度。</a></li>
+<li><a href="#sec-2-1-5">顶格*后跟空格，*的个数决定了该行的级别，最多支持10级</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-2">ORG mode 规矩</a>
+<ul>
+<li><a href="#sec-2-2-1">commands reference</a></li>
+<li><a href="#sec-2-2-2">How to export Chinese in PDF format from org file</a></li>
+<li><a href="#sec-2-2-3">example or src is too long?</a>
+<ul>
+<li><a href="#sec-2-2-3-1">soluion 1</a></li>
+<li><a href="#sec-2-2-3-2">solution 2</a></li>
+<li><a href="#sec-2-2-3-3">example</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-2-4">How to remove the section number when export to html</a></li>
+<li><a href="#sec-2-2-5">agenda export to icalendar</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-3">Tips</a>
+<ul>
+<li><a href="#sec-3-1">life</a>
+<ul>
+<li><a href="#sec-3-1-1">分享</a>
+<ul>
+<li><a href="#sec-3-1-1-1">如果你受了伤，你要帮助他人减轻伤痛。如果你感到痛苦，你要帮助别人减轻痛苦。如果你的生活一团糟，让自己去帮助其他处在困境中的人摆脱困境。</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-1-2">body building</a></li>
+<li><a href="#sec-3-1-3">彼得德鲁克说，每两年都要有一个学习主题</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-2">Read GTD through</a>
+<ul>
+<li><a href="#sec-3-2-1">notes</a>
+<ul>
+<li><a href="#sec-3-2-1-1">在某一时刻，决策行动的4个标准的模式</a></li>
+<li><a href="#sec-3-2-1-2">启动思维的技巧</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-2-2">Tips</a>
+<ul>
+<li><a href="#sec-3-2-2-1">领先的秘密在于开始行动。开始行动的秘密在于把复杂的大宗任务分解成为可以操作的细小工作，然后开始实施第一项内容。&ndash; 马克.吐温</a></li>
+<li><a href="#sec-3-2-2-2">无论问题多大、多严峻，你总可以向解决它们的方向迈出小小的一步，来根除掉束手无策的感觉。行动起来吧</a></li>
+<li><a href="#sec-3-2-2-3">任何一项成功的工作在进行到中途时，看起来都如同一场灾难。</a></li>
+<li><a href="#sec-3-2-2-4">让我们把超前的焦虑变成超前的思考和策划</a></li>
+<li><a href="#sec-3-2-2-5">焦虑和内疚并不是因为承担太多的工作而造成的，这是由于你撕毁了同自己签订的协议而导致后果</a></li>
+<li><a href="#sec-3-2-2-6">我们都可能遇到这种情况：有时，思维敏捷；有时，应该远离思考</a></li>
+<li><a href="#sec-3-2-2-7">你的工作就是发现你的工作，然后全身心的投入其中               &ndash;佛</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-3-3">ubuntu</a>
+<ul>
+<li><a href="#sec-3-3-1">font</a></li>
+<li><a href="#sec-3-3-2">rtorrent</a></li>
+<li><a href="#sec-3-3-3">cmus</a></li>
+<li><a href="#sec-3-3-4">apt-get install ubuntu-desktop</a></li>
+<li><a href="#sec-3-3-5">apt-get update -y</a></li>
+<li><a href="#sec-3-3-6">locale</a></li>
+<li><a href="#sec-3-3-7">Change the default shell</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-4">tools</a>
+<ul>
+<li><a href="#sec-3-4-1">vimium is cool</a></li>
+<li><a href="#sec-3-4-2">emacs</a>
+<ul>
+<li><a href="#sec-3-4-2-1">emacs command</a></li>
+<li><a href="#sec-3-4-2-2">C x n n C x n w</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-4-3">ffmpeg</a></li>
+<li><a href="#sec-3-4-4">istanbul</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-5">commands</a>
+<ul>
+<li><a href="#sec-3-5-1">dump-nftable for dump the netfilter entry</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-6">wisdom in life</a>
+<ul>
+<li><a href="#sec-3-6-1">Say sorry in family, but not argue with your family</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-7">Management</a>
+<ul>
+<li><a href="#sec-3-7-1">Becoming a manager</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-8">Could</a>
+<ul>
+<li><a href="#sec-3-8-1">Tips</a>
+<ul>
+<li><a href="#sec-3-8-1-1">是否可能，运营商不再需要买我们的具体设备，而是买C&amp;P</a></li>
+<li><a href="#sec-3-8-1-2">Service module</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-3-9">Introduction to motivation</a>
+<ul>
+<li><a href="#sec-3-9-1">Needs hierachy</a>
+<ul>
+<li><a href="#sec-3-9-1-1">Belonging needs</a></li>
+<li><a href="#sec-3-9-1-2">Self-esteem needs</a></li>
+<li><a href="#sec-3-9-1-3">Self-actualization needs</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-9-2">SMARTER</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-10">Business execution</a>
+<ul>
+<li><a href="#sec-3-10-1">Practice-people</a></li>
+<li><a href="#sec-3-10-2"></a></li>
+</ul>
+</li>
+<li><a href="#sec-3-11">九大贵人</a></li>
+<li><a href="#sec-3-12">法显</a>
+<ul>
+<li><a href="#sec-3-12-1">公元399</a></li>
+<li><a href="#sec-3-12-2">楼兰</a></li>
+<li><a href="#sec-3-12-3">和田</a></li>
+<li><a href="#sec-3-12-4">大乘小乘</a></li>
+<li><a href="#sec-3-12-5">公元401年</a></li>
+<li><a href="#sec-3-12-6">六十六岁</a></li>
+<li><a href="#sec-3-12-7">公元405年-407年</a></li>
+<li><a href="#sec-3-12-8">七十岁</a></li>
+<li><a href="#sec-3-12-9">斯里兰卡</a></li>
+<li><a href="#sec-3-12-10">公元411年8月</a></li>
+<li><a href="#sec-3-12-11">75岁</a></li>
+<li><a href="#sec-3-12-12">公元412年</a></li>
+<li><a href="#sec-3-12-13">江陵辛寺</a></li>
+<li><a href="#sec-3-12-14">公元423年</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Shell</h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">Tips</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+</div>
+
+<div id="outline-container-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1">during using "if"</h4>
+<div class="outline-text-4" id="text-1-1-1">
+
+<ul>
+<li>there should be enough space in "if" condition check
+     eg: if [ $a = $b ]
+</li>
+<li>if the compare elements are string,  add "" for each element
+     eg: if [ "stringa" = "stringb" ]
+</li>
+<li>for checking a file
+<ul>
+<li>check a file ,whether it's empty
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+
+
+<pre class="example">eg: if test -s file; then 
+        echo "hi"
+     else
+        echo "empty"
+     fi
+</pre>
+
+<ul>
+<li>check a file, whether it's exist
+</li>
+</ul>
+
+
+
+
+<pre class="example">eg: if test -e file; then
+      echo " exsit"
+      else
+        echo " I can't find it"
+      fi
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2" class="outline-4">
+<h4 id="sec-1-1-2">string operation</h4>
+<div class="outline-text-4" id="text-1-1-2">
+
+
+</div>
+
+<div id="outline-container-1-1-2-1" class="outline-5">
+<h5 id="sec-1-1-2-1">abstract sub string</h5>
+<div class="outline-text-5" id="text-1-1-2-1">
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">${#string}</th><th scope="col" class="left">get the string length</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">${string:position}</td><td class="left">sub string from position to the end</td></tr>
+<tr><td class="left">${string:position:length}</td><td class="left">sub string from position to length</td></tr>
+<tr><td class="left">${string#substring}</td><td class="left">delete from start to the first match</td></tr>
+<tr><td class="left">${string#substring}</td><td class="left">delete from start to the last match</td></tr>
+<tr><td class="left">${string%substring}</td><td class="left">delete from the end to the first match</td></tr>
+<tr><td class="left">${string%%substring</td><td class="left">delete from the end to the last match</td></tr>
+<tr><td class="left">${string/substring/replacement}</td><td class="left">replace the first substring</td></tr>
+<tr><td class="left">${string//substring/replacement</td><td class="left">replace all the substring</td></tr>
+<tr><td class="left">${string/#substring/replacement}</td><td class="left"></td></tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">Functions</h3>
+<div class="outline-text-3" id="text-1-2">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">ORG</h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">ORG mode 介绍</h3>
+<div class="outline-text-3" id="text-2-1">
+
+
+</div>
+
+<div id="outline-container-2-1-1" class="outline-4">
+<h4 id="sec-2-1-1">ORG mode 是一种emacs下的编写模式，可以支持高效的输入文字</h4>
+<div class="outline-text-4" id="text-2-1-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-2" class="outline-4">
+<h4 id="sec-2-1-2">是一种所想即所得的记录方式</h4>
+<div class="outline-text-4" id="text-2-1-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-3" class="outline-4">
+<h4 id="sec-2-1-3">可以支持多格式输出。</h4>
+<div class="outline-text-4" id="text-2-1-3">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-4" class="outline-4">
+<h4 id="sec-2-1-4">编写过程有很多快捷键，用来提高编写效率以及编写的舒适度。</h4>
+<div class="outline-text-4" id="text-2-1-4">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-5" class="outline-4">
+<h4 id="sec-2-1-5">顶格*后跟空格，*的个数决定了该行的级别，最多支持10级</h4>
+<div class="outline-text-4" id="text-2-1-5">
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2">ORG mode 规矩</h3>
+<div class="outline-text-3" id="text-2-2">
+
+
+</div>
+
+<div id="outline-container-2-2-1" class="outline-4">
+<h4 id="sec-2-2-1">commands reference</h4>
+<div class="outline-text-4" id="text-2-2-1">
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">name</th><th scope="col" class="left">content</th><th scope="col" class="left">description</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">大纲编辑功能</td><td class="left"></td><td class="left"></td></tr>
+</tbody>
+<tbody>
+<tr><td class="left">S-TAB</td><td class="left">shift+tab</td><td class="left">循环切换整个文档的大纲状态</td></tr>
+<tr><td class="left">TAB</td><td class="left">tab</td><td class="left">循环切换光标所在大纲状态</td></tr>
+<tr><td class="left">C-c C-n/p</td><td class="left">ctl+n/p</td><td class="left">下/上标题</td></tr>
+<tr><td class="left">C-c C-f/b</td><td class="left">ctl+f/b</td><td class="left">下/上标题  同级标题跳转</td></tr>
+<tr><td class="left">C-c C-u</td><td class="left"></td><td class="left">跳到上一级标题</td></tr>
+<tr><td class="left">C-c C-j</td><td class="left"></td><td class="left">大纲模式浏览</td></tr>
+<tr><td class="left">M-RET</td><td class="left"></td><td class="left">插入同级</td></tr>
+<tr><td class="left">M-S-RET</td><td class="left"></td><td class="left">插入同级TODO标题</td></tr>
+<tr><td class="left">M-LEFT/RIGHT</td><td class="left"></td><td class="left">升降当前标题</td></tr>
+<tr><td class="left">M-S-LEFT/RIGHT</td><td class="left"></td><td class="left">子树升降级</td></tr>
+<tr><td class="left">M-S-UP/DOWN</td><td class="left"></td><td class="left">子树上下移动</td></tr>
+<tr><td class="left">C-c *</td><td class="left"></td><td class="left">本行设置为标题或者正文</td></tr>
+<tr><td class="left">C-c C-w</td><td class="left"></td><td class="left">将子树或区域移动到另外一个缓冲区</td></tr>
+<tr><td class="left">C-x n s/w</td><td class="left"></td><td class="left">只显示当前子树</td></tr>
+<tr><td class="left">C-c C-x b</td><td class="left"></td><td class="left">新缓冲区显示当前子树</td></tr>
+<tr><td class="left">C-c /</td><td class="left"></td><td class="left">只列出包含搜索结果的大纲，并高亮</td></tr>
+<tr><td class="left">C-c C-c</td><td class="left"></td><td class="left">取消高亮</td></tr>
+<tr><td class="left">C-c C-x C-h</td><td class="left"></td><td class="left">help</td></tr>
+<tr><td class="left">C-c l</td><td class="left"></td><td class="left">保存链接</td></tr>
+<tr><td class="left">C-c C-l</td><td class="left"></td><td class="left">创建或修改链接</td></tr>
+<tr><td class="left">C-c C-o</td><td class="left"></td><td class="left">打开链接</td></tr>
+<tr><td class="left">C-c %</td><td class="left"></td><td class="left">记录内部链接</td></tr>
+<tr><td class="left">C-c &amp;</td><td class="left"></td><td class="left">跳转内部链接</td></tr>
+</tbody>
+<tbody>
+<tr><td class="left">TAG</td><td class="left"></td><td class="left">Category</td></tr>
+</tbody>
+<tbody>
+<tr><td class="left">Catetory 是固定的，很少变化</td><td class="left"></td><td class="left">而TAG可以随时增加</td></tr>
+<tr><td class="left">ORG mode的标签是继承的</td><td class="left">元数据定义的标签整个文档继承</td><td class="left"></td></tr>
+</tbody>
+</table>
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">command</th><th scope="col" class="left">description</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">M x eval-buffer</td><td class="left">refresh the config</td></tr>
+<tr><td class="left">#<a name="A" class="target">锚点A</a></td><td class="left">~<a href="#A">锚点A</a>~</td></tr>
+<tr><td class="left"><a name="radio-B" class="target">radio B</a></td><td class="left"><a href="#radio-B">radio B</a></td></tr>
+<tr><td class="left">C c C x f</td><td class="left"></td></tr>
+<tr><td class="left">#+CAPTION</td><td class="left">title of table or pic</td></tr>
+<tr><td class="left">#+LABLE</td><td class="left">one lable, <a href="#lable-name">lable name</a></td></tr>
+<tr><td class="left">C c C a</td><td class="left">attachment</td></tr>
+<tr><td class="left">C c -</td><td class="left">head line&ndash;&gt;item</td></tr>
+<tr><td class="left">C c C u</td><td class="left">move to headline</td></tr>
+<tr><td class="left">S UP/DOWN</td><td class="left">move curse</td></tr>
+<tr><td class="left">M UP/DOWN</td><td class="left">move content</td></tr>
+</tbody>
+</table>
+
+    table related
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">C c bar</td><td class="left">convert to table</td></tr>
+<tr><td class="left">C 3 C c bar</td><td class="left">convert with 3 space</td></tr>
+<tr><td class="left">M a e</td><td class="left">move to the begin or end of the filed</td></tr>
+<tr><td class="left">M left right</td><td class="left">move the current column</td></tr>
+<tr><td class="left">M S left</td><td class="left">kill the current column</td></tr>
+<tr><td class="left">M S right</td><td class="left">insert new column to curse position or left</td></tr>
+<tr><td class="left">M UP DOWN</td><td class="left">move current row up/down</td></tr>
+<tr><td class="left">M S UP</td><td class="left">kill current row</td></tr>
+<tr><td class="left">M S DOWN</td><td class="left">insert new row above or current curse position</td></tr>
+<tr><td class="left">C u C c -</td><td class="left">insert headline above</td></tr>
+<tr><td class="left">C c -</td><td class="left">insert headline below</td></tr>
+<tr><td class="left">C c RET</td><td class="left">insert headline and move to the line below</td></tr>
+<tr><td class="left">C c ^</td><td class="left">sort lines in region</td></tr>
+<tr><td class="left">C u C c C c</td><td class="left">sort all table calculate with formual</td></tr>
+</tbody>
+</table>
+
+    region
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">C c '</td><td class="left">edit the current region in a new window</td></tr>
+<tr><td class="left">M x org-table-export</td><td class="left"></td></tr>
+<tr><td class="left">M x org-table-import</td><td class="left"></td></tr>
+<tr><td class="left">M h</td><td class="left">paragragh selection</td></tr>
+</tbody>
+</table>
+
+     tag
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">C c C c</td><td class="left">set tag</td></tr>
+<tr><td class="left">C c C q</td><td class="left">set tag</td></tr>
+<tr><td class="left">C c \</td><td class="left">search tag</td></tr>
+<tr><td class="left">C c / m</td><td class="left">search and view in tree mode</td></tr>
+<tr><td class="left">C c  a m</td><td class="left">create the list from the agenda file about one tag</td></tr>
+</tbody>
+</table>
+
+
+<p>
+    todo
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">C S RET</td><td class="left">TODO insert</td></tr>
+<tr><td class="left">C c C s</td><td class="left">scheduler</td></tr>
+<tr><td class="left">C c C t</td><td class="left">change the state</td></tr>
+<tr><td class="left">S Right</td><td class="left">change the state</td></tr>
+<tr><td class="left">S left</td><td class="left">change the state</td></tr>
+<tr><td class="left">C c C v C c / t</td><td class="left">view all TODO in tree mode</td></tr>
+<tr><td class="left">S M RET</td><td class="left">create an TODO with *</td></tr>
+<tr><td class="left">C c a t</td><td class="left">show all the TODO include the agenda file</td></tr>
+<tr><td class="left">C c C x C i/o</td><td class="left">start or start a timer</td></tr>
+<tr><td class="left">C c C x a/A</td><td class="left">archive in this file</td></tr>
+<tr><td class="left">C c C x C s</td><td class="left">archive  to some file</td></tr>
+</tbody>
+</table>
+
+
+<ol>
+<li>
+</li>
+<li>first
+</li>
+<li>second
+</li>
+</ol>
+
+
+
+<ol>
+<li>third
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-2-2" class="outline-4">
+<h4 id="sec-2-2-2">How to export Chinese in PDF format from org file</h4>
+<div class="outline-text-4" id="text-2-2-2">
+
+<p>    <a href="http://yzprofile.me/2013/01/14/emacs-org-mode-xelatex.html">click here</a>
+</p></div>
+
+</div>
+
+<div id="outline-container-2-2-3" class="outline-4">
+<h4 id="sec-2-2-3">example or src is too long?</h4>
+<div class="outline-text-4" id="text-2-2-3">
+
+
+</div>
+
+<div id="outline-container-2-2-3-1" class="outline-5">
+<h5 id="sec-2-2-3-1">soluion 1</h5>
+<div class="outline-text-5" id="text-2-2-3-1">
+
+<p>当在#+begin_example #+end_example或者#+begin_src #+end_src环境中内容过
+多时会占用大量空间，一个解决办法是加上 -t 选项并配合 -h height -w
+width 选项来指定高宽，使它成为有滚动条的区域。但好像无法使用语法高亮并
+且此区域内容是可编辑的。
+</p></div>
+
+</div>
+
+<div id="outline-container-2-2-3-2" class="outline-5">
+<h5 id="sec-2-2-3-2">solution 2</h5>
+<div class="outline-text-5" id="text-2-2-3-2">
+
+
+
+
+<pre class="example">#+html: &lt;div style="height:100px;overflow:auto;border-style:solid;border-width:1px"&gt;
+#+begin_src c++
+typedef int HANDS;
+enum COLOR { Red, Green, Blue, Yellow, White, Black, Brown } ;
+enum BOOL { FALSE, TRUE };
+
+class Animal        // common base to both horse and bird
+{
+public:
+     Animal(int);
+     virtual ~Animal() { cout &lt;&lt; "Animal destructor...\n"; }
+     virtual int GetAge() const { return itsAge; }
+     virtual void SetAge(int age) { itsAge = age; }
+private:
+     int itsAge;
+};
+#+end_src  
+&lt;/div&gt;
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-2-3-3" class="outline-5">
+<h5 id="sec-2-2-3-3">example</h5>
+<div class="outline-text-5" id="text-2-2-3-3">
+
+
+<div style="height:200px;overflow:auto;border-style:solid;border-width:1px">
+
+<pre class="example"><span class="linenr"> 1:  </span>#define LLC_DEST_INVALID         0      /* Invalid LLC PDU type */
+<span class="linenr"> 2:  </span>#define LLC_DEST_SAP             1      /* Type 1 goes here */
+<span class="linenr"> 3:  </span>#define LLC_DEST_CONN            2      /* Type 2 goes here */
+<span class="linenr"> 4:  </span>
+<span class="linenr"> 5:  </span>extern struct list_head llc_sap_list;
+<span class="linenr"> 6:  </span>extern spinlock_t llc_sap_list_lock;
+<span class="linenr"> 7:  </span>
+<span class="linenr"> 8:  </span>extern int llc_rcv(struct sk_buff *skb, struct net_device *dev,
+<span class="linenr"> 9:  </span>           struct packet_type *pt, struct net_device *orig_dev);
+<span class="linenr">10:  </span>
+<span class="linenr">11:  </span>extern int llc_mac_hdr_init(struct sk_buff *skb,
+<span class="linenr">12:  </span>                const unsigned char *sa, const unsigned char *da);
+<span class="linenr">13:  </span>
+<span class="linenr">14:  </span>extern void llc_add_pack(int type, void (*handler)(struct llc_sap *sap,
+<span class="linenr">15:  </span>                           struct sk_buff *skb));
+<span class="linenr">16:  </span>extern void llc_remove_pack(int type);
+<span class="linenr">17:  </span>
+<span class="linenr">18:  </span>extern void llc_set_station_handler(void (*handler)(struct sk_buff *skb));
+<span class="linenr">19:  </span>
+<span class="linenr">20:  </span>extern struct llc_sap *llc_sap_open(unsigned char lsap,
+<span class="linenr">21:  </span>                    int (*rcv)(struct sk_buff *skb,
+<span class="linenr">22:  </span>                           struct net_device *dev,
+<span class="linenr">23:  </span>                           struct packet_type *pt,
+<span class="linenr">24:  </span>                           struct net_device *orig_dev));
+<span class="linenr">25:  </span>static inline void llc_sap_hold(struct llc_sap *sap)
+<span class="linenr">26:  </span>{
+<span class="linenr">27:  </span>    atomic_inc(&amp;sap-&gt;refcnt);
+<span class="linenr">28:  </span>}
+<span class="linenr">29:  </span>
+<span class="linenr">30:  </span>extern void llc_sap_close(struct llc_sap *sap);
+</pre>
+
+</div>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2-2-4" class="outline-4">
+<h4 id="sec-2-2-4">How to remove the section number when export to html</h4>
+<div class="outline-text-4" id="text-2-2-4">
+
+
+
+
+<pre class="example">(setq org-export-with-section-numbers nil)
+#+options: num:nil
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2-2-5" class="outline-4">
+<h4 id="sec-2-2-5">agenda export to icalendar</h4>
+<div class="outline-text-4" id="text-2-2-5">
+
+
+
+
+<pre class="example">(setq org-agenda-custom-commands
+      '(("h" "Home-related tasks"
+         ((tags "@home")
+          (tags-todo "@home"))
+         ((org-agenda-ndays 300)
+          (org-icalendar-include-todo t)
+          (org-icalendar-combined-name "Perso")
+          (org-icalendar-use-scheduled '(todo-due  event-if-todo
+event-if-not-todo))
+          (org-icalendar-use-deadline '(todo-due event-if-todo
+event-if-not-todo)))
+         ("~/org/homecal.ics" "~/org/homecal.html"))
+        ("w" "Work-related tasks"
+         ((tags "@work")
+          (tags-todo "@work"))
+         ((org-agenda-ndays 300)
+          (org-icalendar-include-todo t)
+          (org-icalendar-combined-name "Work")
+          (org-icalendar-use-scheduled '(todo-due  event-if-todo
+event-if-not-todo))
+          (org-icalendar-use-deadline '(todo-due event-if-todo
+event-if-not-todo)))
+         ("~/org/workcal.ics" "~/org/workcal.html"))))
+</pre>
+
+<p>
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-09-27 周五 17:40</span></span>
+</p></div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Tips</h2>
+<div class="outline-text-2" id="text-3">
+
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1">life</h3>
+<div class="outline-text-3" id="text-3-1">
+
+
+</div>
+
+<div id="outline-container-3-1-1" class="outline-4">
+<h4 id="sec-3-1-1">分享</h4>
+<div class="outline-text-4" id="text-3-1-1">
+
+
+</div>
+
+<div id="outline-container-3-1-1-1" class="outline-5">
+<h5 id="sec-3-1-1-1">如果你受了伤，你要帮助他人减轻伤痛。如果你感到痛苦，你要帮助别人减轻痛苦。如果你的生活一团糟，让自己去帮助其他处在困境中的人摆脱困境。</h5>
+<div class="outline-text-5" id="text-3-1-1-1">
+
+
+<p> 
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-09-02 周一 16:10</span></span>
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-3-1-2" class="outline-4">
+<h4 id="sec-3-1-2">body building</h4>
+<div class="outline-text-4" id="text-3-1-2">
+
+<p>你永远不会等到完美的健身时间和健身条件。你要主动创造它们，就好像我们每天、每分、每秒都在寻找不锻炼的借口一样。 
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-09-02 周一 16:35</span></span>
+</p></div>
+
+</div>
+
+<div id="outline-container-3-1-3" class="outline-4">
+<h4 id="sec-3-1-3">彼得德鲁克说，每两年都要有一个学习主题</h4>
+<div class="outline-text-4" id="text-3-1-3">
+
+
+<p> 
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-09-02 周一 20:45</span></span>
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2">Read GTD through</h3>
+<div class="outline-text-3" id="text-3-2">
+
+
+</div>
+
+<div id="outline-container-3-2-1" class="outline-4">
+<h4 id="sec-3-2-1">notes</h4>
+<div class="outline-text-4" id="text-3-2-1">
+
+
+</div>
+
+<div id="outline-container-3-2-1-1" class="outline-5">
+<h5 id="sec-3-2-1-1">在某一时刻，决策行动的4个标准的模式</h5>
+<div class="outline-text-5" id="text-3-2-1-1">
+
+<ol>
+<li>环境
+</li>
+<li>有多少时间
+</li>
+<li>有多少精力
+</li>
+<li>重要性
+</li>
+</ol>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3-2-1-2" class="outline-5">
+<h5 id="sec-3-2-1-2">启动思维的技巧</h5>
+<div class="outline-text-5" id="text-3-2-1-2">
+
+<ol>
+<li>不判断，不质疑，不评估，不批判
+</li>
+<li>追求数量，不求质量
+</li>
+<li>把分析组织工作至于其次的位置
+</li>
+</ol>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3-2-2" class="outline-4">
+<h4 id="sec-3-2-2">Tips</h4>
+<div class="outline-text-4" id="text-3-2-2">
+
+
+</div>
+
+<div id="outline-container-3-2-2-1" class="outline-5">
+<h5 id="sec-3-2-2-1">领先的秘密在于开始行动。开始行动的秘密在于把复杂的大宗任务分解成为可以操作的细小工作，然后开始实施第一项内容。&ndash; 马克.吐温</h5>
+<div class="outline-text-5" id="text-3-2-2-1">
+
+
+<p> 
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-10-02 周三 18:35</span></span>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-2-2-2" class="outline-5">
+<h5 id="sec-3-2-2-2">无论问题多大、多严峻，你总可以向解决它们的方向迈出小小的一步，来根除掉束手无策的感觉。行动起来吧</h5>
+<div class="outline-text-5" id="text-3-2-2-2">
+
+
+<p> 
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-10-02 周三 18:40</span></span>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-2-2-3" class="outline-5">
+<h5 id="sec-3-2-2-3">任何一项成功的工作在进行到中途时，看起来都如同一场灾难。</h5>
+<div class="outline-text-5" id="text-3-2-2-3">
+
+
+<p> 
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-10-02 周三 17:20</span></span>
+</p></div>
+
+</div>
+
+<div id="outline-container-3-2-2-4" class="outline-5">
+<h5 id="sec-3-2-2-4">让我们把超前的焦虑变成超前的思考和策划</h5>
+<div class="outline-text-5" id="text-3-2-2-4">
+
+
+<p> 
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-10-02 周三 17:35</span></span>
+</p></div>
+
+</div>
+
+<div id="outline-container-3-2-2-5" class="outline-5">
+<h5 id="sec-3-2-2-5">焦虑和内疚并不是因为承担太多的工作而造成的，这是由于你撕毁了同自己签订的协议而导致后果</h5>
+<div class="outline-text-5" id="text-3-2-2-5">
+
+
+<p> 
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-10-02 周三 17:45</span></span>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-2-2-6" class="outline-5">
+<h5 id="sec-3-2-2-6">我们都可能遇到这种情况：有时，思维敏捷；有时，应该远离思考</h5>
+<div class="outline-text-5" id="text-3-2-2-6">
+
+
+<p> 
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-10-02 周三 16:40</span></span>
+</p></div>
+
+</div>
+
+<div id="outline-container-3-2-2-7" class="outline-5">
+<h5 id="sec-3-2-2-7">你的工作就是发现你的工作，然后全身心的投入其中               &ndash;佛</h5>
+<div class="outline-text-5" id="text-3-2-2-7">
+
+
+<p> 
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-10-02 周三 16:55</span></span>
+</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3-3" class="outline-3">
+<h3 id="sec-3-3">ubuntu</h3>
+<div class="outline-text-3" id="text-3-3">
+
+
+</div>
+
+<div id="outline-container-3-3-1" class="outline-4">
+<h4 id="sec-3-3-1">font</h4>
+<div class="outline-text-4" id="text-3-3-1">
+
+<p>    sudo fc-cache -fv .fonts 
+</p></div>
+
+</div>
+
+<div id="outline-container-3-3-2" class="outline-4">
+<h4 id="sec-3-3-2">rtorrent</h4>
+<div class="outline-text-4" id="text-3-3-2">
+
+
+<div style="height:200px;overflow:auto;border-style:solid;border-width:1px">
+
+<pre class="example">#号后面的是注释，不用管他，蓝色标出的是比较重要的配置
+
+##################################     配置文件开始    ####################################
+# This is an example resource file for rTorrent. Copy to
+# ~/.rtorrent.rc and enable/modify the options as needed. Remember to
+# uncomment the options you wish to enable.
+
+# 每个torrent文件允许连接的最大以及最小的peer的数目
+min_peers = 40
+max_peers = 250
+
+# Same as above but for seeding completed torrents (-1 = same as downloading)
+#min_peers_seed = 10
+#max_peers_seed = 50
+
+# Maximum number of simultanious uploads per torrent.
+max_uploads = 15
+
+# 全局上传和下载速率，单位是KB. "0" 代表无限制
+download_rate = 75
+upload_rate = 28
+
+# 默认下载目录，下载好的文件会放到这里
+directory = /opt/downloads
+
+# Default session directory. Make sure you don't run multiple instance
+# of rtorrent using the same session directory. Perhaps using a
+# relative path?
+session = /opt/downloads/.session
+
+# 下面是一个非常有用的功能：监视目录
+# 放在/opt/torrent目录底下的torrent文件会自动开始下载
+# 配置好监视目录以后，只要通过samba或scp往这个目录传种子，就会自动开始下载
+schedule = watch_directory,5,5,load_start=/opt/torrent/*.torrent
+#schedule = untied_directory,5,5,stop_untied=
+
+# Close torrents when diskspace is low.
+#schedule = low_diskspace,5,60,close_low_diskspace=100M
+
+# Stop torrents when reaching upload ratio in percent,
+# when also reaching total upload in bytes, or when
+# reaching final upload ratio in percent.
+# example: stop at ratio 2.0 with at least 200 MB uploaded, or else ratio 20.0
+#schedule = ratio,60,60,stop_on_ratio=200,200M,2000
+
+# The ip address reported to the tracker.
+#ip = 127.0.0.1
+#ip = rakshasa.no
+
+# The ip address the listening socket and outgoing connections is
+# bound to.
+#bind = 127.0.0.1
+#bind = rakshasa.no
+
+# Port range to use for listening.
+#port_range = 6890-6999
+
+# Start opening ports at a random position within the port range.
+#port_random = no
+
+# Check hash for finished torrents. Might be usefull until the bug is
+# fixed that causes lack of diskspace not to be properly reported.
+#check_hash = no
+
+# 是否使用UDP trackers，建议选yes
+use_udp_trackers = yes
+
+# Alternative calls to bind and ip that should handle dynamic ip's.
+#schedule = ip_tick,0,1800,ip=rakshasa
+#schedule = bind_tick,0,1800,bind=rakshasa
+
+# 是否允许协议加密，建议改成allow_incoming,enable_retry,prefer_plaintext的组合体，具体原因就不解释了
+# allow_incoming, try_outgoing, require, require_RC4, enable_retry, prefer_plaintext
+#
+# The example value allows incoming encrypted connections, starts unencrypted
+# outgoing connections but retries with encryption if they fail, preferring
+# plaintext to RC4 encryption after the encrypted handshake
+#
+encryption = allow_incoming,enable_retry,prefer_plaintext
+
+#
+# Do not modify the following parameters unless you know what you're doing.
+#
+
+# Hash read-ahead controls how many MB to request the kernel to read
+# ahead. If the value is too low the disk may not be fully utilized,
+# while if too high the kernel might not be able to keep the read
+# pages in memory thus end up trashing.
+#hash_read_ahead = 10
+
+# Interval between attempts to check the hash, in milliseconds.
+#hash_interval = 100
+
+# Number of attempts to check the hash while using the mincore status,
+# before forcing. Overworked systems might need lower values to get a
+# decent hash checking rate.
+#hash_max_tries = 10
+
+# Max number of files to keep open simultaniously.
+#max_open_files = 128
+
+# Number of sockets to simultaneously keep open.
+#max_open_sockets = &lt;no default&gt;
+
+
+# Example of scheduling commands: Switch between two ip's every 5
+# seconds.
+#schedule = "ip_tick1,5,10,ip=torretta"
+#schedule = "ip_tick2,10,10,ip=lampedusa"
+
+# Remove a scheduled event.
+#schedule_remove = "ip_tick1"
+
+#选择utf-8可以在samba中看到中文
+encoding_list = UTF-8
+
+#rtorrent创建的文件夹(或文件)的权限，默认是0644，建议改成0000(感谢xuanwuhu)，使所有用户都能访问。
+#也只有这样在samba中才可以直接打开、拷贝、删除rtorrent创建的文件
+umask = 0000
+
+#下面两个选项打开dht的功能，照做即可，另外如果想让 rtorrent 在启动的时候就使用 DHT，可以把dht=auto改为dht=on
+dht = auto
+dht_port = 6778
+
+#允许peer交换，当然允许了，多多益善啊
+peer_exchange = yes
+
+#最后这个参数和web配置以及远程管理有关，稍后再介绍
+scgi_port = :5000
+</pre>
+
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-3-3-3" class="outline-4">
+<h4 id="sec-3-3-3">cmus</h4>
+<div class="outline-text-4" id="text-3-3-3">
+
+<p><a href="https://wiki.archlinux.org/index.php/Cmus">wiki</a>
+</p></div>
+
+</div>
+
+<div id="outline-container-3-3-4" class="outline-4">
+<h4 id="sec-3-3-4">apt-get install ubuntu-desktop</h4>
+<div class="outline-text-4" id="text-3-3-4">
+
+<p>sudo apt-get install ubuntu-desktop 安装ubuntu桌面，最全最笨的方法。
+</p>
+<p> 
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-09-05 周四 22:05</span></span> 
+</p></div>
+
+</div>
+
+<div id="outline-container-3-3-5" class="outline-4">
+<h4 id="sec-3-3-5">apt-get update -y</h4>
+<div class="outline-text-4" id="text-3-3-5">
+
+<p>yes to all options 
+</p>
+<p> 
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-09-05 周四 22:05</span></span>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-3-6" class="outline-4">
+<h4 id="sec-3-3-6">locale</h4>
+<div class="outline-text-4" id="text-3-3-6">
+
+
+
+
+<pre class="example">$ locale
+LANG=en_US.UTF-8
+LC_CTYPE="en_US.UTF- 8"                    #用户所使用的语言符号及其分类
+LC_NUMERIC="en_US.UTF- 8"                #数字
+LC_TIME="en_US.UTF-8"                      #时间显 示格式
+LC_COLLATE="en_US.UTF-8"                #比较和排序习惯
+LC_MONETARY="en_US.UTF-8"             #LC_MONETARY
+LC_MESSAGES="en_US.UTF- 8"             #信息主要是提示信息,错误信息, 状态信息, 标题, 标签, 按钮和菜单等
+LC_PAPER="en_US.UTF- 8"                    #默认纸张尺寸大小
+LC_NAME="en_US.UTF-8"                     #姓名书写方式
+LC_ADDRESS="en_US.UTF-8"               #地址书写方式
+LC_TELEPHONE="en_US.UTF-8"             #电话号码书写方式
+LC_MEASUREMENT="en_US.UTF-8"        #度量衡表达方式
+LC_IDENTIFICATION="en_US.UTF-8"      #对自身包含信息的概述
+LC_ALL=
+</pre>
+
+<ul>
+<li>优先级
+</li>
+</ul>
+
+
+
+
+<pre class="example">LC_ALL&gt;LC_*&gt;LANG LC_ALL的值将覆盖所有其他的locale设定4.1、如果你设定了
+     LC_ALL＝zh_CN.UTF-8，那么不管LC_*和LANG设定成什么值，它们都会被强
+     制服从LC_ALL的设定，成为 zh_CN.UTF-8。  4.2、假如你设定了LANG＝
+     zh_CN.UTF-8，而其他的LC_*=en_US.UTF- 8，并且没有设定LC_ALL的话，那
+     么系统的locale设定以LC_*=en_US.UTF-8。4.3、假如你设定了LANG＝
+     zh_CN.UTF- 8，而其他的LC_*，和LC_ALL均未设定的话，系统会将LC_*设定
+     成默认值，也就是LANG的值 zh_CN.UTF-8 。  4.4、假如你设定了 LANG＝
+     zh_CN.UTF-8，而其他的LC_CTYPE=en_US.UTF-8，其他的LC_*，和LC_ALL均
+     未设定的话，那么系统的 locale设定将是：LC_CTYPE=en_US.UTF-8，其余
+     的 LC_COLLATE，LC_MESSAGES等等均会采用默认值，也就是 LANG的值，也
+     就是LC_COLLATE＝LC_MESSAGES＝……＝ LC_PAPER＝LANG＝zh_CN.UTF-8。
+
+</pre>
+
+<ul>
+<li>万能药
+</li>
+</ul>
+
+<p>   echo "export LC_ALL=zh_CN.utf8"&gt;&gt; /etc/profile 
+     Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-09-11 周三 00:10</span></span>
+</p></div>
+
+</div>
+
+<div id="outline-container-3-3-7" class="outline-4">
+<h4 id="sec-3-3-7">Change the default shell</h4>
+<div class="outline-text-4" id="text-3-3-7">
+
+<p>查看一下当前的shell
+[phpbird@host3 ~]$ echo $SHELL
+/usr/local/bin/bash
+当然，这是修改后的。
+</p>
+<p>
+修改缺省的shell可以修改 /etc/passwd
+这个文件是用:分割的多行文件，找到需要修改的用户。把最后一行的shell路径替换掉就可以。当然如果不让登录，就修改成一个不存在的shell。如果改错了，就会麻烦点了。
+</p>
+<p> 
+还有一个是用命令来：chsh
+很优雅的方法
+chsh -s /path/to/shell {user-name}
+我这里就是
+chsh -s /usr/local/bin/bash juhui
+不是root用户，需要输入密码。 
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-09-16 周一 09:55</span></span>
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3-4" class="outline-3">
+<h3 id="sec-3-4">tools</h3>
+<div class="outline-text-3" id="text-3-4">
+
+
+</div>
+
+<div id="outline-container-3-4-1" class="outline-4">
+<h4 id="sec-3-4-1">vimium is cool</h4>
+<div class="outline-text-4" id="text-3-4-1">
+
+<p><a href="http://www.appinn.com/vimium/">http://www.appinn.com/vimium/</a> 
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-09-08 周日 01:05</span></span>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-4-2" class="outline-4">
+<h4 id="sec-3-4-2">emacs</h4>
+<div class="outline-text-4" id="text-3-4-2">
+
+
+</div>
+
+<div id="outline-container-3-4-2-1" class="outline-5">
+<h5 id="sec-3-4-2-1">emacs command</h5>
+<div class="outline-text-5" id="text-3-4-2-1">
+
+<p>C表示ctrl，M表示mac下的meta键，windows下要先按ESC在输入命令字符
+C-v  向下移动一屏
+M-v  向上移动一屏
+C-l  重置屏幕光标
+C-n  下移
+C-p  上移
+C-b  左移
+C-f  右移
+M-f  右移一个单词(中文为下一个标点)
+M-b  左移一个单词(中文为上一个标点)
+C-a  光标移动到行首
+C-e  光标移动到行尾
+M-a  光标移动到句首
+M-e  光标移动到句尾
+M-&lt;  光标移动到文字首
+M-&gt;  光标移动到文字尾
+C-u  输入命令的前缀参数，举例：C-u 8 C-f(向前移动8个字符),C-u 8 <b>(输入8个</b>)
+C-g  取消当前命令或输入的参数
+Backspace  删除光标前的一个字符
+C-d  删除光标后的一个字符
+M-Backspace  删除光标前的一个词
+M-d  删除光标后的一个词
+C-k  移除从光标到行尾间的字符
+M-k  移除从光标到句尾间的字符
+C-@  C-w  移除指定光标之间的字符，举例C-@移动光标到指定位置C-w(移除两次光标之间的内容)
+C-y  召回上一次被移除的文字
+M-y  循环召回被移除的文字
+C-x  字符扩展
+    1 关闭窗格，只保留1个窗格
+    u 撤消操作(undo)
+    C-f 查找文件(新文件名为新建)
+    C-s 保存当前文件
+    C-b 显示缓冲区
+    b 缓冲区名称 显示指定文件缓冲区
+    s 保存所有文件
+    f 设置自动换行宽度，默认70，举例：C-u 20 C-x f
+    o 移动到其他窗格
+M-x  命令名扩展
+C-z  挂起Emacs，windows里为最小化Emacs
+M-x  命令名扩展
+     replace-string 查找并替换文字
+     recover-file 恢复自动保存文件
+     fudamental-mode 切换到Fundamental模式
+     text-mode  切换到text模式
+     auto-fill-mode 启动/停用自动换行模式
+C-h 查看帮助信息
+    m 查看当前主模式的文档
+    a 相关命令搜索
+    f 解释函数名
+    i 查看联机手册
+M-q 手动对段落进行换行
+C-s 向前搜索
+C-r 向后搜索
+C-q 解除屏幕冻结 
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-09-09 周一 10:10</span></span>
+</p></div>
+
+</div>
+
+<div id="outline-container-3-4-2-2" class="outline-5">
+<h5 id="sec-3-4-2-2">C x n n C x n w</h5>
+<div class="outline-text-5" id="text-3-4-2-2">
+
+
+<p> 
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-09-12 周四 21:20</span></span>
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-3-4-3" class="outline-4">
+<h4 id="sec-3-4-3">ffmpeg</h4>
+<div class="outline-text-4" id="text-3-4-3">
+
+<p>a complete, cross-platform solution to record, convert and stream audio and video 
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-09-10 周二 23:35</span></span>
+</p></div>
+
+</div>
+
+<div id="outline-container-3-4-4" class="outline-4">
+<h4 id="sec-3-4-4">istanbul</h4>
+<div class="outline-text-4" id="text-3-4-4">
+
+<p><a href="https://wiki.gnome.org/Istanbul">another tool</a>
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3-5" class="outline-3">
+<h3 id="sec-3-5">commands</h3>
+<div class="outline-text-3" id="text-3-5">
+
+
+</div>
+
+<div id="outline-container-3-5-1" class="outline-4">
+<h4 id="sec-3-5-1">dump-nftable for dump the netfilter entry</h4>
+<div class="outline-text-4" id="text-3-5-1">
+
+
+<p> 
+Added: <span class="timestamp-wrapper"> <span class="timestamp">2013-09-13 周五 15:20</span></span>
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3-6" class="outline-3">
+<h3 id="sec-3-6">wisdom in life</h3>
+<div class="outline-text-3" id="text-3-6">
+
+
+</div>
+
+<div id="outline-container-3-6-1" class="outline-4">
+<h4 id="sec-3-6-1">Say sorry in family, but not argue with your family</h4>
+<div class="outline-text-4" id="text-3-6-1">
+
+
+<p> 
+Added: [2013-10-02 周三 18:40
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3-7" class="outline-3">
+<h3 id="sec-3-7">Management</h3>
+<div class="outline-text-3" id="text-3-7">
+
+
+
+</div>
+
+<div id="outline-container-3-7-1" class="outline-4">
+<h4 id="sec-3-7-1">Becoming a manager</h4>
+<div class="outline-text-4" id="text-3-7-1">
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3-8" class="outline-3">
+<h3 id="sec-3-8">Could</h3>
+<div class="outline-text-3" id="text-3-8">
+
+
+
+</div>
+
+<div id="outline-container-3-8-1" class="outline-4">
+<h4 id="sec-3-8-1">Tips</h4>
+<div class="outline-text-4" id="text-3-8-1">
+
+
+
+</div>
+
+<div id="outline-container-3-8-1-1" class="outline-5">
+<h5 id="sec-3-8-1-1">是否可能，运营商不再需要买我们的具体设备，而是买C&amp;P</h5>
+<div class="outline-text-5" id="text-3-8-1-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-3-8-1-2" class="outline-5">
+<h5 id="sec-3-8-1-2">Service module</h5>
+<div class="outline-text-5" id="text-3-8-1-2">
+
+<p><img src="./cloud/iaas-paas-saas.jpg"  alt="./cloud/iaas-paas-saas.jpg" />
+</p><ul>
+<li id="sec-3-8-1-2-1">Infrastructure as a service<br/>
+
+</li>
+</ul>
+<ul>
+<li id="sec-3-8-1-2-2">Platform as a servic<br/>
+
+</li>
+</ul>
+<ul>
+<li id="sec-3-8-1-2-3">Software as a service<br/>
+
+</li>
+</ul>
+<ul>
+<li id="sec-3-8-1-2-4">Network as a service<br/>
+Mobile network virtualization: Model in which a telecommunications
+manufacturer or independent network operator builds and operates a
+network (wireless, or transport connectivity) and sells its
+communication access capabilities to third parties (commonly mobile
+phone operators) charging by capacity utilization. A mobile virtual
+network operator (MVNO), is a mobile communications services provider
+that does not own the radio spectrum or wireless network
+infrastructure over which it provides services. Commonly a MVNO offers
+its communication services using the network infrastructure of an
+established mobile network operator
+
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3-9" class="outline-3">
+<h3 id="sec-3-9">Introduction to motivation</h3>
+<div class="outline-text-3" id="text-3-9">
+
+
+
+</div>
+
+<div id="outline-container-3-9-1" class="outline-4">
+<h4 id="sec-3-9-1">Needs hierachy</h4>
+<div class="outline-text-4" id="text-3-9-1">
+
+<p><img src="./notes/need_hierachy.png"  alt="./notes/need_hierachy.png" />
+</p>
+</div>
+
+<div id="outline-container-3-9-1-1" class="outline-5">
+<h5 id="sec-3-9-1-1">Belonging needs</h5>
+<div class="outline-text-5" id="text-3-9-1-1">
+
+<p>Involve employee
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-9-1-2" class="outline-5">
+<h5 id="sec-3-9-1-2">Self-esteem needs</h5>
+<div class="outline-text-5" id="text-3-9-1-2">
+
+<p>Validate employee
+</p></div>
+
+</div>
+
+<div id="outline-container-3-9-1-3" class="outline-5">
+<h5 id="sec-3-9-1-3">Self-actualization needs</h5>
+<div class="outline-text-5" id="text-3-9-1-3">
+
+<p>Develop employee
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-3-9-2" class="outline-4">
+<h4 id="sec-3-9-2">SMARTER</h4>
+<div class="outline-text-4" id="text-3-9-2">
+
+<p><img src="./notes/smarter.png"  alt="./notes/smarter.png" />
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3-10" class="outline-3">
+<h3 id="sec-3-10">Business execution</h3>
+<div class="outline-text-3" id="text-3-10">
+
+
+
+</div>
+
+<div id="outline-container-3-10-1" class="outline-4">
+<h4 id="sec-3-10-1">Practice-people</h4>
+<div class="outline-text-4" id="text-3-10-1">
+
+<p><img src="./notes/p_practice.png"  alt="./notes/p_practice.png" />
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-10-2" class="outline-4">
+<h4 id="sec-3-10-2"></h4>
+<div class="outline-text-4" id="text-3-10-2">
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3-11" class="outline-3">
+<h3 id="sec-3-11">九大贵人</h3>
+<div class="outline-text-3" id="text-3-11">
+
+
+
+
+<pre class="example">激励你，让你看到自己优点的人
+帮你清理生活工作思路的人
+给你分享好消息的人
+提醒你看清自己不足的人
+愿介绍成功朋友给你认识的人
+相信你教导你成长的人
+欣赏你维护你并志趣相投的人
+给你正能量带去轻松快乐的人
+能提供学习机会成长平台的人
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3-12" class="outline-3">
+<h3 id="sec-3-12">法显</h3>
+<div class="outline-text-3" id="text-3-12">
+
+
+</div>
+
+<div id="outline-container-3-12-1" class="outline-4">
+<h4 id="sec-3-12-1">公元399</h4>
+<div class="outline-text-4" id="text-3-12-1">
+
+<p>公元399年，62岁的法显开始西行。
+</p></div>
+
+</div>
+
+<div id="outline-container-3-12-2" class="outline-4">
+<h4 id="sec-3-12-2">楼兰</h4>
+<div class="outline-text-4" id="text-3-12-2">
+
+<p>修习小乘佛法。鄯善
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-12-3" class="outline-4">
+<h4 id="sec-3-12-3">和田</h4>
+<div class="outline-text-4" id="text-3-12-3">
+
+<p>于阗，公元三世纪，朱士行
+公元400年春，法显至此
+</p></div>
+
+</div>
+
+<div id="outline-container-3-12-4" class="outline-4">
+<h4 id="sec-3-12-4">大乘小乘</h4>
+<div class="outline-text-4" id="text-3-12-4">
+
+<p>大乘，普渡众生
+小乘，超脱个人
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-12-5" class="outline-4">
+<h4 id="sec-3-12-5">公元401年</h4>
+<div class="outline-text-4" id="text-3-12-5">
+
+<p>帕米尔高原
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-12-6" class="outline-4">
+<h4 id="sec-3-12-6">六十六岁</h4>
+<div class="outline-text-4" id="text-3-12-6">
+
+<p>那竭
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-12-7" class="outline-4">
+<h4 id="sec-3-12-7">公元405年-407年</h4>
+<div class="outline-text-4" id="text-3-12-7">
+
+</div>
+
+</div>
+
+<div id="outline-container-3-12-8" class="outline-4">
+<h4 id="sec-3-12-8">七十岁</h4>
+<div class="outline-text-4" id="text-3-12-8">
+
+<p>回国
+心生种种画，画生种种心，心画不而者，即是如来身。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-12-9" class="outline-4">
+<h4 id="sec-3-12-9">斯里兰卡</h4>
+<div class="outline-text-4" id="text-3-12-9">
+
+<p>乐土，光明富庶的土地。
+停留两年
+七十二岁
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-12-10" class="outline-4">
+<h4 id="sec-3-12-10">公元411年8月</h4>
+<div class="outline-text-4" id="text-3-12-10">
+
+<p>74岁东归
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-12-11" class="outline-4">
+<h4 id="sec-3-12-11">75岁</h4>
+<div class="outline-text-4" id="text-3-12-11">
+
+<p>崂山
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-12-12" class="outline-4">
+<h4 id="sec-3-12-12">公元412年</h4>
+<div class="outline-text-4" id="text-3-12-12">
+
+<p>建康，翻译，江苏南京
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-12-13" class="outline-4">
+<h4 id="sec-3-12-13">江陵辛寺</h4>
+<div class="outline-text-4" id="text-3-12-13">
+
+<p>佛国记
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-12-14" class="outline-4">
+<h4 id="sec-3-12-14">公元423年</h4>
+<div class="outline-text-4" id="text-3-12-14">
+
+<p>逝世 86岁
+</p></div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-12-09T10:46+0800</p>
+<p class="author">Author: Kevin Gao</p>
+<p class="email"><a href="mailto:leijia.gao@nsn.com">leijia.gao@nsn.com</a></p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

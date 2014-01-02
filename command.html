@@ -1,0 +1,1760 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Traffic related command collection</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="Traffic related command collection"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-10-17T09:31+0800"/>
+<meta name="author" content="Kevin Gao"/>
+<meta name="description" content=""/>
+<meta name="keywords" content="octeon, register, performance, configuration"/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" type="text/css" href="http://kevinfhell.github.io/worg.css">
+<link rel="stylesheet" type="text/css" href="orgstyle.css" /
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
+ <a accesskey="h" href="#"> UP </a>
+ |
+ <a accesskey="H" href="theindex.html"> HOME </a>
+</div>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Traffic related command collection</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Configuration</a>
+<ul>
+<li><a href="#sec-1-1">Hardware</a>
+<ul>
+<li><a href="#sec-1-1-1">FPA</a>
+<ul>
+<li><a href="#sec-1-1-1-1">eitpste resource show fpa config</a></li>
+<li><a href="#sec-1-1-1-2">oct-linux-csr FPA_INT_ENB</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-1-2">SSO</a>
+<ul>
+<li><a href="#sec-1-1-2-1">oct-linux-csr SSO_NW_TIM</a></li>
+<li><a href="#sec-1-1-2-2">oct-linux-csr SSO_ERR_ENB</a></li>
+<li><a href="#sec-1-1-2-3">oct-linux-csr SSO_IQ_INT_EN</a></li>
+<li><a href="#sec-1-1-2-4">oct-linux-csr SSO_CFG</a></li>
+<li><a href="#sec-1-1-2-5">oct-linux-csr SSO_GWE_CFG</a></li>
+<li><a href="#sec-1-1-2-6">oct-linux-csr SSO_PND_ECC_CTL</a></li>
+<li><a href="#sec-1-1-2-7">oct-linux-csr SSO_OTH_ECC_CTL</a></li>
+<li><a href="#sec-1-1-2-8">oct-linux-csr SSO_IDX_ECC_CTL</a></li>
+<li><a href="#sec-1-1-2-9">oct-linux-csr SSO_FIDX_ECC_CTL</a></li>
+<li><a href="#sec-1-1-2-10">oct-linux-csr SSO_PP_STRICT</a></li>
+<li><a href="#sec-1-1-2-11">for i in `seq 0 7`;do oct-linux-csr SSO_QOS${i}_RND;done</a></li>
+<li><a href="#sec-1-1-2-12">for i in `seq 0 31`;do oct-linux-csr SSO_PP${i}_QOS_PRI;done</a></li>
+<li><a href="#sec-1-1-2-13">for i in `seq 0 31`;do oct-linux-csr SSO_PP${i}_GRP_MSK;done</a></li>
+<li><a href="#sec-1-1-2-14">for i in `seq 0 63`;do oct-linux-csr SSO_WQ_INT_THR${i};done</a></li>
+<li><a href="#sec-1-1-2-15">for i in `seq 0 7`;do oct-linux-csr SSO_IQ_THR${i};done</a></li>
+<li><a href="#sec-1-1-2-16">for i in `seq 0 7`;do oct-linux-csr SSO_QOS_THR${i};done</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-1-3">PIP</a>
+<ul>
+<li><a href="#sec-1-1-3-1">oct-linux-csr  PIP_INT_EN</a></li>
+<li><a href="#sec-1-1-3-2">oct-linux-csr PIP_GBL_CTL</a></li>
+<li><a href="#sec-1-1-3-3">oct-linux-csr PIP_STAT_CTL</a></li>
+<li><a href="#sec-1-1-3-4">oct-linux-csr PIP_GBL_CFG</a></li>
+<li><a href="#sec-1-1-3-5">for i in `seq 0 7`;do oct-linux-csr PIP_QOS_WATCH$i;done</a></li>
+<li><a href="#sec-1-1-3-6">for i in 0 1;do oct-linux-csr PIP_FRM_LEN_CHK$i;done</a></li>
+<li><a href="#sec-1-1-3-7">for i in 0 1;do oct-linux-csr PIP_PRT_CFG$i;done</a></li>
+<li><a href="#sec-1-1-3-8">for i in 0 1;do oct-linux-csr PIP_PRT_TAG$i;done</a></li>
+<li><a href="#sec-1-1-3-9">oct-linux-csr PIP_SUB_PKIND_FCS0</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-1-4">IPD</a>
+<ul>
+<li><a href="#sec-1-1-4-1">oct-linux-csr IPD_1ST_MBUFF_SKIP</a></li>
+<li><a href="#sec-1-1-4-2">oct-linux-csr IPD_NOT_1ST_MBUFF_SKIP</a></li>
+<li><a href="#sec-1-1-4-3">oct-linux-csr IPD_PACKET_MBUFF_SIZE</a></li>
+<li><a href="#sec-1-1-4-4">oct-linux-csr IPD_CTL_STATUS</a></li>
+<li><a href="#sec-1-1-4-5">oct-linux-csr IPD_WQE_FPA_QUEUE</a></li>
+<li><a href="#sec-1-1-4-6">oct-linux-csr IPD_INT_ENB</a></li>
+<li><a href="#sec-1-1-4-7">for i in `seq 0 7`;do oct-linux-csr IPD_QOS${i}_RED_MARKS;done</a></li>
+<li><a href="#sec-1-1-4-8">for i in `seq 0 7`;do oct-linux-csr IPD_RED_QUE${i}_PARAM;done</a></li>
+<li><a href="#sec-1-1-4-9">oct-linux-csr IPD_RED_BPID_ENABLE0</a></li>
+<li><a href="#sec-1-1-4-10">oct-linux-csr IPD_RED_DELAY</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-1-5">PKO</a>
+<ul>
+<li><a href="#sec-1-1-5-1">oct-linux-csr PKO_REG_FLAGS</a></li>
+<li><a href="#sec-1-1-5-2">oct-linux-csr PKO_REG_CMD_BUF</a></li>
+<li><a href="#sec-1-1-5-3">for i in `seq 0 31`;do oct-linux-csr pko_reg_read_idx ${i}; oct-linux-csr PKO_MEM_PORT_RATE1;done</a></li>
+<li><a href="#sec-1-1-5-4">for i in `seq 0 31`;do oct-linux-csr pko_reg_read_idx ${i}; oct-linux-csr PKO_MEM_IPORT_PTRS;done</a></li>
+<li><a href="#sec-1-1-5-5">for i in `seq 0 31`;do oct-linux-csr pko_reg_read_idx ${i}; oct-linux-csr PKO_MEM_IPORT_QOS;done</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-1-6">TIM</a>
+<ul>
+<li><a href="#sec-1-1-6-1">oct-linux-csr TIM_REG_FLAGS</a></li>
+<li><a href="#sec-1-1-6-2">oct-linux-csr TIM_FR_RN_TT</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-1-7">GMX</a>
+<ul>
+<li><a href="#sec-1-1-7-1">oct-linux-csr GMX2_TX000_MIN_PKT</a></li>
+<li><a href="#sec-1-1-7-2">oct-linux-csr GMX4_TX000_MIN_PKT</a></li>
+<li><a href="#sec-1-1-7-3">oct-linux-csr GMX2_PRT000_CFG</a></li>
+<li><a href="#sec-1-1-7-4">oct-linux-csr GMX4_PRT000_CFG</a></li>
+<li><a href="#sec-1-1-7-5">oct-linux-csr GMX2_RX000_IFG</a></li>
+<li><a href="#sec-1-1-7-6">oct-linux-csr GMX4_RX000_IFG</a></li>
+<li><a href="#sec-1-1-7-7">oct-linux-csr GMX2_TX000_PAUSE_PKT_INTERVAL</a></li>
+<li><a href="#sec-1-1-7-8">oct-linux-csr GMX4_TX000_PAUSE_PKT_INTERVAL</a></li>
+<li><a href="#sec-1-1-7-9">oct-linux-csr GMX2_TX000_SOFT_PAUSE</a></li>
+<li><a href="#sec-1-1-7-10">oct-linux-csr GMX4_TX000_SOFT_PAUSE</a></li>
+<li><a href="#sec-1-1-7-11">oct-linux-csr GMX2_TX000_PAUSE_ZERO</a></li>
+<li><a href="#sec-1-1-7-12">oct-linux-csr GMX4_TX000_PAUSE_ZERO</a></li>
+<li><a href="#sec-1-1-7-13">oct-linux-csr GMX2_RX_PRTS</a></li>
+<li><a href="#sec-1-1-7-14">oct-linux-csr GMX4_RX_PRTS</a></li>
+<li><a href="#sec-1-1-7-15">oct-linux-csr GMX2_TX_PRTS</a></li>
+<li><a href="#sec-1-1-7-16">oct-linux-csr GMX4_TX_PRTS</a></li>
+<li><a href="#sec-1-1-7-17">oct-linux-csr GMX2_TX_IFG</a></li>
+<li><a href="#sec-1-1-7-18">oct-linux-csr GMX4_TX_IFG</a></li>
+<li><a href="#sec-1-1-7-19">oct-linux-csr GMX2_INF_MODE</a></li>
+<li><a href="#sec-1-1-7-20">oct-linux-csr GMX4_INF_MODE</a></li>
+<li><a href="#sec-1-1-7-21">oct-linux-csr GMX2_TX_XAUI_CTL</a></li>
+<li><a href="#sec-1-1-7-22">oct-linux-csr GMX4_TX_XAUI_CTL</a></li>
+<li><a href="#sec-1-1-7-23">oct-linux-csr GMX2_RX_XAUI_CTL</a></li>
+<li><a href="#sec-1-1-7-24">oct-linux-csr GMX4_RX_XAUI_CTL</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-1-2">Software</a>
+<ul>
+<li><a href="#sec-1-2-1">fastdistcli config show |grep -v xaui0 |grep -v  FASTDIST_CONFIG_MEM</a></li>
+<li><a href="#sec-1-2-2">eitpste mux show parameter</a></li>
+<li><a href="#sec-1-2-3">eitpste udp range show</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-2">Performance</a>
+<ul>
+<li><a href="#sec-2-1">Hardware</a>
+<ul>
+<li><a href="#sec-2-1-1">Drop/error</a>
+<ul>
+<li><a href="#sec-2-1-1-1">for i in 0 1;do oct-linux-csr PIP_STAT0_0;done</a></li>
+<li><a href="#sec-2-1-1-2">for i in 0 1;do oct-linux-csr PIP_STAT_INB_ERRS_PKND;done</a></li>
+<li><a href="#sec-2-1-1-3">oct-linux-csr IPD_PKT_ERR</a></li>
+<li><a href="#sec-2-1-1-4">for i in `seq 0 1`;do oct-linux-csr pip_stat_inb_errs_pknd$i;done</a></li>
+<li><a href="#sec-2-1-1-5">oct-linux-csr pko_reg_error</a></li>
+<li><a href="#sec-2-1-1-6">oct-linux-csr GMX2_RX000_STATS_PKTS_DRP</a></li>
+<li><a href="#sec-2-1-1-7">oct-linux-csr GMX4_RX000_STATS_PKTS_DRP</a></li>
+<li><a href="#sec-2-1-1-8">oct-linux-csr GMX2_RX000_STATS_PKTS_BAD</a></li>
+<li><a href="#sec-2-1-1-9">oct-linux-csr GMX4_RX000_STATS_PKTS_BAD</a></li>
+<li><a href="#sec-2-1-1-10">oct-linux-csr GMX2_RX000_INT_REG</a></li>
+<li><a href="#sec-2-1-1-11">oct-linux-csr GMX4_RX000_INT_REG</a></li>
+<li><a href="#sec-2-1-1-12">oct-linux-csr GMX2_RX000_STATS_PKTS</a></li>
+<li><a href="#sec-2-1-1-13">oct-linux-csr GMX4_RX000_STATS_PKTS</a></li>
+<li><a href="#sec-2-1-1-14">oct-linux-csr GMX2_RX000_STATS_OCTS</a></li>
+<li><a href="#sec-2-1-1-15">oct-linux-csr GMX4_RX000_STATS_OCTS</a></li>
+<li><a href="#sec-2-1-1-16">oct-linux-csr GMX2_RX000_STATS_PKTS_CTL</a></li>
+<li><a href="#sec-2-1-1-17">oct-linux-csr GMX4_RX000_STATS_PKTS_CTL</a></li>
+<li><a href="#sec-2-1-1-18">oct-linux-csr GMX2_RX000_STATS_OCTS_CTL</a></li>
+<li><a href="#sec-2-1-1-19">oct-linux-csr GMX4_RX000_STATS_OCTS_CTL</a></li>
+<li><a href="#sec-2-1-1-20">oct-linux-csr GMX2_RX000_STATS_PKTS_DRP</a></li>
+<li><a href="#sec-2-1-1-21">oct-linux-csr GMX4_RX000_STATS_PKTS_DRP</a></li>
+<li><a href="#sec-2-1-1-22">oct-linux-csr GMX2_RX000_STATS_OCTS_DRP</a></li>
+<li><a href="#sec-2-1-1-23">oct-linux-csr GMX4_RX000_STATS_OCTS_DRP</a></li>
+<li><a href="#sec-2-1-1-24">oct-linux-csr GMX2_RX000_STATS_PKTS_BAD</a></li>
+<li><a href="#sec-2-1-1-25">oct-linux-csr GMX4_RX000_STATS_PKTS_BAD</a></li>
+<li><a href="#sec-2-1-1-26">oct-linux-csr GMX2_RX000_STATS_OCTS_BAD</a></li>
+<li><a href="#sec-2-1-1-27">oct-linux-csr GMX4_RX000_STATS_OCTS_BAD</a></li>
+<li><a href="#sec-2-1-1-28">oct-linux-csr GMX2_TX000_STAT0</a></li>
+<li><a href="#sec-2-1-1-29">oct-linux-csr GMX4_TX000_STAT0</a></li>
+<li><a href="#sec-2-1-1-30">oct-linux-csr GMX2_TX000_STAT1</a></li>
+<li><a href="#sec-2-1-1-31">oct-linux-csr GMX4_TX000_STAT1</a></li>
+<li><a href="#sec-2-1-1-32">oct-linux-csr SSO_ERR</a></li>
+<li><a href="#sec-2-1-1-33">oct-linux-csr SSO_IQ_INT</a></li>
+<li><a href="#sec-2-1-1-34">oct-linux-csr SSO_WQ_INT</a></li>
+<li><a href="#sec-2-1-1-35">oct-linux-csr SSO_PND_ECC_ST</a></li>
+<li><a href="#sec-2-1-1-36">oct-linux-csr SSO_OTH_ECC_ST</a></li>
+<li><a href="#sec-2-1-1-37">oct-linux-csr SSO_IDX_ECC_ST</a></li>
+<li><a href="#sec-2-1-1-38">oct-linux-csr SSO_FIDX_ECC_ST</a></li>
+<li><a href="#sec-2-1-1-39">for i in `seq 0 63`;do oct-linux-csr SSO_WQ_INT_CNT${i};done</a></li>
+<li><a href="#sec-2-1-1-40">oct-linux-csr GMX2_TX000_STAT9</a></li>
+<li><a href="#sec-2-1-1-41">oct-linux-csr GMX4_TX000_STAT9</a></li>
+<li><a href="#sec-2-1-1-42">oct-linux-csr PCS2_RX000_STATES_REG</a></li>
+<li><a href="#sec-2-1-1-43">oct-linux-csr PCS4_RX000_STATES_REG</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-1-2">Buffer</a>
+<ul>
+<li><a href="#sec-2-1-2-1">for i in `seq 0 8`;do oct-linux-csr fpa_que${i}_available;done</a></li>
+<li><a href="#sec-2-1-2-2">oct-linux-csr PIP_BCK_PRS</a></li>
+<li><a href="#sec-2-1-2-3">oct-linux-csr IPD_PTR_COUNT</a></li>
+<li><a href="#sec-2-1-2-4">oct-llinux-csr IPD_QUE0_FREE_PAGE_CNT</a></li>
+<li><a href="#sec-2-1-2-5">oct-linux-csr IPD_PORT_SOP0</a></li>
+<li><a href="#sec-2-1-2-6">for i in `seq 0 31`;do oct-linux-csr pko_reg_read_idx ${i}; oct-linux-csr PKO_MEM_COUNT0;done</a></li>
+<li><a href="#sec-2-1-2-7">for i in `seq 0 31`;do oct-linux-csr pko_reg_read_idx ${i}; oct-linux-csr PKO_MEM_COUNT1;done</a></li>
+<li><a href="#sec-2-1-2-8">oct-linux-csr SSO_NOS_CNT</a></li>
+<li><a href="#sec-2-1-2-9">oct-linux-csr SSO_IQ_COM_CNT</a></li>
+<li><a href="#sec-2-1-2-10">oct-linux-csr SSO_QOS_WE</a></li>
+<li><a href="#sec-2-1-2-11">oct-linux-csr SSO_FPAGE_CNT</a></li>
+<li><a href="#sec-2-1-2-12">oct-linux-csr SSO_IQ_CNT${i}</a></li>
+<li><a href="#sec-2-1-2-13">oct-linux-csr SSO_RWQ_PSH_FPTR</a></li>
+<li><a href="#sec-2-1-2-14">oct-linux-csr GMX2_TX_BP</a></li>
+<li><a href="#sec-2-1-2-15">oct-linux-csr GMX4_TX_BP</a></li>
+<li><a href="#sec-2-1-2-16">oct-linux-csr GMX2_STAT_BP</a></li>
+<li><a href="#sec-2-1-2-17">oct-linux-csr GMX4_STAT_BP</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-1-3">Throughput</a>
+<ul>
+<li><a href="#sec-2-1-3-1">for i in `seq 0 3`;do oct-linux-csr sleep 1&amp;&amp;PIP_STAT1_0;done</a></li>
+<li><a href="#sec-2-1-3-2">for i in `seq 0 3`;do oct-linux-csr sleep 1&amp;&amp;PIP_STAT1_1;done</a></li>
+<li><a href="#sec-2-1-3-3">for i in `seq 0 3`;do oct-linux-csr sleep 1&amp;&amp;PIP_STAT2_0;done</a></li>
+<li><a href="#sec-2-1-3-4">for i in `seq 0 3`;do oct-linux-csr sleep 1&amp;&amp;PIP_STAT2_1;done</a></li>
+<li><a href="#sec-2-1-3-5">for i in `seq 0 1`;do oct-linux-csr pip_stat_inb_pkts_pknd$i;done</a></li>
+<li><a href="#sec-2-1-3-6">oct-linux-csr SSO_WA_COM_PC</a></li>
+<li><a href="#sec-2-1-3-7">oct-linux-csr SSO_TS_PC</a></li>
+<li><a href="#sec-2-1-3-8">oct-linux-csr SSO_DS_PC</a></li>
+<li><a href="#sec-2-1-3-9">for i in `seq 0 63`;do oct-linux-csr SSO_WS_PC${i};done</a></li>
+<li><a href="#sec-2-1-3-10">for i in `seq 0 7`;do oct-linux-csr SSO_WA_PC${i};done</a></li>
+<li><a href="#sec-2-1-3-11">oct-linux-csr GMX2_TX000_STAT2</a></li>
+<li><a href="#sec-2-1-3-12">oct-linux-csr GMX4_TX000_STAT2</a></li>
+<li><a href="#sec-2-1-3-13">oct-linux-csr GMX2_TX000_STAT3</a></li>
+<li><a href="#sec-2-1-3-14">oct-linux-csr GMX4_TX000_STAT3</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-2-2">Software</a>
+<ul>
+<li><a href="#sec-2-2-1">fastdist</a>
+<ul>
+<li><a href="#sec-2-2-1-1">eitpste fastdist entity show</a></li>
+<li><a href="#sec-2-2-1-2">eitpste fastdist interqos show</a></li>
+<li><a href="#sec-2-2-1-3">fastdistcli stat show node</a></li>
+<li><a href="#sec-2-2-1-4">fastdistcli stat show peer all</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-2-2">Qos</a>
+<ul>
+<li><a href="#sec-2-2-2-1">eitpste statistic show</a></li>
+<li><a href="#sec-2-2-2-2">eitpste qos iphb show</a></li>
+<li><a href="#sec-2-2-2-3">eitpste qos idsp all</a></li>
+<li><a href="#sec-2-2-2-4">eitpste ipbuf show</a></li>
+<li><a href="#sec-2-2-2-5">eitpste gtp show</a></li>
+<li><a href="#sec-2-2-2-6">eitpste iue show</a></li>
+<li><a href="#sec-2-2-2-7">eitpste tae show</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Configuration</h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">Hardware</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+</div>
+
+<div id="outline-container-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1">FPA</h4>
+<div class="outline-text-4" id="text-1-1-1">
+
+
+</div>
+
+<div id="outline-container-1-1-1-1" class="outline-5">
+<h5 id="sec-1-1-1-1">eitpste resource show fpa config</h5>
+<div class="outline-text-5" id="text-1-1-1-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-1-2" class="outline-5">
+<h5 id="sec-1-1-1-2">oct-linux-csr FPA_INT_ENB</h5>
+<div class="outline-text-5" id="text-1-1-1-2">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2" class="outline-4">
+<h4 id="sec-1-1-2">SSO</h4>
+<div class="outline-text-4" id="text-1-1-2">
+
+
+</div>
+
+<div id="outline-container-1-1-2-1" class="outline-5">
+<h5 id="sec-1-1-2-1">oct-linux-csr SSO_NW_TIM</h5>
+<div class="outline-text-5" id="text-1-1-2-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2-2" class="outline-5">
+<h5 id="sec-1-1-2-2">oct-linux-csr SSO_ERR_ENB</h5>
+<div class="outline-text-5" id="text-1-1-2-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2-3" class="outline-5">
+<h5 id="sec-1-1-2-3">oct-linux-csr SSO_IQ_INT_EN</h5>
+<div class="outline-text-5" id="text-1-1-2-3">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2-4" class="outline-5">
+<h5 id="sec-1-1-2-4">oct-linux-csr SSO_CFG</h5>
+<div class="outline-text-5" id="text-1-1-2-4">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2-5" class="outline-5">
+<h5 id="sec-1-1-2-5">oct-linux-csr SSO_GWE_CFG</h5>
+<div class="outline-text-5" id="text-1-1-2-5">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2-6" class="outline-5">
+<h5 id="sec-1-1-2-6">oct-linux-csr SSO_PND_ECC_CTL</h5>
+<div class="outline-text-5" id="text-1-1-2-6">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2-7" class="outline-5">
+<h5 id="sec-1-1-2-7">oct-linux-csr SSO_OTH_ECC_CTL</h5>
+<div class="outline-text-5" id="text-1-1-2-7">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2-8" class="outline-5">
+<h5 id="sec-1-1-2-8">oct-linux-csr SSO_IDX_ECC_CTL</h5>
+<div class="outline-text-5" id="text-1-1-2-8">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2-9" class="outline-5">
+<h5 id="sec-1-1-2-9">oct-linux-csr SSO_FIDX_ECC_CTL</h5>
+<div class="outline-text-5" id="text-1-1-2-9">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2-10" class="outline-5">
+<h5 id="sec-1-1-2-10">oct-linux-csr SSO_PP_STRICT</h5>
+<div class="outline-text-5" id="text-1-1-2-10">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2-11" class="outline-5">
+<h5 id="sec-1-1-2-11">for i in `seq 0 7`;do oct-linux-csr SSO_QOS${i}_RND;done</h5>
+<div class="outline-text-5" id="text-1-1-2-11">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2-12" class="outline-5">
+<h5 id="sec-1-1-2-12">for i in `seq 0 31`;do oct-linux-csr SSO_PP${i}_QOS_PRI;done</h5>
+<div class="outline-text-5" id="text-1-1-2-12">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2-13" class="outline-5">
+<h5 id="sec-1-1-2-13">for i in `seq 0 31`;do oct-linux-csr SSO_PP${i}_GRP_MSK;done</h5>
+<div class="outline-text-5" id="text-1-1-2-13">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2-14" class="outline-5">
+<h5 id="sec-1-1-2-14">for i in `seq 0 63`;do oct-linux-csr SSO_WQ_INT_THR${i};done</h5>
+<div class="outline-text-5" id="text-1-1-2-14">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2-15" class="outline-5">
+<h5 id="sec-1-1-2-15">for i in `seq 0 7`;do oct-linux-csr SSO_IQ_THR${i};done</h5>
+<div class="outline-text-5" id="text-1-1-2-15">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2-16" class="outline-5">
+<h5 id="sec-1-1-2-16">for i in `seq 0 7`;do oct-linux-csr SSO_QOS_THR${i};done</h5>
+<div class="outline-text-5" id="text-1-1-2-16">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-3" class="outline-4">
+<h4 id="sec-1-1-3">PIP</h4>
+<div class="outline-text-4" id="text-1-1-3">
+
+
+</div>
+
+<div id="outline-container-1-1-3-1" class="outline-5">
+<h5 id="sec-1-1-3-1">oct-linux-csr  PIP_INT_EN</h5>
+<div class="outline-text-5" id="text-1-1-3-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-3-2" class="outline-5">
+<h5 id="sec-1-1-3-2">oct-linux-csr PIP_GBL_CTL</h5>
+<div class="outline-text-5" id="text-1-1-3-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-3-3" class="outline-5">
+<h5 id="sec-1-1-3-3">oct-linux-csr PIP_STAT_CTL</h5>
+<div class="outline-text-5" id="text-1-1-3-3">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-3-4" class="outline-5">
+<h5 id="sec-1-1-3-4">oct-linux-csr PIP_GBL_CFG</h5>
+<div class="outline-text-5" id="text-1-1-3-4">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-3-5" class="outline-5">
+<h5 id="sec-1-1-3-5">for i in `seq 0 7`;do oct-linux-csr PIP_QOS_WATCH$i;done</h5>
+<div class="outline-text-5" id="text-1-1-3-5">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-3-6" class="outline-5">
+<h5 id="sec-1-1-3-6">for i in 0 1;do oct-linux-csr PIP_FRM_LEN_CHK$i;done</h5>
+<div class="outline-text-5" id="text-1-1-3-6">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-3-7" class="outline-5">
+<h5 id="sec-1-1-3-7">for i in 0 1;do oct-linux-csr PIP_PRT_CFG$i;done</h5>
+<div class="outline-text-5" id="text-1-1-3-7">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-3-8" class="outline-5">
+<h5 id="sec-1-1-3-8">for i in 0 1;do oct-linux-csr PIP_PRT_TAG$i;done</h5>
+<div class="outline-text-5" id="text-1-1-3-8">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-3-9" class="outline-5">
+<h5 id="sec-1-1-3-9">oct-linux-csr PIP_SUB_PKIND_FCS0</h5>
+<div class="outline-text-5" id="text-1-1-3-9">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-4" class="outline-4">
+<h4 id="sec-1-1-4">IPD</h4>
+<div class="outline-text-4" id="text-1-1-4">
+
+
+</div>
+
+<div id="outline-container-1-1-4-1" class="outline-5">
+<h5 id="sec-1-1-4-1">oct-linux-csr IPD_1ST_MBUFF_SKIP</h5>
+<div class="outline-text-5" id="text-1-1-4-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-4-2" class="outline-5">
+<h5 id="sec-1-1-4-2">oct-linux-csr IPD_NOT_1ST_MBUFF_SKIP</h5>
+<div class="outline-text-5" id="text-1-1-4-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-4-3" class="outline-5">
+<h5 id="sec-1-1-4-3">oct-linux-csr IPD_PACKET_MBUFF_SIZE</h5>
+<div class="outline-text-5" id="text-1-1-4-3">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-4-4" class="outline-5">
+<h5 id="sec-1-1-4-4">oct-linux-csr IPD_CTL_STATUS</h5>
+<div class="outline-text-5" id="text-1-1-4-4">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-4-5" class="outline-5">
+<h5 id="sec-1-1-4-5">oct-linux-csr IPD_WQE_FPA_QUEUE</h5>
+<div class="outline-text-5" id="text-1-1-4-5">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-4-6" class="outline-5">
+<h5 id="sec-1-1-4-6">oct-linux-csr IPD_INT_ENB</h5>
+<div class="outline-text-5" id="text-1-1-4-6">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-4-7" class="outline-5">
+<h5 id="sec-1-1-4-7">for i in `seq 0 7`;do oct-linux-csr IPD_QOS${i}_RED_MARKS;done</h5>
+<div class="outline-text-5" id="text-1-1-4-7">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-4-8" class="outline-5">
+<h5 id="sec-1-1-4-8">for i in `seq 0 7`;do oct-linux-csr IPD_RED_QUE${i}_PARAM;done</h5>
+<div class="outline-text-5" id="text-1-1-4-8">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-4-9" class="outline-5">
+<h5 id="sec-1-1-4-9">oct-linux-csr IPD_RED_BPID_ENABLE0</h5>
+<div class="outline-text-5" id="text-1-1-4-9">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-4-10" class="outline-5">
+<h5 id="sec-1-1-4-10">oct-linux-csr IPD_RED_DELAY</h5>
+<div class="outline-text-5" id="text-1-1-4-10">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-5" class="outline-4">
+<h4 id="sec-1-1-5">PKO</h4>
+<div class="outline-text-4" id="text-1-1-5">
+
+
+</div>
+
+<div id="outline-container-1-1-5-1" class="outline-5">
+<h5 id="sec-1-1-5-1">oct-linux-csr PKO_REG_FLAGS</h5>
+<div class="outline-text-5" id="text-1-1-5-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-5-2" class="outline-5">
+<h5 id="sec-1-1-5-2">oct-linux-csr PKO_REG_CMD_BUF</h5>
+<div class="outline-text-5" id="text-1-1-5-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-5-3" class="outline-5">
+<h5 id="sec-1-1-5-3">for i in `seq 0 31`;do oct-linux-csr pko_reg_read_idx ${i}; oct-linux-csr PKO_MEM_PORT_RATE1;done</h5>
+<div class="outline-text-5" id="text-1-1-5-3">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-5-4" class="outline-5">
+<h5 id="sec-1-1-5-4">for i in `seq 0 31`;do oct-linux-csr pko_reg_read_idx ${i}; oct-linux-csr PKO_MEM_IPORT_PTRS;done</h5>
+<div class="outline-text-5" id="text-1-1-5-4">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-5-5" class="outline-5">
+<h5 id="sec-1-1-5-5">for i in `seq 0 31`;do oct-linux-csr pko_reg_read_idx ${i}; oct-linux-csr PKO_MEM_IPORT_QOS;done</h5>
+<div class="outline-text-5" id="text-1-1-5-5">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-6" class="outline-4">
+<h4 id="sec-1-1-6">TIM</h4>
+<div class="outline-text-4" id="text-1-1-6">
+
+
+</div>
+
+<div id="outline-container-1-1-6-1" class="outline-5">
+<h5 id="sec-1-1-6-1">oct-linux-csr TIM_REG_FLAGS</h5>
+<div class="outline-text-5" id="text-1-1-6-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-6-2" class="outline-5">
+<h5 id="sec-1-1-6-2">oct-linux-csr TIM_FR_RN_TT</h5>
+<div class="outline-text-5" id="text-1-1-6-2">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-7" class="outline-4">
+<h4 id="sec-1-1-7">GMX</h4>
+<div class="outline-text-4" id="text-1-1-7">
+
+
+</div>
+
+<div id="outline-container-1-1-7-1" class="outline-5">
+<h5 id="sec-1-1-7-1">oct-linux-csr GMX2_TX000_MIN_PKT</h5>
+<div class="outline-text-5" id="text-1-1-7-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-7-2" class="outline-5">
+<h5 id="sec-1-1-7-2">oct-linux-csr GMX4_TX000_MIN_PKT</h5>
+<div class="outline-text-5" id="text-1-1-7-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-7-3" class="outline-5">
+<h5 id="sec-1-1-7-3">oct-linux-csr GMX2_PRT000_CFG</h5>
+<div class="outline-text-5" id="text-1-1-7-3">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-7-4" class="outline-5">
+<h5 id="sec-1-1-7-4">oct-linux-csr GMX4_PRT000_CFG</h5>
+<div class="outline-text-5" id="text-1-1-7-4">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-7-5" class="outline-5">
+<h5 id="sec-1-1-7-5">oct-linux-csr GMX2_RX000_IFG</h5>
+<div class="outline-text-5" id="text-1-1-7-5">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-7-6" class="outline-5">
+<h5 id="sec-1-1-7-6">oct-linux-csr GMX4_RX000_IFG</h5>
+<div class="outline-text-5" id="text-1-1-7-6">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-7-7" class="outline-5">
+<h5 id="sec-1-1-7-7">oct-linux-csr GMX2_TX000_PAUSE_PKT_INTERVAL</h5>
+<div class="outline-text-5" id="text-1-1-7-7">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-7-8" class="outline-5">
+<h5 id="sec-1-1-7-8">oct-linux-csr GMX4_TX000_PAUSE_PKT_INTERVAL</h5>
+<div class="outline-text-5" id="text-1-1-7-8">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-7-9" class="outline-5">
+<h5 id="sec-1-1-7-9">oct-linux-csr GMX2_TX000_SOFT_PAUSE</h5>
+<div class="outline-text-5" id="text-1-1-7-9">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-7-10" class="outline-5">
+<h5 id="sec-1-1-7-10">oct-linux-csr GMX4_TX000_SOFT_PAUSE</h5>
+<div class="outline-text-5" id="text-1-1-7-10">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-7-11" class="outline-5">
+<h5 id="sec-1-1-7-11">oct-linux-csr GMX2_TX000_PAUSE_ZERO</h5>
+<div class="outline-text-5" id="text-1-1-7-11">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-7-12" class="outline-5">
+<h5 id="sec-1-1-7-12">oct-linux-csr GMX4_TX000_PAUSE_ZERO</h5>
+<div class="outline-text-5" id="text-1-1-7-12">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-7-13" class="outline-5">
+<h5 id="sec-1-1-7-13">oct-linux-csr GMX2_RX_PRTS</h5>
+<div class="outline-text-5" id="text-1-1-7-13">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-7-14" class="outline-5">
+<h5 id="sec-1-1-7-14">oct-linux-csr GMX4_RX_PRTS</h5>
+<div class="outline-text-5" id="text-1-1-7-14">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-7-15" class="outline-5">
+<h5 id="sec-1-1-7-15">oct-linux-csr GMX2_TX_PRTS</h5>
+<div class="outline-text-5" id="text-1-1-7-15">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-7-16" class="outline-5">
+<h5 id="sec-1-1-7-16">oct-linux-csr GMX4_TX_PRTS</h5>
+<div class="outline-text-5" id="text-1-1-7-16">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-7-17" class="outline-5">
+<h5 id="sec-1-1-7-17">oct-linux-csr GMX2_TX_IFG</h5>
+<div class="outline-text-5" id="text-1-1-7-17">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-7-18" class="outline-5">
+<h5 id="sec-1-1-7-18">oct-linux-csr GMX4_TX_IFG</h5>
+<div class="outline-text-5" id="text-1-1-7-18">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-7-19" class="outline-5">
+<h5 id="sec-1-1-7-19">oct-linux-csr GMX2_INF_MODE</h5>
+<div class="outline-text-5" id="text-1-1-7-19">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-7-20" class="outline-5">
+<h5 id="sec-1-1-7-20">oct-linux-csr GMX4_INF_MODE</h5>
+<div class="outline-text-5" id="text-1-1-7-20">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-7-21" class="outline-5">
+<h5 id="sec-1-1-7-21">oct-linux-csr GMX2_TX_XAUI_CTL</h5>
+<div class="outline-text-5" id="text-1-1-7-21">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-7-22" class="outline-5">
+<h5 id="sec-1-1-7-22">oct-linux-csr GMX4_TX_XAUI_CTL</h5>
+<div class="outline-text-5" id="text-1-1-7-22">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-7-23" class="outline-5">
+<h5 id="sec-1-1-7-23">oct-linux-csr GMX2_RX_XAUI_CTL</h5>
+<div class="outline-text-5" id="text-1-1-7-23">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-7-24" class="outline-5">
+<h5 id="sec-1-1-7-24">oct-linux-csr GMX4_RX_XAUI_CTL</h5>
+<div class="outline-text-5" id="text-1-1-7-24">
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">Software</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+</div>
+
+<div id="outline-container-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1">fastdistcli config show |grep -v xaui0 |grep -v  FASTDIST_CONFIG_MEM</h4>
+<div class="outline-text-4" id="text-1-2-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-2" class="outline-4">
+<h4 id="sec-1-2-2">eitpste mux show parameter</h4>
+<div class="outline-text-4" id="text-1-2-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-3" class="outline-4">
+<h4 id="sec-1-2-3">eitpste udp range show</h4>
+<div class="outline-text-4" id="text-1-2-3">
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Performance</h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">Hardware</h3>
+<div class="outline-text-3" id="text-2-1">
+
+
+</div>
+
+<div id="outline-container-2-1-1" class="outline-4">
+<h4 id="sec-2-1-1">Drop/error</h4>
+<div class="outline-text-4" id="text-2-1-1">
+
+
+</div>
+
+<div id="outline-container-2-1-1-1" class="outline-5">
+<h5 id="sec-2-1-1-1">for i in 0 1;do oct-linux-csr PIP_STAT0_0;done</h5>
+<div class="outline-text-5" id="text-2-1-1-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-2" class="outline-5">
+<h5 id="sec-2-1-1-2">for i in 0 1;do oct-linux-csr PIP_STAT_INB_ERRS_PKND;done</h5>
+<div class="outline-text-5" id="text-2-1-1-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-3" class="outline-5">
+<h5 id="sec-2-1-1-3">oct-linux-csr IPD_PKT_ERR</h5>
+<div class="outline-text-5" id="text-2-1-1-3">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-4" class="outline-5">
+<h5 id="sec-2-1-1-4">for i in `seq 0 1`;do oct-linux-csr pip_stat_inb_errs_pknd$i;done</h5>
+<div class="outline-text-5" id="text-2-1-1-4">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-5" class="outline-5">
+<h5 id="sec-2-1-1-5">oct-linux-csr pko_reg_error</h5>
+<div class="outline-text-5" id="text-2-1-1-5">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-6" class="outline-5">
+<h5 id="sec-2-1-1-6">oct-linux-csr GMX2_RX000_STATS_PKTS_DRP</h5>
+<div class="outline-text-5" id="text-2-1-1-6">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-7" class="outline-5">
+<h5 id="sec-2-1-1-7">oct-linux-csr GMX4_RX000_STATS_PKTS_DRP</h5>
+<div class="outline-text-5" id="text-2-1-1-7">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-8" class="outline-5">
+<h5 id="sec-2-1-1-8">oct-linux-csr GMX2_RX000_STATS_PKTS_BAD</h5>
+<div class="outline-text-5" id="text-2-1-1-8">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-9" class="outline-5">
+<h5 id="sec-2-1-1-9">oct-linux-csr GMX4_RX000_STATS_PKTS_BAD</h5>
+<div class="outline-text-5" id="text-2-1-1-9">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-10" class="outline-5">
+<h5 id="sec-2-1-1-10">oct-linux-csr GMX2_RX000_INT_REG</h5>
+<div class="outline-text-5" id="text-2-1-1-10">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-11" class="outline-5">
+<h5 id="sec-2-1-1-11">oct-linux-csr GMX4_RX000_INT_REG</h5>
+<div class="outline-text-5" id="text-2-1-1-11">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-12" class="outline-5">
+<h5 id="sec-2-1-1-12">oct-linux-csr GMX2_RX000_STATS_PKTS</h5>
+<div class="outline-text-5" id="text-2-1-1-12">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-13" class="outline-5">
+<h5 id="sec-2-1-1-13">oct-linux-csr GMX4_RX000_STATS_PKTS</h5>
+<div class="outline-text-5" id="text-2-1-1-13">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-14" class="outline-5">
+<h5 id="sec-2-1-1-14">oct-linux-csr GMX2_RX000_STATS_OCTS</h5>
+<div class="outline-text-5" id="text-2-1-1-14">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-15" class="outline-5">
+<h5 id="sec-2-1-1-15">oct-linux-csr GMX4_RX000_STATS_OCTS</h5>
+<div class="outline-text-5" id="text-2-1-1-15">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-16" class="outline-5">
+<h5 id="sec-2-1-1-16">oct-linux-csr GMX2_RX000_STATS_PKTS_CTL</h5>
+<div class="outline-text-5" id="text-2-1-1-16">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-17" class="outline-5">
+<h5 id="sec-2-1-1-17">oct-linux-csr GMX4_RX000_STATS_PKTS_CTL</h5>
+<div class="outline-text-5" id="text-2-1-1-17">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-18" class="outline-5">
+<h5 id="sec-2-1-1-18">oct-linux-csr GMX2_RX000_STATS_OCTS_CTL</h5>
+<div class="outline-text-5" id="text-2-1-1-18">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-19" class="outline-5">
+<h5 id="sec-2-1-1-19">oct-linux-csr GMX4_RX000_STATS_OCTS_CTL</h5>
+<div class="outline-text-5" id="text-2-1-1-19">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-20" class="outline-5">
+<h5 id="sec-2-1-1-20">oct-linux-csr GMX2_RX000_STATS_PKTS_DRP</h5>
+<div class="outline-text-5" id="text-2-1-1-20">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-21" class="outline-5">
+<h5 id="sec-2-1-1-21">oct-linux-csr GMX4_RX000_STATS_PKTS_DRP</h5>
+<div class="outline-text-5" id="text-2-1-1-21">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-22" class="outline-5">
+<h5 id="sec-2-1-1-22">oct-linux-csr GMX2_RX000_STATS_OCTS_DRP</h5>
+<div class="outline-text-5" id="text-2-1-1-22">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-23" class="outline-5">
+<h5 id="sec-2-1-1-23">oct-linux-csr GMX4_RX000_STATS_OCTS_DRP</h5>
+<div class="outline-text-5" id="text-2-1-1-23">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-24" class="outline-5">
+<h5 id="sec-2-1-1-24">oct-linux-csr GMX2_RX000_STATS_PKTS_BAD</h5>
+<div class="outline-text-5" id="text-2-1-1-24">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-25" class="outline-5">
+<h5 id="sec-2-1-1-25">oct-linux-csr GMX4_RX000_STATS_PKTS_BAD</h5>
+<div class="outline-text-5" id="text-2-1-1-25">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-26" class="outline-5">
+<h5 id="sec-2-1-1-26">oct-linux-csr GMX2_RX000_STATS_OCTS_BAD</h5>
+<div class="outline-text-5" id="text-2-1-1-26">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-27" class="outline-5">
+<h5 id="sec-2-1-1-27">oct-linux-csr GMX4_RX000_STATS_OCTS_BAD</h5>
+<div class="outline-text-5" id="text-2-1-1-27">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-28" class="outline-5">
+<h5 id="sec-2-1-1-28">oct-linux-csr GMX2_TX000_STAT0</h5>
+<div class="outline-text-5" id="text-2-1-1-28">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-29" class="outline-5">
+<h5 id="sec-2-1-1-29">oct-linux-csr GMX4_TX000_STAT0</h5>
+<div class="outline-text-5" id="text-2-1-1-29">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-30" class="outline-5">
+<h5 id="sec-2-1-1-30">oct-linux-csr GMX2_TX000_STAT1</h5>
+<div class="outline-text-5" id="text-2-1-1-30">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-31" class="outline-5">
+<h5 id="sec-2-1-1-31">oct-linux-csr GMX4_TX000_STAT1</h5>
+<div class="outline-text-5" id="text-2-1-1-31">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-32" class="outline-5">
+<h5 id="sec-2-1-1-32">oct-linux-csr SSO_ERR</h5>
+<div class="outline-text-5" id="text-2-1-1-32">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-33" class="outline-5">
+<h5 id="sec-2-1-1-33">oct-linux-csr SSO_IQ_INT</h5>
+<div class="outline-text-5" id="text-2-1-1-33">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-34" class="outline-5">
+<h5 id="sec-2-1-1-34">oct-linux-csr SSO_WQ_INT</h5>
+<div class="outline-text-5" id="text-2-1-1-34">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-35" class="outline-5">
+<h5 id="sec-2-1-1-35">oct-linux-csr SSO_PND_ECC_ST</h5>
+<div class="outline-text-5" id="text-2-1-1-35">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-36" class="outline-5">
+<h5 id="sec-2-1-1-36">oct-linux-csr SSO_OTH_ECC_ST</h5>
+<div class="outline-text-5" id="text-2-1-1-36">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-37" class="outline-5">
+<h5 id="sec-2-1-1-37">oct-linux-csr SSO_IDX_ECC_ST</h5>
+<div class="outline-text-5" id="text-2-1-1-37">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-38" class="outline-5">
+<h5 id="sec-2-1-1-38">oct-linux-csr SSO_FIDX_ECC_ST</h5>
+<div class="outline-text-5" id="text-2-1-1-38">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-39" class="outline-5">
+<h5 id="sec-2-1-1-39">for i in `seq 0 63`;do oct-linux-csr SSO_WQ_INT_CNT${i};done</h5>
+<div class="outline-text-5" id="text-2-1-1-39">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-40" class="outline-5">
+<h5 id="sec-2-1-1-40">oct-linux-csr GMX2_TX000_STAT9</h5>
+<div class="outline-text-5" id="text-2-1-1-40">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-41" class="outline-5">
+<h5 id="sec-2-1-1-41">oct-linux-csr GMX4_TX000_STAT9</h5>
+<div class="outline-text-5" id="text-2-1-1-41">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-42" class="outline-5">
+<h5 id="sec-2-1-1-42">oct-linux-csr PCS2_RX000_STATES_REG</h5>
+<div class="outline-text-5" id="text-2-1-1-42">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-1-43" class="outline-5">
+<h5 id="sec-2-1-1-43">oct-linux-csr PCS4_RX000_STATES_REG</h5>
+<div class="outline-text-5" id="text-2-1-1-43">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2-1-2" class="outline-4">
+<h4 id="sec-2-1-2">Buffer</h4>
+<div class="outline-text-4" id="text-2-1-2">
+
+
+</div>
+
+<div id="outline-container-2-1-2-1" class="outline-5">
+<h5 id="sec-2-1-2-1">for i in `seq 0 8`;do oct-linux-csr fpa_que${i}_available;done</h5>
+<div class="outline-text-5" id="text-2-1-2-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-2-2" class="outline-5">
+<h5 id="sec-2-1-2-2">oct-linux-csr PIP_BCK_PRS</h5>
+<div class="outline-text-5" id="text-2-1-2-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-2-3" class="outline-5">
+<h5 id="sec-2-1-2-3">oct-linux-csr IPD_PTR_COUNT</h5>
+<div class="outline-text-5" id="text-2-1-2-3">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-2-4" class="outline-5">
+<h5 id="sec-2-1-2-4">oct-llinux-csr IPD_QUE0_FREE_PAGE_CNT</h5>
+<div class="outline-text-5" id="text-2-1-2-4">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-2-5" class="outline-5">
+<h5 id="sec-2-1-2-5">oct-linux-csr IPD_PORT_SOP0</h5>
+<div class="outline-text-5" id="text-2-1-2-5">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-2-6" class="outline-5">
+<h5 id="sec-2-1-2-6">for i in `seq 0 31`;do oct-linux-csr pko_reg_read_idx ${i}; oct-linux-csr PKO_MEM_COUNT0;done</h5>
+<div class="outline-text-5" id="text-2-1-2-6">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-2-7" class="outline-5">
+<h5 id="sec-2-1-2-7">for i in `seq 0 31`;do oct-linux-csr pko_reg_read_idx ${i}; oct-linux-csr PKO_MEM_COUNT1;done</h5>
+<div class="outline-text-5" id="text-2-1-2-7">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-2-8" class="outline-5">
+<h5 id="sec-2-1-2-8">oct-linux-csr SSO_NOS_CNT</h5>
+<div class="outline-text-5" id="text-2-1-2-8">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-2-9" class="outline-5">
+<h5 id="sec-2-1-2-9">oct-linux-csr SSO_IQ_COM_CNT</h5>
+<div class="outline-text-5" id="text-2-1-2-9">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-2-10" class="outline-5">
+<h5 id="sec-2-1-2-10">oct-linux-csr SSO_QOS_WE</h5>
+<div class="outline-text-5" id="text-2-1-2-10">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-2-11" class="outline-5">
+<h5 id="sec-2-1-2-11">oct-linux-csr SSO_FPAGE_CNT</h5>
+<div class="outline-text-5" id="text-2-1-2-11">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-2-12" class="outline-5">
+<h5 id="sec-2-1-2-12">oct-linux-csr SSO_IQ_CNT${i}</h5>
+<div class="outline-text-5" id="text-2-1-2-12">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-2-13" class="outline-5">
+<h5 id="sec-2-1-2-13">oct-linux-csr SSO_RWQ_PSH_FPTR</h5>
+<div class="outline-text-5" id="text-2-1-2-13">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-2-14" class="outline-5">
+<h5 id="sec-2-1-2-14">oct-linux-csr GMX2_TX_BP</h5>
+<div class="outline-text-5" id="text-2-1-2-14">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-2-15" class="outline-5">
+<h5 id="sec-2-1-2-15">oct-linux-csr GMX4_TX_BP</h5>
+<div class="outline-text-5" id="text-2-1-2-15">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-2-16" class="outline-5">
+<h5 id="sec-2-1-2-16">oct-linux-csr GMX2_STAT_BP</h5>
+<div class="outline-text-5" id="text-2-1-2-16">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-2-17" class="outline-5">
+<h5 id="sec-2-1-2-17">oct-linux-csr GMX4_STAT_BP</h5>
+<div class="outline-text-5" id="text-2-1-2-17">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2-1-3" class="outline-4">
+<h4 id="sec-2-1-3">Throughput</h4>
+<div class="outline-text-4" id="text-2-1-3">
+
+
+</div>
+
+<div id="outline-container-2-1-3-1" class="outline-5">
+<h5 id="sec-2-1-3-1">for i in `seq 0 3`;do oct-linux-csr sleep 1&amp;&amp;PIP_STAT1_0;done</h5>
+<div class="outline-text-5" id="text-2-1-3-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-3-2" class="outline-5">
+<h5 id="sec-2-1-3-2">for i in `seq 0 3`;do oct-linux-csr sleep 1&amp;&amp;PIP_STAT1_1;done</h5>
+<div class="outline-text-5" id="text-2-1-3-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-3-3" class="outline-5">
+<h5 id="sec-2-1-3-3">for i in `seq 0 3`;do oct-linux-csr sleep 1&amp;&amp;PIP_STAT2_0;done</h5>
+<div class="outline-text-5" id="text-2-1-3-3">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-3-4" class="outline-5">
+<h5 id="sec-2-1-3-4">for i in `seq 0 3`;do oct-linux-csr sleep 1&amp;&amp;PIP_STAT2_1;done</h5>
+<div class="outline-text-5" id="text-2-1-3-4">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-3-5" class="outline-5">
+<h5 id="sec-2-1-3-5">for i in `seq 0 1`;do oct-linux-csr pip_stat_inb_pkts_pknd$i;done</h5>
+<div class="outline-text-5" id="text-2-1-3-5">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-3-6" class="outline-5">
+<h5 id="sec-2-1-3-6">oct-linux-csr SSO_WA_COM_PC</h5>
+<div class="outline-text-5" id="text-2-1-3-6">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-3-7" class="outline-5">
+<h5 id="sec-2-1-3-7">oct-linux-csr SSO_TS_PC</h5>
+<div class="outline-text-5" id="text-2-1-3-7">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-3-8" class="outline-5">
+<h5 id="sec-2-1-3-8">oct-linux-csr SSO_DS_PC</h5>
+<div class="outline-text-5" id="text-2-1-3-8">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-3-9" class="outline-5">
+<h5 id="sec-2-1-3-9">for i in `seq 0 63`;do oct-linux-csr SSO_WS_PC${i};done</h5>
+<div class="outline-text-5" id="text-2-1-3-9">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-3-10" class="outline-5">
+<h5 id="sec-2-1-3-10">for i in `seq 0 7`;do oct-linux-csr SSO_WA_PC${i};done</h5>
+<div class="outline-text-5" id="text-2-1-3-10">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-3-11" class="outline-5">
+<h5 id="sec-2-1-3-11">oct-linux-csr GMX2_TX000_STAT2</h5>
+<div class="outline-text-5" id="text-2-1-3-11">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-3-12" class="outline-5">
+<h5 id="sec-2-1-3-12">oct-linux-csr GMX4_TX000_STAT2</h5>
+<div class="outline-text-5" id="text-2-1-3-12">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-3-13" class="outline-5">
+<h5 id="sec-2-1-3-13">oct-linux-csr GMX2_TX000_STAT3</h5>
+<div class="outline-text-5" id="text-2-1-3-13">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-3-14" class="outline-5">
+<h5 id="sec-2-1-3-14">oct-linux-csr GMX4_TX000_STAT3</h5>
+<div class="outline-text-5" id="text-2-1-3-14">
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2">Software</h3>
+<div class="outline-text-3" id="text-2-2">
+
+
+</div>
+
+<div id="outline-container-2-2-1" class="outline-4">
+<h4 id="sec-2-2-1">fastdist</h4>
+<div class="outline-text-4" id="text-2-2-1">
+
+
+</div>
+
+<div id="outline-container-2-2-1-1" class="outline-5">
+<h5 id="sec-2-2-1-1">eitpste fastdist entity show</h5>
+<div class="outline-text-5" id="text-2-2-1-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-2-1-2" class="outline-5">
+<h5 id="sec-2-2-1-2">eitpste fastdist interqos show</h5>
+<div class="outline-text-5" id="text-2-2-1-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-2-1-3" class="outline-5">
+<h5 id="sec-2-2-1-3">fastdistcli stat show node</h5>
+<div class="outline-text-5" id="text-2-2-1-3">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-2-1-4" class="outline-5">
+<h5 id="sec-2-2-1-4">fastdistcli stat show peer all</h5>
+<div class="outline-text-5" id="text-2-2-1-4">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2-2-2" class="outline-4">
+<h4 id="sec-2-2-2">Qos</h4>
+<div class="outline-text-4" id="text-2-2-2">
+
+
+</div>
+
+<div id="outline-container-2-2-2-1" class="outline-5">
+<h5 id="sec-2-2-2-1">eitpste statistic show</h5>
+<div class="outline-text-5" id="text-2-2-2-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-2-2-2" class="outline-5">
+<h5 id="sec-2-2-2-2">eitpste qos iphb show</h5>
+<div class="outline-text-5" id="text-2-2-2-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-2-2-3" class="outline-5">
+<h5 id="sec-2-2-2-3">eitpste qos idsp all</h5>
+<div class="outline-text-5" id="text-2-2-2-3">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-2-2-4" class="outline-5">
+<h5 id="sec-2-2-2-4">eitpste ipbuf show</h5>
+<div class="outline-text-5" id="text-2-2-2-4">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-2-2-5" class="outline-5">
+<h5 id="sec-2-2-2-5">eitpste gtp show</h5>
+<div class="outline-text-5" id="text-2-2-2-5">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-2-2-6" class="outline-5">
+<h5 id="sec-2-2-2-6">eitpste iue show</h5>
+<div class="outline-text-5" id="text-2-2-2-6">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-2-2-7" class="outline-5">
+<h5 id="sec-2-2-2-7">eitpste tae show</h5>
+<div class="outline-text-5" id="text-2-2-2-7">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-10-17T09:31+0800</p>
+<p class="author">Author: Kevin Gao</p>
+<p class="email"><a href="mailto:leijia.gao@nsn.com">leijia.gao@nsn.com</a></p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

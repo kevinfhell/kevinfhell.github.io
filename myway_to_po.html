@@ -1,0 +1,1004 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>My way to be a Product owner</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="My way to be a Product owner"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-12-09T10:46+0800"/>
+<meta name="author" content="Kevin Gao"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" type="text/css" href="http://kevinfhell.github.io/worg.css">
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
+ <a accesskey="h" href="#"> UP </a>
+ |
+ <a accesskey="H" href="theindex.html"> HOME </a>
+</div>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">My way to be a Product owner</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Planing for the PO work</a>
+<ul>
+<li><a href="#sec-1-1">Basic working responsibility and scope</a>
+<ul>
+<li><a href="#sec-1-1-1">Regular work</a>
+<ul>
+<li><a href="#sec-1-1-1-1">Familiar with Tools, processes, rules</a></li>
+<li><a href="#sec-1-1-1-2">Familiar with people that would have cross during work</a></li>
+<li><a href="#sec-1-1-1-3">Familiar with the next step working content</a></li>
+<li><a href="#sec-1-1-1-4">Soft skills</a></li>
+<li><a href="#sec-1-1-1-5">Cross check the base feature refinement with RAN3000 development</a></li>
+<li><a href="#sec-1-1-1-6">Current developd Automatic macro can be used into further CRT</a></li>
+<li><a href="#sec-1-1-1-7">Base feature split into different senario and senario by senario.</a></li>
+<li><a href="#sec-1-1-1-8"></a></li>
+</ul></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-2">Tips</a></li>
+<li><a href="#sec-3">Put software work more early.</a></li>
+<li><a href="#sec-4">Open issues</a>
+<ul>
+<li><a href="#sec-4-1">About the tools</a>
+<ul>
+<li><a href="#sec-4-1-1">Web backlog</a>
+<ul>
+<li><a href="#sec-4-1-1-1">RU release and release, what's the difference?</a></li>
+<li><a href="#sec-4-1-1-2">What kind of information could be the input for deciding a backlog priority</a></li>
+<li><a href="#sec-4-1-1-3">Grooming level, APO  VAT &ndash;&gt; team</a></li>
+<li><a href="#sec-4-1-1-4">Where is the size come from, is the unit is hour?</a></li>
+<li><a href="#sec-4-1-1-5">Specs LE, where is this value come from?</a></li>
+<li><a href="#sec-4-1-1-6">Category, what's the purpose for this attribute?</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-4-2">About process</a>
+<ul>
+<li><a href="#sec-4-2-1">What's the interface to get more detailed customer requirement</a>
+<ul>
+<li><a href="#sec-4-2-1-1">what kind of customer we might meet from platform point of view</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-2-2">How to motivate team from PO point of view</a>
+<ul>
+<li><a href="#sec-4-2-2-1">share vision?   I need to get shared about the vision of our product from APO</a></li>
+<li><a href="#sec-4-2-2-2">share positive information and feedback from customer? APO, project/product manager?</a></li>
+<li><a href="#sec-4-2-2-3">share pain? some rules?</a></li>
+<li><a href="#sec-4-2-2-4">The way to make change.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Planing for the PO work</h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">Basic working responsibility and scope</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+</div>
+
+<div id="outline-container-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1">Regular work</h4>
+<div class="outline-text-4" id="text-1-1-1">
+
+
+</div>
+
+<div id="outline-container-1-1-1-1" class="outline-5">
+<h5 id="sec-1-1-1-1">Familiar with Tools, processes, rules</h5>
+<div class="outline-text-5" id="text-1-1-1-1">
+
+<ul>
+<li id="sec-1-1-1-1-1">Accept360<br/>
+<ul>
+<li id="sec-1-1-1-1-1-1">Preplaning<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-1-1-2">auto calculation<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-1-1-3">add new iteration itme, the ID need to be selected.<br/>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-1-2">Web backlog<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-1-3">DoD<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-1-4">Capacity update before and after each sprint <a href="https://sharenet-ims.inside.nokiasiemensnetworks.com/livelink/livelink?func=ll&amp;objid=498857137&amp;objAction=browse&amp;sort=ordering&amp;viewType=1">TT capacity</a><br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-1-5">Grooming<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-1-6">Planing<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-1-7">Burndown chart<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-1-8">Review<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-1-9">The whole process of software development from L0<br/>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-1-2" class="outline-5">
+<h5 id="sec-1-1-1-2">Familiar with people that would have cross during work</h5>
+<div class="outline-text-5" id="text-1-1-1-2">
+
+<ul>
+<li id="sec-1-1-1-2-1">Team<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-2-2">Scrum master<br/>
+<ul>
+<li id="sec-1-1-1-2-2-1">Arrange discussion with CY and BX<br/>
+<ul>
+<li id="sec-1-1-1-2-2-1-1">Better know each other<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-2-2-1-2">About the expectation from PO<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-2-2-1-3">Robin<br/>
+<ul>
+<li id="sec-1-1-1-2-2-1-3-1">Current status of agile process<br/>
+<ul>
+<li id="sec-1-1-1-2-2-1-3-1-1">Grooming is done by PO<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-2-2-1-3-1-2">No planing part two, no task level estimation. How could we know, whether one item can be done or not in one sprint.<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-2-2-1-3-1-3">No burdown chart, because there is no task<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-2-2-1-3-1-4">Daily scrum can't be done on task level, because there is no this kind of data change.<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-2-2-1-3-1-5">可能出现的问题<br/>
+<ul>
+<li id="sec-1-1-1-2-2-1-3-1-5-1">Team对于每一个iteration item commitment 无法保证。<br/>
+plan是为了更好的控制风险，如果没有对每个item里边task的plan，就不能很好
+的完成风险的控制。如果team为了完成item而加班，或者降低标准来完成，就会
+对产品的Quality产生风险
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-2-2-1-3-1-5-2">对relase planing 产生影响<br/>
+由于无法更准确的评估item是否能完成，导致team无法在plan的时间之内完成
+feature，而这个风险没有在更早的时间被发掘(通过planing，被发掘)，导致最
+终可以进行补救的时间窗口变小。
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-2-2-1-3-1-5-3">PO 无法通过burndown chart，对sprint运行期的风险进行关注和调整。<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-2-2-1-3-1-5-4">有个很大的问题，team的planing不再准确，SP和hour之间的关系变得不可预期。<br/>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-2-2-1-3-2">Current working scope for each member in team<br/>
+<ul>
+<li id="sec-1-1-1-2-2-1-3-2-1">Technical<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-2-2-1-3-2-2">Maintainance<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-2-2-1-3-2-3">Testing<br/>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-2-2-1-3-3">Personal plan, more work on technical or scrum<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-2-2-1-3-4">Next step work of LFR<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-2-2-1-3-5">Minutes<br/>
+<ol>
+<li>估算时间
+</li>
+<li>involve
+</li>
+<li>
+</li>
+</ol>
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-2-2-1-4">TE<br/>
+<ul>
+<li id="sec-1-1-1-2-2-1-4-1">Current status and future plan<br/>
+         Whether cost more time on scrum master
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-2-2-1-4-2">Any difficulty<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-2-2-1-4-3">The relationship with Protege<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-2-2-1-4-4">Next step scope of Thunder&amp;echo<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-2-2-1-4-5">Open source<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-2-2-1-4-6">Scrum master position<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-2-2-1-4-7">Help Robin build up the agile practice<br/>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-2-3">PO team<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-2-4">APO<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-2-5">The customer interface is a X<br/>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-1-3" class="outline-5">
+<h5 id="sec-1-1-1-3">Familiar with the next step working content</h5>
+<div class="outline-text-5" id="text-1-1-1-3">
+
+<ul>
+<li id="sec-1-1-1-3-1">ADA impact of internal improvement<br/>
+<ul>
+<li id="sec-1-1-1-3-1-1">C00617_R_M1_TT_32   Zjane function study &amp; modify - to support both bmpp2 and bcn-b &mdash; pair work with Deployment team  check whether this is needed<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-3-1-2">C00548_R_M1_TT_73   SW architechture refinement: &mdash; subsystem clearnup &mdash; for delta CD feature &mdash; clean subsystem level bi-direction dependency Check whether delta CD is needed<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-3-1-3">C00621_R_M1_TT_84   error log registration to CI  check ,whether there are CI case for ADA only<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-3-1-4">C00557_R_M1_TT_20   RQ PKO packets drop problem a. Solution fix and verified. b. Confirm with Jouni about the max IPBR bandwidth. c. Source code merge into trunk and 1301;  Xuju<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-3-1-5">l improvements   C00557_R_M1_TT_102   To refine SCLI output/hint: -&mdash; 3SP<br/>
+a. There is one PR 39977ESPE06
+b. cooperate with SCLI VAT and Sword/Flash;
+c. DoD: merge to TRUNK/1301; get confirmation from SCLI team;
+20130705: not done in 1307 due to too many open issues in demo meeting. 
+</li>
+</ul>
+<ul>
+<li><br/>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-3-2">RAN3000<br/>
+<ul>
+<li id="sec-1-1-1-3-2-1">Capacity case should be put into CRT<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-3-2-2">Performance CRT could be automation if traffic generator can support.<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-3-2-3">Todo<br/>
+
+<p>
+Action point list
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">Description</th><th scope="col" class="left">owner</th><th scope="col" class="left">status</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">Sould we consider packets dropping when stop buffering at same time?</td><td class="left">Xu meng</td><td class="left">Xu meng will check it with RRC</td></tr>
+<tr><td class="left">If maximum ip number per EITP should be added to ENFS</td><td class="left">Jiang weiguo</td><td class="left"></td></tr>
+<tr><td class="left">Get new CS/PS call number per EITP</td><td class="left">Jiang weiguo</td><td class="left"></td></tr>
+<tr><td class="left">udpMuxAmount, default 30, delay 2, DSCP 46 &ndash;&gt;check default, check with Flash</td><td class="left">Xu meng</td><td class="left"></td></tr>
+<tr><td class="left">Fragmented packet size=1500B +GTP header size( + padding).what is padding</td><td class="left">Xu meng</td><td class="left"></td></tr>
+<tr><td class="left">Robin list some case of Qos</td><td class="left">Zhu xuju</td><td class="left"></td></tr>
+<tr><td class="left">Transfer case from Picus, Oscar and H&amp;C</td><td class="left">Thunderecho</td><td class="left">Timebox can be reserved for this work</td></tr>
+<tr><td class="left">Should we add EIPU foward performance requirement to ENFS</td><td class="left">Zhu xuju</td><td class="left"></td></tr>
+<tr><td class="left">Test about ACL, ACL will be increased in mcRNC4.0,any impact to performance</td><td class="left"></td><td class="left"></td></tr>
+</tbody>
+</table>
+
+
+<p>
+Testing check list
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">Capacity case should be put into CRT</td></tr>
+<tr><td class="left">Performance case should be put into CRT if traffic generator can support</td></tr>
+<tr><td class="left">Need to consider A1 and B2</td></tr>
+<tr><td class="left">For performance case, check the requirment result and maximum result</td></tr>
+<tr><td class="left">Regression after FP deliver the frozen release for RU50EP1, current plan is in Feb 2013</td></tr>
+<tr><td class="left">update PRS FRS, and check CuDo</td></tr>
+</tbody>
+</table>
+
+
+
+<ol>
+<li>Capacity cases: should put them in CRT &ndash;&mdash; Thunderecho, Robin
+</li>
+<li>Performance cases:  should put them in CRT by traffic genrator.This
+   is not mandatory, purpose is for quick regression&ndash;&mdash; Thunderecho, Robin
+</li>
+<li>Sould we consider packets dropping when stop buffering at same time? &mdash; XuMeng
+<ol>
+<li>Xu meng will check this with RRC
+</li>
+</ol>
+
+</li>
+<li>If maximum ip number per EITP should be added to ENFS-&mdash;JiangWeiguo
+</li>
+</ol>
+
+<p>5.Get new CS/PS call number per EITP &mdash; Jiang Weiguo
+</p><ol>
+<li>udpMuxAmount, default 30, delay 2, DSCP 46 &ndash;&gt;check default, check with Flash -&mdash; Xu Meng
+</li>
+</ol>
+
+<p>7.fragmented packet size = 1500 B + GTP header size (+ padding) &ndash;&gt; what is padding? -&mdash; Xu Meng
+</p><ol>
+<li>Robin list some cases of QOS    -&mdash;&gt;Zhu Xuju, should we study CRNC's QOS case
+</li>
+<li>RFC2544, back to back testing
+</li>
+<li>Transfer case from Picus, Oscar and H&amp;C &mdash;&gt; Thunderecho
+</li>
+<li>need A1 and B2 for testing &mdash;&gt; Team
+</li>
+<li>For performance case, record requirement result and maximum result  -&mdash;&gt;Team
+</li>
+<li>Retest after FP deliver new build   &mdash;&gt;Team
+</li>
+<li>update PRS FRS. Check relative CuDo  &mdash;&gt; Team
+</li>
+</ol>
+
+<p>15.should we added EIPU forword requirment to ENFS? &ndash;&mdash;Zhu Xuju
+16.Test about ACL &mdash;Robin
+</p><ol>
+<li>Design case for burst and fragment -&mdash; Thunderecho, Robin
+</li>
+</ol>
+
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-3-3">Sprint 1312 work and current situation<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-3-4">Replan the current items in next 6 sprints<br/>
+<ul>
+<li id="sec-1-1-1-3-4-1">TE<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-3-4-2">Robin<br/>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-3-5">The technical area of each team<br/>
+<ul>
+<li id="sec-1-1-1-3-5-1">TE<br/>
+<ul>
+<li>GTP
+<ul>
+<li>GTP buffering
+</li>
+<li>GTP echo
+</li>
+<li>&hellip;
+</li>
+</ul>
+
+</li>
+<li>Traffic handling
+<ul>
+<li>FP MUX
+</li>
+<li>IPUDP
+</li>
+</ul>
+
+</li>
+<li>Call based monitoring
+</li>
+<li>BFD&amp;ICMP
+</li>
+</ul>
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-3-6">Backlog item in coming sprints.<br/>
+<ul>
+<li id="sec-1-1-1-3-6-1">TE<br/>
+<ul>
+<li>
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-3-6-2">Robin<br/>
+<ul>
+<li id="sec-1-1-1-3-6-2-1">SE Troubleshooting: SE blackbox stack pointer investigation &ndash; Fu weiyi know details<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-3-6-2-2">6WIND split into legacy area. &ndash; with Wang gang layner<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-3-6-2-3">For LFR<br/>
+<ul>
+<li id="sec-1-1-1-3-6-2-3-1">requirment<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-3-6-2-3-2">and implementation<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-3-6-2-3-3">Test case<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-3-6-2-3-4">System domain<br/>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-3-6-2-4">cross validatoin  - prevent used resource be remove &ndash; check the current status sword team zhou zhigang<br/>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-3-7">Proposed CR in coming sprints.<br/>
+<ul>
+<li id="sec-1-1-1-3-7-1">Need to finish the grooming of each CR<br/>
+Need to reserve effort in sprint 1312
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-3-7-2">TE<br/>
+<ul>
+<li>Warming data refactory in EIPU    &ndash; internal improvement
+</li>
+<li>Dirty data need to be clean up during switch over    --
+         internal improvement
+</li>
+<li>Performance tunning in EIPU fastpath &ndash; Add into RAN3000
+</li>
+<li>Bypass VNB in TX direction on EIPU slowpath  &ndash; Maybe part
+         to RAN3000
+</li>
+<li>Remove the lock for normal service in warming mechanism on
+         EIPU  &ndash; Raise CR
+</li>
+<li>Coredump support on EIPU fastpath  &ndash; Raise CR
+</li>
+<li>Add one thin layer for memory management in simple executive
+         enviroment &ndash; Raise CR
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-3-7-3">Robin<br/>
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-3-8">Priority for each backlog and CR.<br/>
+
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-3-9">Transfer work<br/>
+<ul>
+<li id="sec-1-1-1-3-9-1">Team PO work transfer:<br/>
+<ul>
+<li>Accept360 basic operation needed;
+</li>
+<li>Work explanation for following sprint;
+</li>
+<li>Web backlog PO care content;
+</li>
+<li>Legacy issue
+</li>
+<li>The next step work plan, such as improvement point, weak
+         points etc
+</li>
+<li>Legacy feature 
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-3-9-2">Feature PO work transfer:<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-3-9-3">Cooperation with team, way of working.<br/>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-1-4" class="outline-5">
+<h5 id="sec-1-1-1-4">Soft skills</h5>
+<div class="outline-text-5" id="text-1-1-1-4">
+
+<ul>
+<li id="sec-1-1-1-4-1">Becoming a manager<br/>
+<ul>
+<li id="sec-1-1-1-4-1-1">Decision making<br/>
+<ol>
+<li>Gather necessary information
+</li>
+<li>Consider the options
+</li>
+<li>Make a choice
+</li>
+<li>Implement the decision
+</li>
+<li>Monitor the success of the decision
+</li>
+</ol>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-1-4-1-2">Transition<br/>
+<ol>
+<li>Immobilization
+</li>
+<li>Minmization
+</li>
+<li>Depression
+</li>
+<li>Acceptance
+</li>
+<li>Testing
+</li>
+<li>Minimization
+</li>
+<li>Seeking meaning
+</li>
+</ol>
+
+
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-1-5" class="outline-5">
+<h5 id="sec-1-1-1-5">Cross check the base feature refinement with RAN3000 development</h5>
+<div class="outline-text-5" id="text-1-1-1-5">
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-1-6" class="outline-5">
+<h5 id="sec-1-1-1-6">Current developd Automatic macro can be used into further CRT</h5>
+<div class="outline-text-5" id="text-1-1-1-6">
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-1-7" class="outline-5">
+<h5 id="sec-1-1-1-7">Base feature split into different senario and senario by senario.</h5>
+<div class="outline-text-5" id="text-1-1-1-7">
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-1-8" class="outline-5">
+<h5 id="sec-1-1-1-8"></h5>
+<div class="outline-text-5" id="text-1-1-1-8">
+
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Tips</h2>
+<div class="outline-text-2" id="text-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Put software work more early.</h2>
+<div class="outline-text-2" id="text-3">
+
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Open issues</h2>
+<div class="outline-text-2" id="text-4">
+
+
+</div>
+
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1">About the tools</h3>
+<div class="outline-text-3" id="text-4-1">
+
+
+</div>
+
+<div id="outline-container-4-1-1" class="outline-4">
+<h4 id="sec-4-1-1">Web backlog</h4>
+<div class="outline-text-4" id="text-4-1-1">
+
+
+</div>
+
+<div id="outline-container-4-1-1-1" class="outline-5">
+<h5 id="sec-4-1-1-1">RU release and release, what's the difference?</h5>
+<div class="outline-text-5" id="text-4-1-1-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-4-1-1-2" class="outline-5">
+<h5 id="sec-4-1-1-2">What kind of information could be the input for deciding a backlog priority</h5>
+<div class="outline-text-5" id="text-4-1-1-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-4-1-1-3" class="outline-5">
+<h5 id="sec-4-1-1-3">Grooming level, APO  VAT &ndash;&gt; team</h5>
+<div class="outline-text-5" id="text-4-1-1-3">
+
+</div>
+
+</div>
+
+<div id="outline-container-4-1-1-4" class="outline-5">
+<h5 id="sec-4-1-1-4">Where is the size come from, is the unit is hour?</h5>
+<div class="outline-text-5" id="text-4-1-1-4">
+
+</div>
+
+</div>
+
+<div id="outline-container-4-1-1-5" class="outline-5">
+<h5 id="sec-4-1-1-5">Specs LE, where is this value come from?</h5>
+<div class="outline-text-5" id="text-4-1-1-5">
+
+</div>
+
+</div>
+
+<div id="outline-container-4-1-1-6" class="outline-5">
+<h5 id="sec-4-1-1-6">Category, what's the purpose for this attribute?</h5>
+<div class="outline-text-5" id="text-4-1-1-6">
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4-2" class="outline-3">
+<h3 id="sec-4-2">About process</h3>
+<div class="outline-text-3" id="text-4-2">
+
+
+</div>
+
+<div id="outline-container-4-2-1" class="outline-4">
+<h4 id="sec-4-2-1">What's the interface to get more detailed customer requirement</h4>
+<div class="outline-text-4" id="text-4-2-1">
+
+
+</div>
+
+<div id="outline-container-4-2-1-1" class="outline-5">
+<h5 id="sec-4-2-1-1">what kind of customer we might meet from platform point of view</h5>
+<div class="outline-text-5" id="text-4-2-1-1">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4-2-2" class="outline-4">
+<h4 id="sec-4-2-2">How to motivate team from PO point of view</h4>
+<div class="outline-text-4" id="text-4-2-2">
+
+
+</div>
+
+<div id="outline-container-4-2-2-1" class="outline-5">
+<h5 id="sec-4-2-2-1">share vision?   I need to get shared about the vision of our product from APO</h5>
+<div class="outline-text-5" id="text-4-2-2-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-4-2-2-2" class="outline-5">
+<h5 id="sec-4-2-2-2">share positive information and feedback from customer? APO, project/product manager?</h5>
+<div class="outline-text-5" id="text-4-2-2-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-4-2-2-3" class="outline-5">
+<h5 id="sec-4-2-2-3">share pain? some rules?</h5>
+<div class="outline-text-5" id="text-4-2-2-3">
+
+</div>
+
+</div>
+
+<div id="outline-container-4-2-2-4" class="outline-5">
+<h5 id="sec-4-2-2-4">The way to make change.</h5>
+<div class="outline-text-5" id="text-4-2-2-4">
+
+<p>PO&ndash;&gt;APO&ndash;&gt;DA Manager&ndash;&gt;Line manager&ndash;&gt;team or 
+PO&ndash;&gt;Line manager&ndash;&gt;team, I suppose the second one, is there some
+potential boundary? Communication is the only way?
+</p></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-12-09T10:46+0800</p>
+<p class="author">Author: Kevin Gao</p>
+<p class="email"><a href="mailto:leijia.gao@nsn.com">leijia.gao@nsn.com</a></p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,3889 @@
+BCNOC_A board revision major:1, minor:0, serial #: FRU
+OCTEON CN5650-NSP pass 2.1, Core clock: 800 MHz, DDR clock: 333 MHz (666 Mhz data rate)
+Base DRAM address used by u-boot: 0x41f800000, size: 0x800000
+DRAM: 8 GiB
+Clearing DRAM........ done
+Flash: 256 MiB
+PCIe: Port 0 in endpoint mode
+PCIe: Port 1 link active, 4 lanes
+PCI console init succeeded, 1 consoles, 1024 bytes each
+Net:   octmgmt0, octeth0, octeth1
+PCB:  Version A103
+CPLD: Version 0.0.3
+MMC:  Version 3.1
+Octeon Reset Type: Hard Reset
+MMC: Card Config
+pci_host_mode 0 pci_boot 0 fail_safe 0 octeon_speed 8 clock_source 0
+boot_flash 0 buffer_dir 0 rack 1 node_number 1 slot_number 8 boot_script 3 mac 00:d0:c9:c5:ac:dc
+### mmc bootcmd="run bootscript_03"
+Hit key 'u' to stop autoboot: 0
+Interface 0 has 1 ports (XAUI)
+Interface 1 has 1 ports (XAUI)
+Interface 2 has 4 ports (NPI)
+Interface 3 has 4 ports (LOOP)
+BOOTP broadcast 1
+octeth0: Up 10000 Mbps Full duplex (port  0)
+DHCP client bound to address 169.254.240.11
+Using octeth0 device
+TFTP from server 169.254.240.12; our IP address is 169.254.240.11
+Filename 'uboot/autoboot.EIPU-2'.
+Load address: 0x20000000
+Loading: #################################################
+done
+Bytes transferred = 1590 (636 hex)
+## Executing script at 20000000
+Allocated 0x1bd0a000 bytes at address: 0x36000000, name: CAVIUM_MCORE_SHMEM
+Allocated 0x8000000 bytes at address: 0x26000000, name: bucket
+Allocated 0x800000 bytes at address: 0x81c8200, name: dmxmsg
+Allocated 0x80 bytes at address: 0x89c8200, name: cvmx_timer
+Using octeth0 device
+TFTP from server 169.254.240.12; our IP address is 169.254.240.11
+Filename 'imagelinks/0/eitp-octeon-56xx'.
+Load address: 0x400000
+Loading: #################################################
+done
+Bytes transferred = 2058608 (1f6970 hex)
+Bootloader: Done loading app on coremask: 0xfc0
+Allocated 0x10000000 bytes at address: 0xf0000000, name: DMA_HOLE
+Allocated 0x4f00000 bytes at address: 0x100000, name: __tmp_reserved_linux
+Allocated 0x2000000 bytes at address: 0x5000000, name: __reserved_ramdisk
+Using octeth0 device
+TFTP from server 169.254.240.12; our IP address is 169.254.240.11
+Filename 'imagelinks/0/vmlinux-2.6.34.9-WR4.3.fp_octwnd_56xx_standard-202197-g7740a05'.
+Load address: 0x20000000
+Loading: #################################################
+done
+Bytes transferred = 17510457 (10b3039 hex)
+Using octeth0 device
+TFTP from server 169.254.240.12; our IP address is 169.254.240.11
+Filename 'imagelinks/0/initrd-2.6.34.9-WR4.3.fp_octwnd_56xx_standard-202197-g7740a05.img'.
+Load address: 0x5000000
+Loading: #################################################
+done
+Bytes transferred = 14236579 (d93ba3 hex)
+argv[2]: coremask=0x003F
+argv[3]: panic=15
+argv[4]: rd_start=0xa800000005000000
+argv[5]: rd_size=14236579
+argv[6]: ipaddr=169.254.240.11
+argv[7]: netmask=255.255.255.0
+argv[8]: serverip=169.254.240.12
+argv[9]: FRU=BCNOC-A
+argv[10]: rfss=105
+argv[11]: pka=2048M
+argv[12]: bladerole=none
+argv[13]: nfs=169.254.241.25
+argv[14]: vrt=6w
+argv[15]: host=EIPU-2
+argv[16]: rel=R_IL_13.9.1.0.bcn.r.cgr.20130902.8387-mips64-wnd
+argv[17]: hw=BCN
+argv[18]: mac_addr=00:d0:c9:c5:ac:e1
+argv[19]: mac_count=58
+argv[20]: TIME_ZONE=CST
+argv[21]: TIMEZONE_DIFF=-6
+Allocating memory for ELF segment: addr: 0xffffffff80100000 (adjusted to: 0x100000), size 0x10269f0
+Allocated memory for ELF segment: addr: 0xffffffff80100000, size 0x10269f0
+Processing PHDR 0
+## Loading Linux kernel with entry point: 0xffffffff80105f90 ...
+Bootloader: Done loading app on coremask: 0x3f
+Starting to align per port backpressure counters.
+Completed aligning per port backpressure counters (22 loops).
+Starting cores 0xfff
+n 6:~CONSOLEIn->it EiaRRliORzi: ngcv cmxgr_qoulmp _isunibst:ys E crrpuorse it
+loIcrnieatitialngiz cinvmg x_cgqlrom_upjt sagub nsyams edcp bu
+  Lckin
+uPx P8ve:~rsCOioNSn OL2.E-6.> 34ER.9RO-WR:R4 c.3vm.fx_p_qlocm_twinndit_5: 6xErx_rostr aninda crdre-2at02in19g 7-cvg7mx74_q0alm05_j (talbg i@nahimelid ngbl16oc.ck
+  PnaP1.n1:sn~C-nONetSO.nLEet->)  E(gRRccOR v: ercvsimxon_q 4lm.4_i.1ni (t:Wi Endrr Roriv iern  Lcrineauxti Sngou crcvmerx_y qlG+m_+ jt4.ag4a n-4am14ed)  b) lo#1ck4
+ctPPP 6:PR~CEEONMPSOT LETh->u  BSeuip lt5  C13av:5iu8:m 33Ne CtwSTor 2ks01 O3
+00PeoROn M SDcoK mmveanrsd iolin ne2.: 1.bo0-otp7oc, tlbuiniluxd  044x22
+  00000 coremask=0x003F panic=15 rd_start=0xa800000005000000 rd_size=14236579 ipaddr=169.254.240.11 netmask=255.255.255.0 serverip=169.254.240.12 FRU=BCNOC-A rfss=105 pka=2048M bladerole=none nfs=169.254.241.25 vrt=6w host=EIPU-2 rel=R_IL_13.9.1.0.bcn.r.cgr.20130902.8387-mips64-wnd hw=BCN mac_addr=00:d0:c9:c5:ac:e1 mac_count=58 TIME_ZONE=CST TIMEZONE_DIFF=-6
+CVMSEG size: 2 cache lines (256 bytes)
+Cavium Networks SDK-2.0
+bootconsole [early0] enabled
+CPU revision is: 000d0409 (Cavium Octeon+)
+Checking for the multiply/shift bug... no.
+Checking for the daddiu bug... no.
+...no need to free any memory
+Determined physical RAM map:
+ memory: 000000000004e000 @ 0000000000fb2000 (usable after init)
+ memory: 0000000003c00000 @ 0000000001200000 (usable)
+ memory: 0000000001000000 @ 0000000007000000 (usable)
+ memory: 0000000003800000 @ 000000000c400000 (usable)
+ memory: 0000000006000000 @ 0000000020000000 (usable)
+ memory: 0000000008000000 @ 000000002e000000 (usable)
+ memory: 000000008e000000 @ 0000000061e00000 (usable)
+ memory: 000000008ffff000 @ 0000000100001000 (usable)
+Wasting 225008 bytes for tracking 4018 unused pages
+Initial ramdisk at: 0xa800000005000000 (14236579 bytes)
+Zone PFN ranges:
+  DMA32    0x00000fb2 -> 0x000f0000
+  Normal   0x000f0000 -> 0x00190000
+Movable zone start PFN for each node
+early_node_map[8] active PFN ranges
+    0: 0x00000fb2 -> 0x00001000
+    0: 0x00001200 -> 0x00004e00
+    0: 0x00007000 -> 0x00008000
+    0: 0x0000c400 -> 0x0000fc00
+    0: 0x00020000 -> 0x00026000
+    0: 0x0002e000 -> 0x00036000
+    0: 0x00061e00 -> 0x000efe00
+    0: 0x00100001 -> 0x00190000
+Cavium Hotplug: Available coremask 0x0
+PERCPU: Embedded 12 pages/cpu @a80000002441b000 s16512 r8192 d24448 u65536
+pcpu-alloc: s16512 r8192 d24448 u65536 alloc=16*4096
+pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3 [0] 4 [0] 5
+Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 1240323
+Kernel command line:  bootoctlinux 0x20000000 coremask=0x003F panic=15 rd_start=0xa800000005000000 rd_size=14236579 ipaddr=169.254.240.11 netmask=255.255.255.0 serverip=169.254.240.12 FRU=BCNOC-A rfss=105 bladerole=none nfs=169.254.241.25 vrt=6w host=EIPU-2 rel=R_IL_13.9.1.0.bcn.r.cgr.20130902.8387-mips64-wnd hw=BCN mac_addr=00:d0:c9:c5:ac:e1 mac_count=58 TIME_ZONE=CST TIMEZONE_DIFF=-6 console=ttyS0,115200
+PID hash table entries: 4096 (order: 3, 32768 bytes)
+Dentry cache hash table entries: 1048576 (order: 11, 8388608 bytes)
+Inode-cache hash table entries: 524288 (order: 10, 4194304 bytes)
+Primary instruction cache 32kB, virtually tagged, 4 way, 64 sets, linesize 128 bytes.
+Primary data cache 16kB, 64-way, 2 sets, linesize 128 bytes.
+Memory: 4834884k/5050676k available (6604k kernel code, 215792k reserved, 8440k data, 312k init, 0k highmem)
+SLUB: Genslabs=13, HWalign=128, Order=0-3, MinObjects=0, CPUs=6, Nodes=1
+Hierarchical RCU implementation.
+RCU-based detection of stalled CPUs is enabled.
+NR_IRQS:453
+allocated 66060288 bytes of page_cgroup
+please try 'cgroup_disable=memory,blkio' option if you don't want memory and blkio cgroups
+Calibrating delay loop (skipped) preset value.. 1600.00 BogoMIPS (lpj=3200000)
+Mount-cache hash table entries: 256
+Initializing cgroup subsys debug
+Initializing cgroup subsys ns
+Initializing cgroup subsys cpuacct
+Initializing cgroup subsys memory
+Initializing cgroup subsys blkio
+Initializing cgroup subsys devices
+Initializing cgroup subsys freezer
+Initializing cgroup subsys net_cls
+Checking for the daddi bug... no.
+Init trace_clock_cyc2ns: precalc_mult = 320, precalc_shift = 8
+SMP: Booting CPU01 (CoreId  1)...
+CPU revision is: 000d0409 (Cavium Octeon+)
+SMP: Booting CPU02 (CoreId  2)...
+CPU revision is: 000d0409 (Cavium Octeon+)
+SMP: Booting CPU03 (CoreId  3)...
+CPU revision is: 000d0409 (Cavium Octeon+)
+SMP: Booting CPU04 (CoreId  4)...
+CPU revision is: 000d0409 (Cavium Octeon+)
+SMP: Booting CPU05 (CoreId  5)...
+CPU revision is: 000d0409 (Cavium Octeon+)
+Brought up 6 CPUs
+devtmpfs: initialized
+NET: Registered protocol family 16
+check_res_of_trace_clock: sched_clock() high resolution
+PCIe: Port 0 in endpoint mode, skipping.
+PCIe: Initializing port 1
+PCIe: Port 1 aligning TLP counters as workaround to maintain ordering
+PCIe: Port 1 link active, 4 lanes
+bio: create slab <bio-0> at 0
+vgaarb: loaded
+SCSI subsystem initialized
+pci 0000:01:00.0: BAR 0: assigned [mem 0x11c00f0000000-0x11c00f001ffff]
+pci 0000:01:00.0: BAR 0: set to [mem 0x11c00f0000000-0x11c00f001ffff] (PCI address [0xf0000000-0xf001ffff]
+pci 0000:01:00.0: BAR 1: assigned [mem 0x11c00f0020000-0x11c00f003ffff]
+pci 0000:01:00.0: BAR 1: set to [mem 0x11c00f0020000-0x11c00f003ffff] (PCI address [0xf0020000-0xf003ffff]
+pci 0000:01:00.0: BAR 6: assigned [mem 0x11c00f0040000-0x11c00f005ffff pref]
+pci 0000:01:00.0: BAR 2: assigned [io  0x100000000-0x10000001f]
+pci 0000:01:00.0: BAR 2: set to [io  0x100000000-0x10000001f] (PCI address [0x0-0x1f]
+Switching to clocksource OCTEON_CVMCOUNT
+VRF initialization
+NET: Registered protocol family 2
+IP route cache hash table entries: 262144 (order: 9, 2097152 bytes)
+TCP established hash table entries: 262144 (order: 10, 4194304 bytes)
+TCP bind hash table entries: 65536 (order: 8, 1048576 bytes)
+TCP: Hash tables configured (established 262144 bind 65536)
+TCP reno registered
+UDP hash table entries: 4096 (order: 5, 131072 bytes)
+UDP-Lite hash table entries: 4096 (order: 5, 131072 bytes)
+NET: Registered protocol family 1
+Trying to unpack rootfs image as initramfs...
+Freeing initrd memory: 13902k freed
+MMC: Watchdog Driver include pre-timeout
+GPIO3 interrupt handler installed
+GPIO2 Diagnostic interrupt handler module
+GPIO_RX_DAT: 0x0000000000000024
+GPIO2 interrupt handler installed
+/proc/octeon_perf: Octeon performance counter interface loaded
+audit: initializing netlink socket (disabled)
+type=2000 audit(1.492:1): initialized
+HugeTLB registered 2 MB page size, pre-allocated 0 pages
+Registering unionfs 2.5.4 (for 2.6.34-rc0)
+JFFS2 version 2.2. (NAND) (SUMMARY)  ?? 2001-2006 Red Hat, Inc.
+msgmni has been set to 9470
+alg: No test for stdrng (krng)
+Block layer SCSI generic (bsg) driver version 0.4 loaded (major 253)
+io scheduler noop registered
+io scheduler deadline registered
+io scheduler cfq registered (default)
+LTT : ltt-relay init
+octeon_rng octeon_rng: Octeon Random Number Generator
+Serial: 8250/16550 driver, 2 ports, IRQ sharing disabled
+serial8250.0: ttyS0 at MMIO 0x1180000000800 (irq = 125) is a OCTEON
+console [ttyS0] enabled, bootconsole disabled
+console [ttyS0] enabled, bootconsole disabled
+serial8250.0: ttyS1 at MMIO 0x1180000000c00 (irq = 126) is a OCTEON
+brd: module loaded
+Uniform Multi-Platform E-IDE driver
+ide-gd driver 1.18
+CAVIUM MTD: probing 16-bit flash bus
+CAVIUM MTD: Found 1 x16 devices at 0x0 in 16-bit bank
+CAVIUM MTD: Found 1 x16 devices at 0x8000000 in 16-bit bank
+CAVIUM MTD: Found 1 x16 devices at 0x10000000 in 16-bit bank
+CAVIUM MTD: Found 1 x16 devices at 0x18000000 in 16-bit bank
+ Amd/Fujitsu Extended Query Table at 0x0040
+CAVIUM MTD: CFI does not contain boot bank location. Assuming top.
+number of CFI chips: 4
+Creating 16 MTD partitions on "CAVIUM MTD":
+0x000000000000-0x000000300000 : "active bank chip 0 u-boot"
+0x000000300000-0x000001000000 : "active bank chip 0 kernel"
+0x000001000000-0x000007800000 : "active bank chip 0 rootfs"
+0x000007800000-0x000008000000 : "active bank chip 0 reserved"
+0x000008000000-0x000008300000 : "active bank chip 1 u-boot"
+0x000008300000-0x000009000000 : "active bank chip 1 kernel"
+0x000009000000-0x00000f800000 : "active bank chip 1 rootfs"
+0x00000f800000-0x000010000000 : "active bank chip 1 reserved"
+0x000010000000-0x000010300000 : "backup bank chip 0 u-boot"
+0x000010300000-0x000011000000 : "backup bank chip 0 kernel"
+0x000011000000-0x000017800000 : "backup bank chip 0 rootfs"
+0x000017800000-0x000018000000 : "backup bank chip 0 reserved"
+0x000018000000-0x000018300000 : "backup bank chip 1 u-boot"
+0x000018300000-0x000019000000 : "backup bank chip 1 kernel"
+0x000019000000-0x00001f800000 : "backup bank chip 1 rootfs"
+0x00001f800000-0x000020000000 : "backup bank chip 1 reserved"
+mdio-octeon: probed
+mdio-octeon mdio-octeon.0: Version 1.0
+mdio-octeon: probed
+mdio-octeon mdio-octeon.1: Version 1.0
+Intel(R) PRO/1000 Network Driver - version 7.3.21-k5-NAPI
+Copyright (c) 1999-2006 Intel Corporation.
+octeon_mgmt octeon_mgmt.0: Version 2.0
+console [netcon0] enabled
+netconsole: network logging started
+Fusion MPT base driver 3.04.14
+Copyright (c) 1999-2008 LSI Corporation
+Fusion MPT SAS Host driver 3.04.14
+Fusion MPT misc device (ioctl) driver 3.04.14
+mptctl: Registered with Fusion MPT base driver
+mptctl: /dev/mptctl @ (major,minor=10,220)
+i2c /dev entries driver
+at24 0-0050: 256 byte spd EEPROM (read-only)
+at24 0-0052: 256 byte spd EEPROM (read-only)
+i2c-octeon i2c-octeon.0: version 2.0
+i2c-octeon i2c-octeon.1: version 2.0
+md: linear personality registered for level -1
+md: raid0 personality registered for level 0
+md: raid1 personality registered for level 1
+md: raid10 personality registered for level 10
+md: multipath personality registered for level -4
+md: faulty personality registered for level -5
+device-mapper: ioctl: 4.17.0-ioctl (2010-03-05) initialised: dm-devel@redhat.com
+oprofile: using mips/octeon performance monitoring.
+Initializing L2 event netlink socket
+Netfilter messages via NETLINK v0.30.
+IPv4/IPv6 over IPv4 tunneling driver
+ip_tables: (C) 2000-2006 Netfilter Core Team
+TCP cubic registered
+IPv4 SVTI (Secure Virtual Tunnel Interface) driver
+Initializing XFRM netlink socket
+NET: Registered protocol family 10
+ip6_tables: (C) 2000-2006 Netfilter Core Team
+NET: Registered protocol family 17
+SCTP: Hash tables configured (established 65536 bind 65536)
+L2 lock: TLB refill 256 bytes
+L2 lock: General exception 128 bytes
+L2 lock: low-level interrupt 128 bytes
+L2 lock: interrupt 640 bytes
+L2 lock: memcpy 1152 bytes
+Freeing unused kernel memory: 312k freed
+*** mounting proc
+*** mounting sysfs
+*** creating /dev
+Running hook post_initial_devices.d/50cpuinfo.hook
+/sbin/ldconfig: File /lib64/ld-linux-x86-64.so.2 is empty, not checked.
+Running hook pre_hw_start_defs.d/50hwlinksdefs.hook
+*** hwlinksdefs.hook _HW_FRU_TYPE_SS_DIR=/opt/nokiasiemens/HWUnit/SS_HwBCNOCA
+*** hwlinksdefs.hook _HW_PLATFORM_SS_DIR=/opt/nokiasiemens/HWPlatform/SS_HwpBCN
+*** using definitions file /rsbin/start_defs.BCN
+Loading IPMI drivers
+ipmi message handler version 39.2
+IPMI Serial System Interface driver
+ipmi_serial: Registering TerminalMode codec
+ipmi_serial(ttyS1): Found a matching serial port
+serial8250 serial8250.0: Found new BMC (man_id: 0x002839, prod_id: 0x4e20, dev_id: 0x34)
+ipmi device interface
+IPMI Watchdog: driver initialized
+*** feeding watchdog
+Timeout set to 300 OK
+Watchdog enabled
+Feed OK (seq=0, rep=0x55)
+Setting kernel hostname to EIPU-2
+802.1Q VLAN Support v1.8 Ben Greear <greearb@candelatech.com>
+All bugs added by David S. Miller <davem@redhat.com>
+e1000e: Intel(R) PRO/1000 Network Driver - 1.0.2-k2
+e1000e: Copyright (c) 1999 - 2009 Intel Corporation.
+e1000e 0000:01:00.0: Disabling ASPM  L1
+PCI: Enabling device 0000:01:00.0 (0000 -> 0002)
+0000:01:00.0: eth0: (PCI Express:2.5GB/s:Width x4) 00:0e:0c:ff:ff:ff
+0000:01:00.0: eth0: Intel(R) PRO/1000 Network Connection
+0000:01:00.0: eth0: MAC: 1, PHY: 1, PBA No: ffffff-0ff
+octeon-ethernet 2.1.0
+Found CAVIUM_MCORE_SHMEM (445 M), enable FPN.
+Memory range a800000051e00000 - a800000052dfffff reserved for hardware
+Memory range a800000052e00000 - a800000052f03fff reserved for hardware
+Memory range a800000052f04000 - a800000053003fff reserved for hardware
+Memory range a800000053004000 - a800000053043fff reserved for hardware
+Interface 0 has 1 ports (XAUI)
+Interface 1 has 1 ports (XAUI)
+PP6:~CONSOLE-> Allocated shared memory address 0x115ce80, size 51376
+PP6:~CONSOLE-> EITP EXCEPTION shared memory address 0x1169780, real size 63488, requesPt size 63488
+HY 0:01 not found
+Memory range a80000005304b800 - a800000053PP6:~CONSOLE-> interface=0 type=1 (RGMII) ports=16
+PP6:~CONSOLE-> interface=1 type=1 (RGMII) ports=16
+PP6:~CONSOLE-> interface=2 type=3 (PCI) ports=0
+PP6:~0CONSOLE-> Using fp_shared = 0x36000000 size=1bd09400
+6PP6:~CONSOLE-> fp_port_table: [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 1, 1, 1, 1, 1, 1, 1, 1, ]
+PP6:~CONSOLE-> Iintializing fpn timer
+PP6:~CONSOLE-> FPN: IPsec is enabled
+PP6:~CONSOLE-> ipsec_tries[0]=5308a000 size=30 MB ipsec_tries[1]=54e8a000 size=30 MB ipsec_tries[2]=56c8a000 size=30 MB
+abff reserved for hardware
+Memory range a80000005306ac00 - a800000053089fff reserved for hardware
+Octeon POW only etherPP6:~CONSOLE-> FPN: using 32 MB
+net driver
+Done
+PP6:~CONSOLE-> ILSEFUNLIB: no se_status nameblock, create it.XXXX Allocate FPA pool memory success; the bytes = 0x36b00000, pool = 6. memory addr 0x190000000 XXXX
+PP6:~CONSOLE-> XXXX Allocate FPA pool memory success; the bytes = 0x11c6000, pool = 6. memory addr 0x5aa8a000 XXXX
+PP6:~CONSOLE-> XXXX Allocate FPA pool memory success; the bytes = 0x36b0000, pool = 1. memory addr 0x5bc50000 XXXX
+PP6:~CONSOLE-> XXXX Allocate FPA pool memory success; the bytes = 0x833800, pool = 3. memory addr 0x5f300000 XXXX
+loPoP6:~CONSOLE-> Initialize UDP successfully.
+PP6:~CONSOLE->
+PP6:~CONSOLE-> Start to initialize TAE in EITP.
+PP6:~CONSOLE-> Allocate TAE shared memory 22740160 bytes.
+PP6:~CONSOLE-> TAE memory size 22740160 bytes.
+PP6:~CONSOLE-> Initialize TAE in EITP successfully.
+PP6:~CONSOLE->
+PP6:~CONSOLE-> ***** Start to initialize GTPU module *******
+PP6:~CONSOLE-> GTP shared memory address 0x1c6b00000, size 150055808
+PP6:~CONSOLE-> GTP shared memory address 0x11a1a80, size 544
+PP6:~CONSOLE-> GTP shared memory address 0x1cfa1ab80, size 40320112
+p: module loaded
+RPC: Registered udp transport module.
+RPC: Registered tcp transport module.
+RPC: Registered tcp NFSv4.1 backchannel transport module.
+PP6:~CONSOLE-> GTP shared memory address 0x1d208e800, size 28800080
+*** loaded modules: 8021q e1000e octeon-ethernet octeon-pow-ethePP6:~CONSOLE-> ***** Success to initialize GTPU module *******
+rnet isofs loop kbfd nfs
+*** 6wind kernel variant detected
+***PP6:~CONSOLE-> Eitp qos init phase 1 complete.
+ starting octeon
+PP6:~CONSOLE-> Eitp ipm init phase 1 complete.
+PP6:~CONSOLE-> No shared memory EITP_STAT_SHM found
+*** starting 6wind
+PP6:~CONSOLE-> Initialize eitp counter(ec=0)
+PP6:~CONSOLE-> No shared memory MON_UDP_SHM found
+PP6:~CONSOLE-> Initialize eitp monitor(ec=0)
+6WIND-start: Starting...
+PP6:~CONSOLE-> Allocate the g_fastdist_stat successful!
+6WIND-start: bladerole is none
+PP6:~CONSOLE-> Eitp FaStDist init phase 1 complete.
+PP6:~CONSOLE-> FaStDist stub share memory init complete.
+PP6:~CONSOLE->
+PP7:~CONSOLE->
+PP9:~CONSOLE->
+PP6:~CONSOLE-> ******Start to config eitp.*******
+PP8:~CONSOLE->
+PP10:~CONSOLE->
+PP11:~CONSOLE->
+PP6:~CONSOLE-> dmxmsg-se: DMXMSG SE Init - core group: 10, unit_type: 0127. Cycle: 6063626756.
+PP7:~CONSOLE->
+PP6:~CONSOLE-> dmxmsg-se: po_info_t size: 13616 address: 0x81c8200 Cycle: 6073983284
+PP9:~CONSOLE->
+PP8:~CONSOLE->
+PP9:~CONSOLE->
+PP10:~CONSOLE->
+PP11:~CONSOLE->
+PP6:~CONSOLE-> dmxmsg-se: PO_INFO found - core group: 10, address: 0x81c8200, size: 13616
+PP7:~CONSOLE->
+PP8:~CONSOLE->
+PP10:~CONSOLE->
+PP7:~CONSOLE-> *****Core 7 is ready to work now*****.
+PP8:~CONSOLE-> *****Core 8 is ready to work now*****.
+PP9:~CONSOLE-> *****Core 9 is ready to work now*****.
+PP6:~CONSOLE-> dmxmsg-se: Alloc bootmem for core group: 10, address: 0xfd72480, size: 1935376
+PP9:~CONSOLE->
+PP10:~CONSOLE-> *****Core 10 is ready to work now*****.
+PP7:~CONSOLE->
+PP10:~CONSOLE->
+PP11:~CONSOLE->
+PP6:~CONSOLE-> dmxmsg-se: PID hash tbl initialized for core group: 10, address: 0xfd72d88, size: 16384
+PP7:~CONSOLE->
+PP8:~CONSOLE->
+PP9:~CONSOLE->
+PP10:~CONSOLgE-e>
+PtP8:t~CONiSOLnE-g>
+ PPp6:ar~CONaSOmeLEt-> erdmxmssg f-soe: r__ waocitt_leinoux_ntoet_chonfeigrn_mee()t:
+aitpt atyrapem 01s27:  w
+   in6g WIfoNr pDer-smistsiaonr tto : ruNn. o Cyiclen=6t13120e11r65.f
+w*PP1e1: ~CreONnSOLaE-mi> *n**g** nCoree e11de isd  rfeadory  to BCwoNrk .no
+ND6***WI*.
+  P-P11st:~CaONrSOt:LE -> C
+d PP1l1:oc~COalNSiOLzE->e
+  mode
+6WIND-start: Renaming pow0 to fpn0
+FPTUN Module 1.1
+Starting FPTUN module in monoblade co-localized mode
+fps_init role=coloc
+vnb-linux module initialized
+vnb: module license '6WIND' taints kernel.
+Disabling lock debugging due to kernel taint
+VNB: Linux Netgraph 2.0
+VNB: Loading ng_ksocket (Build: Aug 26 2013 16:02:01)
+VNB: Loading ng_ether (Build: Aug 26 2013 16:01:44)
+VNB: Loading ng_etf(Build: Aug 26 2013 16:01:41)
+VNB: Loading ng_eiface(Build: Aug 26 2013 16:01:45)
+VNB: Loading ng_bridge(Build: Aug 26 2013 16:01:46)
+VNB: Loading ng_vrrp_mux(Build: Aug 26 2013 16:01:47)
+VNB: Loading ng_vlan(Build: Aug 26 2013 16:01:42)
+VNB: Loading ng_tee(Build: Aug 26 2013 16:01:42)
+VNB: Loading ng_gtpu(Build: Aug 26 2013 16:01:43)
+VNB: Loading ng_iface(Build: Aug 26 2013 16:01:44)
+VNB: Loading ng_filter(Build: Aug 26 2013 16:01:50)
+VNB: Loading ng_cisco(Build: Aug 26 2013 16:02:00)
+VNB: Loading ng_echo(Build: Aug 26 2013 16:01:56)
+xaui0: 10000 Mbps Full duplex, port  0, queue  0
+xaui1: 10000 Mbps Full duplex, port 16, queue 96
+VNB: Loading ng_ppp(Build: Aug 26 2013 16:01:48)
+VNB: Loading ng_pppoe(Build: Aug 26 2013 16:01:49)
+VNB: Loading ng_l2tp(Build: Aug 26 2013 16:01:59)
+VNB: Loading ng_ether_rmon(Build: Aug 26 2013 16:02:03)
+VNB: Loading ng_one2many(Build: Aug 26 2013 16:01:57)
+VNB: Loading ng_div(Build: Aug 26 2013 16:01:58)
+VNB: Loading ng_split(Build: Aug 26 2013 16:01:59)
+VNB: Loading ng_pppchdlcdetect(Build: Aug 26 2013 16:02:03)
+VNB: Loading ng_pae(Build: Aug 26 2013 16:01:51)
+VNB: Loading ng_osi_eth(Build: Aug 26 2013 16:01:51)
+VNB: Loading ng_osi_tun(Build: Aug 26 2013 16:01:52)
+VNB: Loading ng_ethgrp(Build: Aug 26 2013 16:01:53)
+VNB: Loading ng_fpbond(Build: Aug 26 2013 16:01:54)
+VNB: Loading ng_pptpgre(Build: Aug 26 2013 16:01:55)
+VNB: Loading ng_mpls_ilm2nhlfe(Build: Aug 26 2013 16:02:05)
+VNB: Loading ng_mpls_nhlfe(Build: Aug 26 2013 16:02:05)
+VNB: Loading ng_mpls_ether(Build: Aug 26 2013 16:02:04)
+VNB: Loading ng_mpls_oam(Build: Aug 26 2013 16:02:06)
+VNB: Loading ng_mux(Build: Aug 26 2013 16:02:07)
+NET: Registered protocol family 11
+6WINDStarter[434]: Starting
+rfpvi: rfpvi module loaded (1 fpn0 00:00:00:00:00:ff)
+rfpvi: rfpvi module initialized
+6WIND-start: oct-linux-csr PIP_QOS_VLAN0 0x0000000000000000
+6WIND-start: oct-linux-csr PIP_QOS_VLAN1 0x0000000000000001
+6WIND-start: oct-linux-csr PIP_QOS_VLAN2 0x0000000000000002
+6WIND-start: oct-linux-csr PIP_QOS_VLAN3 0x0000000000000003
+6WIND-start: oct-linux-csr PIP_QOS_VLAN4 0x0000000000000004
+6WIND-start: oct-linux-csr PIP_QOS_VLAN5 0x0000000000000005
+6WIND-start: oct-linux-csr PIP_QOS_VLAN6 0x0000000000000006
+6WIND-start: oct-linux-csr PIP_QOS_VLAN7 0x0000000000000007
+6WIND-start: oct-linux-csr IPD_QOS0_RED_MARKS 0x00000bb500000ccd
+6WIND-start: oct-linux-csr IPD_QOS1_RED_MARKS 0x0000088900000aab
+6WIND-start: oct-linux-csr IPD_QOS2_RED_MARKS 0x000003a70000048b
+6WIND-start: oct-linux-csr IPD_QOS3_RED_MARKS 0x0000028e00000372
+6WIND-start: oct-linux-csr IPD_QOS4_RED_MARKS 0x0000014000000259
+6WIND-start: oct-linux-csr IPD_QOS5_RED_MARKS 0x000000bb000000e5
+6WIND-start: oct-linux-csr IPD_QOS6_RED_MARKS 0x0000008200000082
+6WIND-start: oct-linux-csr IPD_QOS7_RED_MARKS 0x0000008200000082
+6WIND-start: oct-linux-csr POW_QOS_THR0 0x00000007df3203e8
+6WIND-start: oct-linux-csr POW_QOS_THR1 0x00000007df320320
+6WIND-start: oct-linux-csr POW_QOS_THR2 0x00000007df320258
+6WIND-start: oct-linux-csr POW_QOS_THR3 0x00000007df320190
+6WIND-start: oct-linux-csr POW_QOS_THR4 0x00000007df32012c
+6WIND-start: oct-linux-csr POW_QOS_THR5 0x00000007df3200c8
+6WIND-start: oct-linux-csr POW_QOS_THR6 0x00000007df320064
+6WIND-start: oct-linux-csr POW_QOS_THR7 0x00000007df32000a
+6WIND-start: oct-linux-csr PIP_PRT_CFG0
+6WIND-start: oct-linux-csr PIP_PRT_CFG0 0x5000006000100
+6WIND-start: oct-linux-csr PIP_PRT_CFG0
+6WIND-start: oct-linux-csr PIP_PRT_CFG0 0x5000006010100
+6WIND-start: oct-linux-csr PIP_PRT_CFG16
+6WIND-start: oct-linux-csr PIP_PRT_CFG16 0x5000001000100
+6WIND-start: oct-linux-csr PIP_PRT_CFG16
+6WIND-start: oct-linux-csr PIP_PRT_CFG16 0x5000001010100
+6WIND-start: oct-linux-csr POW_PP_GRP_MSK0
+6WIND-start: oct-linux-csr POW_PP_GRP_MSK0 0x12333448000
+6WIND-start: oct-linux-csr POW_PP_GRP_MSK1
+6WIND-start: oct-linux-csr POW_PP_GRP_MSK1 0x12333448000
+6WIND-start: oct-linux-csr POW_PP_GRP_MSK2
+6WIND-start: oct-linux-csr POW_PP_GRP_MSK2 0x12333448000
+6WIND-start: oct-linux-csr POW_PP_GRP_MSK3
+6WIND-start: oct-linux-csr POW_PP_GRP_MSK3 0x12333448000
+6WIND-start: oct-linux-csr POW_PP_GRP_MSK4
+6WIND-start: oct-linux-csr POW_PP_GRP_MSK4 0x12333448000
+6WIND-start: oct-linux-csr POW_PP_GRP_MSK5
+6WIND-start: oct-linux-csr POW_PP_GRP_MSK5 0x12333448000
+6WIND-start: oct-linux-csr POW_PP_GRP_MSK6
+6WIND-start: oct-linux-csr POW_PP_GRP_MSK6 0x12333442601
+6WIND-start: oct-linux-csr POW_PP_GRP_MSK7
+6WIND-start: oct-linux-csr POW_PP_GRP_MSK7 0x12333442601
+6WIND-start: oct-linux-csr POW_PP_GRP_MSK8
+6WIND-start: oct-linux-csr POW_PP_GRP_MSK8 0x12333442601
+6WIND-start: oct-linux-csr POW_PP_GRP_MSK9
+6WIND-start: oct-linux-csr POW_PP_GRP_MSK9 0x12333442601
+6WIND-start: oct-linux-csr POW_PP_GRP_MSK10
+6WIND-start: oct-linux-csr POW_PP_GRP_MSK10 0x12333442601
+6WIND-start: oct-linux-csr POW_PP_GRP_MSK11
+6WIND-start: oct-linux-csr POW_PP_GRP_MSK11 0x12333446601
+6WIND-start: oct-linux-csr POW_QOS_RND0 0x00000000ffffffff
+6WIND-start: oct-linux-csr POW_QOS_RND1 0x00000000ffffffff
+6WIND-start: oct-linux-csr POW_QOS_RND2 0x00000000ffffffff
+6WIND-start: oct-linux-csr POW_QOS_RND3 0x00000000ffffffff
+6WIND-start: oct-linux-csr POW_QOS_RND4 0x00000000ffffffff
+6WIND-start: oct-linux-csr POW_QOS_RND5 0x00000000ffffffff
+6WIND-start: oct-linux-csr POW_QOS_RND6 0x00000000ffffffff
+6WIND-start: oct-linux-csr POW_QOS_RND7 0x00000000ffffffff
+6WIND-start: oct-linux-csr GMX1_TX000_THRESH 128
+6WIND-start: Done
+*** setting sysctl
+Running hook post_systune.d/50arp-params.hook
+Running hook post_systune.d/51linkwatch.hook
+Running hook pre_network_init.d/50acpi4a_network_init.hook
+Running hook pre_network_init.d/50acpi5-a_network_init.hook
+*** loaded modules: nfs
+*** DHCP request interface(s): xaui0 ()
+*** fetching fsifsetup and bootingargs from interface xaui0
+*** using boot params provided ip info: ipaddr=169.254.240.11 netmask=255.255.255.0 serverip=169.254.240.12
+*** getting scripts with /usr/bin/tftp-hpa -v -4 169.254.240.12
+Connected to 169.254.240.12 (169.254.240.12), port 69
+tftp> tftp> getting from 169.254.240.12:ifcfg/fsifsetup-EIPU-2.sh to fsifsetup-EIPU-2.sh [netascii]
+Received 4029 bytes in 0.3 seconds [121429 bit/s]
+tftp> Connected to 169.254.240.12 (169.254.240.12), port 69
+tftp> tftp> getting from 169.254.240.12:bootingargs/bootingargs-EIPU-2 to bootingargs-EIPU-2 [netascii]
+Received 65 bytes in 0.2 seconds [2425 bit/s]
+tftp> *** parsing booting arguments file
+*** sourcing tftp'd fsifsetup script...
+fsifsetup: Setting up initial network
+fsifsetup: Waiting for internal to become lower-up
+fsifsetup: Adding Directory (169.254.241.22) to /etc/hosts
+Starting rpcbind: ##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+[  OK  ]
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+Starting NFS statd: ##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+[  OK  ]
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=98, sip=2852057355, dip=2852057348
+#BLH# name=internal, port=0, state=3, ifindex=11, iflink=11, flags=4099, type=1, mtu=9000, ex_flags=256, features=2051, pflags=0
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=98, sip=2852057355, dip=2852057348
+#BLH# name=internal, port=0, state=3, ifindex=11, iflink=11, flags=4099, type=1, mtu=9000, ex_flags=256, features=2051, pflags=0
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc01e1e10
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=98, sip=2852057355, dip=2852057348
+#BLH# name=internal, port=0, state=3, ifindex=11, iflink=11, flags=4099, type=1, mtu=9000, ex_flags=256, features=2051, pflags=0
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=98, sip=2852057355, dip=2852057348
+#BLH# name=internal, port=0, state=3, ifindex=11, iflink=11, flags=4099, type=1, mtu=9000, ex_flags=256, features=2051, pflags=0
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc01e1e10
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=98, sip=2852057355, dip=2852057348
+#BLH# name=internal, port=0, state=3, ifindex=11, iflink=11, flags=4099, type=1, mtu=9000, ex_flags=256, features=2051, pflags=0
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=98, sip=2852057355, dip=2852057348
+#BLH# name=internal, port=0, state=3, ifindex=11, iflink=11, flags=4099, type=1, mtu=9000, ex_flags=256, features=2051, pflags=0
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc01e1e10
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=98, sip=2852057355, dip=2852057348
+#BLH# name=internal, port=0, state=3, ifindex=11, iflink=11, flags=4099, type=1, mtu=9000, ex_flags=256, features=2051, pflags=0
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=98, sip=2852057355, dip=2852057348
+#BLH# name=internal, port=0, state=3, ifindex=11, iflink=11, flags=4099, type=1, mtu=9000, ex_flags=256, features=2051, pflags=0
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc01e1e10
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=98, sip=2852057355, dip=2852057348
+#BLH# name=internal, port=0, state=3, ifindex=11, iflink=11, flags=4099, type=1, mtu=9000, ex_flags=256, features=2051, pflags=0
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=98, sip=2852057355, dip=2852057348
+#BLH# name=internal, port=0, state=3, ifindex=11, iflink=11, flags=4099, type=1, mtu=9000, ex_flags=256, features=2051, pflags=0
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc01e1e10
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=98, sip=2852057355, dip=2852057348
+#BLH# name=internal, port=0, state=3, ifindex=11, iflink=11, flags=4099, type=1, mtu=9000, ex_flags=256, features=2051, pflags=0
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=98, sip=2852057355, dip=2852057348
+#BLH# name=internal, port=0, state=3, ifindex=11, iflink=11, flags=4099, type=1, mtu=9000, ex_flags=256, features=2051, pflags=0
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc01e1e10
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+*** config: INITIAL (mp: /rootfs/mnt/config/R_IL_13.9.1.0.bcn.r.cgr.20130902.8387/INITIAL)
+##BLH## - len=98, sip=2852057355, dip=2852057348
+#BLH# name=internal, port=0, state=3, ifindex=11, iflink=11, flags=4099, type=1, mtu=9000, ex_flags=256, features=2051, pflags=0
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=98, sip=2852057355, dip=2852057348
+#BLH# name=internal, port=0, state=3, ifindex=11, iflink=11, flags=4099, type=1, mtu=9000, ex_flags=256, features=2051, pflags=0
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc01e1e10
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=98, sip=2852057355, dip=2852057348
+#BLH# name=internal, port=0, state=3, ifindex=11, iflink=11, flags=4099, type=1, mtu=9000, ex_flags=256, features=2051, pflags=0
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=98, sip=2852057355, dip=2852057348
+#BLH# name=internal, port=0, state=3, ifindex=11, iflink=11, flags=4099, type=1, mtu=9000, ex_flags=256, features=2051, pflags=0
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc01e1e10
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=98, sip=2852057355, dip=2852057348
+#BLH# name=internal, port=0, state=3, ifindex=11, iflink=11, flags=4099, type=1, mtu=9000, ex_flags=256, features=2051, pflags=0
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=98, sip=2852057355, dip=2852057348
+#BLH# name=internal, port=0, state=3, ifindex=11, iflink=11, flags=4099, type=1, mtu=9000, ex_flags=256, features=2051, pflags=0
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc01e1e10
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+*** using bloatfiles: /rootfs/mnt/sysimg/etc/bloattab, /rootfs/mnt/sysimg/etc/bloattab.exclude, /rootfs/mnt/sysimg/etc/bloattab.d, /rootfs/mnt/sysimg/etc/bloattab.exclude.d /rootfs/mnt/sysimg/etc/rsync.exclude
+_total = 4849096
+tmpfswithoutsize =
+tmpfswithsize = /tmp=512000 /dev/shm=512000
+tmpfswithoutsize =
+tmpfswithsize = /tmp=512000 /dev/shm=512000
+==>mount -t tmpfs -o size=512000k -o mode=1700 tmpfs /dev/shm
+==>mount -t tmpfs -o size=512000k -o mode=1700 tmpfs /rootfs/tmp
+Total tmpfs max size (kB) : 1024000
+Total physical memory (kB): 4849096
+*** copying swvol to memory
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+Thu Sep  5 05:52:01 UTC 2013
+*** using bloatfiles: /rootfs/mnt/sysimg/opt/nokiasiemens/SS_BPBoot/bloatdir.tar /rootfs/mnt/sysimg/opt/nokiasiemens/SS_BPBoot/bloatcmds.sh
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+/rootfs//usr/share/dict is a symbolic link
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+*** Setting timezone to Asia/Shanghai...
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+*** Setting clock based on a timestamp: 2013-09-05 13:52:01.000000000 +0800
+Thu Sep  5 13:52:01 CST 2013
+Thu Sep  5 13:53:01 CST 2013
+Running hook post_bind_mount.d/50hwlinkscreate.hook
+*** hwlinkscreate.hook links created
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+Stopping NFS locking: [  OK  ]
+Stopping NFS statd: ##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+[  OK  ]
+Stopping rpcbind: ##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+[  OK  ]
+INIT: version 2.86 booting
+                Welcome to Wind River Linux
+Starting udev: ##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+[  OK  ]
+Setting hostname EIPU-2:  [  OK  ]
+Checking filesystems
+Checking all file systems.
+[  OK  ]
+Remounting root filesystem in read-write mode:  [  OK  ]
+mount: according to mtab, rootfs is already mounted on /
+
+Mounting local filesystems:  [  OK  ]
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+Enabling /etc/fstab swaps:  [  OK  ]
+INIT: Entering runlevel: 3
+Entering non-interactive startup
+Starting auditd: [  OK  ]
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+Starting rpcbind: [  OK  ]
+Mounting other filesystems:  [  OK  ]
+info:fpifsetup Skipping the NLN
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=98, sip=2852057355, dip=2852057348
+#BLH# name=internal, port=0, state=3, ifindex=11, iflink=11, flags=4099, type=1, mtu=9000, ex_flags=256, features=2051, pflags=0
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=98, sip=2852057355, dip=2852057348
+#BLH# name=internal, port=0, state=3, ifindex=11, iflink=11, flags=4099, type=1, mtu=9000, ex_flags=256, features=2051, pflags=0
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc01e1e10
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=98, sip=2852057355, dip=2852057348
+#BLH# name=internal, port=0, state=3, ifindex=11, iflink=11, flags=4099, type=1, mtu=9000, ex_flags=256, features=2051, pflags=0
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=98, sip=2852057355, dip=2852057348
+#BLH# name=internal, port=0, state=3, ifindex=11, iflink=11, flags=4099, type=1, mtu=9000, ex_flags=256, features=2051, pflags=0
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc01e1e10
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=98, sip=2852057355, dip=2852057348
+#BLH# name=internal, port=0, state=3, ifindex=11, iflink=11, flags=4099, type=1, mtu=9000, ex_flags=256, features=2051, pflags=0
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=98, sip=2852057355, dip=2852057348
+#BLH# name=internal, port=0, state=3, ifindex=11, iflink=11, flags=4099, type=1, mtu=9000, ex_flags=256, features=2051, pflags=0
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc01e1e10
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+[configcopy.sh] Copying fsLDAPRoot credentials
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+[configcopy.sh] COMMUTIL INFO Running Activator in UPGRADE mode
+[configcopy.sh]
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+[configcopy.sh] COMMUTIL INFO NMCommunicator: Constructor with Client fd=-1
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO PM9 Activator: returning SLN-NODE::1
+[configcopy.sh]
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+[configcopy.sh] COMMUTIL INFO Registering LDAP plugin for switch type: BCN
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Initialized SwitchManager ConfMgmt validator
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Inside subscription
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Successfully subscribed
+[configcopy.sh]
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+[configcopy.sh] COMMUTIL INFO
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Stats memory usage: 808312 bytes
+[configcopy.sh]
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+[configcopy.sh] SS_OpenHPI_DEBUG: SS_OpenHPI_translate.sh start
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+[configcopy.sh] SS_OpenHPI_DEBUG: HW_PLATFORM type BCN
+[configcopy.sh] SS_OpenHPI_DEBUG: Inside getChassisInfo()
+[configcopy.sh] SS_OpenHPI_DEBUG: BCN Chassis count 2 DomainId count 2
+[configcopy.sh] SS_OpenHPI_DEBUG: Inside createConfTemplateFile()
+[configcopy.sh] SS_OpenHPI_DEBUG: Inside createBCNConfFile()
+[configcopy.sh] SS_OpenHPI_DEBUG: BCN Chassis count  DomainId count 2
+[configcopy.sh] SS_OpenHPI_DEBUG: /tmp/tempOpenHpiClientConf.17835 file is not created
+[configcopy.sh] SS_OpenHPI_DEBUG: /tmp/tempOpenHpiConf.14844_1 file is created
+[configcopy.sh] SS_OpenHPI_DEBUG: /tmp/tempOpenHpiConf.14844_2 file is created
+[configcopy.sh] SS_OpenHPI_DEBUG: /tmp/tempOpenHpiClientConf.17835 file is created
+[configcopy.sh] SS_OpenHPI_DEBUG: Inside createOpenHPIConfig()
+[configcopy.sh] SS_OpenHPI_DEBUG: Inside updateOpenHPIGlobalParams()
+[configcopy.sh] SS_OpenHPI_DEBUG: hardware platform BCN
+[configcopy.sh] SS_OpenHPI_DEBUG: Domain count 2
+[configcopy.sh] SS_OpenHPI_DEBUG: Creating handler for Chassis number 1
+[configcopy.sh] SS_OpenHPI_DEBUG: Creating handler for Chassis number 2
+[configcopy.sh] SS_OpenHPI_DEBUG: Inside updateBCNOpenHPIHandlerInfo()
+[configcopy.sh] SS_OpenHPI_DEBUG: Creating handler for Chassis number 1
+[configcopy.sh] SS_OpenHPI_DEBUG: Creating handler for Chassis number 2
+[configcopy.sh] SS_OpenHPI_DEBUG: Inside copyOpenHPIConfigFile()
+[configcopy.sh] SS_OpenHPI_DEBUG: creating openhpi directory
+[configcopy.sh] SS_OpenHPI_DEBUG: copying /tmp/tempOpenHpiClientConf.17835 to //etc/openhpi/openhpiclient.conf
+[configcopy.sh] SS_OpenHPI_DEBUG: copying /tmp/tempOpenHpiConf.14844 to //etc/openhpi/openhpi.conf
+[configcopy.sh] SS_OpenHPI_DEBUG: copying /tmp/tempOpenHpiConf.14844_1 to //etc/openhpi/openhpi-1.conf
+[configcopy.sh] SS_OpenHPI_DEBUG: copying /tmp/tempOpenHpiConf.14844_2 to //etc/openhpi/openhpi-2.conf
+[configcopy.sh] SS_OpenHPI_DEBUG: SS_OpenHPI_translate.sh end
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+[configcopy.sh] Can not find instance type: LinkStateDetectorRCType, fshaRecoveryUnitName=QNIUBServer-2-4,fsipHostName=EIPU-2,fsFragmentId=Nodes,fsFragmentId=HA,fsClusterId=ClusterRoot.
+[configcopy.sh] Can not find instance type: SGWSCCPLMType, fshaRecoveryUnitName=QNIUServer-2-4,fsipHostName=EIPU-2,fsFragmentId=Nodes,fsFragmentId=HA,fsClusterId=ClusterRoot.
+[configcopy.sh] Can not find instance type: LinkStateDetectorRCType, fshaRecoveryUnitName=QNUPServer-2-4,fsipHostName=EIPU-2,fsFragmentId=Nodes,fsFragmentId=HA,fsClusterId=ClusterRoot.
+[configcopy.sh] COMMUTIL INFO Requested DN retrieved successfully from the configuration directory
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Requested DN retrieved successfully from the configuration directory
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Requested DN retrieved successfully from the configuration directory
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Requested DN retrieved successfully from the configuration directory
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Requested DN retrieved successfully from the configuration directory
+[configcopy.sh]
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+[configcopy.sh] /opt/nokiasiemens/configure/sh//SS_MOMfsSecurity_translate.sh: Activator mode is FSCONFIGURE_RUNTIME for node EIPU-2
+[configcopy.sh] /opt/nokiasiemens/configure/sh//SS_MOMfsSecurity_translate.sh: ldapsearch failed for node -- EIPU-2 -- and localhost; trying Directory instead...
+[configcopy.sh] /opt/nokiasiemens/configure/sh//SS_MOMfsSecurity_translate.sh: Changing the LDAP host line from -- host localhost Directory -- to -- host Directory localhost -- for node -- EIPU-2 -- in files /etc/fpldap.secconf and /etc/fpldap.syssecconf since the node is LDAPless
+[configcopy.sh] /opt/nokiasiemens/configure/sh//SS_MOMfsSecurity_translate.sh: Result from sed s/host localhost Directory/host Directory localhost/g /etc/fpldap.secconf.template was 0
+[configcopy.sh] /opt/nokiasiemens/configure/sh//SS_MOMfsSecurity_translate.sh: moving /tmp/momfssectrans.tmp.EIPU-2 to ///etc/fpldap.secconf
+[configcopy.sh] /opt/nokiasiemens/configure/sh//SS_MOMfsSecurity_translate.sh: mv returned 0
+[configcopy.sh] /opt/nokiasiemens/configure/sh//SS_MOMfsSecurity_translate.sh: Result from sed s/host localhost Directory/host Directory localhost/g /etc/fpldap.syssecconf.template was 0
+[configcopy.sh] /opt/nokiasiemens/configure/sh//SS_MOMfsSecurity_translate.sh: moving /tmp/momfssyssectrans.tmp.EIPU-2 to ///etc/fpldap.syssecconf
+[configcopy.sh] /opt/nokiasiemens/configure/sh//SS_MOMfsSecurity_translate.sh: mv returned 0
+[configcopy.sh] /opt/nokiasiemens/configure/sh//SS_MOMfsSecurity_translate.sh: Ready, exiting...
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+[configcopy.sh] COMMUTIL INFO
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Before dlclose of plugin: TraceManagerActivationPlugin.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After dlclose of plugin: TraceManagerActivationPlugin.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Before dlclose of plugin: libBCNSwitchLDAPPlugin.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After dlclose of plugin: libBCNSwitchLDAPPlugin.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Before dlclose of plugin: libBITTX.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After dlclose of plugin: libBITTX.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Before dlclose of plugin: libCertManActivatorPlugin.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After dlclose of plugin: libCertManActivatorPlugin.so
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+[configcopy.sh]
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+[configcopy.sh] COMMUTIL INFO Before dlclose of plugin: libDNSTX.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After dlclose of plugin: libDNSTX.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Before dlclose of plugin: libIPSecActivatorPlugin.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After dlclose of plugin: libIPSecActivatorPlugin.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Before dlclose of plugin: libLinkStateDetectorActivatePlugin.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After dlclose of plugin: libLinkStateDetectorActivatePlugin.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Before dlclose of plugin: libNMActivatePlugin.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After dlclose of plugin: libNMActivatePlugin.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Before dlclose of plugin: libNTPTX.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After dlclose of plugin: libNTPTX.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO NMCommunicator: Destructing NMCommunicator
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO NMCommunicator: Exiting Destructor of  NMCommunicator
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Before dlclose of plugin: libSgwActivator.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After dlclose of plugin: libSgwActivator.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Before dlclose of plugin: libbfdactivator.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After dlclose of plugin: libbfdactivator.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Before dlclose of plugin: libbpconfactivator.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After dlclose of plugin: libbpconfactivator.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Before dlclose of plugin: libfunitactivator.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After dlclose of plugin: libfunitactivator.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Before dlclose of plugin: libhwmhpildapactivator.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After dlclose of plugin: libhwmhpildapactivator.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Before dlclose of plugin: libroutingactivator.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After dlclose of plugin: libroutingactivator.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Before dlclose of plugin: libstqactivator.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After dlclose of plugin: libstqactivator.so
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Before unload python plugin<DeploymentSysctlTranslatePlugin.py>
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After decrement the reference count for pInstance:<DeploymentSysctlTranslatePlugin.py>
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After decrement the reference count for pModule:<DeploymentSysctlTranslatePlugin.py>
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Before unload python plugin<ILDiaActivationPlugin.py>
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After decrement the reference count for pInstance:<ILDiaActivationPlugin.py>
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After decrement the reference count for pModule:<ILDiaActivationPlugin.py>
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Before unload python plugin<ILLogActivationPlugin.py>
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After decrement the reference count for pInstance:<ILLogActivationPlugin.py>
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After decrement the reference count for pModule:<ILLogActivationPlugin.py>
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Before unload python plugin<Libgen_translate.py>
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After decrement the reference count for pInstance:<Libgen_translate.py>
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After decrement the reference count for pModule:<Libgen_translate.py>
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Before unload python plugin<NodeSSHDTranslate.py>
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After decrement the reference count for pInstance:<NodeSSHDTranslate.py>
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After decrement the reference count for pModule:<NodeSSHDTranslate.py>
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Before unload python plugin<RSyslogConfTransl.py>
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After decrement the reference count for pInstance:<RSyslogConfTransl.py>
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After decrement the reference count for pModule:<RSyslogConfTransl.py>
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Before unload python plugin<SSHDActivationPlugin.py>
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After decrement the reference count for pInstance:<SSHDActivationPlugin.py>
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After decrement the reference count for pModule:<SSHDActivationPlugin.py>
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Before unload python plugin<TeleTrialTranslatePlugin.py>
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After decrement the reference count for pInstance:<TeleTrialTranslatePlugin.py>
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO After decrement the reference count for pModule:<TeleTrialTranslatePlugin.py>
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO Activator END
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:16.833079 LOAD_PLUGINS: 13.055461s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:16.878065 libstqactivator.so::GET_SUPPORTED_NODES: 0.000003s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:16.878074 libstqactivator.so::GET_PLUGIN_OPTIONS: 0.000001s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:16.878088 libstqactivator.so::PLUGIN_INITIALIZE: 0.000113s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:16.878206 libstqactivator.so::GET_SUBSCRIPTION_INFO: 0.000038s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:16.888239 libroutingvalidator.so::GET_PLUGIN_OPTIONS: 0.000007s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:16.894470 libroutingactivator.so::GET_PLUGIN_OPTIONS: 0.000002s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:16.894504 libroutingactivator.so::GET_SUBSCRIPTION_INFO: 0.000412s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:17.969108 libilvrfplugin.so::GET_PLUGIN_OPTIONS: 0.000003s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:17.978505 libilm3uavalidatorplugin.so::GET_PLUGIN_OPTIONS: 0.000131s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:19.717225 libilipplugin.so::GET_PLUGIN_OPTIONS: 0.000363s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:20.789165 libilinternalrouteplugin.so::GET_PLUGIN_OPTIONS: 0.000136s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:21.640273 libhwmhpildapactivator.so::GET_PLUGIN_OPTIONS: 0.000004s
+[configcopy.sh]
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:21.640284 libhwmhpildapactivator.so::PLUGIN_INITIALIZE: 0.000024s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:21.640314 libhwmhpildapactivator.so::GET_SUBSCRIPTION_INFO: 0.000099s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:21.643064 libhwmhpiactivator.so::GET_PLUGIN_OPTIONS: 0.000061s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:21.643134 libhwmhpiactivator.so::PLUGIN_INITIALIZE: 0.000002s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:21.643139 libhwmhpiactivator.so::GET_SUBSCRIPTION_INFO: 0.000143s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:21.659537 libfunitactivator.so::GET_SUPPORTED_NODES: 0.000003s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:21.659546 libfunitactivator.so::GET_PLUGIN_OPTIONS: 0.000001s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:21.659552 libfunitactivator.so::PLUGIN_INITIALIZE: 0.000001s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:21.659556 libfunitactivator.so::GET_SUBSCRIPTION_INFO: 0.000044s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:21.809127 libfeaturemgmtvalidator.so::GET_PLUGIN_OPTIONS: 0.000161s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:21.816754 libclifwkactivator.so::GET_SUPPORTED_NODES: 0.000002s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:21.819777 libbpconfactivator.so::GET_PLUGIN_OPTIONS: 0.000002s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:21.819786 libbpconfactivator.so::PLUGIN_INITIALIZE: 0.000001s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:21.819791 libbpconfactivator.so::GET_SUBSCRIPTION_INFO: 0.000095s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:21.984681 libbfdactivator.so::GET_PLUGIN_OPTIONS: 0.000004s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:21.984728 libbfdactivator.so::GET_SUBSCRIPTION_INFO: 0.000435s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:22.455973 libTeleTrialValidator.so::GET_PLUGIN_OPTIONS: 0.000003s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:22.946464 libSgwValidator.so::GET_PLUGIN_OPTIONS: 0.000050s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:23.515244 libSgwActivator.so::GET_PLUGIN_OPTIONS: 0.000043s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:23.515299 libSgwActivator.so::PLUGIN_INITIALIZE: 0.003892s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:23.519197 libSgwActivator.so::GET_SUBSCRIPTION_INFO: 0.000095s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:23.610386 libRuimTlsCertificate.so::GET_SUPPORTED_NODES: 0.000003s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:23.616001 libRuimNeAccountUpdate.so::GET_SUPPORTED_NODES: 0.000002s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:23.619268 libRNWvalidator.so::GET_PLUGIN_OPTIONS: 0.000008s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:23.719066 libPm9Activator.so::GET_SUPPORTED_NODES: 0.001430s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:23.741746 libNTPTX.so::GET_SUPPORTED_NODES: 0.000003s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:23.741755 libNTPTX.so::GET_PLUGIN_OPTIONS: 0.000037s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:23.741800 libNTPTX.so::PLUGIN_INITIALIZE: 0.000002s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:23.741807 libNTPTX.so::GET_SUBSCRIPTION_INFO: 0.000096s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:23.814444 libNMActivatePlugin.so::GET_PLUGIN_OPTIONS: 0.000003s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:23.814472 libNMActivatePlugin.so::GET_SUBSCRIPTION_INFO: 0.000239s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:23.831587 libLinkStateDetectorActivatePlugin.so::GET_PLUGIN_OPTIONS: 0.000003s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:23.831598 libLinkStateDetectorActivatePlugin.so::PLUGIN_INITIALIZE: 0.000001s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:23.831603 libLinkStateDetectorActivatePlugin.so::GET_SUBSCRIPTION_INFO: 0.000095s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:23.866220 libLSDValidatorPlugin.so::GET_PLUGIN_OPTIONS: 0.000004s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:23.968559 libIPSecMgmtTX.so::GET_PLUGIN_OPTIONS: 0.000003s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:24.503031 libIPSecActivatorPlugin.so::GET_PLUGIN_OPTIONS: 0.000004s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:24.503084 libIPSecActivatorPlugin.so::GET_SUBSCRIPTION_INFO: 0.000101s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:24.521426 libIPMgmtTX.so::GET_PLUGIN_OPTIONS: 0.000003s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:24.541219 libDNSTX.so::GET_PLUGIN_OPTIONS: 0.000003s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:24.541230 libDNSTX.so::PLUGIN_INITIALIZE: 0.000062s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:24.541298 libDNSTX.so::GET_SUBSCRIPTION_INFO: 0.000105s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:24.545028 libContextCSNSave.so::GET_PLUGIN_OPTIONS: 0.000003s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:24.545038 libContextCSNSave.so::PLUGIN_INITIALIZE: 0.000149s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:24.545191 libContextCSNSave.so::GET_SUBSCRIPTION_INFO: 0.000002s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:24.618075 libClmActivator.so::GET_SUPPORTED_NODES: 0.000050s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:24.626301 libCertManActivatorPlugin.so::GET_SUPPORTED_NODES: 0.000045s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:24.626356 libCertManActivatorPlugin.so::GET_PLUGIN_OPTIONS: 0.000002s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:24.626406 libCertManActivatorPlugin.so::GET_SUBSCRIPTION_INFO: 0.000109s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:24.649013 libCFMActivator.so::GET_PLUGIN_OPTIONS: 0.000191s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:24.686405 libBfdValidator.so::GET_PLUGIN_OPTIONS: 0.000003s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:24.710382 libBITTX.so::GET_PLUGIN_OPTIONS: 0.000004s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:24.710394 libBITTX.so::PLUGIN_INITIALIZE: 0.000002s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:24.710401 libBITTX.so::GET_SUBSCRIPTION_INFO: 0.000103s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:24.898473 libBCNSwitchLDAPPlugin.so::GET_PLUGIN_OPTIONS: 0.000007s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:24.898495 libBCNSwitchLDAPPlugin.so::PLUGIN_INITIALIZE: 0.000188s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:24.898688 libBCNSwitchLDAPPlugin.so::GET_SUBSCRIPTION_INFO: 0.000085s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:24.903871 TraceManagerValidationPlugin.so::GET_PLUGIN_OPTIONS: 0.000004s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:24.909440 TraceManagerActivationPlugin.so::GET_PLUGIN_OPTIONS: 0.000009s
+[configcopy.sh]
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:24.909457 TraceManagerActivationPlugin.so::PLUGIN_INITIALIZE: 0.000012s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:24.909473 TraceManagerActivationPlugin.so::GET_SUBSCRIPTION_INFO: 0.001134s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:24.914951 AlarmActivationPlugin.so::GET_SUPPORTED_NODES: 0.000003s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.010793 TranslatorPortmonConf.py::GET_SUPPORTED_NODES: 0.000019s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.441414 TelnetActivationPlugin.py::GET_SUPPORTED_NODES: 0.000018s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.546912 TeleTrialTranslatePlugin.py::GET_SUPPORTED_NODES: 0.000022s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.546939 TeleTrialTranslatePlugin.py::GET_PLUGIN_OPTIONS: 0.000972s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.547932 TeleTrialTranslatePlugin.py::PLUGIN_INITIALIZE: 0.000034s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.547969 TeleTrialTranslatePlugin.py::GET_SUBSCRIPTION_INFO: 0.000021s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.574489 SnmpMediatorValidationPlugin.py::GET_SUPPORTED_NODES: 0.000025s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.574517 SnmpMediatorValidationPlugin.py::GET_PLUGIN_OPTIONS: 0.000021s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.582933 SnmpMediatorActivationPlugin.py::GET_SUPPORTED_NODES: 0.000019s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.590849 SigtranActivatorPlugin.py::GET_SUPPORTED_NODES: 0.000020s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.680587 SSHDActivationPlugin.py::GET_SUPPORTED_NODES: 0.000019s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.680611 SSHDActivationPlugin.py::GET_PLUGIN_OPTIONS: 0.000021s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.680642 SSHDActivationPlugin.py::PLUGIN_INITIALIZE: 0.044685s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.725330 SSHDActivationPlugin.py::GET_SUBSCRIPTION_INFO: 0.000022s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.839026 RSyslogConfTransl.py::GET_SUPPORTED_NODES: 0.000021s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.839052 RSyslogConfTransl.py::GET_PLUGIN_OPTIONS: 0.000021s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.839083 RSyslogConfTransl.py::PLUGIN_INITIALIZE: 0.000016s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.839102 RSyslogConfTransl.py::GET_SUBSCRIPTION_INFO: 0.000027s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.848962 NodeTypeValidationPlugin.py::GET_SUPPORTED_NODES: 0.000020s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.848985 NodeTypeValidationPlugin.py::GET_PLUGIN_OPTIONS: 0.000021s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.855861 NodeSSHDTranslate.py::GET_SUPPORTED_NODES: 0.000018s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.855882 NodeSSHDTranslate.py::GET_PLUGIN_OPTIONS: 0.000019s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.855911 NodeSSHDTranslate.py::PLUGIN_INITIALIZE: 0.000012s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.855926 NodeSSHDTranslate.py::GET_SUBSCRIPTION_INFO: 0.000025s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.872008 MasterSnmpAgentActivationPlugin.py::GET_SUPPORTED_NODES: 0.000020s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.951483 Libgen_translate.py::GET_SUPPORTED_NODES: 0.000020s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.951508 Libgen_translate.py::GET_PLUGIN_OPTIONS: 0.000019s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.951537 Libgen_translate.py::PLUGIN_INITIALIZE: 0.000013s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.951553 Libgen_translate.py::GET_SUBSCRIPTION_INFO: 0.000026s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.969136 LanMgmtTransPlugin.py::GET_SUPPORTED_NODES: 0.000020s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.979460 ILLogActivationPlugin.py::GET_SUPPORTED_NODES: 0.000019s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.979482 ILLogActivationPlugin.py::GET_PLUGIN_OPTIONS: 0.000023s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.979514 ILLogActivationPlugin.py::PLUGIN_INITIALIZE: 0.000013s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.979530 ILLogActivationPlugin.py::GET_SUBSCRIPTION_INFO: 0.000130s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.986591 ILDiaActivationPlugin.py::GET_SUPPORTED_NODES: 0.000018s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.986612 ILDiaActivationPlugin.py::GET_PLUGIN_OPTIONS: 0.000090s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.986712 ILDiaActivationPlugin.py::PLUGIN_INITIALIZE: 0.000083s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:26.986798 ILDiaActivationPlugin.py::GET_SUBSCRIPTION_INFO: 0.458415s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:27.457013 FTPActivationPlugin.py::GET_SUPPORTED_NODES: 0.000020s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:27.716624 DeploymentSysctlTranslatePlugin.py::GET_SUPPORTED_NODES: 0.000076s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:27.716705 DeploymentSysctlTranslatePlugin.py::GET_PLUGIN_OPTIONS: 0.000021s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:27.716738 DeploymentSysctlTranslatePlugin.py::PLUGIN_INITIALIZE: 0.000026s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:27.716767 DeploymentSysctlTranslatePlugin.py::GET_SUBSCRIPTION_INFO: 0.000022s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:27.803102 Deployment90ValidationPlugin.py::GET_SUPPORTED_NODES: 0.000040s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:27.803146 Deployment90ValidationPlugin.py::GET_PLUGIN_OPTIONS: 0.000026s
+[configcopy.sh]
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:29.709805 Deployment40ValidationPlugin.py::GET_SUPPORTED_NODES: 0.000026s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:29.709835 Deployment40ValidationPlugin.py::GET_PLUGIN_OPTIONS: 0.000022s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:29.731309 Deployment20ValidationPlugin.py::GET_SUPPORTED_NODES: 0.000022s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:29.731335 Deployment20ValidationPlugin.py::GET_PLUGIN_OPTIONS: 0.000021s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:29.743151 Deployment10ValidationPlugin.py::GET_SUPPORTED_NODES: 0.000021s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:29.743175 Deployment10ValidationPlugin.py::GET_PLUGIN_OPTIONS: 0.000020s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:29.879455 DHCPDActivationPlugin.py::GET_SUPPORTED_NODES: 0.000022s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:29.895733 UPGRADE: 11.033186s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:29.896390 libroutingactivator.so::FULL_TRANSLATE: 0.063178s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:29.959896 02-SS_OpenHPI_translate.sh::FULL_TRANSLATE: 0.830643s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:30.790808 ILLogActivationPlugin.py::FULL_TRANSLATE: 0.045305s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:30.836278 Libgen_translate.py::FULL_TRANSLATE: 1.046520s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:31.882944 NodeSSHDTranslate.py::FULL_TRANSLATE: 0.006151s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:31.889155 RSyslogConfTransl.py::FULL_TRANSLATE: 1.086270s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:32.975686 libBITTX.so::FULL_TRANSLATE: 0.462225s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:33.437972 libhwmhpildapactivator.so::FULL_TRANSLATE: 0.131354s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:33.569392 libDNSTX.so::FULL_TRANSLATE: 0.032180s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:33.601612 libNTPTX.so::FULL_TRANSLATE: 0.339548s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:33.941303 50-SS_SAT_translate.sh::FULL_TRANSLATE: 1.646909s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:35.588652 libIPSecActivatorPlugin.so::FULL_TRANSLATE: 0.115038s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:35.703759 90-SS_HWM_translate.sh::FULL_TRANSLATE: 0.740431s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:36.444374 99-EditDHCP_translate.sh::FULL_TRANSLATE: 0.022789s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:36.467450 DeploymentSysctlTranslatePlugin.py::FULL_TRANSLATE: 0.070068s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:36.537729 ILDiaActivationPlugin.py::FULL_TRANSLATE: 0.000123s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:36.538326 A2S_SHM_translate.sh::FULL_TRANSLATE: 0.077560s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:36.616070 SS_BPConf_translate.sh::FULL_TRANSLATE: 0.065550s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:36.681804 SS_ILCapConf_translate.sh::FULL_TRANSLATE: 0.124879s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:36.806870 SS_MOMfsSecurity_translate.sh::FULL_TRANSLATE: 0.095274s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:36.902371 TraceManagerActivationPlugin.so::FULL_TRANSLATE: 0.671629s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:37.574157 libCertManActivatorPlugin.so::FULL_TRANSLATE: 0.002131s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:37.576335 libSgwActivator.so::FULL_TRANSLATE: 0.000038s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:37.576507 libfunitactivator.so::FULL_TRANSLATE: 2.326312s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:39.902894 libstqactivator.so::FULL_TRANSLATE: 1.025660s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:40.930441 PLUGIN_FINALIZE: 0.529343s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:40.939660 libBITTX.so::PLUGIN_FINALIZE: 0.000019s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:40.940612 libDNSTX.so::PLUGIN_FINALIZE: 0.000017s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:40.943040 libLinkStateDetectorActivatePlugin.so::PLUGIN_FINALIZE: 0.000024s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:40.945144 libNTPTX.so::PLUGIN_FINALIZE: 0.000018s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO EIPU-2 Sep  5 13:53:40.945608 libSgwActivator.so::PLUGIN_FINALIZE: 0.001069s
+[configcopy.sh]
+[configcopy.sh] COMMUTIL INFO started: Sep  5 13:53:16.818438 elapsed: 24.657494s
+[configcopy.sh]
+[configcopy.sh] Activator exit status  0
+[configcopy.sh] Updated activator /tmp/ldap/contextCSN to 20130903065143Z#000005#00#000000
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+chown: cannot access `/tmp/rshell/media': No such file or directory
+chmod: cannot access `/tmp/rshell/media': No such file or directory
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+Starting sshd: [  OK  ]
+Starting NodeTraceMgr: OK
+
+Starting crond: [  OK  ]
+[ OK ] ================================
+[ OK ] ======== DOOS SERVICE ==========
+[ OK ] ================================
+[ DEBUG ] Get node type
+[ OK ] Exit, only running in SLN nodes
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+Skipped slap start for diskless node in BCN
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+Starting ecc_error_monitor
+Loading fsdcfg (loading file </lib/modules/2.6.34.9-WR4.3.fp_octwnd_56xx_standard-202197-g7740a05/drivers/se/fsdcfg.ko> with params <ifname=xaui0 ipd_port=0 pko_port=1 vlan_id=804 mtu=2048>)  .
+Loading dmxmsg (loading file /lib/modules/2.6.34.9-WR4.3.fp_octwnd_56xx_standard-202197-g7740a05/drivers/net/dmxmsg/dmxmsg_core.ko with params )   (loading file /lib/modules/2.6.34.9-WR4.3.fp_octwnd_56xx_standard-202197-g7740a05/drivers/net/dmxmsg/dmxmsg_po.ko with params iface=xaui0  core_group=5  enable_rds=1 vlan_enable=1 vlan_id=805)  PP6:~CONSOLE-> dmxmsg-se: __wait_linux_to_config_me(): Unit type 0127 still waiting, and linux module init detected. Cycle=75592042918.
+ (loading file /lib/modules/2.6.34.9-WR4.3.fp_octwnd_56xx_standard-202197-g7740a05/drivers/net/dmxmsg/dmxmsg_devif.ko with params )  .
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+Writing ClockSync setting to HW.
+Loading hwzip.
+.
+set irq smp_affinity.
+AUDIT_STATUS: enabled=1 flag=1 pid=1669 rate_limit=0 backlog_limit=320 lost=0 backlog=0
+[Run Qos reset csr script]
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+
+In EIPU Node
+In OCTEON +
+change done!!!
+
+Wind River Linux release 4.3
+Kernel 2.6.34.9-WR4.3.fp_octwnd_56xx_standard-202197-g7740a05 on  mips64 (console)
+EIPU-2 login: ##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[0]: dev_queue_xmit:2382
+#BLH# trace[3]: dev_queue_xmit:2404
+#BLH# trace[13]: dev_queue_xmit:2461
+#BLH# trace[16]: dev_queue_xmit:2487
+#BLH# trace[17]: dev_queue_xmit:2492
+#BLH# trace[19]: dev_queue_xmit:2505
+#BLH# trace[20]: dev_queue_xmit:2524
+#BLH# trace[21]: dev_queue_xmit:2540
+#BLH# trace[22]: dev_queue_xmit:2543
+#BLH# trace[23]: dev_queue_xmit:2548
+#BLH# trace[29]: dev_queue_xmit:2575
+##BLH## - len=130, sip=2852057099, dip=2852057108
+#BLH# name=xaui0, port=0, state=3, ifindex=7, iflink=7, flags=4099, type=1, mtu=9000, ex_flags=256, features=4098, pflags=1024
+#BLH# trace[1000]: dev_hard_start_xmit:2097
+#BLH# trace[1001]: dev_hard_start_xmit:2100
+#BLH# trace[1002]: dev_hard_start_xmit:2107
+#BLH# trace[1006]: dev_hard_start_xmit:2125
+#BLH# trace[1007]: dev_hard_start_xmit:2131
+#BLH# start_xmit=ffffffffc0086ce0
+#BLH# trace[1008]: dev_hard_start_xmit:2139
+#BLH# trace[1009]: dev_hard_start_xmit:2155
+#BLH# trace[30]: dev_queue_xmit:2580
+#BLH# trace[35]: dev_queue_xmit:2609
+PP6:~CONSOLE-> dmxmsg-se: Permission granted. SE unit_type 0127 running with phys address 1807. Cycle=92583842568.
+PP6:~CONSOLE-> fastdist_config_init core_group=9
+PP6:~CONSOLE-> fastdist_config_init() succeed
+PP6:~CONSOLE-> fastdist pko_port = 1, base_queue = 6, cvmx_pko_base_queue = 6
+PP6:~CONSOLE-> Succ to register family 2560 to dmx msg.
+PP6:~CONSOLE->
+PP6:~CONSOLE->
+PP6:~CONSOLE->
+PP6:~CONSOLE-> *****Core 6 is ready to work now*****.
+PP6:~CONSOLE->
+PP6:~CONSOLE->
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 0(baseq=0)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 1(baseq=6)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 2(baseq=12)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 3(baseq=18)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 4(baseq=24)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 5(baseq=30)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 6(baseq=36)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 7(baseq=42)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 8(baseq=48)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 9(baseq=54)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 10(baseq=60)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 11(baseq=66)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 12(baseq=72)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 13(baseq=78)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 14(baseq=84)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 15(baseq=90)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 16(baseq=96)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 17(baseq=102)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 18(baseq=108)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 19(baseq=114)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 20(baseq=120)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 21(baseq=126)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 22(baseq=132)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 23(baseq=138)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 24(baseq=144)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 25(baseq=150)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 26(baseq=156)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 27(baseq=162)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 28(baseq=168)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 29(baseq=174)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 30(baseq=180)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 31(baseq=186)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0x0 ] to queues of port 32(baseq=192)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0x0 ] to queues of port 33(baseq=193)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0x0 ] to queues of port 34(baseq=194)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0x0 ] to queues of port 35(baseq=195)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 36(baseq=196)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 37(baseq=197)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 38(baseq=198)
+PP9:~CONSOLE-> fpn_octeon_update_queue_weight: Configured qos_mask [0xff ] to queues of port 39(baseq=199)
