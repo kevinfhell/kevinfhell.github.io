@@ -1,0 +1,13 @@
+
+/* Custom styles for Confluence (included for all themes by default) */
+
+/* CONF-28415 */
+form.editor.editor-default,
+.editor-fullheight {
+    height: 100%;
+    height: auto\9; /* IE8 */
+}
+
+/* End custom styles for Confluence */
+
+

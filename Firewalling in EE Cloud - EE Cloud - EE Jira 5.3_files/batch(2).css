@@ -1,0 +1,389 @@
+.ajs-menu-bar .ajs-button a.share span{background-image:url(/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/1.26/_/download/resources/com.atlassian.confluence.plugins.share-page:mail-page-resources/images/share.png);}
+#inline-dialog-shareContentPopup .contents{overflow:visible;}
+form.share-content-popup fieldset{margin-top:3px;margin-bottom:1px;}
+.share-content-popup .button-panel{border-top:1px solid #EEE;padding:9px 10px 9px;text-align:right;}
+.share-content-popup .button-panel input:disabled{color:graytext;}
+form.share-content-popup .textarea{height:60px;padding-left:3px;padding-right:3px;}
+.share-content-popup .button{margin:2px 0 2px 2px;}
+.share-content-popup ol{margin:7px 0 7px 0;padding:0;list-style-type:none;}
+.share-content-popup ol li{margin:4px 0;}
+.share-content-popup ol li img{height:1.72em;vertical-align:middle;width:1.72em;}
+.progress-messages{left:10px;position:absolute;}
+.share-content-popup .done{background:url(/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/1.26/_/download/resources/com.atlassian.confluence.plugins.share-page:mail-page-resources/images/tick.png) no-repeat;}
+.share-content-popup .error{background:url(/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/1.26/_/download/resources/com.atlassian.confluence.plugins.share-page:mail-page-resources/../../../images/icons/emoticons/warning.gif) no-repeat;}
+.share-content-popup .autocomplete li.active a span{color:white;}
+.share-page-progress{position:absolute;background-color:white;z-index:1;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}
+.share-page-progress-container-inner{position:absolute;text-align:center;}
+.share-content-popup .remove-recipient{float:right;background:url(/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/1.26/_/download/resources/com.atlassian.confluence.plugins.share-page:mail-page-resources/../../../images/icons/trash_16.gif) no-repeat 50% 50%;text-indent:-9999px;height:24px;width:24px;cursor:pointer;}
+.share-content-popup .aui-dd-parent,#com-atlassian-confluence .share-content-popup .aui-dd-parent .aui-dropdown{width:259px;}
+form.aui .share-page-progress-container-inner p{margin:0;padding-bottom:0;}
+form.aui fieldset{padding:8px 8px 8px 12px;margin:0 auto;}
+.aui-inline-dialog .contents .share-content-popup .submit{text-align:center;}
+@media screen{#navigator-bar{padding:0;border-bottom:1px solid #00254e;height:29px;background-color:#204f80;}
+#navigator-bar ul{display:block;padding:0;margin:0;list-style:none;}
+#navigator-bar li{white-space:nowrap;display:inline-block;vertical-align:top;padding:5px 9px;}
+#navigator-bar a{color:#ddd!important;font-weight:bold;cursor:pointer;display:block;font-size:13px;line-height:19px;text-decoration:none;}
+#navigator-bar li:hover{background-color:#3b73af;text-decoration:none;}
+#navigator-bar a:focus{outline:none;}
+#navigator-bar .yourhere{background-color:#3b73af;}
+#navigator-bar .yourhere a{color:#fff!important;cursor:default;}
+#navigator-bar .lite{background-image:url(/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/2.0.1/_/download/resources/nl.tweeenveertig.navigator-plugin:navigator-resources/images/lite-logo.png);background-position:center center;background-repeat:no-repeat;text-indent:-999999px;width:50px;float:right;}
+.admin .admin-section .overview-links li>a.icon-admin-navigator-link{background-image:url(/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/2.0.1/_/download/resources/nl.tweeenveertig.navigator-plugin:navigator-resources/images/navigator-logo-16.png);}
+.admin .admin-section .overview-links li>a.icon-admin-navigator-license{background-image:url(/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/2.0.1/_/download/resources/nl.tweeenveertig.navigator-plugin:navigator-resources/images/license-logo-16.png);}
+.admin .admin-section .overview-links li>a.icon-admin-navigator-configuration{background-image:url(/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/2.0.1/_/download/resources/nl.tweeenveertig.navigator-plugin:navigator-resources/images/configuration-logo-16.png);}
+}
+@media print{#navigator-bar{display:none;}
+}
+/*
+Common css classes to be used across contexts (eg. on the wiki page, attachments page, search results, etc.)
+*/
+
+.gliffy-document-icon, ul.search-results li h3 a span.gliffy-document-icon { 
+    background-image: url("/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/5.1/_/download/resources/com.gliffy.integration.confluence:gliffy-global-resources/../../download/resources/com.gliffy.integration.confluence:gliffy-macro-key/icons/diagram_16.gif");
+}
+
+.gliffy-aui-icon {
+    background-image: url("/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/5.1/_/download/resources/com.gliffy.integration.confluence:gliffy-global-resources/../../download/resources/com.gliffy.integration.confluence:gliffy-macro-key/icons/gliffy-logo-14px.png");
+    background-repeat: no-repeat;
+    border: medium none;
+    display: block;
+    height: 14px;
+    left: 10px;
+    padding: 0;
+    position: absolute;
+    text-indent: -9999px;
+    top: 0.9em;
+    width: 14px;
+}
+
+
+#gliffy-dashboard-link span {
+    background-image: url("/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/5.1/_/download/resources/com.gliffy.integration.confluence:gliffy-global-resources/../../download/resources/com.gliffy.integration.confluence:gliffy-macro-key/icons/gliffy-logo-14px.png");
+    background-repeat: no-repeat;
+}
+
+.gliffy-search-renderer-thumbnail {
+    border: 1px solid #CCCCCC;
+    height: 158px;
+}
+
+form.aui.long-label .group legend span.gliffy-radio-label-fix {
+    width: 190px;
+    left: 50px;
+}
+.wiki-content ul.inline-task-list>li{list-style:none;padding-left:22px;margin-left:-22px;background-repeat:no-repeat;}
+.wiki-content td>ul.inline-task-list>li,.wiki-content th>ul.inline-task-list>li{padding-left:22px;margin-left:-17px;}
+.shortcutsmenu ul.inline-task-list>li{padding-left:22px;background-position:0 3px;margin-left:-17px;}
+.wiki-content ul.inline-task-list>li.checked,.wiki-content ul.inline-task-list>li.checked>*{color:#747474;}
+.wiki-content ul.inline-task-list>li.checked>ul.inline-task-list{color:#000;}
+.wiki-content ul.inline-task-list>li.checked>span[style],.wiki-content ul.inline-task-list>li.checked>*>span[style]{color:#747474!important;}
+#inline-tasks-notice{position:fixed;display:block;top:0;right:0;left:0;width:30%;margin:15px auto auto auto;z-index:999;padding:5px;text-align:center;}
+ul.inline-task-list>li{background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAA3NCSVQICAjb4U/gAAAASFBMVEX////T09PR0dHHx8e4uLi1tbWzs7P////7+/v5+fn39/f19fXz8/Pw8PDt7e3r6+vp6eni4uLZ2dnW1ta1tbWvr6+tra2np6fTg+AaAAAAGHRSTlMAIiIi7u7u//////////////////////8Gb5XnAAAACXBIWXMAAAsSAAALEgHS3X78AAAAFXRFWHRDcmVhdGlvbiBUaW1lADE3LzUvMTJy5gkEAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAAFVJREFUGJWNzzsWgCAQQ1GV4SMqIIjsf6d6hjA1t3xVsiwTVmpAGwd6krM/lypxaNHC3Xpwg0fYBYIXCIdAOAVCuCAg5AClB11zZOXVHJQZ042aufoB23IHlonEg/MAAAAASUVORK5CYII=');}
+ul.inline-task-list>li.hover{background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAA3NCSVQICAjb4U/gAAAATlBMVEX////Dw8PBwcGysrKfn5+ZmZn////7+/v5+fn29vbz8/Pv7+/r6+vo6Ojk5OTj4+Ph4eHf39/Z2dnJycnGxsbFxcWZmZmUlJSRkZGHh4cCB4S1AAAAGnRSTlMAIiIi7u7//////////////////////////+sElOwAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAVdEVYdENyZWF0aW9uIFRpbWUAMTcvNS8xMnLmCQQAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzbovLKMAAAAVklEQVQYlY3PzQJAIBBF4WimCBX5qfd/UeSadd/yrO5VqkFHBaivgc5ozcOGi2oo3sBWvjBYcAijQHACYRIIs0DwCwSE5GH/Aue0xteRuQbN/3TWLVdv81wH02KcUtAAAAAASUVORK5CYII=');}
+ul.inline-task-list>li.active{background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAA3NCSVQICAjb4U/gAAAATlBMVEX////BwcGvr6+fn5+ZmZn39/f09PTw8PDt7e3r6+vp6enl5eXi4uLd3d3b29vZ2dnW1tbV1dXR0dHIyMjFxcXBwcGVlZWTk5OQkJCHh4cp9fvSAAAAGnRSTlMAIiLu7v///////////////////////////zGBzHsAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAVdEVYdENyZWF0aW9uIFRpbWUAMTcvNS8xMnLmCQQAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzbovLKMAAAAVUlEQVQYlY3PORaAIBBEQWDGXVkUUe5/UX1DQ0yFP+pWqoPhDGwkcIre/UJ8WUK+LNy5hKNyCHuDsDUIa4MwNzVMsCD4Ec4SKNlBhIckaKrTSfdc/QBM0wexhvTtJQAAAABJRU5ErkJggg==');}
+ul.inline-task-list>li.disabled{background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAA3NCSVQICAjb4U/gAAAAOVBMVEX////j4+Pd3d3U1NTS0tLR0dH////7+/v5+fn39/fz8/Px8fHt7e3o6Ojl5eXS0tLPz8/MzMzJycnrmCZ8AAAAE3RSTlMAIiLu7u7/////////////////W597/gAAAAlwSFlzAAALEgAACxIB0t1+/AAAABV0RVh0Q3JlYXRpb24gVGltZQAxNy81LzEycuYJBAAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAABQSURBVBiVjc9JEoAgDERRIEwGRcz9D2sJneys4u/yVh3nNvIkiPwEulv+Km3QBOGMTllQFKqC9QfVAhwWgPVmwMWoL4gD0p84ISSdnsLOqy/vTwW50dzZXwAAAABJRU5ErkJggg==');}
+ul.inline-task-list>li.checked{background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAA3NCSVQICAjb4U/gAAAAtFBMVEX////KzM+5wMYAAAAWFhYeHh4aGho4ODi0tbatsbOlpqcHBwft8vbr8fbp7/Pn7fPk7PLh6vHe5+/a5e3W4uzb4ebT4OrT3+jP3enO3OfW2dzP1tvL1dzN1d3L09nIz9XKzM/DzdXDzNS/ydK9xs2wucCur7Cpq6ynp6elpqecnJx8gIN0eHtuc3ZtcXRqbW9mZmZhZGZcX2JKTE1GSEkzMzMoKioaGhoZGhsWFhYHBwgAAADE9dcjAAAAPHRSTlMAIiJVmbu7zO7u7u7///////////////////////////////////////////////////////////////+FOGbiAAAACXBIWXMAAAsSAAALEgHS3X78AAAAFXRFWHRDcmVhdGlvbiBUaW1lADE3LzUvMTJy5gkEAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAAI9JREFUGJWFz8cSgjAQgGHERiwxTVFQECwk9rbW938v0876HTYz/+weEgS/1dt61CLpdRrdpg7ROsE9Dc9Pj5ZZU0nfGh5fYO/UABvp9g4bFwj5XNJ89wYiXaD0DPsDQEZdkIzNrvCEjDG/wTmf3mCpH+VCLIRYrPSIfShHXuECqorJ2CgrZEOIlIfCP1+1vgduEOsH8FmwAAAAAElFTkSuQmCC');}
+ul.inline-task-list>li.checked.hover{background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAA3NCSVQICAjb4U/gAAAAzFBMVEX///+5vMCcq7cAAAAUFBUeHh4aGho4ODibnZ+RlpuPlZqOj5EHBwfr8/np8fjn7vXi7fbh7PXc6fTW5vLQ4vHZ4efK3u7U2t/E2+3R19zC1+m91uvK1NzH09240+nB0d7C0Nq8z93Bzda+zdvDyc2ww9OwwM6uwM+swNCsvMqpvMuis8GZmZmLj5GIiIiHh4eAgIB5f4Rwd3xpcXdnb3VpbXBdYmZZXmNXWFhHS05ER0ozMzMvMjQwMTIoKSsYGhsYGBgVFhYHBwgAAACx7RrJAAAARHRSTlMAIiJVmbu7zO7u7u7u/////////////////////////////////////////////////////////////////////////4ZNFhsAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAVdEVYdENyZWF0aW9uIFRpbWUAMTcvNS8xMnLmCQQAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzbovLKMAAAAk0lEQVQYlYXPxxKCMBCAYcQGWNAkxogFeyext7X7/u9kWHLW/7CZ+Wb3EMv6XTqvR8qRpkKmmNXgLBt+SecPT89cvKbqZay2fwHeqWolrrW+wwpBEvI5tvubNxCZAKUH2O6u0KUGGAvP8LgNGDPAOe9dYKwfA4EQYrTQI0hATZqmmUJwo2kHm0cugu0pk2f/+Sr2BS/7Ezv9RxbHAAAAAElFTkSuQmCC');}
+ul.inline-task-list>li.checked.active{background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAA3NCSVQICAjb4U/gAAAAw1BMVEX///+5u7yiqK4AAAASEhMeHh4aGho4ODibm52SlZeGiIkGBwfl6+/k6e3g5uzb4ujX3+XX3uPR2uLN19/I09zN0dTDz9nIz9XIzM++y9XCytHDyc7Dx8u6x9G+xs27wca6wsm1v8exvceyvMSzub2wucGvucOvuMGkrLSQkpOQkZGIiIiHh4d/f39ob3RmbHBkaW1jaGxaXmBWXGBUVVZRVVlHSUtGR0gzMzMwMTEtLzEjJSYYGRoYGBgTExQGBwcAAACDboeNAAAAQXRSTlMAIiJVmbu7zO7u7u7///////////////////////////////////////////////////////////////////////Io9DQAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAVdEVYdENyZWF0aW9uIFRpbWUAMTcvNS8xMnLmCQQAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzbovLKMAAAAkklEQVQYlYXP1xLCIBBA0cRKbBBATdTYWwz2tnb//6skC77qfVhmzsAM6zi/yxb1yHjKVsqV8xq8eBaFumh+eBTSa2oUYsP9E/CdamDT1Q2WBqR8HweT9QukQkiE2MFme4W+SAxw3jrB/dLl3AJjrHmGnj4s+JTS9lgP30JQs3UMkLheraQFC4Lgku/XiftnVewDBwERybJWRzQAAAAASUVORK5CYII=');}
+ul.inline-task-list>li.checked.disabled{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAA3NCSVQICAjb4U/gAAAAk1BMVEX////h4eHY2NhmZmZycnJ4eHh1dXWHh4fS0tLPz8/Jyclqamr39/f09PTz8/Px8fHu7u7t7e3r6+vp6enn5+fl5eXj4+Ph4eHf39/e3t7U1NTPz8/MzMzJycnDw8OysrKtra2qqqqpqamnp6ejo6OhoaGfn5+Tk5OQkJCEhISDg4N+fn52dnZ1dXVycnJqampmZmbqf9FEAAAAMXRSTlMAIiJVmbu7zO7u7u7/////////////////////////////////////////////////JyPsjAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABV0RVh0Q3JlYXRpb24gVGltZQAxNy81LzEycuYJBAAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAACHSURBVBiVhc/ZFoIgEIBhs01KVkOyJCttmfb3f7qmAbus/2I4fAfOgST53XCKY5D52Gw0HyNk6wXPMe662+RzzBc5pdsH0D3PKdtcYRNAiNfRuu0ThA8g5QF2e4BSfsGe4H4pZQ9KKXuGCpcIRmtdrXCYCEsTcwFY7YqwrxlByvqns/TPV6k3BzsNDv1OwIMAAAAASUVORK5CYII=);}
+.content-preview ul.inline-task-list>li{background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAA3NCSVQICAjb4U/gAAAAOVBMVEX////j4+Pd3d3U1NTS0tLR0dH////7+/v5+fn39/fz8/Px8fHt7e3o6Ojl5eXS0tLPz8/MzMzJycnrmCZ8AAAAE3RSTlMAIiLu7u7/////////////////W597/gAAAAlwSFlzAAALEgAACxIB0t1+/AAAABV0RVh0Q3JlYXRpb24gVGltZQAxNy81LzEycuYJBAAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAABQSURBVBiVjc9JEoAgDERRIEwGRcz9D2sJneys4u/yVh3nNvIkiPwEulv+Km3QBOGMTllQFKqC9QfVAhwWgPVmwMWoL4gD0p84ISSdnsLOqy/vTwW50dzZXwAAAABJRU5ErkJggg==');}
+.content-preview ul.inline-task-list>li.checked{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAA3NCSVQICAjb4U/gAAAAk1BMVEX////h4eHY2NhmZmZycnJ4eHh1dXWHh4fS0tLPz8/Jyclqamr39/f09PTz8/Px8fHu7u7t7e3r6+vp6enn5+fl5eXj4+Ph4eHf39/e3t7U1NTPz8/MzMzJycnDw8OysrKtra2qqqqpqamnp6ejo6OhoaGfn5+Tk5OQkJCEhISDg4N+fn52dnZ1dXVycnJqampmZmbqf9FEAAAAMXRSTlMAIiJVmbu7zO7u7u7/////////////////////////////////////////////////JyPsjAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABV0RVh0Q3JlYXRpb24gVGltZQAxNy81LzEycuYJBAAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAACHSURBVBiVhc/ZFoIgEIBhs01KVkOyJCttmfb3f7qmAbus/2I4fAfOgST53XCKY5D52Gw0HyNk6wXPMe662+RzzBc5pdsH0D3PKdtcYRNAiNfRuu0ThA8g5QF2e4BSfsGe4H4pZQ9KKXuGCpcIRmtdrXCYCEsTcwFY7YqwrxlByvqns/TPV6k3BzsNDv1OwIMAAAAASUVORK5CYII=);}
+#navigation .ajs-menu-bar .ajs-button a.editscaffold span{background-image:url("/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/4.5.1/_/download/resources/net.customware.confluence.plugin.scaffolding:view-content-resources/../../../images/icons/edit_20.png");}
+/* basics */
+div.subspaces-menu  {
+	font-size: 12px;
+	font-weight: bold;
+	color:#666; 
+	clear: both;
+}
+
+#subspace-global-navigation {
+	position: relative;
+	clear: both;
+}
+
+#com-atlassian-confluence .wiki-content .subspaces-plain li {
+	position: inherit !important;
+}
+
+#com-atlassian-confluence .wiki-content .subspaces-plain li a {
+	background-color: transparent;
+}
+
+#subspace-global-navigation .subspaces-menu ul.level_0 {
+	padding: 0 10px;
+}
+
+div.subspaces-menu ul,
+div.subspaces-list ul.level_0 {
+	list-style-type:none;
+	display:block;
+	margin:0;
+	padding:0;
+	background-color:white;
+}
+
+div.subspaces-menu ul.level_0 {
+
+	background: url(/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/2.1/_/download/resources/de.communardo.confluence.plugins.subspace:subspace-resource/images/bg_menu.png) repeat-x;
+	height:27px;
+	vertical-align:middle;
+}
+
+div.subspaces-menu ul.level_0 > li {
+
+	border-right: 1px solid #CCC;
+	border-left: 1px solid white;
+	background: url(/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/2.1/_/download/resources/de.communardo.confluence.plugins.subspace:subspace-resource/images/bg_menu.png) repeat-x;
+}
+
+div.subspaces-menu ul li {
+	line-height:27px;
+	float:left;
+	position:relative;
+}
+
+div.subspaces-menu ul ul {
+
+	display:none;
+	position:absolute;
+	left:-1px;
+	border-left:1px solid #CCC;
+	border-bottom:1px solid #CCC;
+	border-right:1px solid #CCC;
+	z-index: 11; /* .ia-fixed-sidebar + 1 */
+}
+
+div.subspaces-menu ul ul ul {
+
+	border:1px solid #CCC;
+	left:100%;
+	top:-1px;
+}
+
+* + html div.subspaces-menu ul.level_1 {
+	
+	top:27px;
+}
+
+#com-atlassian-confluence div.subspaces-menu ul li a,
+#com-atlassian-confluence div.subspaces-menu ul li a:visited,
+#com-atlassian-confluence div.subspaces-menu ul li a:link,
+#com-atlassian-confluence div.subspaces-menu ul li span {
+
+	display:block;
+	padding:0 20px;
+	height:27px;
+	color:#666;
+	
+	text-decoration:none;
+	white-space:nowrap;
+}
+
+#com-atlassian-confluence div.subspaces-menu li a {
+	background-color: transparent;
+}
+
+div.subspaces-menu ul ul li {
+
+	float:none;
+}
+
+div.subspaces-menu li:hover > ul {
+
+	display:block;
+}
+
+div.subspaces-menu ul ul li + li {
+	
+	border-top:1px dotted #CCC;
+}
+
+/* markers */
+#com-atlassian-confluence div.subspaces-menu li a:hover,
+#com-atlassian-confluence div.subspaces-menu li.isExternalLink a:hover {
+	background-color:#DDD;
+}
+
+div.subspaces-menu ul ul li.hasChildren{
+	/* there are children */
+	background: #fff url(/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/2.1/_/download/resources/de.communardo.confluence.plugins.subspace:subspace-resource/images/arrow_grey_r.gif) no-repeat right;
+}
+
+div.subspaces-menu ul ul li.hasChildren > a:hover {
+	background: #DDD url(/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/2.1/_/download/resources/de.communardo.confluence.plugins.subspace:subspace-resource/images/arrow_grey_r.gif) no-repeat right;
+}
+
+div.subspaces-menu li.isExternalLink li.hasChildren > a:hover {
+	background:url(/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/2.1/_/download/resources/de.communardo.confluence.plugins.subspace:subspace-resource/images/link.png) no-repeat 10px center;
+}
+
+div.subspaces-menu li.hasChildInContext > a,
+div.subspaces-menu li.hasChildInContext > span {
+
+	/* one of my children is the currently active space*/
+	font-style:italic;	
+}
+
+div.subspaces-menu li.active > a{
+
+	/* i am the currently active space */
+	color:#f78e31;
+}
+
+#com-atlassian-confluence div.subspaces-menu li.isExternalLink a,
+#com-atlassian-confluence div.subspaces-menu li.isExternalLink a:visited,
+#com-atlassian-confluence div.subspaces-menu li.isExternalLink a:link{
+	background:url(/s/en_GB/3398/84f448c1067609161db7eeaf020f96b084eef29d.22/2.1/_/download/resources/de.communardo.confluence.plugins.subspace:subspace-resource/images/link.png) no-repeat 10px center;
+	padding-left:30px;
+}
+
+div.subspaces-menu img.space_icon {
+	height: 15px;
+	vertical-align: middle;
+	margin: 0 5px 0 -10px;
+}
+
+div.subspaces-menu img.home_button {
+	vertical-align: middle;	
+}
+
+
+/*subspaces list*/
+
+.subspaces-list .tabnav .tabs a {
+    background: #FFF;
+    border-top: 1px solid #FFF;
+    border-left: 1px solid #FFF;
+    border-right: 1px solid #FFF;
+    margin: 0;
+    padding: 5px 8px 3px 8px;
+}
+
+.subspaces-list .tabnav .tabs a:hover {
+    background: #FFF;
+    border-top: 1px solid #EEE;
+    border-left: 1px solid #EEE;
+    border-right: 1px solid #EEE;
+}
+
+.subspaces-list .tabnav .tabs a.current:link,
+.subspaces-list .tabnav .tabs a.current {
+    border-top: 1px solid #BBB;
+    border-left: 1px solid #BBB;
+    border-right: 1px solid #BBB;
+    border-bottom: 1px solid white;
+    color: #000;
+}
+
+.subspaces-list .tabnav, .comment .tabnav, ul.tabnav {
+	list-style-type: none;
+    border-bottom-color: #BBB;
+}
+
+.subspaces-list .tabnav, .comment .tabnav {
+    font-weight: normal;
+}
+
+.subspaces-list .tabnav .tabs a:link,
+.subspaces-list .tabnav .tabs a:visited {
+    color: #326CA6;
+}
+
+.subspaces-list #spacesLabel {
+    padding: 4px 6px 2px;
+    float: left;
+    margin-top: 3px;
+    font-weight: bold;
+}
+
+.subspaces-list .spaceList td {
+	overflow: hidden;	
+}
+
+.subspaces-list .spaceList a {
+	background-color: transparent;
+}
+
+#com-atlassian-confluence .subspace_cloak {
+	display: none;
+}
+
+.subspace_clear_float {
+	clear: both;	
+}
+
+.subspace_dashboard_container .subspace_dashboard_footer .sublink {
+	float: right;
+	padding-top: 4px;
+}
+
+.subspace_dashboard_container {
+	margin: 20px 0;
+}
+
+
+#link-tree-container input.readonly{
+	color: #555;
+}
+
+#link-tree-container ul,
+#link-tree-container li,
+#space-structure-container ul{
+	list-style: none;
+	margin: 5px 0;
+}
+
+#link-tree-container > ul,
+#space-structure-container > ul{
+	padding: 0px;
+}
+
+#link-tree-container li > ul{
+	margin: 5px 0 10px 0;
+}
+
+.topspace_line .logo {
+	width: 25px;
+}
+
+#topspaces_holder {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	position: relative;	
+}
+
+#topspaces_holder fieldset {
+	border: 1px solid #757575;
+	width: auto;
+	padding: 5px;
+}
+
+#header .subspaces-quicksearch {
+	float: right;
+}
+
+#search-container fieldset {
+	border: none;
+}
+
+* + html .subspaces-quicksearch .subspaces-quick-search-query {
+	display: block;
+}
+
+.subspaces-quicksearch .aui-dd-parent .aui-dropdown-right  {
+	right: auto;
+}
+
+.subspaces-quicksearch .dropdown-shim {
+	display: none\0/ !important;	
+}
+}
+.clickable {
+    cursor: pointer;
+}
+
+.inline-first-p > p:first-child {
+    display: inline !important;
+}
+
