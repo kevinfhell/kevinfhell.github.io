@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="euc-jp"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>DPDK Quick guide</title>
+<meta http-equiv="Content-Type" content="text/html;charset=euc-jp"/>
+<meta name="title" content="DPDK Quick guide"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2014-02-20T23:31+0800"/>
+<meta name="author" content="Kevin Gao"/>
+<meta name="description" content=""/>
+<meta name="keywords" content="DPDK"/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" type="text/css" href="http://kevinfhell.github.io/worg.css">
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
+ <a accesskey="h" href="#"> UP </a>
+ |
+ <a accesskey="H" href="theindex.html"> HOME </a>
+</div>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">DPDK Quick guide</h1>
+
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Get the code</a></li>
+<li><a href="#sec-2">Compile guide</a>
+<ul>
+<li><a href="#sec-2-1">Env</a>
+<ul>
+<li><a href="#sec-2-1-1">Kernel version &gt;= 2.6.33</a></li>
+<li><a href="#sec-2-1-2">glibc &gt;= 2.7 (for features related to cpuset)</a></li>
+<li><a href="#sec-2-1-3">Kernel configuration</a></li>
+<li><a href="#sec-2-1-4">Huge page</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-2">Install</a>
+<ul>
+<li><a href="#sec-2-2-1">igb_uio insert</a></li>
+<li><a href="#sec-2-2-2">Bind the interface to the igb_uio</a>
+<ul>
+<li><a href="#sec-2-2-2-1">interface list</a></li>
+<li><a href="#sec-2-2-2-2">bind unbind</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-3">Hello world</a>
+<ul>
+<li><a href="#sec-3-1">Compile the hello world</a></li>
+<li><a href="#sec-3-2">run</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Get the code</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>Read-only access:
+</p>
+
+
+<pre class="example">git clone git://dpdk.org/dpdk
+</pre>
+
+<p>
+Or if git is blocked in your network:
+</p>
+
+
+<pre class="example">git clone http://dpdk.org/git/dpdk
+</pre>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Compile guide</h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">Env</h3>
+<div class="outline-text-3" id="text-2-1">
+
+
+</div>
+
+<div id="outline-container-2-1-1" class="outline-4">
+<h4 id="sec-2-1-1">Kernel version &gt;= 2.6.33</h4>
+<div class="outline-text-4" id="text-2-1-1">
+
+<p>The kernel version in use can be checked using the command: 
+uname -r
+For details of the patches needed to use the Intel® DPDK with earlier kernel 
+versions, see the Intel® DPDK FAQ included in the Intel® DPDK Release Notes. 
+Note also that Redhat* Linux 6.2 and 6.3 uses a 2.6.32 kernel that already has all 
+the necessary patches applied. 
+</p></div>
+
+</div>
+
+<div id="outline-container-2-1-2" class="outline-4">
+<h4 id="sec-2-1-2">glibc &gt;= 2.7 (for features related to cpuset)</h4>
+<div class="outline-text-4" id="text-2-1-2">
+
+<p>The version can be checked using the ldd &ndash;version command. A sample output 
+is shown below:
+</p>
+
+
+<pre class="example">[root@nsn-controller ~]# ldd --version
+ldd (GNU libc) 2.12
+Copyright (C) 2010 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+Written by Roland McGrath and Ulrich Drepper.
+
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-3" class="outline-4">
+<h4 id="sec-2-1-3">Kernel configuration</h4>
+<div class="outline-text-4" id="text-2-1-3">
+
+<p>In the Fedora OS and other common distributions, such as Ubuntu*, or RedHat 
+Enterprise Linux, the vendor supplied kernel configurations can be used to run 
+most Intel® DPDK applications.
+For other kernel builds, options which should be enabled for Intel® DPDK include:
+— UIO support, 
+— HUGETLBFS 
+— PROC_PAGE_MONITOR support. 
+— HPET and HPET_MMAP configuration options should also be enabled if HPET 
+support is required. High Precision Event Timer (HPET) 
+</p></div>
+
+</div>
+
+<div id="outline-container-2-1-4" class="outline-4">
+<h4 id="sec-2-1-4">Huge page</h4>
+<div class="outline-text-4" id="text-2-1-4">
+
+<p>Hugepage support is required for the large memory pool allocation used for packet 
+buffers (the HUGETLBFS option must be enabled in the running
+kernel). By using  hugepage allocations, performance is increased since fewer 
+pages are needed, and therefore less Translation Lookaside Buffers (TLBs, high speed 
+translation caches), which reduce the time it takes to translate a virtual page address 
+to a physical page address. Without hugepages, high TLB miss rates would occur with 
+the standard 4k page size, slowing performance. 
+</p>
+<p>
+Reserve the Huge page
+</p>
+
+
+<pre class="example">echo 1024 &gt; /sys/kernel/mm/hugepages/hugepages-2048kB/nr_hugepages
+On a NUMA machine, pages should be allocated explicitly on separate nodes: 
+echo 1024 &gt; /sys/devices/system/node/node0/hugepages/hugepages-2048kB/nr_hugepages
+echo 1024 &gt; /sys/devices/system/node/node1/hugepages/hugepages-2048kB/nr_hugepages
+</pre>
+
+
+<p>
+Once the hugepage memory is reserved, to make the memory available for 
+Intel® DPDK use, perform the following steps: 
+</p>
+
+
+<pre class="example">mkdir /mnt/huge
+mount -t hugetlbfs nodev /mnt/huge
+The mount point can be made permanent across reboots, by adding the following line 
+to the /etc/fstab file:
+nodev /mnt/huge hugetlbfs defaults 0 0
+For 1GB pages, the page size must be specified as a mount option:
+nodev /mnt/huge_1GB hugetlbfs pagesize=1GB 0 0
+</pre>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2">Install</h3>
+<div class="outline-text-3" id="text-2-2">
+
+
+
+
+<pre class="example">make install T=x86_64*gcc
+</pre>
+
+<p>
+only config
+</p>
+
+
+<pre class="example">make config T=x86_64-default-linuxapp-gcc
+</pre>
+
+
+
+</div>
+
+<div id="outline-container-2-2-1" class="outline-4">
+<h4 id="sec-2-2-1">igb_uio insert</h4>
+<div class="outline-text-4" id="text-2-2-1">
+
+
+
+
+<pre class="example">sudo modprobe uio
+sudo insmod kmod/igb_uio.ko
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-2-2" class="outline-4">
+<h4 id="sec-2-2-2">Bind the interface to the igb_uio</h4>
+<div class="outline-text-4" id="text-2-2-2">
+
+
+</div>
+
+<div id="outline-container-2-2-2-1" class="outline-5">
+<h5 id="sec-2-2-2-1">interface list</h5>
+<div class="outline-text-5" id="text-2-2-2-1">
+
+
+
+
+<pre class="example">root@host:DPDK# ./tools/pci_unbind.py --status
+Network devices using IGB_UIO driver
+====================================
+0000:82:00.0 '82599EB 10-Gigabit SFI/SFP+ Network Connection' drv=igb_uio unused=ixgbe
+0000:82:00.1 '82599EB 10-Gigabit SFI/SFP+ Network Connection' drv=igb_uio unused=ixgbe
+Network devices using kernel driver
+===================================
+0000:04:00.0 'I350 Gigabit Network Connection' if=em0 drv=igb unused=igb_uio *Active*
+0000:04:00.1 'I350 Gigabit Network Connection' if=eth1 drv=igb unused=igb_uio
+0000:04:00.2 'I350 Gigabit Network Connection' if=eth2 drv=igb unused=igb_uio
+0000:04:00.3 'I350 Gigabit Network Connection' if=eth3 drv=igb unused=igb_uio
+Other network devices
+============
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-2-2-2" class="outline-5">
+<h5 id="sec-2-2-2-2">bind unbind</h5>
+<div class="outline-text-5" id="text-2-2-2-2">
+
+
+
+
+<pre class="example">To bind device eth1, 04:00.1, to the igb_uio driver:
+root@host:DPDK# ./tools/pci_unbind.py --bind=igb_uio 04:00.1
+or, alternatively,
+root@host:DPDK# ./tools/pci_unbind.py --bind=igb_uio eth1
+To restore device 82:00.0 to its original kernel binding:
+root@host:DPDK# ./tools/pci_unbind.py --bind=ixgbe 82:00.0
+</pre>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Hello world</h2>
+<div class="outline-text-2" id="text-3">
+
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1">Compile the hello world</h3>
+<div class="outline-text-3" id="text-3-1">
+
+<p>Once an Intel? DPDK target environment directory has been created (such as 
+x86_64-default-linuxapp-gcc), it contains all libraries and header files required 
+to build an application. 
+When compiling an application in the Linux* environment on the Intel? DPDK, the 
+following variables must be exported:
+</p><ul>
+<li>RTE_SDK - Points to the Intel? DPDK installation directory. 
+</li>
+<li>RTE_TARGET - Points to the Intel? DPDK target environment directory. 
+</li>
+</ul>
+
+<p>The following is an example of creating the helloworld application, which runs in the 
+Intel DPDK Linux environment. This example may be found in the ${RTE_SDK}/
+examples directory.
+The directory contains the main.c file. This file, when combined with the libraries in 
+the Intel DPDK target environment, calls the various functions to initialize the Intel? 
+DPDK environment, then launches an entry point (dispatch application) for each core to 
+be utilized. By default, the binary is generated in the build
+directory.
+</p>
+
+
+<pre class="example">user@host:~/DPDK$ cd examples/helloworld/
+user@host:~/DPDK/examples/helloworld$ export RTE_SDK=$HOME/DPDK
+user@host:~/DPDK/examples/helloworld$ export RTE_TARGET=x86_64-default-linuxapp-gcc
+user@host:~/DPDK/examples/helloworld$ make
+CC main.o
+LD helloworld
+INSTALL-APP helloworld
+INSTALL-MAP helloworld.map
+user@host:~/DPDK/examples/helloworld$ ls build/app
+helloworld helloworld.map
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2">run</h3>
+<div class="outline-text-3" id="text-3-2">
+
+<p>The UIO drivers and hugepages must be setup prior to running an application.
+Any ports to be used by the application must be already bound to the igb_uio 
+module
+</p>
+
+
+<pre class="example">./rte-app -c COREMASK -n NUM [-b &lt;domain:bus:devid.func&gt;] [--socket-mem=MB,...] 
+[-m MB] [-r NUM] [-v] [--file-prefix] [--proc-type &lt;primary|secondary|auto&gt;]
+
+The EAL options are as follows:
+ -c COREMASK: An hexadecimal bit mask of the cores to run on. Note that core 
+numbering can change between platforms and should be determined beforehand.
+ -n NUM: Number of memory channels per processor socket
+ -b &lt;domain:bus:devid.func&gt;: blacklisting of ports; prevent EAL from using 
+specified PCI device (multiple -b options are allowed) 
+ --use-device: use the specified ethernet device(s) only. Use comma-separate 
+&lt;[domain:]bus:devid.func&gt; values. Cannot be used with -b option
+ --socket-mem: Memory to allocate from hugepages on specific sockets 
+ -m MB: Memory to allocate from hugepages, regardless of processor socket. It is 
+recommended that --socket-mem be used instead of this option.
+ -r NUM: Number of memory ranks 
+ -v: Display version information on startup 
+ --huge-dir: The directory where hugetlbfs is mounted 
+ --file-prefix: The prefix text used for hugepage filenames 
+ --proc-type: The type of process instance 
+The -c and the -n options are mandatory; the others are optional. 
+Copy the Intel? DPDK application binary to your target, then run the application as 
+follows (assuming the platform has four memory channels per processor socket, and 
+that cores 0-3 are present and are to be used for running the application):
+user@target:~$ ./helloworld -c f -n 4
+Note: The --proc-type and --file-prefix EAL options are used for running multiple 
+Intel DPDK processes. See the “Multi-process Sample Application” chapter in the 
+Intel DPDK Sample Applications User Guide and the Intel? DPDK Programmer’s Guide 
+for more details.
+</pre>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2014-02-20T23:31+0800</p>
+<p class="author">Author: Kevin Gao</p>
+<p class="email"><a href="mailto:leijia.gao@nsn.com">leijia.gao@nsn.com</a></p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>
