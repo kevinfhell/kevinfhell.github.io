@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="title" content="1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-01-03T17:56+0800"/>
+<meta name="generated" content="2014-01-20T00:26+0800"/>
 <meta name="author" content="Kevin Gao"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -127,32 +127,268 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">fjkjl</a></li>
+<li><a href="#sec-1">Value analysis for internal improvement</a>
+<ul>
+<li><a href="#sec-1-1">Traffic domain depts clean up</a>
+<ul>
+<li><a href="#sec-1-1-1">Case</a></li>
+<li><a href="#sec-1-1-2">Reason for change</a></li>
+<li><a href="#sec-1-1-3">Impact scale</a></li>
+<li><a href="#sec-1-1-4">Return of Investment</a></li>
+<li><a href="#sec-1-1-5">Target release</a></li>
+<li><a href="#sec-1-1-6">Classification</a></li>
+<li><a href="#sec-1-1-7">Priority</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2">Controller on Cloud PoC</a>
+<ul>
+<li><a href="#sec-1-2-1">Case</a></li>
+<li><a href="#sec-1-2-2">Reason for change</a></li>
+<li><a href="#sec-1-2-3">chang scale</a></li>
+<li><a href="#sec-1-2-4">Return of Investment</a></li>
+<li><a href="#sec-1-2-5">Target release</a></li>
+<li><a href="#sec-1-2-6">Classification</a></li>
+<li><a href="#sec-1-2-7">Priority</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">fjkjl</h2>
-<div class="outline-text-2" id="text-1">
-
-<p>&hellip;
-.
-..
-&hellip;
-&hellip;
-</p>
+<div id="outline-container-1" class="outline-3">
+<h3 id="sec-1">Value analysis for internal improvement</h3>
+<div class="outline-text-3" id="text-1">
 
 
-<pre class="example">...
-</pre>
+</div>
 
+<div id="outline-container-1-1" class="outline-4">
+<h4 id="sec-1-1">Traffic domain depts clean up</h4>
+<div class="outline-text-4" id="text-1-1">
+
+
+</div>
+
+<div id="outline-container-1-1-1" class="outline-5">
+<h5 id="sec-1-1-1">Case</h5>
+<div class="outline-text-5" id="text-1-1-1">
+
+<p>We need to summarize the requirement of each based feature in traffic
+domain, and check whether  we have testing case to cover each requirement, then go
+through the legacy code and do some exploring testing.
+currently, there are mainly five base features, we have finished
+two of them, and the output is significant, we detected 13 prontos,
+and added feature requirment specifications for each feature. The feature requirement
+specification is very important to improve the quality visibility of
+our product. we can have a view that how many requirement we have in
+some domain, and how many case we have to cover each requirement.
+</p></div>
+
+</div>
+
+<div id="outline-container-1-1-2" class="outline-5">
+<h5 id="sec-1-1-2">Reason for change</h5>
+<div class="outline-text-5" id="text-1-1-2">
+
+<p>Traffic is a major domain in TT area, based on the history metrics,
+the fault amount also take a high propotion. Detailed data can be
+got from the attached spreadsheet. In order to reduce the risk on our
+targe of RU50EP1 VZ target.we need to review our product
+start from requirement point again. 
+</p></div>
+
+</div>
+
+<div id="outline-container-1-1-3" class="outline-5">
+<h5 id="sec-1-1-3">Impact scale</h5>
+<div class="outline-text-5" id="text-1-1-3">
+
+<p>The amount of the faults in TT area is xxx, xxx is from traffic
+area. xxx of them are detect outside TT area, if we can make xxx of
+them left shit inside DA, we can save xxx. 
+</p></div>
+
+</div>
+
+<div id="outline-container-1-1-4" class="outline-5">
+<h5 id="sec-1-1-4">Return of Investment</h5>
+<div class="outline-text-5" id="text-1-1-4">
+
+<ul>
+<li id="sec-1-1-4-1">Cost of investment<br/>
+After team grooming, we need to invest about 1000 hours, multiplex
+this with the SW3 hour cost 20¬, the investment is 20000¬.
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-4-2">Benefit<br/>
+      The benefit include two parts
+<ol>
+<li>Leftshit of the fault correction, we can correct more faults
+   inside Development area. If we detect 1 customer pronto and 5
+   I&amp;V reported pronto inside DA, we can saving about 14000+5*1400=210000
+</li>
+<li>More clear requirement spcification for the product, There might be
+   some relationship between new requirements and some exsiting one,
+   The feature requirement specification management will help us
+   detect the impact on the legacy feature in new feature
+   development. This will increase the software quality in
+   development phase. We have xxx prontos in traffic area in 2013, if
+   we can reduce 5 percentage by this, we can save 5*1400=7000
+</li>
+</ol>
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-5" class="outline-5">
+<h5 id="sec-1-1-5">Target release</h5>
+<div class="outline-text-5" id="text-1-1-5">
+
+<p>RU50EP1
+</p></div>
+
+</div>
+
+<div id="outline-container-1-1-6" class="outline-5">
+<h5 id="sec-1-1-6">Classification</h5>
+<div class="outline-text-5" id="text-1-1-6">
+
+<p>Test coverage improvement
+</p></div>
+
+</div>
+
+<div id="outline-container-1-1-7" class="outline-5">
+<h5 id="sec-1-1-7">Priority</h5>
+<div class="outline-text-5" id="text-1-1-7">
+
+<p>High
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-4">
+<h4 id="sec-1-2">Controller on Cloud PoC</h4>
+<div class="outline-text-4" id="text-1-2">
+
+
+</div>
+
+<div id="outline-container-1-2-1" class="outline-5">
+<h5 id="sec-1-2-1">Case</h5>
+<div class="outline-text-5" id="text-1-2-1">
+
+<p>This is a PoC work on migrating the radio controller to cloud.
+In this PoC, we will try some alternatives on the following aspects:
+</p><ol>
+<li>The cloud platform
+</li>
+<li>The possiblity to reuse currently VSP/VGP components
+</li>
+<li>The fast packet handling performance on cloud based platform.
+</li>
+<li>The impact on the current site solution 
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-2" class="outline-5">
+<h5 id="sec-1-2-2">Reason for change</h5>
+<div class="outline-text-5" id="text-1-2-2">
+
+<p>In Liquid core, Many PoC projects have been done, some of them are demostrated with our
+customer, they are very successful and got  possitive
+feedback. The next slide tell us the major eventsabout cloud in
+core network in NSN. For controller, we have not started. But this is the time
+to start  We can get many experience from liquid core and many
+assets to reuse. If we want to migrate controller to cloud, TT is a
+very critical area, Fast packet handling is a very big challenge on
+telecloud, this part is mainly covered by TT area. And a lot of
+transport adaption work are all changed compare cloud with the
+dedicate hardware currently. So we need to join this PoC work and
+make important contribution to help our controller on cloud to be
+successful. 
+</p></div>
+
+</div>
+
+<div id="outline-container-1-2-3" class="outline-5">
+<h5 id="sec-1-2-3">chang scale</h5>
+<div class="outline-text-5" id="text-1-2-3">
+
+<p>NSN have 23000 BSCs and 3000RNCs running all over the world. And
+check the market trend in the 2014, 2015 and future, 2G and 3G will
+increase not so quickly but continuously. Customer have CAPEX and
+OPEX pressure if they need to buy more and more hardware device and
+manage them in current way. Cloud is an opportunity, Putting the
+controller to cloud will save the CAPEX and OPEX obviously.
+</p></div>
+
+</div>
+
+<div id="outline-container-1-2-4" class="outline-5">
+<h5 id="sec-1-2-4">Return of Investment</h5>
+<div class="outline-text-5" id="text-1-2-4">
+
+<ul>
+<li id="sec-1-2-4-1">Cost of investment<br/>
+Currently, we have planed 4 months work with a 6 people team. total
+investiment might be 6*3*22*8*20=63360
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-4-2">Benefit<br/>
+We will have oportunity to demostrate the controller on cloud with
+our customer earlier than our customer. Just as the liquid core has
+did with IFA and Vodafone. The return may can't be measured in
+6-12months, but if the product comes out from the PoC, The benefit of
+our PoC work is obviously and valueable then.
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-5" class="outline-5">
+<h5 id="sec-1-2-5">Target release</h5>
+<div class="outline-text-5" id="text-1-2-5">
+
+<p>N/A
+</p></div>
+
+</div>
+
+<div id="outline-container-1-2-6" class="outline-5">
+<h5 id="sec-1-2-6">Classification</h5>
+<div class="outline-text-5" id="text-1-2-6">
+
+<p>Proof of Concept
+</p></div>
+
+</div>
+
+<div id="outline-container-1-2-7" class="outline-5">
+<h5 id="sec-1-2-7">Priority</h5>
+<div class="outline-text-5" id="text-1-2-7">
+
+</div>
+</div>
 </div>
 </div>
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2014-01-03T17:56+0800</p>
+<p class="date">Date: 2014-01-20T00:26+0800</p>
 <p class="author">Author: Kevin Gao</p>
 <p class="email"><a href="mailto:leijia.gao@nsn.com">leijia.gao@nsn.com</a></p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>

@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
                "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Controller on Cloud</title>
-<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="Controller on Cloud"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-01-05T22:09+0800"/>
+<meta name="generated" content="2014-02-20T23:31+0800"/>
 <meta name="author" content="Kevin Gao"/>
 <meta name="description" content=""/>
 <meta name="keywords" content="emacs, personal notes"/>
@@ -129,23 +129,65 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#sec-1">RNC on Cloud</a>
 <ul>
-<li><a href="#sec-1-1">Overview</a></li>
-<li><a href="#sec-1-2">Scheduler</a></li>
-<li><a href="#sec-1-3">Study plan</a>
+<li><a href="#sec-1-1">PoC team introduction</a>
 <ul>
-<li><a href="#sec-1-3-1">DPDK</a>
+<li><a href="#sec-1-1-1">Team information</a></li>
+<li><a href="#sec-1-1-2">Device information</a></li>
+<li><a href="#sec-1-1-3">Work branch</a></li>
+<li><a href="#sec-1-1-4">Contact list in hangzhou</a></li>
+<li><a href="#sec-1-1-5">Contact list from counterpart</a></li>
+<li><a href="#sec-1-1-6">WoW</a>
 <ul>
-<li><a href="#sec-1-3-1-1">Overview</a></li>
-<li><a href="#sec-1-3-1-2">Programing guide</a></li>
-<li><a href="#sec-1-3-1-3">API reference</a></li>
-<li><a href="#sec-1-3-1-4">Sample guilde</a></li>
-<li><a href="#sec-1-3-1-5">Troubleshooting</a></li>
-<li><a href="#sec-1-3-1-6">Third part supporting</a></li>
-<li><a href="#sec-1-3-1-7">Others</a></li>
+<li><a href="#sec-1-1-6-1">Study</a></li>
+<li><a href="#sec-1-1-6-2">Meetings</a></li>
+<li><a href="#sec-1-1-6-3">Way of Cooperation</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-1-7">Study Materials</a>
+<ul>
+<li><a href="#sec-1-1-7-1">DPDK</a></li>
+<li><a href="#sec-1-1-7-2">Cloud</a></li>
+<li><a href="#sec-1-1-7-3">VGP</a></li>
+<li><a href="#sec-1-1-7-4">VSP</a></li>
+<li><a href="#sec-1-1-7-5">Openstack</a></li>
+<li><a href="#sec-1-1-7-6">Materials from Intel</a></li>
 </ul></li>
 </ul>
 </li>
-<li><a href="#sec-1-4">Work plan</a></li>
+<li><a href="#sec-1-2">Project introduction</a>
+<ul>
+<li><a href="#sec-1-2-1">Overview</a>
+<ul>
+<li><a href="#sec-1-2-1-1">Scope of this PoC</a></li>
+<li><a href="#sec-1-2-1-2">Scope of Hangzhou</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2-2">Scheduler</a>
+<ul>
+<li><a href="#sec-1-2-2-1">Phase1</a></li>
+<li><a href="#sec-1-2-2-2">Phase2</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2-3">Task tracing</a>
+<ul>
+<li><a href="#sec-1-2-3-1">Ipalight porting</a></li>
+<li><a href="#sec-1-2-3-2">Transport porting</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2-4">Work plan</a>
+<ul>
+<li><a href="#sec-1-2-4-1">Current status</a></li>
+<li><a href="#sec-1-2-4-2">Questions</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2-5">Meeting minutes</a>
+<ul>
+<li><a href="#sec-1-2-5-1">Mon Jan 20 13:40:59 2014</a></li>
+<li><a href="#sec-1-2-5-2">Wed Feb 18 14:24:46 2014</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -160,39 +202,320 @@ for the JavaScript code in this tag.
 </div>
 
 <div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1">Overview</h3>
+<h3 id="sec-1-1">PoC team introduction</h3>
 <div class="outline-text-3" id="text-1-1">
 
+
+</div>
+
+<div id="outline-container-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1">Team information</h4>
+<div class="outline-text-4" id="text-1-1-1">
+
+<p>We are C team
+</p>
+<p>
+We are Cloud pioneer in NSN
+</p>
+<p>
+We are Fu weiyi, Wang wei, Ye Changyi, Dong xiao, Tang huanan, Wu
+Xiaoping, Chi xiaobo, Zhang bing, Liu weiwei, Xu wei. Gao Leijia
+</p>
 </div>
 
 </div>
 
-<div id="outline-container-1-2" class="outline-3">
-<h3 id="sec-1-2">Scheduler</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-1-1-2" class="outline-4">
+<h4 id="sec-1-1-2">Device information</h4>
+<div class="outline-text-4" id="text-1-1-2">
+
+<p>We have One HP server for cloud platform
+</p>
+<p>
+MGT IP:      10.56.212.18 
+</p>
+<p>
+USER:          root
+</p>
+<p>
+PASSWD:   password
+<div style="height:200px;overflow:auto;border-style:solid;border-width:1px">
+
+<pre class="example">Machine (16GB)
+  NUMANode L#0 (P#0 8182MB) + Socket L#0 + L3 L#0 (12MB)
+    L2 L#0 (256KB) + L1d L#0 (32KB) + L1i L#0 (32KB) + Core L#0
+      PU L#0 (P#0)
+      PU L#1 (P#12)
+    L2 L#1 (256KB) + L1d L#1 (32KB) + L1i L#1 (32KB) + Core L#1
+      PU L#2 (P#2)
+      PU L#3 (P#14)
+    L2 L#2 (256KB) + L1d L#2 (32KB) + L1i L#2 (32KB) + Core L#2
+      PU L#4 (P#4)
+      PU L#5 (P#16)
+    L2 L#3 (256KB) + L1d L#3 (32KB) + L1i L#3 (32KB) + Core L#3
+      PU L#6 (P#6)
+      PU L#7 (P#18)
+    L2 L#4 (256KB) + L1d L#4 (32KB) + L1i L#4 (32KB) + Core L#4
+      PU L#8 (P#8)
+      PU L#9 (P#20)
+    L2 L#5 (256KB) + L1d L#5 (32KB) + L1i L#5 (32KB) + Core L#5
+      PU L#10 (P#10)
+      PU L#11 (P#22)
+  NUMANode L#1 (P#1 8192MB) + Socket L#1 + L3 L#1 (12MB)
+    L2 L#6 (256KB) + L1d L#6 (32KB) + L1i L#6 (32KB) + Core L#6
+      PU L#12 (P#1)
+      PU L#13 (P#13)
+    L2 L#7 (256KB) + L1d L#7 (32KB) + L1i L#7 (32KB) + Core L#7
+      PU L#14 (P#3)
+      PU L#15 (P#15)
+    L2 L#8 (256KB) + L1d L#8 (32KB) + L1i L#8 (32KB) + Core L#8
+      PU L#16 (P#5)
+      PU L#17 (P#17)
+    L2 L#9 (256KB) + L1d L#9 (32KB) + L1i L#9 (32KB) + Core L#9
+      PU L#18 (P#7)
+      PU L#19 (P#19)
+    L2 L#10 (256KB) + L1d L#10 (32KB) + L1i L#10 (32KB) + Core L#10
+      PU L#20 (P#9)
+      PU L#21 (P#21)
+    L2 L#11 (256KB) + L1d L#11 (32KB) + L1i L#11 (32KB) + Core L#11
+      PU L#22 (P#11)
+      PU L#23 (P#23)
+  HostBridge L#0
+    PCIBridge
+      PCI 103c:323a
+        Block L#0 "sda"
+    PCIBridge
+      PCI 14e4:1639
+        Net L#1 "eth0"
+      PCI 14e4:1639
+    PCIBridge
+      PCI 14e4:1639
+      PCI 14e4:1639
+        Net L#2 "eth3"
+    PCIBridge
+      PCI 1002:515e
+        GPU L#3 "controlD64"
+        GPU L#4 "card0"
+
+</pre>
+
+</div>
+and One IBM server for compiling 
+</p>
+<p>
+MGT IP:   10.56.212.3
+</p>
+<p>
+USER:      con-cloud
+</p>
+<p>
+PASSWD:  password
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-3" class="outline-4">
+<h4 id="sec-1-1-3">Work branch</h4>
+<div class="outline-text-4" id="text-1-1-3">
+
+<p><a href="https://svne1.access.nsn.com/isource/svnroot/scm_il/branches/cloud_controller">https://svne1.access.nsn.com/isource/svnroot/scm_il/branches/cloud_controller</a>
+</p>
+<p>
+branch at 8484@trunk
+</p></div>
+
+</div>
+
+<div id="outline-container-1-1-4" class="outline-4">
+<h4 id="sec-1-1-4">Contact list in hangzhou</h4>
+<div class="outline-text-4" id="text-1-1-4">
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Name</td><td class="left">Address</td></tr>
+<tr><td class="left">Lab related support</td><td class="left">Fu weiyi</td></tr>
+</tbody>
+</table>
 
 </div>
 
 </div>
 
-<div id="outline-container-1-3" class="outline-3">
-<h3 id="sec-1-3">Study plan</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-1-1-5" class="outline-4">
+<h4 id="sec-1-1-5">Contact list from counterpart</h4>
+<div class="outline-text-4" id="text-1-1-5">
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">Name</th><th scope="col" class="left">address</th></tr>
+<tr><th scope="col" class="left">Openstack</th><th scope="col" class="left"><a href="https://workspaces.emea.nsn-net.net/sites/OSR/Wiki/OpenStack Reference Stack.aspx">Openstack reference wiki</a></th></tr>
+<tr><th scope="col" class="left"></th><th scope="col" class="left">Erukala, Vijaya (EXT-Tata Consultancy Ser - FI/Espoo);</th></tr>
+<tr><th scope="col" class="left"></th><th scope="col" class="left">Singh, Man (NSN - FI/Espoo)</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">VSP</td><td class="left"></td></tr>
+</tbody>
+<tbody>
+<tr><td class="left">VGP</td><td class="left"></td></tr>
+</tbody>
+<tbody>
+<tr><td class="left">UP/UMW</td><td class="left">Singh, Satish 1. (NSN - IN/Bangalore)</td></tr>
+</tbody>
+<tbody>
+<tr><td class="left">CP</td><td class="left"></td></tr>
+</tbody>
+<tbody>
+<tr><td class="left">PET lab</td><td class="left">Kaartinen, Petri (NSN - FI/Espoo)</td></tr>
+</tbody>
+<tbody>
+<tr><td class="left">Integration in Espoo</td><td class="left">Karento, Mika (NSN - FI/Espoo)</td></tr>
+</tbody>
+<tbody>
+<tr><td class="left">BCQ</td><td class="left">Mertsalmi, Jussi (NSN - FI/Espoo)</td></tr>
+</tbody>
+</table>
 
 
 </div>
 
-<div id="outline-container-1-3-1" class="outline-4">
-<h4 id="sec-1-3-1">DPDK</h4>
-<div class="outline-text-4" id="text-1-3-1">
+</div>
+
+<div id="outline-container-1-1-6" class="outline-4">
+<h4 id="sec-1-1-6">WoW</h4>
+<div class="outline-text-4" id="text-1-1-6">
 
 
 </div>
 
-<div id="outline-container-1-3-1-1" class="outline-5">
-<h5 id="sec-1-3-1-1">Overview</h5>
-<div class="outline-text-5" id="text-1-3-1-1">
+<div id="outline-container-1-1-6-1" class="outline-5">
+<h5 id="sec-1-1-6-1">Study</h5>
+<div class="outline-text-5" id="text-1-1-6-1">
 
+
+
+
+<pre class="example">Group1:EAL: -- Zhang bing
+Memory manager, -- Fu weiyi
+Memory pool manager, -- Ye changyi
+Network packet --Wangwei
+buffer management, -- Ye changyi
+Timer lib, -- Zhang bing
+Hash lib. -- Wang wei
+Development  -- Fu weiyi
+Group2:PMD -- Dong xiao
+Ring manager -- Chi xiaobo
+Packet fowarding algorithm -- Wu xiaoping
+Qos -- Tang huanan
+Thread safety -- Xu wei
+Performance -- Chi xiaobo
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-6-2" class="outline-5">
+<h5 id="sec-1-1-6-2">Meetings</h5>
+<div class="outline-text-5" id="text-1-1-6-2">
+
+<ul>
+<li id="sec-1-1-6-2-1">Common<br/>
+<ol>
+<li>Chairman rotation in regular meeting
+</li>
+</ol>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Fu weiyi</td></tr>
+<tr><td class="left">Wang wei</td></tr>
+<tr><td class="left">Ye Changyi</td></tr>
+<tr><td class="left">Dong xiao</td></tr>
+<tr><td class="left">Tang huanan</td></tr>
+<tr><td class="left">Wu Xiaoping</td></tr>
+<tr><td class="left">Chi xiaobo</td></tr>
+<tr><td class="left">Zhang bing</td></tr>
+<tr><td class="left">Liu weiwei</td></tr>
+<tr><td class="left">Xu wei</td></tr>
+<tr><td class="left">Gao Leijia</td></tr>
+</tbody>
+</table>
+
+<ol>
+<li>Meeting minutes record in page
+</li>
+</ol>
+
+<p><a href="https://workspaces.emea.nsn-net.net/sites/RCOCPHZC/Wiki/meeting minutes.aspx">meeting minutes in wiki</a>
+</p><ol>
+<li>All tasks are tracing in page 
+</li>
+</ol>
+
+<p><a href="https://workspaces.emea.nsn-net.net/sites/RCOCPHZC/Wiki/work tracing.aspx">tasktracing in wiki</a>
+</p><ol>
+<li>Open issues record in page
+</li>
+</ol>
+
+<p><a href="https://workspaces.emea.nsn-net.net/sites/RCOCPHZC/Wiki/Open issues.aspx">open issues in wiki</a>
+</p><ol>
+<li>AP followed in page
+</li>
+</ol>
+
+<p><a href="https://workspaces.emea.nsn-net.net/sites/RCOCPHZC/Wiki/Action Points.aspx">AP in wiki</a>
+</p></li>
+</ul>
+<ul>
+<li id="sec-1-1-6-2-2">With conterparts<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-6-2-3">Internal team<br/>
+Regular meeting 
+<ul>
+<li>Working status tracing
+</li>
+<li>ad hoc 
+</li>
+</ul>
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-6-3" class="outline-5">
+<h5 id="sec-1-1-6-3">Way of Cooperation</h5>
+<div class="outline-text-5" id="text-1-1-6-3">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-7" class="outline-4">
+<h4 id="sec-1-1-7">Study Materials</h4>
+<div class="outline-text-4" id="text-1-1-7">
+
+
+</div>
+
+<div id="outline-container-1-1-7-1" class="outline-5">
+<h5 id="sec-1-1-7-1">DPDK</h5>
+<div class="outline-text-5" id="text-1-1-7-1">
+
+<ul>
+<li id="sec-1-1-7-1-1">Overview<br/>
 <ol>
 <li>You will know, what is DPDK, what it is used for. 
 </li>
@@ -203,57 +526,45 @@ for the JavaScript code in this tag.
 </ol>
 
 <p><a href="./materials/DPDK/IntelDataPlaneDevelopmentKitOverview_Rev1.6.pdf">IntelDataPlaneDevelopmentKitOverview</a>
-</p></div>
-
-</div>
-
-<div id="outline-container-1-3-1-2" class="outline-5">
-<h5 id="sec-1-3-1-2">Programing guide</h5>
-<div class="outline-text-5" id="text-1-3-1-2">
-
-<p>Read this document before you start programing on the DPDK
+</p>
+<p>
+<a href="./dpdk.html">./dpdk.html</a>
+</p>
+<p>
+More info is on dpdk.org
+</p></li>
+</ul>
+<ul>
+<li id="sec-1-1-7-1-2">Programing guide<br/>
+Read this document before you start programing on the DPDK
 <a href="./materials/DPDK/intel-dpdk-programmers-guide.pdf">Programing guide</a>
-</p></div>
-
-</div>
-
-<div id="outline-container-1-3-1-3" class="outline-5">
-<h5 id="sec-1-3-1-3">API reference</h5>
-<div class="outline-text-5" id="text-1-3-1-3">
-
-<p>Don't know the meaning of some API, check here.
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-7-1-3">API reference<br/>
+Don't know the meaning of some API, check here.
 <a href="./materials/DPDK/intel_DPDK_API_Ref_Rev1.1.pdf">API reference</a>
-</p></div>
-
-</div>
-
-<div id="outline-container-1-3-1-4" class="outline-5">
-<h5 id="sec-1-3-1-4">Sample guilde</h5>
-<div class="outline-text-5" id="text-1-3-1-4">
-
-<p>Here is some basic samples, such as l2fwd? l3fwd? or hello word. 
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-7-1-4">Sample guilde<br/>
+Here is some basic samples, such as l2fwd? l3fwd? or hello word. 
 <a href="./materials/DPDK/intel-dpdk-sample-applications-user-guide.pdf">samples</a>
 <a href="./materials/DPDK/intel-dpdk-testpmd-application-user-guide.pdf">testpmd</a>
-</p></div>
-
-</div>
-
-<div id="outline-container-1-3-1-5" class="outline-5">
-<h5 id="sec-1-3-1-5">Troubleshooting</h5>
-<div class="outline-text-5" id="text-1-3-1-5">
-
-<p>DPDK is used to accelerating the packet handling, Opp, you packet
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-7-1-5">Troubleshooting<br/>
+DPDK is used to accelerating the packet handling, Opp, you packet
 lost? start the tracing from here. 
 <a href="./materials/DPDK/looking-for-lost-packets-paper.pdf">looking forthe lost packet</a>
-</p></div>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-7-1-6">Third part supporting<br/>
+Many companies are supporting this DPDK, you may have known some of them
 
-</div>
-
-<div id="outline-container-1-3-1-6" class="outline-5">
-<h5 id="sec-1-3-1-6">Third part supporting</h5>
-<div class="outline-text-5" id="text-1-3-1-6">
-
-<p>Many companies are supporting this DPDK, you may have known some of them
+<p>
 <a href="./materials/DPDK/6WINDGate_overview_for_IntelDPDK.pdf">6WindGate</a>
 </p>
 <p>
@@ -261,36 +572,714 @@ lost? start the tracing from here.
 </p>
 <p>
 <a href="./materials/DPDK/dpdk-tieto-support.pdf">Tieto</a>
-</p></div>
-
-</div>
-
-<div id="outline-container-1-3-1-7" class="outline-5">
-<h5 id="sec-1-3-1-7">Others</h5>
-<div class="outline-text-5" id="text-1-3-1-7">
-
-<p>You may find some tips about better programing on Intel based platform
+</p></li>
+</ul>
+<ul>
+<li id="sec-1-1-7-1-7">Others<br/>
+You may find some tips about better programing on Intel based platform
 <a href="./Materials/DPDK/ia-multicore-packet-processing-paper.pdf">./Materials/DPDK/ia-multicore-packet-processing-paper.pdf</a>
-</p>
+
 <p>
 <a href="./materials/DPDK/ia-data-plane-packet-processing-paper.pdf">./materials/DPDK/ia-data-plane-packet-processing-paper.pdf</a>
+</p>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-7-2" class="outline-5">
+<h5 id="sec-1-1-7-2">Cloud</h5>
+<div class="outline-text-5" id="text-1-1-7-2">
+
+<p><a href="./materials/Cloud/VirtualizationIntro-V2-4.ppt">Virtualization</a>
+</p>
+<p>
+<a href="./materials/Cloud/Intel虚拟化技术-从VT-x到VT-d.pdf">Vitualization in Intel</a>
+</p>
+<p>
+<a href="./materials/Cloud/Intro+to+Cloud+Computing.pptx">Cloud Computing</a>
+</p>
+<p>
+<a href="./materials/Cloud/carrier-cloud-telecoms.pdf">carrier-cloud-telecoms</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-7-3" class="outline-5">
+<h5 id="sec-1-1-7-3">VGP</h5>
+<div class="outline-text-5" id="text-1-1-7-3">
+
+<p>Virtual Gateway Platform (VGP) is the
+name used by MBB product management for the software platform that
+enables deployment and operation of FlexiNG and other product
+applications as guests in a virtualization infrastructure
+</p>
+<p>
+<a href="https://sharenet-ims.inside.nokiasiemensnetworks.com/Overview/D506674097">Overview</a>
+</p>
+<p>
+<a href="https://sharenet-ims.inside.nokiasiemensnetworks.com/livelink/livelink?func=ll&amp;objId=506169440&amp;objAction=Browse">More in VGP</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-7-4" class="outline-5">
+<h5 id="sec-1-1-7-4">VSP</h5>
+<div class="outline-text-5" id="text-1-1-7-4">
+
+<p><a href="./materials/Virtualized+Server+Platform+(VSP1.0+P6)+Architecture+Description.docx">./materials/Virtualized+Server+Platform+(VSP1.0+P6)+Architecture+Description.docx</a>
+</p></div>
+
+</div>
+
+<div id="outline-container-1-1-7-5" class="outline-5">
+<h5 id="sec-1-1-7-5">Openstack</h5>
+<div class="outline-text-5" id="text-1-1-7-5">
+
+<p><a href="https://workspaces.emea.nsn-net.net/sites/OSR/Wiki/OpenStack Reference Stack.aspx">Openstack reference wiki</a>
+<a href="./openstack.html">./openstack.html</a>
+</p></div>
+
+</div>
+
+<div id="outline-container-1-1-7-6" class="outline-5">
+<h5 id="sec-1-1-7-6">Materials from Intel</h5>
+<div class="outline-text-5" id="text-1-1-7-6">
+
+<p><a href="./materials/Intel/">./materials/Intel/</a>
+</p>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">Project introduction</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+</div>
+
+<div id="outline-container-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1">Overview</h4>
+<div class="outline-text-4" id="text-1-2-1">
+
+<p>    <a href="./materials/mcController cloud status.pptx">./materials/mcController cloud status.pptx</a>
+</p>
+<p>
+    <a href="./materials/Controller_Cloud_Proof_of_Concept.pptx">./materials/Controller_Cloud_Proof_of_Concept.pptx</a>
+</p>
+
+
+<div style="height:200px;overflow:auto;border-style:solid;border-width:1px">
+
+<pre class="example">Part I
+-------------------------------------------------------------------
+
+Competence devepment for the PoC learning by doing WK5
+
+1- Walk-though demo from LCC lab B5 and contacts
+   - Setup and lab configuration
+   - OpenStack and VM configurations
+   - Arranging this Demo next??
+   - WK5
+
+2- Walk-though about Flexi NG demo and support and contacts (Markku can help to establish interface)
+   - Arrange, Tuesday we will agree the timing??
+   - WK5
+
+3- Walk-through about the FP virtual CI and contacts  
+
+   - Framework =&gt; Centos + openstack + VMWare? (VI) + Guest OS (FP = VGP)
+   - Arrange next??
+   - WK5  
+
+Part II
+-------------------------------------------------------------------
+
+   
+10- Create development branch for the porting (Next week)
+   - Common branch and compilation environment
+   
+   - Compilation server is need??
+   
+   - Mika Karento will create the common branch and maintain the compilation server, AP: Ahmed
+   
+   - Create a branch ASAP -&gt; Karento (13.5.5_24??)
+
+
+Part III
+---------------------------------------------------------------------------------------------------------------
+
+
+13- Porting and starting up seccussfully in the VM the mcRNC SW to x86_64 environment (Create ISO )
+
+   - Phase #1 (Slow path support)
+
+      a- Create a development branch
+         - Which Guest OS will be used (WR 4.3 or later?)
+      b- Compile FP (Already Supports for MGW)
+         - Porting the remining components to x86_64 (In case any deviation exists)
+      c- Compile IPA light (Partially supported for MGW)
+         - Porting the remining components to x86_64
+            - Call management functionality
+            - DMX
+            - DC (Static configuration of virtual functional units)
+            - List all the critical interfaces and check if application can do some hack for the PoC to speed-up
+
+      d- CP &amp; O&amp;M compile
+   
+   - Phase# 2 (Fast path support to bring up in the build)
+
+      e- EITP and PAL porting to DPDK and compile 
+         - Meeting with HZ and PAL(BLR) team
+         - DPDK common meeting is preffered
+         - UP+Transport = VM??
+
+Part IV  
+------------------------------------------------------------------------------------------------------------------------
+
+5- Lab setup enviromnmet for PoC
+   - BLR (HP blade)
+      - How to setup the lab and who will maintain, AP: Arul+ Satish
+      - Centos + openstack  (Can you check if you can find some old HW to install the Centos 6.5/Openstack)
+   - CP MT lab (with E2E)  in Espoo (now in PC move to HP  blade), Niko Tanner??
+   - HZ lab demo (Fu Weiyi)
+      - OpenStack installation support (from LCC)
+   - Integration in Espoo (Mika Karento)
+      - Openstack intall, networking configuration is ongoing
+   - PET lab (Petri Kaartinen)
+
+
+--------------------------------------------------------------------------------------------------------
+
+6- CAPEX calculation for each lab.
+   - Initail calculation?
+   - Order for one HP blade or two the CP (Some mobiles)??
+   - Initail estimation is ready??
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+
+4- Discuss with FxP VGP and agree mode of cooperation
+   - ASAP (Mainly IPA light and VGP issues)
+   - VP proposed to have controller specific common meeting.
+   - Zhang Bing + Kevin Gao + Fu Weiyi + Ahmed
+
+
+7- Meetings 
+
+   - Weekly meeting HZ + BLR (ad hoc)
+      - Tuesday 8-10 am Helsinki time
+
+   - Technical meeting 
+      - weekly meeting for CP
+      - Erkki + Markku + Tero + Niko + Karento
+      - No Tuesdays (Thru).
+
+   - Start defining the WoW
+   - Ashwin, Arul will check the other persons and send to Ahmed.
+   - Weekly meeting with HZ+BLR and ad hoc meeting?
+   
+
+8- IPA light and VGP??
+
+
+   
+11. Definig the PoC detail plan
+   - AP: Ahmed target before end of Jan.
+
+
+12- Start defining the context level architecture view
+   AP: Ahmed target before end of Jan first version.
+
+
+   
+14- IPA light + VGP (needed changes)
+   -??
+15- Resource allocation for the whole year 2014 
+
+16- Meeting??
+
+   - We will provide monthly status report for L4
+   - Incremental Demo for L4 every two months (always have more than planned)
+
+   - We will have monthly meeting where L4 managers can participate if they want.???
+
+</pre>
+
+</div>
+
+
+</div>
+
+<div id="outline-container-1-2-1-1" class="outline-5">
+<h5 id="sec-1-2-1-1">Scope of this PoC</h5>
+<div class="outline-text-5" id="text-1-2-1-1">
+
+<p>PoC is part of the cloud evolution defined in the gragh below
+<img src="./cloud/rnc_cloud_overview.png"  alt="./cloud/rnc_cloud_overview.png" />
+</p></div>
+
+</div>
+
+<div id="outline-container-1-2-1-2" class="outline-5">
+<h5 id="sec-1-2-1-2">Scope of Hangzhou</h5>
+<div class="outline-text-5" id="text-1-2-1-2">
+
+<p><img src="./cloud/ipalight.png"  alt="./cloud/ipalight.png" />
+</p>
+<p>
+In hangzhou, we need to porting current ipalight components on
+X86 based platform. 
+LibGen SI DC and Dmxmsg have been running on x86 based MGW, CM and T&amp;T have
+not been compiled with x86, We need to porting them on the x86 based
+vitual machine. 
+</p>
+<p>
+For mcTransport, it is running in simple executive on octeon currently, we need
+to porting the functionality to x86 based platform. DPDK is used to
+accelerate the packet handling performance.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-2" class="outline-4">
+<h4 id="sec-1-2-2">Scheduler</h4>
+<div class="outline-text-4" id="text-1-2-2">
+
+
+</div>
+
+<div id="outline-container-1-2-2-1" class="outline-5">
+<h5 id="sec-1-2-2-1">Phase1</h5>
+<div class="outline-text-5" id="text-1-2-2-1">
+
+<p>LE Mar 24th 2014
+Porting ipalight to virtualized platform. 
+</p><ol>
+<li>Port IPA light SW to x86_64 and bring-up the system with 4 virtual nodes (vCFPU, vEIPU, vCSPU and vUSPU)
+</li>
+<li>Changing the EITP to support DPDK and open 6wind 
+</li>
+<li>In phase one we will not use the openStack, but just KVM and use the virtual configuration samples from FP to run the system in KVM host. 
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-2-2" class="outline-5">
+<h5 id="sec-1-2-2-2">Phase2</h5>
+<div class="outline-text-5" id="text-1-2-2-2">
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-3" class="outline-4">
+<h4 id="sec-1-2-3">Task tracing</h4>
+<div class="outline-text-4" id="text-1-2-3">
+
+<p><a href="https://workspaces.emea.nsn-net.net/sites/RCOCPHZC/Wiki/work tracing.aspx">wiki record</a>
+</p>
+</div>
+
+<div id="outline-container-1-2-3-1" class="outline-5">
+<h5 id="sec-1-2-3-1">Ipalight porting</h5>
+<div class="outline-text-5" id="text-1-2-3-1">
+
+<ul>
+<li id="sec-1-2-3-1-1">Overall view<br/>
+<img src="./cloud/ipalight.png"  alt="./cloud/ipalight.png" />
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-3-1-2">Call management<br/>
+Led by Wangwei
+<img src="./cloud/call_management.png"  alt="./cloud/call_management.png" />
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">PRB</th><th scope="col" class="left">Subsystem</th><th scope="col" class="left">status</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">RM2PRB</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">RFRPRB</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">LEMANA</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">LRMPRB</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">RM3PRB</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">UHAPRB</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">UMUTIL</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">RMUTIL</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">LGUTIL</td><td class="left"></td><td class="left"></td></tr>
+</tbody>
+</table>
+
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-3-1-3">Signaling<br/>
+Led by Wu xiaoping
+<img src="./cloud/signaling.png"  alt="./cloud/signaling.png" />
+
+<ul>
+<li id="sec-1-2-3-1-3-1">SS7 signaling<br/>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">PRB</th><th scope="col" class="left">Subsystem</th><th scope="col" class="left">Status</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">SCXADM</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">SAGPRO</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">SMNPRO</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">SEGPRO</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">SORPRO</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">XPSLOD</td><td class="left"></td><td class="left"></td></tr>
+</tbody>
+</table>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-3-1-3-2">NBAP signaling<br/>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">PRB</th><th scope="col" class="left">Subsystem</th><th scope="col" class="left">Status</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">NBMPRO</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">NBLSTC</td><td class="left"></td><td class="left"></td></tr>
+</tbody>
+</table>
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-3-1-4">Traffic and Transport<br/>
+Led by Zhang bing
+<img src="./cloud/traffic_transport.png"  alt="./cloud/traffic_transport.png" />
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">PRB</th><th scope="col" class="left">Subsystem</th><th scope="col" class="left">Status</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">CACPRB</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">TAEPRB</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">IUETOR</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">ILQOSA</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">SEAgent</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">UPCMON</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">SKOIVU</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">JAPILA</td><td class="left"></td><td class="left"></td></tr>
+</tbody>
+</table>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-3-1-5">Dmxmsg<br/>
+Led by Chi xiaobo
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-3-1-6">LibGen<br/>
+Led by Chi xiaobo
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-3-1-7">Distribute Computing<br/>
+Led by Tang huanan and Ye changyi
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">Subsystem</th><th scope="col" class="left">Responsible team</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">IL_AmnprbType</td><td class="left">HERCLERS</td></tr>
+<tr><td class="left">IL_AutoreturnprbType</td><td class="left">Porsche</td></tr>
+<tr><td class="left">IL_CpmonitorType</td><td class="left">Smart team</td></tr>
+<tr><td class="left">IL_EfocefType</td><td class="left">BLACKJACK</td></tr>
+<tr><td class="left">IL_FmpprbType</td><td class="left">BLACKJACK</td></tr>
+<tr><td class="left">IL_GivclientType</td><td class="left">Baihu</td></tr>
+<tr><td class="left">IL_LibgenType</td><td class="left">Launcher</td></tr>
+<tr><td class="left">IL_LastProc12Type</td><td class="left">BlackJack</td></tr>
+<tr><td class="left">IL_LastProc22Type</td><td class="left">BlackJack</td></tr>
+<tr><td class="left">IL_LastProc32Type</td><td class="left">BlackJack</td></tr>
+<tr><td class="left">IL_LchproType</td><td class="left">Matrix</td></tr>
+<tr><td class="left">IL_LmonitorType</td><td class="left">TURBO</td></tr>
+<tr><td class="left">IL_MfsprbType</td><td class="left">BlackJack</td></tr>
+<tr><td class="left">IL_Mm5prbType</td><td class="left">Baihu team</td></tr>
+<tr><td class="left">IL_NasevaType</td><td class="left">Sparta</td></tr>
+<tr><td class="left">IL_PrpproType</td><td class="left">BLACKJACK</td></tr>
+<tr><td class="left">IL_PrtpgmType</td><td class="left">BlackJack</td></tr>
+<tr><td class="left">IL_PxysemType</td><td class="left">BLACKJACK</td></tr>
+<tr><td class="left">IL_RfrprbType</td><td class="left">SPIDER</td></tr>
+<tr><td class="left">IL_RiamanType</td><td class="left">Sparta</td></tr>
+<tr><td class="left">IL_RiesenType</td><td class="left">Sparta</td></tr>
+<tr><td class="left">IL_SEAgentType</td><td class="left">Sword</td></tr>
+<tr><td class="left">IL_SlyprbType</td><td class="left">SMART</td></tr>
+<tr><td class="left">IL_SokeriType</td><td class="left">Sorcery</td></tr>
+<tr><td class="left">IL_StarterType</td><td class="left">BlackJack</td></tr>
+<tr><td class="left">IL_ThermoType</td><td class="left">Launcher</td></tr>
+<tr><td class="left">IL_TiseroType</td><td class="left">SPARK</td></tr>
+<tr><td class="left">IL_TpmonitorType</td><td class="left">TURBO</td></tr>
+<tr><td class="left">IL_UnitStateAgentType</td><td class="left">Sparta</td></tr>
+<tr><td class="left">IL_UpmonitorType</td><td class="left">TURBO</td></tr>
+<tr><td class="left">IL_WupmanType</td><td class="left">Launcher</td></tr>
+<tr><td class="left">IL_TafproType</td><td class="left">smart</td></tr>
+</tbody>
+</table>
+
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-3-2" class="outline-5">
+<h5 id="sec-1-2-3-2">Transport porting</h5>
+<div class="outline-text-5" id="text-1-2-3-2">
+
+<p>Team member are in study phase of this part. 
+content about DPDK and transport on RNC
 </p></div>
 </div>
+
+</div>
+
+<div id="outline-container-1-2-4" class="outline-4">
+<h4 id="sec-1-2-4">Work plan</h4>
+<div class="outline-text-4" id="text-1-2-4">
+
+
+</div>
+
+<div id="outline-container-1-2-4-1" class="outline-5">
+<h5 id="sec-1-2-4-1">Current status</h5>
+<div class="outline-text-5" id="text-1-2-4-1">
+
+<ul>
+<li id="sec-1-2-4-1-1">Jan 2014<br/>
+We have got a 8 people team available. 
+We got HP server built up, Raw DPDK has been deployed on the server,
+Hello world passed. 
+
+<p>
+Openstack is installed successfully, and the VM start up. Still some
+issue blocked the connection with the VM. we still didn't get a shell
+of the VM.
+</p>
+<p> 
+Next step is build up the competence of the team
+</p><ol>
+<li>What is cloud, what it means to RNC
+</li>
+<li>DPDK
+</li>
+<li>IP stack over DPDK selection
+</li>
+<li>Openstack 
+</li>
+<li>VGP,VSP
+</li>
+<li>IPA light architecture
+</li>
+</ol>
+
+<p>About the study part, there will be three demos, might happend in
+week4
+</p>
+
+
+<pre class="example">1- Walk-though demo from LCC lab B5 and contacts
+   - Setup and lab configuration
+   - OpenStack and VM configurations
+   - Arranging this Demo next??
+   - WK5
+
+2- Walk-though about Flexi NG demo and support and contacts (Markku can help to establish interface)
+   - Arrange, Tuesday we will agree the timing??
+   - WK5
+
+3- Walk-through about the FP virtual CI and contacts  
+
+   - Framework =&gt; Centos + openstack + VMWare? (VI) + Guest OS (FP = VGP)
+   - Arrange next??
+   - WK5  
+
+</pre>
+
+<p>
+Detailed study plan will be discussed by team in week4 meeting.
+</p>
+</li>
+</ul>
 </div>
 
 </div>
 
-<div id="outline-container-1-4" class="outline-3">
-<h3 id="sec-1-4">Work plan</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-1-2-4-2" class="outline-5">
+<h5 id="sec-1-2-4-2">Questions</h5>
+<div class="outline-text-5" id="text-1-2-4-2">
 
+<p>Q: The prgress of the device application?
+</p>
+<p>
+A: Formal device is still under application. maybe avaliable in three
+weeks
+</p>
+<p>
+Q: The backlog item?
+</p>
+<p>
+A: The formal backlog will be created in week4.
+</p>
+<p>
+Q: Contact list?
+</p>
+<p>
+A: For the UMW/UP, Singh, Satish 1. (NSN - IN/Bangalore)
+Other is still in buidlling
+</p>
+<p>
+Q: Overall target of this project, and scheduler. 
+</p>
+<p>
+A: PoC work is planned to last one year. Target is a static configured
+cloud RNC running with live call. 
+</p>
+<p>
+Q: The porting phase architecture
+</p>
+<p>
+A: Ahmed will plan it after this tough period because of P8 issue, In
+hangzhou team, we will have some proposal. 
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-5" class="outline-4">
+<h4 id="sec-1-2-5">Meeting minutes</h4>
+<div class="outline-text-4" id="text-1-2-5">
+
+
+</div>
+
+<div id="outline-container-1-2-5-1" class="outline-5">
+<h5 id="sec-1-2-5-1">Mon Jan 20 13:40:59 2014</h5>
+<div class="outline-text-5" id="text-1-2-5-1">
+
+
+<div style="height:200px;overflow:auto;border-style:solid;border-width:1px">
+
+<pre class="example">1. Current status sharing
+2. Study plan
+   1. Common knowlege study in week4
+   2. Divde into two groups
+  Group1:    Ye changyi, Zhang bing, Fu weiyi, Liu weiwei, Wang wei,
+  Group2:    Dongxiao, Chi xiaobo, Zhu tianda, Wu xiaoping, Xu Wei.
+      Tanghuanan.
+Hold workshop in weekly round from week5
+   Topic:
+    1) DPDK and Openstack material prepare
+    2) Start from Group1 in week5
+3. Way of working
+   1) Gerrit + git
+   2) Select one Scrum master in 20th Feb
+   3) Create public folder for shared materials
+   4) Community has been created
+   5) Mail recored is neccessary for problem tracing
+   6) Study output need to be stored in one shared folder
+4. Direction selection
+This will be done after the first round study 
+Workshops in week4:
+1. Call end to end process Wangwei
+2. Current transport plan implementation in mcRNC Zhang bing
+3. Openstack/VSP/VGP/DPDK  VMware and KVM introduction in 30 slides Gao Leijia
+</pre>
+
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-5-2" class="outline-5">
+<h5 id="sec-1-2-5-2">Wed Feb 18 14:24:46 2014</h5>
+<div class="outline-text-5" id="text-1-2-5-2">
+
+
+<div style="height:200px;overflow:auto;border-style:solid;border-width:1px">
+
+<pre class="example">1) Current status
+a. Compilation and SW porting and VM configurations.
+i. Compilation is ongoing for whole IL SW (VM nodes are working with only FP SW in HZ)
+1. https://workspaces.emea.nsn-net.net/sites/RCOCPHZC/Wiki/work%20tracing.aspx
+ii.   FP build is 3.4 (RU50 uses 3.4). AP: Ahmed, Check the build ID (FP, IL and RNC) 
+iii.  In PoC we will use simple IP stack in DPDK based on some open source project (This means before the VGP support is ready)
+iv.   In first demo 03/2014, bring all the SW into Virtual Infractures and make internal connectivity work (If possible we will try dummy calls)
+v. In second demo 04/2014, make the basics calls (Internal, hack the code to make it work??)
+vi.   In third demo 06/2014, make both calls PS and AMR through
+
+2) Next steps and future plans
+
+a. The challenge will be the transport part
+b. UP endianess is the major challenge, Intel compilation support for big-endian code could help: Ahmed to check if Intel has cross compilation support
+c. DMX/fastDist (vSwitch can handle our etherType), in demo they will not be changes. AP: Satish/Ahmed/Zhang Bing check the internal communication for both DMX and fastDist, Zhang Bing can check the effort needed for the porting the fastDist.
+d. DMX can be used both UP and control plane? AP: Zhang Bing/Satish/Ahmed to check if the DMX can be used for both traffic control  plane and UP, list the limitations. Target: Friday
+e. One tech meeting after study to analyze and agree is needed and should be arranged.
+
+3) AOB
+a. Trip to HZ for Satish 04/2014, AP: Ahmed.
+b. Workshop plans should be completed this week, AP: Ahmed
+c. SCM support is needed for the application, AP: Ahmed to agree with Kai and Karento
+d. ILMAN is OK, they are already now supporting and they created the cloud branch for the project.
+4) MoO
+a. Weekly meeting
+b. One wiki page for the whole project, can be re-used the HZ page?
+</pre>
+
+</div>
+
+
+</div>
+</div>
 </div>
 </div>
 </div>
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2014-01-05T22:09+0800</p>
+<p class="date">Date: 2014-02-20T23:31+0800</p>
 <p class="author">Author: Kevin Gao</p>
 <p class="email"><a href="mailto:leijia.gao@nsn.com">leijia.gao@nsn.com</a></p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
