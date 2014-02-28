@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="Controller on Cloud"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-02-20T23:31+0800"/>
+<meta name="generated" content="2014-02-28T22:07+0800"/>
 <meta name="author" content="Kevin Gao"/>
 <meta name="description" content=""/>
 <meta name="keywords" content="emacs, personal notes"/>
@@ -133,24 +133,29 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#sec-1-1-1">Team information</a></li>
 <li><a href="#sec-1-1-2">Device information</a></li>
-<li><a href="#sec-1-1-3">Work branch</a></li>
-<li><a href="#sec-1-1-4">Contact list in hangzhou</a></li>
-<li><a href="#sec-1-1-5">Contact list from counterpart</a></li>
-<li><a href="#sec-1-1-6">WoW</a>
+<li><a href="#sec-1-1-3">Work branch</a>
 <ul>
-<li><a href="#sec-1-1-6-1">Study</a></li>
-<li><a href="#sec-1-1-6-2">Meetings</a></li>
-<li><a href="#sec-1-1-6-3">Way of Cooperation</a></li>
+<li><a href="#sec-1-1-3-1">Mon Feb 24 11:41:48 2014</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-1-7">Study Materials</a>
+<li><a href="#sec-1-1-4">Compile guide</a></li>
+<li><a href="#sec-1-1-5">Contact list in hangzhou</a></li>
+<li><a href="#sec-1-1-6">Contact list from counterpart</a></li>
+<li><a href="#sec-1-1-7">WoW</a>
 <ul>
-<li><a href="#sec-1-1-7-1">DPDK</a></li>
-<li><a href="#sec-1-1-7-2">Cloud</a></li>
-<li><a href="#sec-1-1-7-3">VGP</a></li>
-<li><a href="#sec-1-1-7-4">VSP</a></li>
-<li><a href="#sec-1-1-7-5">Openstack</a></li>
-<li><a href="#sec-1-1-7-6">Materials from Intel</a></li>
+<li><a href="#sec-1-1-7-1">Study</a></li>
+<li><a href="#sec-1-1-7-2">Meetings</a></li>
+<li><a href="#sec-1-1-7-3">Way of Cooperation</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-1-8">Study Materials</a>
+<ul>
+<li><a href="#sec-1-1-8-1">DPDK</a></li>
+<li><a href="#sec-1-1-8-2">Cloud</a></li>
+<li><a href="#sec-1-1-8-3">VGP</a></li>
+<li><a href="#sec-1-1-8-4">VSP</a></li>
+<li><a href="#sec-1-1-8-5">Openstack</a></li>
+<li><a href="#sec-1-1-8-6">Materials from Intel</a></li>
 </ul></li>
 </ul>
 </li>
@@ -159,33 +164,40 @@ for the JavaScript code in this tag.
 <li><a href="#sec-1-2-1">Overview</a>
 <ul>
 <li><a href="#sec-1-2-1-1">Scope of this PoC</a></li>
-<li><a href="#sec-1-2-1-2">Scope of Hangzhou</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-2-2">Scheduler</a>
+<li><a href="#sec-1-2-2">Roadmap in hangzhou</a>
 <ul>
-<li><a href="#sec-1-2-2-1">Phase1</a></li>
-<li><a href="#sec-1-2-2-2">Phase2</a></li>
+<li><a href="#sec-1-2-2-1">Phase1&amp;2</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-2-3">Task tracing</a>
+<li><a href="#sec-1-2-3">Scheduler</a>
 <ul>
-<li><a href="#sec-1-2-3-1">Ipalight porting</a></li>
-<li><a href="#sec-1-2-3-2">Transport porting</a></li>
+<li><a href="#sec-1-2-3-1">Phase1</a></li>
+<li><a href="#sec-1-2-3-2">Phase2</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-2-4">Work plan</a>
+<li><a href="#sec-1-2-4">Task tracing</a>
 <ul>
-<li><a href="#sec-1-2-4-1">Current status</a></li>
-<li><a href="#sec-1-2-4-2">Questions</a></li>
+<li><a href="#sec-1-2-4-1">Transport porting</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-2-5">Meeting minutes</a>
+<li><a href="#sec-1-2-5">Work plan</a>
 <ul>
-<li><a href="#sec-1-2-5-1">Mon Jan 20 13:40:59 2014</a></li>
-<li><a href="#sec-1-2-5-2">Wed Feb 18 14:24:46 2014</a></li>
+<li><a href="#sec-1-2-5-1">Current status</a></li>
+<li><a href="#sec-1-2-5-2">Questions</a></li>
 </ul>
 </li>
+<li><a href="#sec-1-2-6">Meeting minutes</a>
+<ul>
+<li><a href="#sec-1-2-6-1">Mon Jan 20 13:40:59 2014</a></li>
+<li><a href="#sec-1-2-6-2">Wed Feb 18 14:24:46 2014</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-1-3">Tech summarize</a>
+<ul>
+<li><a href="#sec-1-3-1">vSwitch</a></li>
 </ul>
 </li>
 </ul>
@@ -229,7 +241,24 @@ Xiaoping, Chi xiaobo, Zhang bing, Liu weiwei, Xu wei. Gao Leijia
 <h4 id="sec-1-1-2">Device information</h4>
 <div class="outline-text-4" id="text-1-1-2">
 
-<p>We have One HP server for cloud platform
+<p>http_proxy in lab
+</p>
+
+
+<pre class="example">export http_proxy=http://10.106.143.212:8080
+</pre>
+
+<p>
+We have one Dell server
+</p>
+
+
+<pre class="example">It's IP : 10.56.212.19
+VNC   : 10.56.212.19:5
+</pre>
+
+<p>
+One HP server for cloud platform
 </p>
 <p>
 MGT IP:      10.56.212.18 
@@ -323,13 +352,73 @@ PASSWD:  password
 </p>
 <p>
 branch at 8484@trunk
-</p></div>
+</p>
+<p>
+dpdk version
+</p>
+
+
+
+<pre class="example">version: 1.5.1r2
+</pre>
+
+<p>
+libc version 
+<div style="height:200px;overflow:auto;border-style:solid;border-width:1px">
+
+<pre class="example"># /lib/libc.so.6
+GNU C Library (Wind River Linux Toolchain 4.4a-431 - User Built) stable release version 2.11.1, by Roland McGrath et al.
+Copyright (C) 2009 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.
+There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.
+Compiled by GNU CC version 4.4.1.
+Compiled on a Linux &gt;&gt;2.6.32-358.23.2.el6.x86_64&lt;&lt; system on 2013-11-18.
+Available extensions:
+        crypt add-on version 2.1 by Michael Glad and others
+        GNU Libidn by Simon Josefsson
+        Native POSIX Threads Library by Ulrich Drepper et al
+        Support for some architectures added on, not maintained in glibc core.
+        BIND-8.2.3-T5B
+For bug reporting instructions, please see:
+</pre>
+
+</div>
+
+</p>
+</div>
+
+<div id="outline-container-1-1-3-1" class="outline-5">
+<h5 id="sec-1-1-3-1">Mon Feb 24 11:41:48 2014</h5>
+<div class="outline-text-5" id="text-1-1-3-1">
+
+<p>Now the FP build and application is build is decided, they are
+</p>
+
+
+<pre class="example">1) R_QNCB.14.6.0_6
+2) R_IL_14.1.1.3
+3) R_FPT_3.4.1.4
+</pre>
+
+
+</div>
+</div>
 
 </div>
 
 <div id="outline-container-1-1-4" class="outline-4">
-<h4 id="sec-1-1-4">Contact list in hangzhou</h4>
+<h4 id="sec-1-1-4">Compile guide</h4>
 <div class="outline-text-4" id="text-1-1-4">
+
+<p><a href="./cloud_rnc_compile.html">./cloud_rnc_compile.html</a>
+</p></div>
+
+</div>
+
+<div id="outline-container-1-1-5" class="outline-4">
+<h4 id="sec-1-1-5">Contact list in hangzhou</h4>
+<div class="outline-text-4" id="text-1-1-5">
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <colgroup><col class="left" /><col class="left" />
@@ -344,9 +433,9 @@ branch at 8484@trunk
 
 </div>
 
-<div id="outline-container-1-1-5" class="outline-4">
-<h4 id="sec-1-1-5">Contact list from counterpart</h4>
-<div class="outline-text-4" id="text-1-1-5">
+<div id="outline-container-1-1-6" class="outline-4">
+<h4 id="sec-1-1-6">Contact list from counterpart</h4>
+<div class="outline-text-4" id="text-1-1-6">
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <colgroup><col class="left" /><col class="left" />
@@ -385,16 +474,16 @@ branch at 8484@trunk
 
 </div>
 
-<div id="outline-container-1-1-6" class="outline-4">
-<h4 id="sec-1-1-6">WoW</h4>
-<div class="outline-text-4" id="text-1-1-6">
+<div id="outline-container-1-1-7" class="outline-4">
+<h4 id="sec-1-1-7">WoW</h4>
+<div class="outline-text-4" id="text-1-1-7">
 
 
 </div>
 
-<div id="outline-container-1-1-6-1" class="outline-5">
-<h5 id="sec-1-1-6-1">Study</h5>
-<div class="outline-text-5" id="text-1-1-6-1">
+<div id="outline-container-1-1-7-1" class="outline-5">
+<h5 id="sec-1-1-7-1">Study</h5>
+<div class="outline-text-5" id="text-1-1-7-1">
 
 
 
@@ -415,16 +504,24 @@ Thread safety -- Xu wei
 Performance -- Chi xiaobo
 </pre>
 
-</div>
+<p>
+share folder
+</p>
+
+
+<pre class="example">\\rncipafs1\DA3\con-cloud-poc
+</pre>
 
 </div>
 
-<div id="outline-container-1-1-6-2" class="outline-5">
-<h5 id="sec-1-1-6-2">Meetings</h5>
-<div class="outline-text-5" id="text-1-1-6-2">
+</div>
+
+<div id="outline-container-1-1-7-2" class="outline-5">
+<h5 id="sec-1-1-7-2">Meetings</h5>
+<div class="outline-text-5" id="text-1-1-7-2">
 
 <ul>
-<li id="sec-1-1-6-2-1">Common<br/>
+<li id="sec-1-1-7-2-1">Common<br/>
 <ol>
 <li>Chairman rotation in regular meeting
 </li>
@@ -475,11 +572,11 @@ Performance -- Chi xiaobo
 </p></li>
 </ul>
 <ul>
-<li id="sec-1-1-6-2-2">With conterparts<br/>
+<li id="sec-1-1-7-2-2">With conterparts<br/>
 </li>
 </ul>
 <ul>
-<li id="sec-1-1-6-2-3">Internal team<br/>
+<li id="sec-1-1-7-2-3">Internal team<br/>
 Regular meeting 
 <ul>
 <li>Working status tracing
@@ -494,28 +591,28 @@ Regular meeting
 
 </div>
 
-<div id="outline-container-1-1-6-3" class="outline-5">
-<h5 id="sec-1-1-6-3">Way of Cooperation</h5>
-<div class="outline-text-5" id="text-1-1-6-3">
+<div id="outline-container-1-1-7-3" class="outline-5">
+<h5 id="sec-1-1-7-3">Way of Cooperation</h5>
+<div class="outline-text-5" id="text-1-1-7-3">
 
 </div>
 </div>
 
 </div>
 
-<div id="outline-container-1-1-7" class="outline-4">
-<h4 id="sec-1-1-7">Study Materials</h4>
-<div class="outline-text-4" id="text-1-1-7">
+<div id="outline-container-1-1-8" class="outline-4">
+<h4 id="sec-1-1-8">Study Materials</h4>
+<div class="outline-text-4" id="text-1-1-8">
 
 
 </div>
 
-<div id="outline-container-1-1-7-1" class="outline-5">
-<h5 id="sec-1-1-7-1">DPDK</h5>
-<div class="outline-text-5" id="text-1-1-7-1">
+<div id="outline-container-1-1-8-1" class="outline-5">
+<h5 id="sec-1-1-8-1">DPDK</h5>
+<div class="outline-text-5" id="text-1-1-8-1">
 
 <ul>
-<li id="sec-1-1-7-1-1">Overview<br/>
+<li id="sec-1-1-8-1-1">Overview<br/>
 <ol>
 <li>You will know, what is DPDK, what it is used for. 
 </li>
@@ -535,33 +632,33 @@ More info is on dpdk.org
 </p></li>
 </ul>
 <ul>
-<li id="sec-1-1-7-1-2">Programing guide<br/>
+<li id="sec-1-1-8-1-2">Programing guide<br/>
 Read this document before you start programing on the DPDK
 <a href="./materials/DPDK/intel-dpdk-programmers-guide.pdf">Programing guide</a>
 </li>
 </ul>
 <ul>
-<li id="sec-1-1-7-1-3">API reference<br/>
+<li id="sec-1-1-8-1-3">API reference<br/>
 Don't know the meaning of some API, check here.
 <a href="./materials/DPDK/intel_DPDK_API_Ref_Rev1.1.pdf">API reference</a>
 </li>
 </ul>
 <ul>
-<li id="sec-1-1-7-1-4">Sample guilde<br/>
+<li id="sec-1-1-8-1-4">Sample guilde<br/>
 Here is some basic samples, such as l2fwd? l3fwd? or hello word. 
 <a href="./materials/DPDK/intel-dpdk-sample-applications-user-guide.pdf">samples</a>
 <a href="./materials/DPDK/intel-dpdk-testpmd-application-user-guide.pdf">testpmd</a>
 </li>
 </ul>
 <ul>
-<li id="sec-1-1-7-1-5">Troubleshooting<br/>
+<li id="sec-1-1-8-1-5">Troubleshooting<br/>
 DPDK is used to accelerating the packet handling, Opp, you packet
 lost? start the tracing from here. 
 <a href="./materials/DPDK/looking-for-lost-packets-paper.pdf">looking forthe lost packet</a>
 </li>
 </ul>
 <ul>
-<li id="sec-1-1-7-1-6">Third part supporting<br/>
+<li id="sec-1-1-8-1-6">Third part supporting<br/>
 Many companies are supporting this DPDK, you may have known some of them
 
 <p>
@@ -575,7 +672,7 @@ Many companies are supporting this DPDK, you may have known some of them
 </p></li>
 </ul>
 <ul>
-<li id="sec-1-1-7-1-7">Others<br/>
+<li id="sec-1-1-8-1-7">Others<br/>
 You may find some tips about better programing on Intel based platform
 <a href="./Materials/DPDK/ia-multicore-packet-processing-paper.pdf">./Materials/DPDK/ia-multicore-packet-processing-paper.pdf</a>
 
@@ -588,9 +685,9 @@ You may find some tips about better programing on Intel based platform
 
 </div>
 
-<div id="outline-container-1-1-7-2" class="outline-5">
-<h5 id="sec-1-1-7-2">Cloud</h5>
-<div class="outline-text-5" id="text-1-1-7-2">
+<div id="outline-container-1-1-8-2" class="outline-5">
+<h5 id="sec-1-1-8-2">Cloud</h5>
+<div class="outline-text-5" id="text-1-1-8-2">
 
 <p><a href="./materials/Cloud/VirtualizationIntro-V2-4.ppt">Virtualization</a>
 </p>
@@ -607,9 +704,9 @@ You may find some tips about better programing on Intel based platform
 
 </div>
 
-<div id="outline-container-1-1-7-3" class="outline-5">
-<h5 id="sec-1-1-7-3">VGP</h5>
-<div class="outline-text-5" id="text-1-1-7-3">
+<div id="outline-container-1-1-8-3" class="outline-5">
+<h5 id="sec-1-1-8-3">VGP</h5>
+<div class="outline-text-5" id="text-1-1-8-3">
 
 <p>Virtual Gateway Platform (VGP) is the
 name used by MBB product management for the software platform that
@@ -626,18 +723,18 @@ applications as guests in a virtualization infrastructure
 
 </div>
 
-<div id="outline-container-1-1-7-4" class="outline-5">
-<h5 id="sec-1-1-7-4">VSP</h5>
-<div class="outline-text-5" id="text-1-1-7-4">
+<div id="outline-container-1-1-8-4" class="outline-5">
+<h5 id="sec-1-1-8-4">VSP</h5>
+<div class="outline-text-5" id="text-1-1-8-4">
 
 <p><a href="./materials/Virtualized+Server+Platform+(VSP1.0+P6)+Architecture+Description.docx">./materials/Virtualized+Server+Platform+(VSP1.0+P6)+Architecture+Description.docx</a>
 </p></div>
 
 </div>
 
-<div id="outline-container-1-1-7-5" class="outline-5">
-<h5 id="sec-1-1-7-5">Openstack</h5>
-<div class="outline-text-5" id="text-1-1-7-5">
+<div id="outline-container-1-1-8-5" class="outline-5">
+<h5 id="sec-1-1-8-5">Openstack</h5>
+<div class="outline-text-5" id="text-1-1-8-5">
 
 <p><a href="https://workspaces.emea.nsn-net.net/sites/OSR/Wiki/OpenStack Reference Stack.aspx">Openstack reference wiki</a>
 <a href="./openstack.html">./openstack.html</a>
@@ -645,13 +742,12 @@ applications as guests in a virtualization infrastructure
 
 </div>
 
-<div id="outline-container-1-1-7-6" class="outline-5">
-<h5 id="sec-1-1-7-6">Materials from Intel</h5>
-<div class="outline-text-5" id="text-1-1-7-6">
+<div id="outline-container-1-1-8-6" class="outline-5">
+<h5 id="sec-1-1-8-6">Materials from Intel</h5>
+<div class="outline-text-5" id="text-1-1-8-6">
 
 <p><a href="./materials/Intel/">./materials/Intel/</a>
 </p>
-
 </div>
 </div>
 </div>
@@ -828,44 +924,69 @@ Part IV
 <p>PoC is part of the cloud evolution defined in the gragh below
 <img src="./cloud/rnc_cloud_overview.png"  alt="./cloud/rnc_cloud_overview.png" />
 </p></div>
-
-</div>
-
-<div id="outline-container-1-2-1-2" class="outline-5">
-<h5 id="sec-1-2-1-2">Scope of Hangzhou</h5>
-<div class="outline-text-5" id="text-1-2-1-2">
-
-<p><img src="./cloud/ipalight.png"  alt="./cloud/ipalight.png" />
-</p>
-<p>
-In hangzhou, we need to porting current ipalight components on
-X86 based platform. 
-LibGen SI DC and Dmxmsg have been running on x86 based MGW, CM and T&amp;T have
-not been compiled with x86, We need to porting them on the x86 based
-vitual machine. 
-</p>
-<p>
-For mcTransport, it is running in simple executive on octeon currently, we need
-to porting the functionality to x86 based platform. DPDK is used to
-accelerate the packet handling performance.
-</p>
-</div>
 </div>
 
 </div>
 
 <div id="outline-container-1-2-2" class="outline-4">
-<h4 id="sec-1-2-2">Scheduler</h4>
+<h4 id="sec-1-2-2">Roadmap in hangzhou</h4>
 <div class="outline-text-4" id="text-1-2-2">
 
 
 </div>
 
 <div id="outline-container-1-2-2-1" class="outline-5">
-<h5 id="sec-1-2-2-1">Phase1</h5>
+<h5 id="sec-1-2-2-1">Phase1&amp;2</h5>
 <div class="outline-text-5" id="text-1-2-2-1">
 
-<p>LE Mar 24th 2014
+<ul>
+<li id="sec-1-2-2-1-1">Compile Ipalight iso for x86_64 arch successfully<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-2-1-2">Change the deployment of Node,RU,RG,PRB for vRNC<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-2-1-3">Make the ipalight startup on vRNC, the iso can be deliverred to Application for integration<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-2-1-4">Create AMR call with ipalight platform build successfully<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-2-1-5">Internal traffic between TP and UP go through<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-2-1-6">External traffic go through<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-2-1-7">AMR call traffic go through in PET environment<br/>
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-3" class="outline-4">
+<h4 id="sec-1-2-3">Scheduler</h4>
+<div class="outline-text-4" id="text-1-2-3">
+
+
+</div>
+
+<div id="outline-container-1-2-3-1" class="outline-5">
+<h5 id="sec-1-2-3-1">Phase1</h5>
+<div class="outline-text-5" id="text-1-2-3-1">
+
+<p><a href="./controller_cloud_phase1.html">Phase1 introduction</a>
+</p>
+<p>
+LE Mar 24th 2014
 Porting ipalight to virtualized platform. 
 </p><ol>
 <li>Port IPA light SW to x86_64 and bring-up the system with 4 virtual nodes (vCFPU, vEIPU, vCSPU and vUSPU)
@@ -880,214 +1001,69 @@ Porting ipalight to virtualized platform.
 
 </div>
 
-<div id="outline-container-1-2-2-2" class="outline-5">
-<h5 id="sec-1-2-2-2">Phase2</h5>
-<div class="outline-text-5" id="text-1-2-2-2">
-
-
-</div>
-</div>
-
-</div>
-
-<div id="outline-container-1-2-3" class="outline-4">
-<h4 id="sec-1-2-3">Task tracing</h4>
-<div class="outline-text-4" id="text-1-2-3">
-
-<p><a href="https://workspaces.emea.nsn-net.net/sites/RCOCPHZC/Wiki/work tracing.aspx">wiki record</a>
-</p>
-</div>
-
-<div id="outline-container-1-2-3-1" class="outline-5">
-<h5 id="sec-1-2-3-1">Ipalight porting</h5>
-<div class="outline-text-5" id="text-1-2-3-1">
-
-<ul>
-<li id="sec-1-2-3-1-1">Overall view<br/>
-<img src="./cloud/ipalight.png"  alt="./cloud/ipalight.png" />
-</li>
-</ul>
-<ul>
-<li id="sec-1-2-3-1-2">Call management<br/>
-Led by Wangwei
-<img src="./cloud/call_management.png"  alt="./cloud/call_management.png" />
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" /><col class="left" />
-</colgroup>
-<thead>
-<tr><th scope="col" class="left">PRB</th><th scope="col" class="left">Subsystem</th><th scope="col" class="left">status</th></tr>
-</thead>
-<tbody>
-<tr><td class="left">RM2PRB</td><td class="left"></td><td class="left"></td></tr>
-<tr><td class="left">RFRPRB</td><td class="left"></td><td class="left"></td></tr>
-<tr><td class="left">LEMANA</td><td class="left"></td><td class="left"></td></tr>
-<tr><td class="left">LRMPRB</td><td class="left"></td><td class="left"></td></tr>
-<tr><td class="left">RM3PRB</td><td class="left"></td><td class="left"></td></tr>
-<tr><td class="left">UHAPRB</td><td class="left"></td><td class="left"></td></tr>
-<tr><td class="left">UMUTIL</td><td class="left"></td><td class="left"></td></tr>
-<tr><td class="left">RMUTIL</td><td class="left"></td><td class="left"></td></tr>
-<tr><td class="left">LGUTIL</td><td class="left"></td><td class="left"></td></tr>
-</tbody>
-</table>
-
-
-</li>
-</ul>
-<ul>
-<li id="sec-1-2-3-1-3">Signaling<br/>
-Led by Wu xiaoping
-<img src="./cloud/signaling.png"  alt="./cloud/signaling.png" />
-
-<ul>
-<li id="sec-1-2-3-1-3-1">SS7 signaling<br/>
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" /><col class="left" />
-</colgroup>
-<thead>
-<tr><th scope="col" class="left">PRB</th><th scope="col" class="left">Subsystem</th><th scope="col" class="left">Status</th></tr>
-</thead>
-<tbody>
-<tr><td class="left">SCXADM</td><td class="left"></td><td class="left"></td></tr>
-<tr><td class="left">SAGPRO</td><td class="left"></td><td class="left"></td></tr>
-<tr><td class="left">SMNPRO</td><td class="left"></td><td class="left"></td></tr>
-<tr><td class="left">SEGPRO</td><td class="left"></td><td class="left"></td></tr>
-<tr><td class="left">SORPRO</td><td class="left"></td><td class="left"></td></tr>
-<tr><td class="left">XPSLOD</td><td class="left"></td><td class="left"></td></tr>
-</tbody>
-</table>
-
-</li>
-</ul>
-<ul>
-<li id="sec-1-2-3-1-3-2">NBAP signaling<br/>
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" /><col class="left" />
-</colgroup>
-<thead>
-<tr><th scope="col" class="left">PRB</th><th scope="col" class="left">Subsystem</th><th scope="col" class="left">Status</th></tr>
-</thead>
-<tbody>
-<tr><td class="left">NBMPRO</td><td class="left"></td><td class="left"></td></tr>
-<tr><td class="left">NBLSTC</td><td class="left"></td><td class="left"></td></tr>
-</tbody>
-</table>
-
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li id="sec-1-2-3-1-4">Traffic and Transport<br/>
-Led by Zhang bing
-<img src="./cloud/traffic_transport.png"  alt="./cloud/traffic_transport.png" />
-
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" /><col class="left" />
-</colgroup>
-<thead>
-<tr><th scope="col" class="left">PRB</th><th scope="col" class="left">Subsystem</th><th scope="col" class="left">Status</th></tr>
-</thead>
-<tbody>
-<tr><td class="left">CACPRB</td><td class="left"></td><td class="left"></td></tr>
-<tr><td class="left">TAEPRB</td><td class="left"></td><td class="left"></td></tr>
-<tr><td class="left">IUETOR</td><td class="left"></td><td class="left"></td></tr>
-<tr><td class="left">ILQOSA</td><td class="left"></td><td class="left"></td></tr>
-<tr><td class="left">SEAgent</td><td class="left"></td><td class="left"></td></tr>
-<tr><td class="left">UPCMON</td><td class="left"></td><td class="left"></td></tr>
-<tr><td class="left">SKOIVU</td><td class="left"></td><td class="left"></td></tr>
-<tr><td class="left">JAPILA</td><td class="left"></td><td class="left"></td></tr>
-</tbody>
-</table>
-
-</li>
-</ul>
-<ul>
-<li id="sec-1-2-3-1-5">Dmxmsg<br/>
-Led by Chi xiaobo
-</li>
-</ul>
-<ul>
-<li id="sec-1-2-3-1-6">LibGen<br/>
-Led by Chi xiaobo
-
-</li>
-</ul>
-<ul>
-<li id="sec-1-2-3-1-7">Distribute Computing<br/>
-Led by Tang huanan and Ye changyi
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
-</colgroup>
-<thead>
-<tr><th scope="col" class="left">Subsystem</th><th scope="col" class="left">Responsible team</th></tr>
-</thead>
-<tbody>
-<tr><td class="left">IL_AmnprbType</td><td class="left">HERCLERS</td></tr>
-<tr><td class="left">IL_AutoreturnprbType</td><td class="left">Porsche</td></tr>
-<tr><td class="left">IL_CpmonitorType</td><td class="left">Smart team</td></tr>
-<tr><td class="left">IL_EfocefType</td><td class="left">BLACKJACK</td></tr>
-<tr><td class="left">IL_FmpprbType</td><td class="left">BLACKJACK</td></tr>
-<tr><td class="left">IL_GivclientType</td><td class="left">Baihu</td></tr>
-<tr><td class="left">IL_LibgenType</td><td class="left">Launcher</td></tr>
-<tr><td class="left">IL_LastProc12Type</td><td class="left">BlackJack</td></tr>
-<tr><td class="left">IL_LastProc22Type</td><td class="left">BlackJack</td></tr>
-<tr><td class="left">IL_LastProc32Type</td><td class="left">BlackJack</td></tr>
-<tr><td class="left">IL_LchproType</td><td class="left">Matrix</td></tr>
-<tr><td class="left">IL_LmonitorType</td><td class="left">TURBO</td></tr>
-<tr><td class="left">IL_MfsprbType</td><td class="left">BlackJack</td></tr>
-<tr><td class="left">IL_Mm5prbType</td><td class="left">Baihu team</td></tr>
-<tr><td class="left">IL_NasevaType</td><td class="left">Sparta</td></tr>
-<tr><td class="left">IL_PrpproType</td><td class="left">BLACKJACK</td></tr>
-<tr><td class="left">IL_PrtpgmType</td><td class="left">BlackJack</td></tr>
-<tr><td class="left">IL_PxysemType</td><td class="left">BLACKJACK</td></tr>
-<tr><td class="left">IL_RfrprbType</td><td class="left">SPIDER</td></tr>
-<tr><td class="left">IL_RiamanType</td><td class="left">Sparta</td></tr>
-<tr><td class="left">IL_RiesenType</td><td class="left">Sparta</td></tr>
-<tr><td class="left">IL_SEAgentType</td><td class="left">Sword</td></tr>
-<tr><td class="left">IL_SlyprbType</td><td class="left">SMART</td></tr>
-<tr><td class="left">IL_SokeriType</td><td class="left">Sorcery</td></tr>
-<tr><td class="left">IL_StarterType</td><td class="left">BlackJack</td></tr>
-<tr><td class="left">IL_ThermoType</td><td class="left">Launcher</td></tr>
-<tr><td class="left">IL_TiseroType</td><td class="left">SPARK</td></tr>
-<tr><td class="left">IL_TpmonitorType</td><td class="left">TURBO</td></tr>
-<tr><td class="left">IL_UnitStateAgentType</td><td class="left">Sparta</td></tr>
-<tr><td class="left">IL_UpmonitorType</td><td class="left">TURBO</td></tr>
-<tr><td class="left">IL_WupmanType</td><td class="left">Launcher</td></tr>
-<tr><td class="left">IL_TafproType</td><td class="left">smart</td></tr>
-</tbody>
-</table>
-
-
-</li>
-</ul>
-</div>
-
-</div>
-
 <div id="outline-container-1-2-3-2" class="outline-5">
-<h5 id="sec-1-2-3-2">Transport porting</h5>
+<h5 id="sec-1-2-3-2">Phase2</h5>
 <div class="outline-text-5" id="text-1-2-3-2">
 
-<p>Team member are in study phase of this part. 
-content about DPDK and transport on RNC
-</p></div>
+
+</div>
 </div>
 
 </div>
 
 <div id="outline-container-1-2-4" class="outline-4">
-<h4 id="sec-1-2-4">Work plan</h4>
+<h4 id="sec-1-2-4">Task tracing</h4>
 <div class="outline-text-4" id="text-1-2-4">
+
+<p><a href="https://workspaces.emea.nsn-net.net/sites/RCOCPHZC/Wiki/work tracing.aspx">wiki record</a>
+<a href="./ipalight_porting.html">./ipalight_porting.html</a>
+</p>
+</div>
+
+<div id="outline-container-1-2-4-1" class="outline-5">
+<h5 id="sec-1-2-4-1">Transport porting</h5>
+<div class="outline-text-5" id="text-1-2-4-1">
+
+<ul>
+<li id="sec-1-2-4-1-1">Mon Feb 24 10:47:09 2014<br/>
+In phase1, there is a topic about the TP and UP communication under
+discussion. 
+Following alternatives are under discussion
+
+
+
+<pre class="example">1. EITP and UMW over DPDK use linux kernel dmxmsg service, and expand dmxmsg kernel module to support user plane traffic.
+One DPDK instance will be regarded as a normal dmxmsg user to transmit both CP and UP. This can be a choice for PoC, but maybe the performance of user plane traffic is a problem and cannot be a final solution.
+2. Using linux kernel dmxmsg service for DPDK instance since the dmxmsg performance requirement is not high(at least in EITP), but porting fastdist to DPDK for TP/UP performance reason.
+
+3. Porting dmxmsg SE lib to DPDK, expand dmxmsg DPDK lib to support user plane traffic.
+4. Porting both dmxmsg SE lib and fastdist to DPDK.
+</pre>
+
+
+<p>
+The fourth one is preferred by Ahmed, we plan to estimate the effort
+for it.
+</p></li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-5" class="outline-4">
+<h4 id="sec-1-2-5">Work plan</h4>
+<div class="outline-text-4" id="text-1-2-5">
 
 
 </div>
 
-<div id="outline-container-1-2-4-1" class="outline-5">
-<h5 id="sec-1-2-4-1">Current status</h5>
-<div class="outline-text-5" id="text-1-2-4-1">
+<div id="outline-container-1-2-5-1" class="outline-5">
+<h5 id="sec-1-2-5-1">Current status</h5>
+<div class="outline-text-5" id="text-1-2-5-1">
 
 <ul>
-<li id="sec-1-2-4-1-1">Jan 2014<br/>
+<li id="sec-1-2-5-1-1">Jan 2014<br/>
 We have got a 8 people team available. 
 We got HP server built up, Raw DPDK has been deployed on the server,
 Hello world passed. 
@@ -1116,8 +1092,7 @@ Next step is build up the competence of the team
 
 <p>About the study part, there will be three demos, might happend in
 week4
-</p>
-
+<div style="height:200px;overflow:auto;border-style:solid;border-width:1px">
 
 <pre class="example">1- Walk-though demo from LCC lab B5 and contacts
    - Setup and lab configuration
@@ -1137,18 +1112,30 @@ week4
 
 </pre>
 
-<p>
+</div>
 Detailed study plan will be discussed by team in week4 meeting.
-</p>
+</p></li>
+</ul>
+<ul>
+<li id="sec-1-2-5-1-2">Feb 2014<br/>
+<ul>
+<li id="sec-1-2-5-1-2-1">Fri Feb 28 14:19:35 2014<br/>
+One month passed since the team built up, The compiling of the
+ipalight on x86_64 are success, we are changing the deploy script for
+commision. DPDK enviroment is building up on the CLA-0, some of the
+examples have been verified on the vitural CLA-0.
+
+</li>
+</ul>
 </li>
 </ul>
 </div>
 
 </div>
 
-<div id="outline-container-1-2-4-2" class="outline-5">
-<h5 id="sec-1-2-4-2">Questions</h5>
-<div class="outline-text-5" id="text-1-2-4-2">
+<div id="outline-container-1-2-5-2" class="outline-5">
+<h5 id="sec-1-2-5-2">Questions</h5>
+<div class="outline-text-5" id="text-1-2-5-2">
 
 <p>Q: The prgress of the device application?
 </p>
@@ -1187,16 +1174,16 @@ hangzhou team, we will have some proposal.
 
 </div>
 
-<div id="outline-container-1-2-5" class="outline-4">
-<h4 id="sec-1-2-5">Meeting minutes</h4>
-<div class="outline-text-4" id="text-1-2-5">
+<div id="outline-container-1-2-6" class="outline-4">
+<h4 id="sec-1-2-6">Meeting minutes</h4>
+<div class="outline-text-4" id="text-1-2-6">
 
 
 </div>
 
-<div id="outline-container-1-2-5-1" class="outline-5">
-<h5 id="sec-1-2-5-1">Mon Jan 20 13:40:59 2014</h5>
-<div class="outline-text-5" id="text-1-2-5-1">
+<div id="outline-container-1-2-6-1" class="outline-5">
+<h5 id="sec-1-2-6-1">Mon Jan 20 13:40:59 2014</h5>
+<div class="outline-text-5" id="text-1-2-6-1">
 
 
 <div style="height:200px;overflow:auto;border-style:solid;border-width:1px">
@@ -1233,9 +1220,9 @@ Workshops in week4:
 
 </div>
 
-<div id="outline-container-1-2-5-2" class="outline-5">
-<h5 id="sec-1-2-5-2">Wed Feb 18 14:24:46 2014</h5>
-<div class="outline-text-5" id="text-1-2-5-2">
+<div id="outline-container-1-2-6-2" class="outline-5">
+<h5 id="sec-1-2-6-2">Wed Feb 18 14:24:46 2014</h5>
+<div class="outline-text-5" id="text-1-2-6-2">
 
 
 <div style="height:200px;overflow:auto;border-style:solid;border-width:1px">
@@ -1271,7 +1258,56 @@ b. One wiki page for the whole project, can be re-used the HZ page?
 </div>
 
 
+
 </div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3">Tech summarize</h3>
+<div class="outline-text-3" id="text-1-3">
+
+
+</div>
+
+<div id="outline-container-1-3-1" class="outline-4">
+<h4 id="sec-1-3-1">vSwitch</h4>
+<div class="outline-text-4" id="text-1-3-1">
+
+<p><a href="http://openvswitch.org/support/">Open vSwitch HOWTO</a>
+</p>
+<p>
+<img src="./cloud/vswitch.png"  alt="./cloud/vswitch.png" />
+</p>
+<p>
+<a href="https://01.org/packet-processing/intel®-ovdk">vSwitch with Intel DPDK</a>
+</p>
+<p>
+<a href="https://01.org/sites/default/files/downloads/intel_dpdk_vswitch_040_gsg.pdf">configuration guide</a>
+</p>
+<p>
+Solution from Windriver
+</p>
+<p>
+<img src="./cloud/open-virtualization-profile-diagram.jpg"  alt="./cloud/open-virtualization-profile-diagram.jpg" />
+</p>
+<p>
+Solution from 6Wind
+</p>
+<p>
+<img src="./cloud/ovs_6wind.png"  alt="./cloud/ovs_6wind.png" />
+</p>
+<p>
+<a href="http://www.opendataplane.org/wp-content/uploads/2013/12/ODPLaunchOverview1.pdf">ODP overview</a>
+</p>
+<p>
+Hight level arch
+</p>
+<p>
+<img src="./cloud/ODP_arch.png"  alt="./cloud/ODP_arch.png" />
+</p>
 </div>
 </div>
 </div>
@@ -1279,7 +1315,7 @@ b. One wiki page for the whole project, can be re-used the HZ page?
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2014-02-20T23:31+0800</p>
+<p class="date">Date: 2014-02-28T22:07+0800</p>
 <p class="author">Author: Kevin Gao</p>
 <p class="email"><a href="mailto:leijia.gao@nsn.com">leijia.gao@nsn.com</a></p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
