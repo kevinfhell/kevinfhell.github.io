@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Cloud RNC compile guide</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="Cloud RNC compile guide"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2014-02-28T20:38+0800"/>
+<meta name="author" content="Kevin Gao"/>
+<meta name="description" content=""/>
+<meta name="keywords" content="emacs, personal notes"/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" type="text/css" href="http://kevinfhell.github.io/worg.css">
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
+ <a accesskey="h" href="#"> UP </a>
+ |
+ <a accesskey="H" href="theindex.html"> HOME </a>
+</div>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Cloud RNC compile guide</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Compile guide</a>
+<ul>
+<li><a href="#sec-1-1">Compile DPDK on Linsee</a></li>
+<li><a href="#sec-1-2">Compile Ipalight package on Linsee</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Compile guide</h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">Compile DPDK on Linsee</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+
+
+<pre class="example">Steps to test example:
+
+1. Compile DPDK example in linSEE15   ( hzling15.china.nsn-net.net )
+
+In [ product/build/  ]
+            ./setcougarenv.sh -w -a x86_64 -c
+
+In [ SS_ILEITP/src/dpdk   ]
+export RTE_SDK= /home/XXXXX/cloud_controller/SS_ILEITP/src/dpdk
+export RTE_TARGET=x86_64-default-linuxapp-gcc
+make config T=x86_64-default-linuxapp-gcc
+make install T=x86_64*gcc
+
+2. Copy example to CLA-0
+
+scp example  to host:  10.56.212.19   (root/password)
+scp  example  to cla-0                              (root/system)
+  
+
+3. Run it :
+
+EAL: Skip lcore 60 (not detected)
+EAL: Skip lcore 61 (not detected)
+EAL: Skip lcore 62 (not detected)
+EAL: Skip lcore 63 (not detected)
+EAL: Setting up memory...
+EAL: TSC frequency is ~2327692 KHz
+EAL: WARNING: cpu flags constant_tsc=no nonstop_tsc=no -&gt; using unreliable clock cycles !
+EAL: WARNING: Master core has no memory on local socket!
+EAL: Master core 0 is ready (tid=c51c5800)
+EAL: Core 1 is ready (tid=bfbb2710)
+hello from core 1
+hello from core 0
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">Compile Ipalight package on Linsee</h3>
+<div class="outline-text-3" id="text-1-2">
+
+<p>Job to trigger builds:
+</p>
+<p>
+<a href="http://ipalight-hudson.china.nsn-net.net:8080/view/cloud_controller/job/IL_dailytag_cloud_controller/">http://ipalight-hudson.china.nsn-net.net:8080/view/cloud_controller/job/IL_dailytag_cloud_controller/</a>
+</p>
+<p>
+Job to compile:
+</p>
+<p>
+<a href="http://ipalight-hudson.china.nsn-net.net:8080/view/cloud_controller/job/IL_compile_cloud_controller/">http://ipalight-hudson.china.nsn-net.net:8080/view/cloud_controller/job/IL_compile_cloud_controller/</a>
+</p>
+
+
+
+<pre class="example">[hzscm@hzling14 R_IL_13.13.1.4]$product/build/setcougarenv.sh -w -a x86_64 -c
+setting environment variables for SVNFETCH
+Set VOBTAG to /var/fpwork/ILBuild/R_IL_13.13.1.4/cougar-wr-mips-6wind-bmpp/R_IL_13.13.1.4
+Sourcing envsetup.sh...
+Set FPSDKROOT=/build/fpsdkroot_cougar
+Set FPSDKROOT_EXTRA=/build/fpsdkroot_extra
+Warning: FPSDKROOT_EXTRA directory is missing. Some compilations might fail
+Sourcing /var/fpwork/ILBuild/R_IL_13.13.1.4/cougar-wr-mips-6wind-bmpp/R_IL_13.13.1.4/flexiserver/build/setwrgcc m64
+Using WR SDK /build/fpsdkroot_cougar/toolchains/WR4.3/v431/toolchain.v431.i586
+No jslint found
+No Python-2.6.7 found
+Warning: bison 1.875 is not available. May affect e.g. SS_SnmpMediator compilation. I'll use whatever there is
+Set BISON_HOME=/usr (as not in LINSEE)
+No Klocwork found
+No ant-contrib found
+Skipping svn setting. "$SVN_VERSION=svn_1.6.5" defined
+WR Linux is now set
+Using R_FPT_3.3.1.1
+Using sack: imenv 14.1-36
+Setting script environment ...
+SETENVFPVARIANT:
+Overruling RH_KERNEL_HOME by value of the same env. variable: /build/fpsdkroot_cougar/kheaders/x86_64/linux-2.6.34.13-WR4.3.fp_x86_64_standard-00027-g76285ab
+Using SDK_VERSION:
+MY_KDIR:/build/fpsdkroot_cougar/kheaders/x86_64/linux-2.6.34.13-WR4.3.fp_x86_64_standard-00027-g76285ab
+[hzscm@hzling14 R_IL_13.13.1.4]$
+[hzscm@hzling14 R_IL_13.13.1.4]$
+[hzscm@hzling14 R_IL_13.13.1.4]$echo "HW=$HW , HWTYPE=$HWTYPE , IPAL_APPLICATION=$IPAL_APPLICATION"
+HW=BCN , HWTYPE=BOC-A , IPAL_APPLICATION=RNC
+[hzscm@hzling14 R_IL_13.13.1.4]$echo $SVNENVOPTS
+-w -a x86_64
+
+</pre>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2014-02-28T20:38+0800</p>
+<p class="author">Author: Kevin Gao</p>
+<p class="email"><a href="mailto:leijia.gao@nsn.com">leijia.gao@nsn.com</a></p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

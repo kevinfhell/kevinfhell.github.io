@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Ipalight porting</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="Ipalight porting"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2014-02-28T22:07+0800"/>
+<meta name="author" content="Kevin Gao"/>
+<meta name="description" content=""/>
+<meta name="keywords" content="emacs, personal notes"/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" type="text/css" href="http://kevinfhell.github.io/worg.css">
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
+ <a accesskey="h" href="#"> UP </a>
+ |
+ <a accesskey="H" href="theindex.html"> HOME </a>
+</div>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Ipalight porting</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Ipalight porting</a>
+<ul>
+<li><a href="#sec-1-1">Overall view</a></li>
+<li><a href="#sec-1-2">Call management</a></li>
+<li><a href="#sec-1-3">Signaling</a>
+<ul>
+<li><a href="#sec-1-3-1">SS7 signaling</a></li>
+<li><a href="#sec-1-3-2">NBAP signaling</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-4">Traffic and Transport</a></li>
+<li><a href="#sec-1-5">Dmxmsg</a></li>
+<li><a href="#sec-1-6">LibGen</a></li>
+<li><a href="#sec-1-7">Distribute Computing</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Ipalight porting</h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">Overall view</h3>
+<div class="outline-text-3" id="text-1-1">
+
+<p><img src="./cloud/ipalight.png"  alt="./cloud/ipalight.png" />
+</p></div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">Call management</h3>
+<div class="outline-text-3" id="text-1-2">
+
+<p>Led by Wangwei
+<img src="./cloud/call_management.png"  alt="./cloud/call_management.png" />
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">PRB</th><th scope="col" class="left">Subsystem</th><th scope="col" class="left">status</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">RM2PRB</td><td class="left"></td><td class="left">Done</td></tr>
+<tr><td class="left">RFRPRB</td><td class="left"></td><td class="left">Done</td></tr>
+<tr><td class="left">LEMANA</td><td class="left"></td><td class="left">Done</td></tr>
+<tr><td class="left">LRMPRB</td><td class="left"></td><td class="left">Done</td></tr>
+<tr><td class="left">RM3PRB</td><td class="left"></td><td class="left">Done</td></tr>
+<tr><td class="left">UHAPRB</td><td class="left"></td><td class="left">Done</td></tr>
+<tr><td class="left">UMUTIL</td><td class="left"></td><td class="left">Done</td></tr>
+<tr><td class="left">RMUTIL</td><td class="left"></td><td class="left">Done</td></tr>
+<tr><td class="left">LGUTIL</td><td class="left"></td><td class="left">Done</td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3">Signaling</h3>
+<div class="outline-text-3" id="text-1-3">
+
+<p>Led by Wu xiaoping
+<img src="./cloud/signaling.png"  alt="./cloud/signaling.png" />
+</p>
+
+</div>
+
+<div id="outline-container-1-3-1" class="outline-4">
+<h4 id="sec-1-3-1">SS7 signaling</h4>
+<div class="outline-text-4" id="text-1-3-1">
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">PRB</th><th scope="col" class="left">Subsystem</th><th scope="col" class="left">Status</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">SCXADM</td><td class="left"></td><td class="left">Done</td></tr>
+<tr><td class="left">SAGPRO</td><td class="left"></td><td class="left">Done</td></tr>
+<tr><td class="left">SMNPRO</td><td class="left"></td><td class="left">Done</td></tr>
+<tr><td class="left">SEGPRO</td><td class="left"></td><td class="left">Done</td></tr>
+<tr><td class="left">SORPRO</td><td class="left"></td><td class="left">Done</td></tr>
+<tr><td class="left">XPSLOD</td><td class="left"></td><td class="left">Done</td></tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-3-2" class="outline-4">
+<h4 id="sec-1-3-2">NBAP signaling</h4>
+<div class="outline-text-4" id="text-1-3-2">
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">PRB</th><th scope="col" class="left">Subsystem</th><th scope="col" class="left">Status</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">NBMPRO</td><td class="left"></td><td class="left">Done</td></tr>
+<tr><td class="left">NBLSTC</td><td class="left"></td><td class="left">Done</td></tr>
+</tbody>
+</table>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-4" class="outline-3">
+<h3 id="sec-1-4">Traffic and Transport</h3>
+<div class="outline-text-3" id="text-1-4">
+
+<p>Led by Zhang bing
+<img src="./cloud/traffic_transport.png"  alt="./cloud/traffic_transport.png" />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">PRB</th><th scope="col" class="left">Subsystem</th><th scope="col" class="left">Status</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">CACPRB</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">TAEPRB</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">IUETOR</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">ILQOSA</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">SEAgent</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">UPCMON</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">SKOIVU</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">JAPILA</td><td class="left"></td><td class="left"></td></tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-5" class="outline-3">
+<h3 id="sec-1-5">Dmxmsg</h3>
+<div class="outline-text-3" id="text-1-5">
+
+<p>Led by Chi xiaobo
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">PRB</th><th scope="col" class="left">status</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">Dmxmsg</td><td class="left">Done</td></tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-6" class="outline-3">
+<h3 id="sec-1-6">LibGen</h3>
+<div class="outline-text-3" id="text-1-6">
+
+<p>Led by Chi xiaobo
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">PRB</th><th scope="col" class="left">status</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">libgen</td><td class="left">Done</td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-7" class="outline-3">
+<h3 id="sec-1-7">Distribute Computing</h3>
+<div class="outline-text-3" id="text-1-7">
+
+<p>Led by Tang huanan and Ye changyi
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">Subsystem</th><th scope="col" class="left">Responsible team</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">IL_AmnprbType</td><td class="left">HERCLERS</td></tr>
+<tr><td class="left">IL_AutoreturnprbType</td><td class="left">Porsche</td></tr>
+<tr><td class="left">IL_CpmonitorType</td><td class="left">Smart team</td></tr>
+<tr><td class="left">IL_EfocefType</td><td class="left">BLACKJACK</td></tr>
+<tr><td class="left">IL_FmpprbType</td><td class="left">BLACKJACK</td></tr>
+<tr><td class="left">IL_GivclientType</td><td class="left">Baihu</td></tr>
+<tr><td class="left">IL_LibgenType</td><td class="left">Launcher</td></tr>
+<tr><td class="left">IL_LastProc12Type</td><td class="left">BlackJack</td></tr>
+<tr><td class="left">IL_LastProc22Type</td><td class="left">BlackJack</td></tr>
+<tr><td class="left">IL_LastProc32Type</td><td class="left">BlackJack</td></tr>
+<tr><td class="left">IL_LchproType</td><td class="left">Matrix</td></tr>
+<tr><td class="left">IL_LmonitorType</td><td class="left">TURBO</td></tr>
+<tr><td class="left">IL_MfsprbType</td><td class="left">BlackJack</td></tr>
+<tr><td class="left">IL_Mm5prbType</td><td class="left">Baihu team</td></tr>
+<tr><td class="left">IL_NasevaType</td><td class="left">Sparta</td></tr>
+<tr><td class="left">IL_PrpproType</td><td class="left">BLACKJACK</td></tr>
+<tr><td class="left">IL_PrtpgmType</td><td class="left">BlackJack</td></tr>
+<tr><td class="left">IL_PxysemType</td><td class="left">BLACKJACK</td></tr>
+<tr><td class="left">IL_RfrprbType</td><td class="left">SPIDER</td></tr>
+<tr><td class="left">IL_RiamanType</td><td class="left">Sparta</td></tr>
+<tr><td class="left">IL_RiesenType</td><td class="left">Sparta</td></tr>
+<tr><td class="left">IL_SEAgentType</td><td class="left">Sword</td></tr>
+<tr><td class="left">IL_SlyprbType</td><td class="left">SMART</td></tr>
+<tr><td class="left">IL_SokeriType</td><td class="left">Sorcery</td></tr>
+<tr><td class="left">IL_StarterType</td><td class="left">BlackJack</td></tr>
+<tr><td class="left">IL_ThermoType</td><td class="left">Launcher</td></tr>
+<tr><td class="left">IL_TiseroType</td><td class="left">SPARK</td></tr>
+<tr><td class="left">IL_TpmonitorType</td><td class="left">TURBO</td></tr>
+<tr><td class="left">IL_UnitStateAgentType</td><td class="left">Sparta</td></tr>
+<tr><td class="left">IL_UpmonitorType</td><td class="left">TURBO</td></tr>
+<tr><td class="left">IL_WupmanType</td><td class="left">Launcher</td></tr>
+<tr><td class="left">IL_TafproType</td><td class="left">smart</td></tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2014-02-28T22:07+0800</p>
+<p class="author">Author: Kevin Gao</p>
+<p class="email"><a href="mailto:leijia.gao@nsn.com">leijia.gao@nsn.com</a></p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>
