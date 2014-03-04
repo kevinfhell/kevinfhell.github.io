@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="Controller on Cloud"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-03-03T18:02+0800"/>
+<meta name="generated" content="2014-03-04T14:53+0800"/>
 <meta name="author" content="Kevin Gao"/>
 <meta name="description" content=""/>
 <meta name="keywords" content="emacs, personal notes"/>
@@ -148,15 +148,7 @@ for the JavaScript code in this tag.
 <li><a href="#sec-1-1-7-3">Way of Cooperation</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-1-8">Study Materials</a>
-<ul>
-<li><a href="#sec-1-1-8-1">DPDK</a></li>
-<li><a href="#sec-1-1-8-2">Cloud</a></li>
-<li><a href="#sec-1-1-8-3">VGP</a></li>
-<li><a href="#sec-1-1-8-4">VSP</a></li>
-<li><a href="#sec-1-1-8-5">Openstack</a></li>
-<li><a href="#sec-1-1-8-6">Materials from Intel</a></li>
-</ul></li>
+<li><a href="#sec-1-1-8">Study Materials</a></li>
 </ul>
 </li>
 <li><a href="#sec-1-2">Project introduction</a>
@@ -198,6 +190,7 @@ for the JavaScript code in this tag.
 <li><a href="#sec-1-3">Tech summarize</a>
 <ul>
 <li><a href="#sec-1-3-1">vSwitch</a></li>
+<li><a href="#sec-1-3-2">virtio support for the Guest NIC</a></li>
 </ul>
 </li>
 </ul>
@@ -604,152 +597,8 @@ Regular meeting
 <h4 id="sec-1-1-8">Study Materials</h4>
 <div class="outline-text-4" id="text-1-1-8">
 
-
-</div>
-
-<div id="outline-container-1-1-8-1" class="outline-5">
-<h5 id="sec-1-1-8-1">DPDK</h5>
-<div class="outline-text-5" id="text-1-1-8-1">
-
-<ul>
-<li id="sec-1-1-8-1-1">Overview<br/>
-<ol>
-<li>You will know, what is DPDK, what it is used for. 
-</li>
-<li>The components in DPDK
-</li>
-<li>How it help you achive better performance on IA based platform
-</li>
-</ol>
-
-<p><a href="./materials/DPDK/IntelDataPlaneDevelopmentKitOverview_Rev1.6.pdf">IntelDataPlaneDevelopmentKitOverview</a>
-</p>
-<p>
-<a href="./dpdk.html">./dpdk.html</a>
-</p>
-<p>
-More info is on dpdk.org
-</p></li>
-</ul>
-<ul>
-<li id="sec-1-1-8-1-2">Programing guide<br/>
-Read this document before you start programing on the DPDK
-<a href="./materials/DPDK/intel-dpdk-programmers-guide.pdf">Programing guide</a>
-</li>
-</ul>
-<ul>
-<li id="sec-1-1-8-1-3">API reference<br/>
-Don't know the meaning of some API, check here.
-<a href="./materials/DPDK/intel_DPDK_API_Ref_Rev1.1.pdf">API reference</a>
-</li>
-</ul>
-<ul>
-<li id="sec-1-1-8-1-4">Sample guilde<br/>
-Here is some basic samples, such as l2fwd? l3fwd? or hello word. 
-<a href="./materials/DPDK/intel-dpdk-sample-applications-user-guide.pdf">samples</a>
-<a href="./materials/DPDK/intel-dpdk-testpmd-application-user-guide.pdf">testpmd</a>
-</li>
-</ul>
-<ul>
-<li id="sec-1-1-8-1-5">Troubleshooting<br/>
-DPDK is used to accelerating the packet handling, Opp, you packet
-lost? start the tracing from here. 
-<a href="./materials/DPDK/looking-for-lost-packets-paper.pdf">looking forthe lost packet</a>
-</li>
-</ul>
-<ul>
-<li id="sec-1-1-8-1-6">Third part supporting<br/>
-Many companies are supporting this DPDK, you may have known some of them
-
-<p>
-<a href="./materials/DPDK/6WINDGate_overview_for_IntelDPDK.pdf">6WindGate</a>
-</p>
-<p>
-<a href="./materials/DPDK/Wind_River_and_Intel_DPDK_Support.pdf">Windriver</a>
-</p>
-<p>
-<a href="./materials/DPDK/dpdk-tieto-support.pdf">Tieto</a>
-</p></li>
-</ul>
-<ul>
-<li id="sec-1-1-8-1-7">Others<br/>
-You may find some tips about better programing on Intel based platform
-<a href="./Materials/DPDK/ia-multicore-packet-processing-paper.pdf">./Materials/DPDK/ia-multicore-packet-processing-paper.pdf</a>
-
-<p>
-<a href="./materials/DPDK/ia-data-plane-packet-processing-paper.pdf">./materials/DPDK/ia-data-plane-packet-processing-paper.pdf</a>
-</p>
-</li>
-</ul>
-</div>
-
-</div>
-
-<div id="outline-container-1-1-8-2" class="outline-5">
-<h5 id="sec-1-1-8-2">Cloud</h5>
-<div class="outline-text-5" id="text-1-1-8-2">
-
-<p><a href="./materials/Cloud/VirtualizationIntro-V2-4.ppt">Virtualization</a>
-</p>
-<p>
-<a href="./materials/Cloud/Intel虚拟化技术-从VT-x到VT-d.pdf">Vitualization in Intel</a>
-</p>
-<p>
-<a href="./materials/Cloud/Intro+to+Cloud+Computing.pptx">Cloud Computing</a>
-</p>
-<p>
-<a href="./materials/Cloud/carrier-cloud-telecoms.pdf">carrier-cloud-telecoms</a>
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-1-1-8-3" class="outline-5">
-<h5 id="sec-1-1-8-3">VGP</h5>
-<div class="outline-text-5" id="text-1-1-8-3">
-
-<p>Virtual Gateway Platform (VGP) is the
-name used by MBB product management for the software platform that
-enables deployment and operation of FlexiNG and other product
-applications as guests in a virtualization infrastructure
-</p>
-<p>
-<a href="https://sharenet-ims.inside.nokiasiemensnetworks.com/Overview/D506674097">Overview</a>
-</p>
-<p>
-<a href="https://sharenet-ims.inside.nokiasiemensnetworks.com/livelink/livelink?func=ll&amp;objId=506169440&amp;objAction=Browse">More in VGP</a>
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-1-1-8-4" class="outline-5">
-<h5 id="sec-1-1-8-4">VSP</h5>
-<div class="outline-text-5" id="text-1-1-8-4">
-
-<p><a href="./materials/Virtualized+Server+Platform+(VSP1.0+P6)+Architecture+Description.docx">./materials/Virtualized+Server+Platform+(VSP1.0+P6)+Architecture+Description.docx</a>
+<p><a href="./cloud_study_materials.html">./cloud_study_materials.html</a>
 </p></div>
-
-</div>
-
-<div id="outline-container-1-1-8-5" class="outline-5">
-<h5 id="sec-1-1-8-5">Openstack</h5>
-<div class="outline-text-5" id="text-1-1-8-5">
-
-<p><a href="https://workspaces.emea.nsn-net.net/sites/OSR/Wiki/OpenStack Reference Stack.aspx">Openstack reference wiki</a>
-<a href="./openstack.html">./openstack.html</a>
-</p></div>
-
-</div>
-
-<div id="outline-container-1-1-8-6" class="outline-5">
-<h5 id="sec-1-1-8-6">Materials from Intel</h5>
-<div class="outline-text-5" id="text-1-1-8-6">
-
-<p><a href="./materials/Intel/">./materials/Intel/</a>
-</p>
-</div>
-</div>
 </div>
 
 </div>
@@ -1005,7 +854,6 @@ Porting ipalight to virtualized platform.
 <h5 id="sec-1-2-3-2">Phase2</h5>
 <div class="outline-text-5" id="text-1-2-3-2">
 
-
 </div>
 </div>
 
@@ -1044,6 +892,24 @@ One DPDK instance will be regarded as a normal dmxmsg user to transmit both CP a
 <p>
 The fourth one is preferred by Ahmed, we plan to estimate the effort
 for it.
+</p></li>
+</ul>
+<ul>
+<li id="sec-1-2-4-1-2">Tue Mar  4 10:19:50 2014<br/>
+For the ip stack over DPDK, we tried the rump kernel, it's too heavy
+for our use, and the archtecture is not suitable for our usage
+here is a short report about this research
+
+
+
+<pre class="example">\\rncipafs1\DA3\con-cloud-poc\workshop\IPStack
+</pre>
+
+<p>
+Next step, we plan to use the example l3fwd in DPDK as a code based,
+and porting needed function from different parts, such as the
+lightweight ip stack in Cavium SDK, the IP stack in 6wind, and other
+examples in DPDK. 
 </p></li>
 </ul>
 </div>
@@ -1276,46 +1142,24 @@ b. One wiki page for the whole project, can be re-used the HZ page?
 <h4 id="sec-1-3-1">vSwitch</h4>
 <div class="outline-text-4" id="text-1-3-1">
 
-<p><a href="http://openvswitch.org/support/">Open vSwitch HOWTO</a>
-</p>
-<p>
-<img src="./cloud/vswitch.png"  alt="./cloud/vswitch.png" />
-</p>
-<p>
-<a href="https://01.org/packet-processing/intel®-ovdk">vSwitch with Intel DPDK</a>
-</p>
-<p>
-<a href="https://01.org/sites/default/files/downloads/intel_dpdk_vswitch_040_gsg.pdf">configuration guide</a>
-</p>
-<p>
-Solution from Windriver
-</p>
-<p>
-<img src="./cloud/open-virtualization-profile-diagram.jpg"  alt="./cloud/open-virtualization-profile-diagram.jpg" />
-</p>
-<p>
-Solution from 6Wind
-</p>
-<p>
-<img src="./cloud/ovs_6wind.png"  alt="./cloud/ovs_6wind.png" />
-</p>
-<p>
-<a href="http://www.opendataplane.org/wp-content/uploads/2013/12/ODPLaunchOverview1.pdf">ODP overview</a>
-</p>
-<p>
-Hight level arch
-</p>
-<p>
-<img src="./cloud/ODP_arch.png"  alt="./cloud/ODP_arch.png" />
-</p>
+<p><a href="./vSwitch_summary.html">./vSwitch_summary.html</a>
+</p></div>
+
 </div>
+
+<div id="outline-container-1-3-2" class="outline-4">
+<h4 id="sec-1-3-2">virtio support for the Guest NIC</h4>
+<div class="outline-text-4" id="text-1-3-2">
+
+<p><a href="http://www.linux-kvm.org/page/Using_VirtIO_NIC">One experiment in debian</a>
+</p></div>
 </div>
 </div>
 </div>
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2014-03-03T18:02+0800</p>
+<p class="date">Date: 2014-03-04T14:53+0800</p>
 <p class="author">Author: Kevin Gao</p>
 <p class="email"><a href="mailto:leijia.gao@nsn.com">leijia.gao@nsn.com</a></p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
