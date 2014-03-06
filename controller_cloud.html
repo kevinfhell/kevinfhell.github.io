@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="Controller on Cloud"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-03-04T14:53+0800"/>
+<meta name="generated" content="2014-03-06T10:31+0800"/>
 <meta name="author" content="Kevin Gao"/>
 <meta name="description" content=""/>
 <meta name="keywords" content="emacs, personal notes"/>
@@ -160,30 +160,26 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#sec-1-2-2">Roadmap in hangzhou</a>
 <ul>
-<li><a href="#sec-1-2-2-1">Phase1&amp;2</a></li>
+<li><a href="#sec-1-2-2-1">High level milestone division of phase #1</a></li>
+<li><a href="#sec-1-2-2-2">High level milestone division of phase #2 (Draft)</a></li>
+<li><a href="#sec-1-2-2-3">Internal target: End of 09/14 and 12/14</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-2-3">Scheduler</a>
+<li><a href="#sec-1-2-3">Task tracing</a>
 <ul>
-<li><a href="#sec-1-2-3-1">Phase1</a></li>
-<li><a href="#sec-1-2-3-2">Phase2</a></li>
+<li><a href="#sec-1-2-3-1">Transport porting</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-2-4">Task tracing</a>
+<li><a href="#sec-1-2-4">Work plan</a>
 <ul>
-<li><a href="#sec-1-2-4-1">Transport porting</a></li>
+<li><a href="#sec-1-2-4-1">Current status</a></li>
+<li><a href="#sec-1-2-4-2">Questions</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-2-5">Work plan</a>
+<li><a href="#sec-1-2-5">Meeting minutes</a>
 <ul>
-<li><a href="#sec-1-2-5-1">Current status</a></li>
-<li><a href="#sec-1-2-5-2">Questions</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-2-6">Meeting minutes</a>
-<ul>
-<li><a href="#sec-1-2-6-1">Mon Jan 20 13:40:59 2014</a></li>
-<li><a href="#sec-1-2-6-2">Wed Feb 18 14:24:46 2014</a></li>
+<li><a href="#sec-1-2-5-1">Mon Jan 20 13:40:59 2014</a></li>
+<li><a href="#sec-1-2-5-2">Wed Feb 18 14:24:46 2014</a></li>
 </ul></li>
 </ul>
 </li>
@@ -352,7 +348,7 @@ dpdk version
 
 
 
-<pre class="example">version: 1.5.1r2
+<pre class="example">DPDK (dpdk-1.6.0r1, Intel release version + OVS)
 </pre>
 
 <p>
@@ -781,99 +777,130 @@ Part IV
 <h4 id="sec-1-2-2">Roadmap in hangzhou</h4>
 <div class="outline-text-4" id="text-1-2-2">
 
-
+<p><a href="./controller_cloud_phase1.html">Phase1 introduction</a>
+</p>
 </div>
 
 <div id="outline-container-1-2-2-1" class="outline-5">
-<h5 id="sec-1-2-2-1">Phase1&amp;2</h5>
+<h5 id="sec-1-2-2-1">High level milestone division of phase #1</h5>
 <div class="outline-text-5" id="text-1-2-2-1">
 
-<ul>
-<li id="sec-1-2-2-1-1">Compile Ipalight iso for x86_64 arch successfully<br/>
+
+<p> 
+Phase #1 Full RNC SW virtualization context diagram (LE: 06/14: Fully virtualized RNC SW running on HP HW in standalone environment)
+Content
+</p><ul>
+<li id="sec-1-2-2-1-1">Internal targets: End of 03/14 (Note, this is not final list)<br/>
+<ol>
+<li>IPA light ISO creation for x86_64 arch
+</li>
+<li>Application x86_64 compilation environment and ISO creation
+</li>
+<li>SIGTRAN RMPs compiled with x86_64
+</li>
+<li>Deployment changes
+</li>
+<li>Node, RU,RG,PRB for vCluster RNC
+</li>
+<li>Platform and application integration
+</li>
+<li>Standalone vCluster RNC commissioning
+</li>
+<li>Booting and running the VMs in the cluster
+</li>
+<li>Create AMR call with pure IPAlight build successfully
+</li>
+</ol>
+
 </li>
 </ul>
 <ul>
-<li id="sec-1-2-2-1-2">Change the deployment of Node,RU,RG,PRB for vRNC<br/>
+<li id="sec-1-2-2-1-2">Internal targets: End of 04/14<br/>
+<ol>
+<li>Internal traffic between TP and UP go through
+</li>
+<li>Connectivity with external traffic go through, this means transport functionality porting completed
+</li>
+<li>Application and platform SW integration porting completion
+</li>
+</ol>
+
 </li>
 </ul>
 <ul>
-<li id="sec-1-2-2-1-3">Make the ipalight startup on vRNC, the iso can be deliverred to Application for integration<br/>
+<li id="sec-1-2-2-1-3">Internal target: End of 06/14<br/>
+<ol>
+<li>Controller cloud architecture design
+</li>
+<li>Basic calls and system functionality working with PET and e2e environment
+</li>
+<li>Performance optimization
+</li>
+<li>Basic functionality testing done (I&amp;V) in standalone virtual
+   environment
+</li>
+</ol>
+
 </li>
 </ul>
-<ul>
-<li id="sec-1-2-2-1-4">Create AMR call with ipalight platform build successfully<br/>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-2-2" class="outline-5">
+<h5 id="sec-1-2-2-2">High level milestone division of phase #2 (Draft)</h5>
+<div class="outline-text-5" id="text-1-2-2-2">
+
+<p> Phase #2 LE 12/14:  Scope definition is ongoing ,this list could be changed later based on architecture design
+</p></div>
+
+</div>
+
+<div id="outline-container-1-2-2-3" class="outline-5">
+<h5 id="sec-1-2-2-3">Internal target: End of 09/14 and 12/14</h5>
+<div class="outline-text-5" id="text-1-2-2-3">
+
+<ol>
+<li>Architecture changes
 </li>
-</ul>
-<ul>
-<li id="sec-1-2-2-1-5">Internal traffic between TP and UP go through<br/>
+<li>VGP support (This will depend on the VGP readiness)
 </li>
-</ul>
-<ul>
-<li id="sec-1-2-2-1-6">External traffic go through<br/>
+<li>Networking
 </li>
-</ul>
-<ul>
-<li id="sec-1-2-2-1-7">AMR call traffic go through in PET environment<br/>
+<li>BP
 </li>
-</ul>
+<li>Network virtualization (SDN+NFV)
+</li>
+<li>OpenStack integration (NSN modified stack)
+</li>
+<li>NSN orchestration support with limited scaling
+</li>
+<li>Cloud framework
+</li>
+<li>Product specific plugins
+</li>
+</ol>
+
 </div>
 </div>
 
 </div>
 
 <div id="outline-container-1-2-3" class="outline-4">
-<h4 id="sec-1-2-3">Scheduler</h4>
+<h4 id="sec-1-2-3">Task tracing</h4>
 <div class="outline-text-4" id="text-1-2-3">
-
-
-</div>
-
-<div id="outline-container-1-2-3-1" class="outline-5">
-<h5 id="sec-1-2-3-1">Phase1</h5>
-<div class="outline-text-5" id="text-1-2-3-1">
-
-<p><a href="./controller_cloud_phase1.html">Phase1 introduction</a>
-</p>
-<p>
-LE Mar 24th 2014
-Porting ipalight to virtualized platform. 
-</p><ol>
-<li>Port IPA light SW to x86_64 and bring-up the system with 4 virtual nodes (vCFPU, vEIPU, vCSPU and vUSPU)
-</li>
-<li>Changing the EITP to support DPDK and open 6wind 
-</li>
-<li>In phase one we will not use the openStack, but just KVM and use the virtual configuration samples from FP to run the system in KVM host. 
-</li>
-</ol>
-
-</div>
-
-</div>
-
-<div id="outline-container-1-2-3-2" class="outline-5">
-<h5 id="sec-1-2-3-2">Phase2</h5>
-<div class="outline-text-5" id="text-1-2-3-2">
-
-</div>
-</div>
-
-</div>
-
-<div id="outline-container-1-2-4" class="outline-4">
-<h4 id="sec-1-2-4">Task tracing</h4>
-<div class="outline-text-4" id="text-1-2-4">
 
 <p><a href="https://workspaces.emea.nsn-net.net/sites/RCOCPHZC/Wiki/work tracing.aspx">wiki record</a>
 <a href="./ipalight_porting.html">./ipalight_porting.html</a>
 </p>
 </div>
 
-<div id="outline-container-1-2-4-1" class="outline-5">
-<h5 id="sec-1-2-4-1">Transport porting</h5>
-<div class="outline-text-5" id="text-1-2-4-1">
+<div id="outline-container-1-2-3-1" class="outline-5">
+<h5 id="sec-1-2-3-1">Transport porting</h5>
+<div class="outline-text-5" id="text-1-2-3-1">
 
 <ul>
-<li id="sec-1-2-4-1-1">Mon Feb 24 10:47:09 2014<br/>
+<li id="sec-1-2-3-1-1">Mon Feb 24 10:47:09 2014<br/>
 In phase1, there is a topic about the TP and UP communication under
 discussion. 
 Following alternatives are under discussion
@@ -895,7 +922,7 @@ for it.
 </p></li>
 </ul>
 <ul>
-<li id="sec-1-2-4-1-2">Tue Mar  4 10:19:50 2014<br/>
+<li id="sec-1-2-3-1-2">Tue Mar  4 10:19:50 2014<br/>
 For the ip stack over DPDK, we tried the rump kernel, it's too heavy
 for our use, and the archtecture is not suitable for our usage
 here is a short report about this research
@@ -917,19 +944,19 @@ examples in DPDK.
 
 </div>
 
-<div id="outline-container-1-2-5" class="outline-4">
-<h4 id="sec-1-2-5">Work plan</h4>
-<div class="outline-text-4" id="text-1-2-5">
+<div id="outline-container-1-2-4" class="outline-4">
+<h4 id="sec-1-2-4">Work plan</h4>
+<div class="outline-text-4" id="text-1-2-4">
 
 
 </div>
 
-<div id="outline-container-1-2-5-1" class="outline-5">
-<h5 id="sec-1-2-5-1">Current status</h5>
-<div class="outline-text-5" id="text-1-2-5-1">
+<div id="outline-container-1-2-4-1" class="outline-5">
+<h5 id="sec-1-2-4-1">Current status</h5>
+<div class="outline-text-5" id="text-1-2-4-1">
 
 <ul>
-<li id="sec-1-2-5-1-1">Jan 2014<br/>
+<li id="sec-1-2-4-1-1">Jan 2014<br/>
 We have got a 8 people team available. 
 We got HP server built up, Raw DPDK has been deployed on the server,
 Hello world passed. 
@@ -983,9 +1010,9 @@ Detailed study plan will be discussed by team in week4 meeting.
 </p></li>
 </ul>
 <ul>
-<li id="sec-1-2-5-1-2">Feb 2014<br/>
+<li id="sec-1-2-4-1-2">Feb 2014<br/>
 <ul>
-<li id="sec-1-2-5-1-2-1">Fri Feb 28 14:19:35 2014<br/>
+<li id="sec-1-2-4-1-2-1">Fri Feb 28 14:19:35 2014<br/>
 One month passed since the team built up, The compiling of the
 ipalight on x86_64 are success, we are changing the deploy script for
 commision. DPDK enviroment is building up on the CLA-0, some of the
@@ -999,9 +1026,9 @@ examples have been verified on the vitural CLA-0.
 
 </div>
 
-<div id="outline-container-1-2-5-2" class="outline-5">
-<h5 id="sec-1-2-5-2">Questions</h5>
-<div class="outline-text-5" id="text-1-2-5-2">
+<div id="outline-container-1-2-4-2" class="outline-5">
+<h5 id="sec-1-2-4-2">Questions</h5>
+<div class="outline-text-5" id="text-1-2-4-2">
 
 <p>Q: The prgress of the device application?
 </p>
@@ -1040,16 +1067,16 @@ hangzhou team, we will have some proposal.
 
 </div>
 
-<div id="outline-container-1-2-6" class="outline-4">
-<h4 id="sec-1-2-6">Meeting minutes</h4>
-<div class="outline-text-4" id="text-1-2-6">
+<div id="outline-container-1-2-5" class="outline-4">
+<h4 id="sec-1-2-5">Meeting minutes</h4>
+<div class="outline-text-4" id="text-1-2-5">
 
 
 </div>
 
-<div id="outline-container-1-2-6-1" class="outline-5">
-<h5 id="sec-1-2-6-1">Mon Jan 20 13:40:59 2014</h5>
-<div class="outline-text-5" id="text-1-2-6-1">
+<div id="outline-container-1-2-5-1" class="outline-5">
+<h5 id="sec-1-2-5-1">Mon Jan 20 13:40:59 2014</h5>
+<div class="outline-text-5" id="text-1-2-5-1">
 
 
 <div style="height:200px;overflow:auto;border-style:solid;border-width:1px">
@@ -1086,9 +1113,9 @@ Workshops in week4:
 
 </div>
 
-<div id="outline-container-1-2-6-2" class="outline-5">
-<h5 id="sec-1-2-6-2">Wed Feb 18 14:24:46 2014</h5>
-<div class="outline-text-5" id="text-1-2-6-2">
+<div id="outline-container-1-2-5-2" class="outline-5">
+<h5 id="sec-1-2-5-2">Wed Feb 18 14:24:46 2014</h5>
+<div class="outline-text-5" id="text-1-2-5-2">
 
 
 <div style="height:200px;overflow:auto;border-style:solid;border-width:1px">
@@ -1122,8 +1149,6 @@ b. One wiki page for the whole project, can be re-used the HZ page?
 </pre>
 
 </div>
-
-
 
 </div>
 </div>
@@ -1159,7 +1184,7 @@ b. One wiki page for the whole project, can be re-used the HZ page?
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2014-03-04T14:53+0800</p>
+<p class="date">Date: 2014-03-06T10:31+0800</p>
 <p class="author">Author: Kevin Gao</p>
 <p class="email"><a href="mailto:leijia.gao@nsn.com">leijia.gao@nsn.com</a></p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
