@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="Controller on Cloud"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-03-17T15:09+0800"/>
+<meta name="generated" content="2014-04-08T14:24+0800"/>
 <meta name="author" content="Kevin Gao"/>
 <meta name="description" content=""/>
 <meta name="keywords" content="emacs, personal notes"/>
@@ -133,10 +133,9 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#sec-1-1-1">Team information</a></li>
 <li><a href="#sec-1-1-2">Device information</a></li>
-<li><a href="#sec-1-1-3">Work branch</a>
+<li><a href="#sec-1-1-3">Build Information</a>
 <ul>
-<li><a href="#sec-1-1-3-1">RPMs and API</a></li>
-<li><a href="#sec-1-1-3-2">Mon Feb 24 11:41:48 2014</a></li>
+<li><a href="#sec-1-1-3-1">Work branch</a></li>
 </ul>
 </li>
 <li><a href="#sec-1-1-4">Compile guide</a></li>
@@ -181,6 +180,7 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#sec-1-2-5-1">Mon Jan 20 13:40:59 2014</a></li>
 <li><a href="#sec-1-2-5-2">Wed Feb 18 14:24:46 2014</a></li>
+<li><a href="#sec-1-2-5-3">Tue Apr  8 10:10:37 2014</a></li>
 </ul></li>
 </ul>
 </li>
@@ -335,8 +335,15 @@ PASSWD:  password
 </div>
 
 <div id="outline-container-1-1-3" class="outline-4">
-<h4 id="sec-1-1-3">Work branch</h4>
+<h4 id="sec-1-1-3">Build Information</h4>
 <div class="outline-text-4" id="text-1-1-3">
+
+
+</div>
+
+<div id="outline-container-1-1-3-1" class="outline-5">
+<h5 id="sec-1-1-3-1">Work branch</h5>
+<div class="outline-text-5" id="text-1-1-3-1">
 
 <p><a href="https://svne1.access.nsn.com/isource/svnroot/scm_il/branches/cloud_controller">https://svne1.access.nsn.com/isource/svnroot/scm_il/branches/cloud_controller</a>
 </p>
@@ -374,13 +381,8 @@ For bug reporting instructions, please see:
 </pre>
 
 </div>
-</p>
-</div>
-
-<div id="outline-container-1-1-3-1" class="outline-5">
-<h5 id="sec-1-1-3-1">RPMs and API</h5>
-<div class="outline-text-5" id="text-1-1-3-1">
-
+</p><ul>
+<li id="sec-1-1-3-1-1">RPMs and API<br/>
 
 
 
@@ -405,16 +407,12 @@ R_IL_14.1.1.0-20140310T105848Z.build.23.WR.x86_64_r_api.cgr.tar.gz
 
 </pre>
 
-</div>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-3-1-2">Mon Feb 24 11:41:48 2014<br/>
+Now the FP build and application is build is decided, they are
 
-</div>
-
-<div id="outline-container-1-1-3-2" class="outline-5">
-<h5 id="sec-1-1-3-2">Mon Feb 24 11:41:48 2014</h5>
-<div class="outline-text-5" id="text-1-1-3-2">
-
-<p>Now the FP build and application is build is decided, they are
-</p>
 
 
 <pre class="example">1) R_QNCB.14.6.0_6
@@ -423,6 +421,8 @@ R_IL_14.1.1.0-20140310T105848Z.build.23.WR.x86_64_r_api.cgr.tar.gz
 </pre>
 
 
+</li>
+</ul>
 </div>
 </div>
 
@@ -1178,6 +1178,33 @@ b. One wiki page for the whole project, can be re-used the HZ page?
 </div>
 
 </div>
+
+</div>
+
+<div id="outline-container-1-2-5-3" class="outline-5">
+<h5 id="sec-1-2-5-3">Tue Apr  8 10:10:37 2014</h5>
+<div class="outline-text-5" id="text-1-2-5-3">
+
+<ol>
+<li>Call management part was verified, and only CCH created failed, need
+   to be traced later. Based on the current testing requirement, AMR
+   call has been created successfully, we plan to postpone this job after first demostration. 
+</li>
+<li>Signaling part, SIGTRAN and Iub signaling has not been tested,
+   need to arrange the testing. planned in this week.  
+</li>
+<li>Integrate fastpath functionality(IPUDP/GTP/RTP/RTCP, etc) with
+   Fastdistlib, Dmxmsglib.  
+</li>
+<li>Add RU for EITP over DPDK, and launch it in vRNC. 
+</li>
+<li>Porting the UPsim for traffic testing on platform level.
+</li>
+<li>Build the vRNC testing environment in new HP server.
+</li>
+</ol>
+
+</div>
 </div>
 </div>
 
@@ -1211,7 +1238,7 @@ b. One wiki page for the whole project, can be re-used the HZ page?
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2014-03-17T15:09+0800</p>
+<p class="date">Date: 2014-04-08T14:24+0800</p>
 <p class="author">Author: Kevin Gao</p>
 <p class="email"><a href="mailto:leijia.gao@nsn.com">leijia.gao@nsn.com</a></p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
