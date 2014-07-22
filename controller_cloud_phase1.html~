@@ -261,7 +261,7 @@ Fastpath
 Traffic: Internal
 </p>
 <p>
-FastDist, Dmxmsg(dmxmsglib)
+FastDist, Dmxmsg
 </p></li>
 </ul>
 <ul>
