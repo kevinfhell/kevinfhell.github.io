@@ -1,0 +1,973 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Controller Cloud phase2 introduction</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="Controller Cloud phase2 introduction"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2014-08-28T22:27+0800"/>
+<meta name="author" content="Kevin Gao"/>
+<meta name="description" content=""/>
+<meta name="keywords" content="emacs, personal notes"/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" type="text/css" href="http://kevinfhell.github.io/worg.css">
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
+ <a accesskey="h" href="#"> UP </a>
+ |
+ <a accesskey="H" href="theindex.html"> HOME </a>
+</div>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Controller Cloud phase2 introduction</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Phase2</a>
+<ul>
+<li><a href="#sec-1-1">Testing environment</a>
+<ul>
+<li><a href="#sec-1-1-1">Arch</a></li>
+<li><a href="#sec-1-1-2">Performance tunning status update</a>
+<ul>
+<li><a href="#sec-1-1-2-1">Host level</a></li>
+<li><a href="#sec-1-1-2-2">Guest level</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-1-3">Current open issues</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Phase2</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>Le Dec 24th 2014
+Launch the vRNC on openstack platform.
+</p><ol>
+<li>Porting TP to DPM.
+<ol>
+<li>Verify the performance
+</li>
+<li>Tunning the performance
+</li>
+</ol>
+
+</li>
+<li>Porting Dmxmsg to userspace application with DPDK
+</li>
+<li>Porting Dmxmsg to IP based DPDK
+</li>
+<li>Merge TPUP together on same VM.
+</li>
+<li>Add LBPU for loadbalance 
+</li>
+<li>Combine TPUP into the same process.
+</li>
+</ol>
+
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">Testing environment</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+</div>
+
+<div id="outline-container-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1">Arch</h4>
+<div class="outline-text-4" id="text-1-1-1">
+
+<p>Host:
+</p>
+
+
+<pre class="example">OS:CentOS6.5
+CPU:model name      : Intel(R) Xeon(R) CPU E5-2680 v2 @ 2.80GHz(Ivy Bridge)
+memory:DDR3 1600, 128G
+OVDK version:1.1
+DPDK version:1.7.0
+</pre>
+
+<p>
+Guest:
+</p>
+
+
+<pre class="example">OS:WR4.3
+CPU:model name      : Intel Xeon E312xx (Sandy Bridge)
+cpu MHz         : 2792.734
+memory: 4G
+DPDK:1.7.0
+</pre>
+
+<p>
+Full path testing arch. to simulate UP, we deploy a L2FWD example on
+USPU, this example just switch the mac address in the packet and send
+it back to EIPU.Traffic path is
+IXIA&ndash;&gt;OVDK&ndash;&gt;EIPU&ndash;&gt;OVDK&ndash;&gt;USPU&ndash;&gt;OVDK&ndash;&gt;EIPU&ndash;&gt;OVDK&ndash;&gt;IXIA
+<img src="./cloud/Test_arch_fullpath.png"  alt="./cloud/Test_arch_fullpath.png" />
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2" class="outline-4">
+<h4 id="sec-1-1-2">Performance tunning status update</h4>
+<div class="outline-text-4" id="text-1-1-2">
+
+
+</div>
+
+<div id="outline-container-1-1-2-1" class="outline-5">
+<h5 id="sec-1-1-2-1">Host level</h5>
+<div class="outline-text-5" id="text-1-1-2-1">
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">Case</th><th scope="col" class="left">result</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">L2FWD on host</td><td class="left">13Mpps</td></tr>
+<tr><td class="left">OVDK fwd</td><td class="left">7.8Mpps</td></tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2-2" class="outline-5">
+<h5 id="sec-1-1-2-2">Guest level</h5>
+<div class="outline-text-5" id="text-1-1-2-2">
+
+<ul>
+<li id="sec-1-1-2-2-1">single core without DPM deployed<br/>
+<ul>
+<li id="sec-1-1-2-2-1-1">Host level with bridge, guest os driver with virtio<br/>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">Case</th><th scope="col" class="left">result</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">L2FWD</td><td class="left">250Kpps</td></tr>
+<tr><td class="left">EITP</td><td class="left">50Kpps</td></tr>
+</tbody>
+</table>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-2-2-1-2">Host level with OVDK, guest os driver with virtio<br/>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">Case</th><th scope="col" class="left">result</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">L2FWD</td><td class="left">400K</td></tr>
+</tbody>
+</table>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-2-2-1-3">Host level with OVDK, guest os driver with IVSHEM<br/>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">Case</th><th scope="col" class="left">result</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">L2FWD</td><td class="left">6.8M</td></tr>
+</tbody>
+</table>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-2-2-1-4">Host level with OVDK, guest os driver with virtio+vhost<br/>
+<ul>
+<li id="sec-1-1-2-2-1-4-1">Standalone environemnt testing<br/>
+<img src="./cloud/guest_access.png"  alt="./cloud/guest_access.png" />
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">Case</th><th scope="col" class="left">result</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">L2FWD</td><td class="left">8Mpps</td></tr>
+<tr><td class="left">EITP</td><td class="left">1.623Mpps</td></tr>
+</tbody>
+</table>
+
+
+<p>
+IXIA&ndash;&gt;OVDK&ndash;&gt;EIPU&ndash;&gt;OVDK&ndash;&gt;IXIA
+</p>
+<p>
+<img src="./cloud/test_arch_standalone.png"  alt="./cloud/test_arch_standalone.png" />
+Open issue
+</p><ol>
+<li>With the OVDK+vHost, there is continously packet lost, even with very
+</li>
+</ol>
+
+<p>low packet rate. We are trying to get help from Intel about this
+issue. 
+</p></li>
+</ul>
+<ul>
+<li id="sec-1-1-2-2-1-4-2">Fullpath testing<br/>
+IXIA&ndash;&gt;OVDK&ndash;&gt;L2FWD&ndash;&gt;OVDK&ndash;&gt;L2FWD&ndash;&gt;OVDK&ndash;&gt;L2FWD&ndash;&gt;IXIA
+
+<p> 
+We got 3.6M PPS with this traffic path. This can be a bench mark for
+our EITP full path traffic testing. 
+</p>
+<p>
+IXIA&ndash;&gt;OVDK&ndash;&gt;EIPU&ndash;&gt;OVDK&ndash;&gt;L2FWD&ndash;&gt;OVDK&ndash;&gt;EIPU&ndash;&gt;IXIA
+</p>
+<ul>
+<li id="sec-1-1-2-2-1-4-2-1">With rx 64 packet batch, tx no batch, we got 700KPPS<br/>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="right" /><col class="right" /><col class="right" /><col class="right" /><col class="right" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="right">loop count</th><th scope="col" class="right">packet num</th><th scope="col" class="right">idle count</th><th scope="col" class="right">packet per loop</th><th scope="col" class="right">ave cycle</th></tr>
+</thead>
+<tbody>
+<tr><td class="right">111838</td><td class="right">7157600</td><td class="right">0</td><td class="right">63.999714</td><td class="right">1955.9629</td></tr>
+<tr><td class="right">110204</td><td class="right">7053056</td><td class="right">0</td><td class="right">64</td><td class="right">1984.9552</td></tr>
+<tr><td class="right">110618</td><td class="right">7079544</td><td class="right">0</td><td class="right">63.999928</td><td class="right">1977.5285</td></tr>
+<tr><td class="right">111048</td><td class="right">7107072</td><td class="right">0</td><td class="right">64</td><td class="right">1969.8689</td></tr>
+<tr><td class="right">111322</td><td class="right">7124588</td><td class="right">0</td><td class="right">63.999820</td><td class="right">1965.0259</td></tr>
+<tr><td class="right">112908</td><td class="right">7226112</td><td class="right">0</td><td class="right">64</td><td class="right">1937.4181</td></tr>
+<tr><td class="right">113304</td><td class="right">7251456</td><td class="right">0</td><td class="right">64</td><td class="right">1930.6468</td></tr>
+<tr><td class="right">113326</td><td class="right">7252864</td><td class="right">0</td><td class="right">64</td><td class="right">1930.2720</td></tr>
+<tr><td class="right">113620</td><td class="right">7271680</td><td class="right">0</td><td class="right">64</td><td class="right">1925.2772</td></tr>
+<tr><td class="right">114168</td><td class="right">7306752</td><td class="right">0</td><td class="right">64</td><td class="right">1916.0360</td></tr>
+<tr><td class="right">114140</td><td class="right">7304924</td><td class="right">0</td><td class="right">63.999685</td><td class="right">1916.5155</td></tr>
+<tr><td class="right">113900</td><td class="right">7289600</td><td class="right">0</td><td class="right">64</td><td class="right">1920.5443</td></tr>
+<tr><td class="right">113862</td><td class="right">7287136</td><td class="right">0</td><td class="right">63.999719</td><td class="right">1921.1937</td></tr>
+<tr><td class="right">102740</td><td class="right">6575360</td><td class="right">0</td><td class="right">64</td><td class="right">2129.1610</td></tr>
+<tr><td class="right">113842</td><td class="right">7285888</td><td class="right">0</td><td class="right">64</td><td class="right">1921.5228</td></tr>
+<tr><td class="right">114100</td><td class="right">7302400</td><td class="right">0</td><td class="right">64</td><td class="right">1917.1779</td></tr>
+<tr><td class="right">108832</td><td class="right">6965248</td><td class="right">0</td><td class="right">64</td><td class="right">2009.9787</td></tr>
+<tr><td class="right">112168</td><td class="right">7178752</td><td class="right">0</td><td class="right">64</td><td class="right">1950.1997</td></tr>
+</tbody>
+</table>
+
+<div style="height:400px;overflow:auto;border-style:solid;border-width:1px">
+
+<pre class="example">[root@EIPU-0(KVMCluster) /root]
+# gprof /root/ileitp
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total
+ time   seconds   seconds    calls   s/call   s/call  name
+ 30.38     75.71    75.71                             virtio_xmit_pkts
+ 20.10    125.79    50.08                             virtio_recv_pkts
+ 15.10    163.42    37.63        1    37.63    62.72  main_loop
+ 10.50    189.59    26.17 240330600     0.00     0.00  eitp_udp_output
+  3.60    198.57     8.98 480661843     0.00     0.00  rt_lookup
+  2.31    204.33     5.77                             fastdist_send
+  1.59    208.29     3.96 240330601     0.00     0.00  arp_get_entry
+  1.20    211.29     3.00 240331243     0.00     0.00  gtp_dl_handler
+  1.20    214.27     2.98 240331243     0.00     0.00  eitp_udp_input
+  0.95    216.64     2.37 240330600     0.00     0.00  gtp_ul_handler
+  0.90    218.87     2.24 480661844     0.00     0.00  ether_output
+  0.88    221.08     2.21                             fastdist_process_fastdist_packet
+  0.72    222.88     1.80 240330600     0.00     0.00  rte_pktmbuf_free
+  0.72    224.66     1.79 240331243     0.00     0.00  tf_find_by_gtp_tpi
+  0.62    226.21     1.55                             dmxmsg_se_translate_addr
+  0.58    227.66     1.45 240331243     0.00     0.00  udp_ip2grp
+  0.53    228.98     1.33 240331243     0.00     0.00  ip_input
+  0.51    230.24     1.26 240331243     0.00     0.00  __gtpu_dl_active_rab_handler
+  0.48    231.43     1.19 1481887740     0.00     0.00  ping_send_packets
+  0.47    232.61     1.18 240331243     0.00     0.00  eitp_udp_dispatch
+  0.47    233.78     1.17 720993086     0.00     0.00  gtp_get_payload_len
+  0.42    234.81     1.04 240331243     0.00     0.00  tae_dl_handler
+  0.40    235.81     1.00                             virtio_dev_cq_start
+  0.33    236.63     0.82 240330600     0.00     0.00  tae_flow_handler
+  0.33    237.44     0.81 480661843     0.00     0.00  get_gtptable_by_logaddr
+  0.30    238.18     0.75 240331243     0.00     0.00  gtp_check_head
+
+</pre>
+
+</div>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-2-2-1-4-2-2">With tx 32 packet batch, rx 64 packet batch mode<br/>
+<ul>
+<li id="sec-1-1-2-2-1-4-2-2-1">64bytes<br/>
+830KPPS
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="right" /><col class="right" /><col class="right" /><col class="right" /><col class="right" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="right">loop count</th><th scope="col" class="right">packet num</th><th scope="col" class="right">idle count</th><th scope="col" class="right">packet per loop</th><th scope="col" class="right">ave cycle</th></tr>
+</thead>
+<tbody>
+<tr><td class="right">130090</td><td class="right">8325660</td><td class="right">0</td><td class="right">63.999231</td><td class="right">1681.5484</td></tr>
+<tr><td class="right">131244</td><td class="right">8399072</td><td class="right">7</td><td class="right">63.995855</td><td class="right">1666.8508</td></tr>
+<tr><td class="right">130896</td><td class="right">8377344</td><td class="right">0</td><td class="right">64</td><td class="right">1671.1741</td></tr>
+<tr><td class="right">130582</td><td class="right">8357248</td><td class="right">0</td><td class="right">64</td><td class="right">1675.1926</td></tr>
+<tr><td class="right">131026</td><td class="right">8385664</td><td class="right">0</td><td class="right">64</td><td class="right">1669.5160</td></tr>
+<tr><td class="right">131114</td><td class="right">8391296</td><td class="right">0</td><td class="right">64</td><td class="right">1668.3954</td></tr>
+<tr><td class="right">131414</td><td class="right">8410432</td><td class="right">0</td><td class="right">63.999513</td><td class="right">1664.5994</td></tr>
+<tr><td class="right">131014</td><td class="right">8384352</td><td class="right">7</td><td class="right">63.995848</td><td class="right">1669.7772</td></tr>
+<tr><td class="right">131844</td><td class="right">8437984</td><td class="right">0</td><td class="right">63.999757</td><td class="right">1659.1641</td></tr>
+<tr><td class="right">131578</td><td class="right">8420992</td><td class="right">0</td><td class="right">64</td><td class="right">1662.5120</td></tr>
+</tbody>
+</table>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-2-2-1-4-2-2-2">128bytes<br/>
+830KPPS
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="right" /><col class="right" /><col class="right" /><col class="right" /><col class="right" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="right">loop count</th><th scope="col" class="right">packet num</th><th scope="col" class="right">idle count</th><th scope="col" class="right">packet per loop</th><th scope="col" class="right">ave cycle</th></tr>
+</thead>
+<tbody>
+<tr><td class="right">130670</td><td class="right">8362784</td><td class="right">0</td><td class="right">63.999265</td><td class="right">1674.0837</td></tr>
+<tr><td class="right">132472</td><td class="right">8478208</td><td class="right">0</td><td class="right">64</td><td class="right">1651.2923</td></tr>
+<tr><td class="right">131788</td><td class="right">8434400</td><td class="right">0</td><td class="right">63.999757</td><td class="right">1659.8691</td></tr>
+<tr><td class="right">132560</td><td class="right">8483360</td><td class="right">6</td><td class="right">63.996379</td><td class="right">1650.2895</td></tr>
+<tr><td class="right">132684</td><td class="right">8491776</td><td class="right">0</td><td class="right">64</td><td class="right">1648.6539</td></tr>
+<tr><td class="right">132048</td><td class="right">8451072</td><td class="right">0</td><td class="right">64</td><td class="right">1656.5946</td></tr>
+<tr><td class="right">130246</td><td class="right">8335744</td><td class="right">0</td><td class="right">64</td><td class="right">1679.5142</td></tr>
+<tr><td class="right">131838</td><td class="right">8437632</td><td class="right">0</td><td class="right">64</td><td class="right">1659.2333</td></tr>
+<tr><td class="right">132384</td><td class="right">8472448</td><td class="right">0</td><td class="right">63.999033</td><td class="right">1652.4150</td></tr>
+<tr><td class="right">132672</td><td class="right">8490464</td><td class="right">7</td><td class="right">63.995900</td><td class="right">1648.9087</td></tr>
+<tr><td class="right">132484</td><td class="right">8478912</td><td class="right">0</td><td class="right">63.999517</td><td class="right">1651.1552</td></tr>
+<tr><td class="right">131328</td><td class="right">8404992</td><td class="right"></td><td class="right">64</td><td class="right">1665.6768</td></tr>
+</tbody>
+</table>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-2-2-1-4-2-2-3">256bytes<br/>
+830KPPS
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="right" /><col class="right" /><col class="right" /><col class="right" /><col class="right" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="right">loop count</th><th scope="col" class="right">packet num</th><th scope="col" class="right">idle count</th><th scope="col" class="right">packet per loop</th><th scope="col" class="right">ave cycle</th></tr>
+</thead>
+<tbody>
+<tr><td class="right">130710</td><td class="right">8365344</td><td class="right">0</td><td class="right">63.999266</td><td class="right">1673.5713</td></tr>
+<tr><td class="right">132008</td><td class="right">8447968</td><td class="right">7</td><td class="right">63.995879</td><td class="right">1657.2032</td></tr>
+<tr><td class="right">129778</td><td class="right">8305696</td><td class="right">0</td><td class="right">63.999260</td><td class="right">1685.5902</td></tr>
+<tr><td class="right">132680</td><td class="right">8491520</td><td class="right">0</td><td class="right">64</td><td class="right">1648.7036</td></tr>
+<tr><td class="right">133664</td><td class="right">8554464</td><td class="right">0</td><td class="right">63.999761</td><td class="right">1636.5724</td></tr>
+<tr><td class="right">132294</td><td class="right">8466816</td><td class="right">0</td><td class="right">64</td><td class="right">1653.5141</td></tr>
+<tr><td class="right">132466</td><td class="right">8477824</td><td class="right">0</td><td class="right">64</td><td class="right">1651.3671</td></tr>
+<tr><td class="right">132586</td><td class="right">8485024</td><td class="right">6</td><td class="right">63.996380</td><td class="right">1649.9659</td></tr>
+<tr><td class="right">133456</td><td class="right">8541088</td><td class="right">0</td><td class="right">63.999281</td><td class="right">1639.1354</td></tr>
+</tbody>
+</table>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-2-2-1-4-2-2-4">512 bytes<br/>
+880KPPS
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="right" /><col class="right" /><col class="right" /><col class="right" /><col class="right" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="right">loop count</th><th scope="col" class="right">packet num</th><th scope="col" class="right">idle count</th><th scope="col" class="right">packet per loop</th><th scope="col" class="right">ave cycle</th></tr>
+</thead>
+<tbody>
+<tr><td class="right">133604</td><td class="right">8543744</td><td class="right">85</td><td class="right">63.948265</td><td class="right">1638.6259</td></tr>
+<tr><td class="right">133404</td><td class="right">8537760</td><td class="right">0</td><td class="right">63.999280</td><td class="right">1639.7744</td></tr>
+<tr><td class="right">133718</td><td class="right">8557952</td><td class="right">0</td><td class="right">64</td><td class="right">1635.9054</td></tr>
+<tr><td class="right">136116</td><td class="right">8711360</td><td class="right">0</td><td class="right">63.999530</td><td class="right">1607.0969</td></tr>
+<tr><td class="right">136410</td><td class="right">8729728</td><td class="right">7</td><td class="right">63.996247</td><td class="right">1603.7155</td></tr>
+<tr><td class="right">136320</td><td class="right">8724352</td><td class="right">0</td><td class="right">63.999061</td><td class="right">1604.7037</td></tr>
+<tr><td class="right">134512</td><td class="right">8608768</td><td class="right">0</td><td class="right">64</td><td class="right">1626.2490</td></tr>
+<tr><td class="right">137198</td><td class="right">8780576</td><td class="right">0</td><td class="right">63.999300</td><td class="right">1594.4284</td></tr>
+<tr><td class="right">136780</td><td class="right">8753920</td><td class="right">0</td><td class="right">64</td><td class="right">1599.2835</td></tr>
+<tr><td class="right">136888</td><td class="right">8760764</td><td class="right">0</td><td class="right">63.999503</td><td class="right">1598.0341</td></tr>
+</tbody>
+</table>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-2-2-1-4-2-2-5">1024 bytes<br/>
+890KPPS
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="right" /><col class="right" /><col class="right" /><col class="right" /><col class="right" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="right">loop count</th><th scope="col" class="right">packet num</th><th scope="col" class="right">idle count</th><th scope="col" class="right">packet per loop</th><th scope="col" class="right">ave cycle</th></tr>
+</thead>
+<tbody>
+<tr><td class="right">140042</td><td class="right">8962596</td><td class="right">1</td><td class="right">63.999343</td><td class="right">1562.0474</td></tr>
+<tr><td class="right">138862</td><td class="right">8887168</td><td class="right">0</td><td class="right">64</td><td class="right">1575.3050</td></tr>
+<tr><td class="right">139214</td><td class="right">8909600</td><td class="right">1</td><td class="right">63.999310</td><td class="right">1571.3388</td></tr>
+<tr><td class="right">138706</td><td class="right">8876732</td><td class="right">6</td><td class="right">63.996741</td><td class="right">1577.1570</td></tr>
+<tr><td class="right">136940</td><td class="right">8764128</td><td class="right">0</td><td class="right">63.999766</td><td class="right">1597.4208</td></tr>
+<tr><td class="right">136512</td><td class="right">8736768</td><td class="right">0</td><td class="right">64</td><td class="right">1602.4232</td></tr>
+<tr><td class="right">139288</td><td class="right">8914336</td><td class="right">0</td><td class="right">63.999311</td><td class="right">1570.5040</td></tr>
+</tbody>
+</table>
+
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-2-2-1-4-2-2-6">1480 bytes<br/>
+833KPPS
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="right" /><col class="right" /><col class="right" /><col class="right" /><col class="right" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="right">loop count</th><th scope="col" class="right">packet num</th><th scope="col" class="right">idle count</th><th scope="col" class="right">packet per loop</th><th scope="col" class="right">ave cycle</th></tr>
+</thead>
+<tbody>
+<tr><td class="right">57924624</td><td class="right">6171848</td><td class="right">57683024</td><td class="right">0.10654964</td><td class="right">2268.3644</td></tr>
+<tr><td class="right">3852186</td><td class="right">8200836</td><td class="right">3544077</td><td class="right">2.1288785</td><td class="right">1707.1430</td></tr>
+<tr><td class="right">1445606</td><td class="right">8250712</td><td class="right">1195100</td><td class="right">5.7074417</td><td class="right">1696.8233</td></tr>
+<tr><td class="right">1749604</td><td class="right">8334312</td><td class="right">1479128</td><td class="right">4.7635419</td><td class="right">1679.8027</td></tr>
+<tr><td class="right">1806370</td><td class="right">8334280</td><td class="right">1532734</td><td class="right">4.6138277</td><td class="right">1679.8092</td></tr>
+<tr><td class="right">2069146</td><td class="right">8334328</td><td class="right">1787960</td><td class="right">4.0279072</td><td class="right">1679.7995</td></tr>
+<tr><td class="right">764820</td><td class="right">8330336</td><td class="right">547375</td><td class="right">10.891891</td><td class="right">1680.6045</td></tr>
+<tr><td class="right">1013146</td><td class="right">8334044</td><td class="right">774506</td><td class="right">8.2259062</td><td class="right">1679.8567</td></tr>
+<tr><td class="right">892034</td><td class="right">8327157</td><td class="right">666086</td><td class="right">9.3350220</td><td class="right">1681.2461</td></tr>
+<tr><td class="right">1314640</td><td class="right">8334359</td><td class="right">1058553</td><td class="right">6.3396512</td><td class="right">1679.7933</td></tr>
+<tr><td class="right">1756018</td><td class="right">8327504</td><td class="right">1484794</td><td class="right">4.7422657</td><td class="right">1681.1760</td></tr>
+<tr><td class="right">1977452</td><td class="right">8334352</td><td class="right">1698417</td><td class="right">4.2146924</td><td class="right">1679.7947</td></tr>
+<tr><td class="right">2392334</td><td class="right">8334328</td><td class="right">2098858</td><td class="right">3.4837644</td><td class="right">1679.7995</td></tr>
+</tbody>
+</table>
+
+
+
+<p>
+RAW data
+<div style="height:400px;overflow:auto;border-style:solid;border-width:1px">
+
+<pre class="example">The maximum pps for full path is about 550k pps. (two directions)
+with core isolation on host and guest, we get 770k pps through IXIA--&gt;EIPU--&gt;USPU--&gt;EIPU--&gt;IXIA
+[root@CFPU-0(KVMCluster) /root/traffic]
+# tail -f /srv/Log/log/syslog  | grep ileitp
+Aug 19 07:26:59.768651 info EIPU-0 ileitp[6167]:  main_loop: loop_count : 219106, packet_num : 5994240, idle_count : 31698
+Aug 19 07:27:04.764619 info EIPU-0 ileitp[6167]:  main_loop: loop_count : 212730, packet_num : 5914996, idle_count : 27789
+Aug 19 07:27:09.760298 info EIPU-0 ileitp[6167]:  main_loop: loop_count : 200364, packet_num : 5943572, idle_count : 14539
+Aug 19 07:27:14.756543 info EIPU-0 ileitp[6167]:  main_loop: loop_count : 206656, packet_num : 5901296, idle_count : 22147
+Aug 19 07:27:19.753429 info EIPU-0 ileitp[6167]:  main_loop: loop_count : 202098, packet_num : 5971240, idle_count : 15418
+Aug 19 07:27:24.750449 info EIPU-0 ileitp[6167]:  main_loop: loop_count : 212290, packet_num : 5928540, idle_count : 26934
+Aug 19 07:27:29.747507 info EIPU-0 ileitp[6167]:  main_loop: loop_count : 207686, packet_num : 5964800, idle_count : 21203
+Aug 19 07:27:34.744598 info EIPU-0 ileitp[6167]:  main_loop: loop_count : 217836, packet_num : 5956252, idle_count : 31605
+Aug 19 07:27:39.742273 info EIPU-0 ileitp[6167]:  main_loop: loop_count : 211610, packet_num : 5984444, idle_count : 24476
+Aug 19 07:27:44.740477 info EIPU-0 ileitp[6167]:  main_loop: loop_count : 212322, packet_num : 5996132, idle_count : 24844
+
+| packet number | loop count | idle count | packet per loop | ave cycle per packet |
+|---------------+------------+------------+-----------------+----------------------|
+|       5994240 |     219106 |      31698 |       31.984974 |            2335.5755 |
+|       5914996 |     212730 |      27789 |       31.983151 |            2366.8655 |
+|       5943572 |     200364 |      14539 |       31.984781 |            2355.4859 |
+|       5901296 |     206656 |      22147 |       31.983784 |            2372.3602 |
+|       5971240 |     202098 |      15418 |       31.986501 |            2344.5716 |
+|       5928540 |     212290 |      26934 |       31.984613 |            2361.4583 |
+|       5964800 |     207686 |      21203 |       31.985757 |            2347.1030 |
+|       5956252 |     217836 |      31605 |       31.983139 |            2350.4714 |
+|       5984444 |     211610 |      24476 |       31.979459 |            2339.3986 |
+|       5996132 |     212322 |      24844 |       31.983123 |            2334.8386 |
+#+TBLFM: $4=$1/($2-$3)::$5=5*2800000000/($2-$3)/$4
+
+# gprof /root/ileitp
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total
+ time   seconds   seconds    calls   s/call   s/call  name
+ 28.39     42.50    42.50                             virtio_recv_pkts
+ 21.86     75.23    32.73        1    32.73    54.20  main_loop
+ 14.58     97.05    21.82                             virtio_xmit_pkts
+  4.79    104.23     7.18 286098880     0.00     0.00  rt_lookup
+  4.00    110.22     5.99 125354396     0.00     0.00  eitp_udp_output
+  2.99    114.69     4.48                             fastdist_send
+  1.62    117.11     2.42 160744484     0.00     0.00  gtp_dl_handler
+  1.60    119.51     2.40 125354398     0.00     0.00  arp_get_entry
+  1.50    121.76     2.25 286098881     0.00     0.00  ether_output
+  1.42    123.89     2.13 160744484     0.00     0.00  eitp_udp_input
+  1.26    125.78     1.89 125354396     0.00     0.00  gtp_ul_handler
+  0.97    127.23     1.45 160744484     0.00     0.00  tf_find_by_gtp_tpi
+  0.94    128.63     1.40 125354396     0.00     0.00  rte_pktmbuf_free
+  0.92    130.01     1.38                             fastdist_process_fastdist_packet
+  0.88    131.33     1.32 160744484     0.00     0.00  __gtpu_dl_active_rab_handler
+  0.86    132.62     1.29 446843364     0.00     0.00  gtp_get_payload_len
+  0.84    133.87     1.25 160744484     0.00     0.00  udp_ip2grp
+  0.75    134.99     1.12                             dmxmsg_se_translate_addr
+  0.75    136.11     1.12 160744484     0.00     0.00  ip_input
+  0.69    137.14     1.04 1104611487     0.00     0.00  ping_send_packets
+  0.54    137.95     0.81 160744484     0.00     0.00  tae_dl_handler
+  0.53    138.74     0.79                             virtio_dev_cq_start
+  0.51    139.51     0.77 160744484     0.00     0.00  eitp_udp_dispatch
+  0.44    140.17     0.66 125354396     0.00     0.00  tae_flow_handler
+  0.43    140.81     0.65 160744484     0.00     0.00  gtp_check_head
+  0.35    141.34     0.53 160744484     0.00     0.00  gtp_ext_hdr_parse
+
+
+syslog:Aug 21 08:35:57.294030 info EIPU-0 ileitp[6147]:  main_loop: loop_count : 111838, packet_num : 7157600, idle_count : 0
+syslog:Aug 21 08:36:02.298067 info EIPU-0 ileitp[6147]:  main_loop: loop_count : 110204, packet_num : 7053056, idle_count : 0
+syslog:Aug 21 08:36:07.301972 info EIPU-0 ileitp[6147]:  main_loop: loop_count : 110618, packet_num : 7079544, idle_count : 0
+syslog:Aug 21 08:36:12.305994 info EIPU-0 ileitp[6147]:  main_loop: loop_count : 111048, packet_num : 7107072, idle_count : 0
+syslog:Aug 21 08:36:17.311753 info EIPU-0 ileitp[6147]:  main_loop: loop_count : 111322, packet_num : 7124588, idle_count : 0
+syslog:Aug 21 08:36:22.317193 info EIPU-0 ileitp[6147]:  main_loop: loop_count : 112908, packet_num : 7226112, idle_count : 0
+syslog:Aug 21 08:36:27.322578 info EIPU-0 ileitp[6147]:  main_loop: loop_count : 113304, packet_num : 7251456, idle_count : 0
+syslog:Aug 21 08:36:32.327473 info EIPU-0 ileitp[6147]:  main_loop: loop_count : 113326, packet_num : 7252864, idle_count : 0
+syslog:Aug 21 08:36:37.330015 info EIPU-0 ileitp[6147]:  main_loop: loop_count : 113620, packet_num : 7271680, idle_count : 0
+syslog:Aug 21 08:36:42.332537 info EIPU-0 ileitp[6147]:  main_loop: loop_count : 114168, packet_num : 7306752, idle_count : 0
+syslog:Aug 21 08:36:47.335000 info EIPU-0 ileitp[6147]:  main_loop: loop_count : 114140, packet_num : 7304924, idle_count : 0
+syslog:Aug 21 08:36:52.337157 info EIPU-0 ileitp[6147]:  main_loop: loop_count : 113900, packet_num : 7289600, idle_count : 0
+syslog:Aug 21 08:36:57.339252 info EIPU-0 ileitp[6147]:  main_loop: loop_count : 113862, packet_num : 7287136, idle_count : 0
+syslog:Aug 21 08:37:02.341213 info EIPU-0 ileitp[6147]:  main_loop: loop_count : 102740, packet_num : 6575360, idle_count : 0
+
+
+#
+[root@EIPU-0(KVMCluster) /root]
+# gprof /root/ileitp
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total
+ time   seconds   seconds    calls   s/call   s/call  name
+ 30.38     75.71    75.71                             virtio_xmit_pkts
+ 20.10    125.79    50.08                             virtio_recv_pkts
+ 15.10    163.42    37.63        1    37.63    62.72  main_loop
+ 10.50    189.59    26.17 240330600     0.00     0.00  eitp_udp_output
+  3.60    198.57     8.98 480661843     0.00     0.00  rt_lookup
+  2.31    204.33     5.77                             fastdist_send
+  1.59    208.29     3.96 240330601     0.00     0.00  arp_get_entry
+  1.20    211.29     3.00 240331243     0.00     0.00  gtp_dl_handler
+  1.20    214.27     2.98 240331243     0.00     0.00  eitp_udp_input
+  0.95    216.64     2.37 240330600     0.00     0.00  gtp_ul_handler
+  0.90    218.87     2.24 480661844     0.00     0.00  ether_output
+  0.88    221.08     2.21                             fastdist_process_fastdist_packet
+  0.72    222.88     1.80 240330600     0.00     0.00  rte_pktmbuf_free
+  0.72    224.66     1.79 240331243     0.00     0.00  tf_find_by_gtp_tpi
+  0.62    226.21     1.55                             dmxmsg_se_translate_addr
+  0.58    227.66     1.45 240331243     0.00     0.00  udp_ip2grp
+  0.53    228.98     1.33 240331243     0.00     0.00  ip_input
+  0.51    230.24     1.26 240331243     0.00     0.00  __gtpu_dl_active_rab_handler
+  0.48    231.43     1.19 1481887740     0.00     0.00  ping_send_packets
+  0.47    232.61     1.18 240331243     0.00     0.00  eitp_udp_dispatch
+  0.47    233.78     1.17 720993086     0.00     0.00  gtp_get_payload_len
+  0.42    234.81     1.04 240331243     0.00     0.00  tae_dl_handler
+  0.40    235.81     1.00                             virtio_dev_cq_start
+  0.33    236.63     0.82 240330600     0.00     0.00  tae_flow_handler
+  0.33    237.44     0.81 480661843     0.00     0.00  get_gtptable_by_logaddr
+  0.30    238.18     0.75 240331243     0.00     0.00  gtp_check_head
+
+</pre>
+
+</div>
+
+</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-2-2-2">One core classification three core processing with DPM deployed<br/>
+<ul>
+<li id="sec-1-1-2-2-2-1">Host level with OVDK, guest os driver with virtio+host<br/>
+<ol>
+<li>The tx and rx are handled on the same core, 300KPPS
+</li>
+</ol>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="right" /><col class="right" /><col class="right" /><col class="right" /><col class="right" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="right">loop count</th><th scope="col" class="right">packet num</th><th scope="col" class="right">idle count</th><th scope="col" class="right">packet per loop</th><th scope="col" class="right">ave cycle</th></tr>
+</thead>
+<tbody>
+<tr><td class="right">46676</td><td class="right">2987264</td><td class="right">0</td><td class="right">64</td><td class="right">4686.5627</td></tr>
+<tr><td class="right">47504</td><td class="right">3040256</td><td class="right">0</td><td class="right">64</td><td class="right">4604.8754</td></tr>
+<tr><td class="right">46792</td><td class="right">2994528</td><td class="right">1</td><td class="right">63.996581</td><td class="right">4675.1942</td></tr>
+<tr><td class="right">46994</td><td class="right">3007584</td><td class="right">0</td><td class="right">63.999319</td><td class="right">4654.8991</td></tr>
+<tr><td class="right">46488</td><td class="right">2975232</td><td class="right">0</td><td class="right">64</td><td class="right">4705.5154</td></tr>
+</tbody>
+</table>
+
+<ol>
+<li>Tx and Rx are handled on different core, 350PPS
+</li>
+</ol>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="right" /><col class="right" /><col class="right" /><col class="right" /><col class="right" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="right">loop count</th><th scope="col" class="right">packet num</th><th scope="col" class="right">idle count</th><th scope="col" class="right">packet per loop</th><th scope="col" class="right">ave cycle</th></tr>
+</thead>
+<tbody>
+<tr><td class="right">54176</td><td class="right">3464832</td><td class="right">19</td><td class="right">63.955109</td><td class="right">4040.5999</td></tr>
+<tr><td class="right">54056</td><td class="right">3459264</td><td class="right">3</td><td class="right">63.994080</td><td class="right">4047.1037</td></tr>
+<tr><td class="right">54326</td><td class="right">3474656</td><td class="right">17</td><td class="right">63.959356</td><td class="right">4029.1758</td></tr>
+<tr><td class="right">54416</td><td class="right">3479324</td><td class="right">31</td><td class="right">63.939356</td><td class="right">4023.7701</td></tr>
+<tr><td class="right">54068</td><td class="right">3458528</td><td class="right">16</td><td class="right">63.966265</td><td class="right">4047.9649</td></tr>
+<tr><td class="right">53958</td><td class="right">3451744</td><td class="right">12</td><td class="right">63.970940</td><td class="right">4055.9207</td></tr>
+<tr><td class="right">54186</td><td class="right">3465952</td><td class="right">15</td><td class="right">63.963976</td><td class="right">4039.2943</td></tr>
+<tr><td class="right">54150</td><td class="right">3463424</td><td class="right">16</td><td class="right">63.959815</td><td class="right">4042.2426</td></tr>
+<tr><td class="right">53986</td><td class="right">3453152</td><td class="right">14</td><td class="right">63.963842</td><td class="right">4054.2669</td></tr>
+<tr><td class="right">53940</td><td class="right">3449244</td><td class="right">24</td><td class="right">63.945940</td><td class="right">4058.8604</td></tr>
+<tr><td class="right">54122</td><td class="right">3462976</td><td class="right">7</td><td class="right">63.984627</td><td class="right">4042.7655</td></tr>
+</tbody>
+</table>
+
+
+
+
+<div style="height:400px;overflow:auto;border-style:solid;border-width:1px">
+
+<pre class="example">1. The classification and sending packets to external interface are in one core. 300K pps can be reached.
+12 flows are created.
+
+Aug 25 05:59:52.142928 info EIPU-0 ileitp[6176]:  main_loop: loop_count : 46676, packet_num : 2987264, idle_count : 0
+Aug 25 05:59:57.146296 info EIPU-0 ileitp[6176]:  main_loop: loop_count : 47504, packet_num : 3040256, idle_count : 0
+Aug 25 06:00:02.149796 info EIPU-0 ileitp[6176]:  main_loop: loop_count : 46792, packet_num : 2994528, idle_count : 1
+Aug 25 06:00:07.153325 info EIPU-0 ileitp[6176]:  main_loop: loop_count : 46994, packet_num : 3007584, idle_count : 0
+Aug 25 06:00:12.156811 info EIPU-0 ileitp[6176]:  main_loop: loop_count : 46488, packet_num : 2975232, idle_count : 0
+
+# gprof /root/ileitp
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total
+ time   seconds   seconds    calls   s/call   s/call  name
+ 69.98    487.10   487.10        3   162.37   176.80  dpm_evm_dispatcher_loop
+  6.13    529.78    42.68                             main
+  4.67    562.26    32.48                             virtio_recv_pkts
+  3.87    589.22    26.96 66750869     0.00     0.00  dpm_evm_send_data
+  3.65    614.65    25.43                             dpm_free
+  3.09    636.15    21.50                             dpm_alloc_mem
+  1.28    645.05     8.90 1058579697     0.00     0.00  dpm_evm_dispatcher
+  1.02    652.17     7.12                             virtio_xmit_pkts
+  0.86    658.16     6.00 15709432     0.00     0.00  arp_get_entry
+  0.81    663.77     5.61 26690001     0.00     0.00  rt_lookup
+  0.72    668.76     5.00 19943864     0.00     0.00  eitp_udp_output
+  0.61    672.98     4.22 66826257     0.00     0.00  dpm_evm_receive_data
+  0.36    675.46     2.48 20372050     0.00     0.00  fastdist_send
+  0.17    676.64     1.18                             virtio_dev_cq_start
+  0.17    677.80     1.16 11618193     0.00     0.00  eitp_udp_input
+  0.17    678.96     1.16 13016917     0.00     0.00  fastdist_process_fastdist_packet
+  0.15    680.02     1.07  2016730     0.00     0.00  p_gtp_main
+  0.15    681.07     1.05 19766981     0.00     0.00  gtp_ul_handler
+  0.13    681.95     0.89 13055972     0.00     0.00  p_egress_pkt_out_main
+  0.11    682.75     0.80 11291212     0.00     0.00  gtp_dl_evm_dispatch
+  0.11    683.52     0.78 14872514     0.00     0.00  rte_pktmbuf_free
+
+
+
+EAL: WARNING: cpu flags constant_tsc=yes nonstop_tsc=no -&gt; using unreliable clock cycles !
+EAL: Master core 0 is ready (tid=c2aa1820)
+DL-TEID    Status RAB-STATE  Local IP        Remote IP       UL-TEID    VRF-ID Downlink  Uplink    Relocation Buffered
+---------- ------ ---------- --------------- --------------- ---------- ------ --------- --------- ---------- --------
+0xBED00001 WORK   Active     192.168.220.123 192.168.220.100 0x8        0      0/2353648 8/2353369 0/0        0
+0xBED00002 WORK   Active     192.168.220.123 192.168.220.100 0x8        0      0/2353653 10/2353373 0/0        0
+0xBED00003 WORK   Active     192.168.220.123 192.168.220.100 0x8        0      0/2353498 16/2353215 0/0        0
+0xBED00004 WORK   Active     192.168.220.123 192.168.220.100 0x8        0      0/2353689 12/2353395 0/0        0
+0xBED00005 WORK   Active     192.168.220.123 192.168.220.100 0x8        0      0/2353597 7/2353321 0/0        0
+0xBED00006 WORK   Active     192.168.220.123 192.168.220.100 0x8        0      0/2353345 10/2353067 0/0        0
+0xBED00007 WORK   Active     192.168.220.123 192.168.220.100 0x8        0      0/2353291 15/2353010 0/0        0
+0xBED00008 WORK   Active     192.168.220.123 192.168.220.100 0x8        0      0/2353104 12/2352812 0/0        0
+0xBED00009 WORK   Active     192.168.220.123 192.168.220.100 0x8        0      0/2353089 6/2352808 0/0        0
+0xBED0000A WORK   Active     192.168.220.123 192.168.220.100 0x8        0      0/2353327 11/2353043 0/0        0
+0xBED0000B WORK   Active     192.168.220.123 192.168.220.100 0x8        0      0/2353536 15/2353246 0/0        0
+0xBED0000C WORK   Active     192.168.220.123 192.168.220.100 0x8        0      0/2353543 11/2353245 0/0        0
+
+2. The classification in the master core and the sending traffic to external interface in other cores. 350K pps can be reached. 
+
+
+Aug 25 06:15:18.788150 info EIPU-0 ileitp[6666]:  main_loop: loop_count : 54176, packet_num : 3464832, idle_count : 19
+Aug 25 06:15:23.788455 info EIPU-0 ileitp[6666]:  main_loop: loop_count : 54056, packet_num : 3459264, idle_count : 3
+Aug 25 06:15:28.788609 info EIPU-0 ileitp[6666]:  main_loop: loop_count : 54326, packet_num : 3474656, idle_count : 17
+Aug 25 06:15:33.788690 info EIPU-0 ileitp[6666]:  main_loop: loop_count : 54416, packet_num : 3479324, idle_count : 31
+Aug 25 06:15:38.788546 info EIPU-0 ileitp[6666]:  main_loop: loop_count : 54068, packet_num : 3458528, idle_count : 16
+Aug 25 06:15:43.789554 info EIPU-0 ileitp[6666]:  main_loop: loop_count : 53958, packet_num : 3451744, idle_count : 12
+Aug 25 06:15:48.795949 info EIPU-0 ileitp[6666]:  main_loop: loop_count : 54186, packet_num : 3465952, idle_count : 15
+Aug 25 06:15:53.801948 info EIPU-0 ileitp[6666]:  main_loop: loop_count : 54150, packet_num : 3463424, idle_count : 16
+Aug 25 06:15:58.807563 info EIPU-0 ileitp[6666]:  main_loop: loop_count : 53986, packet_num : 3453152, idle_count : 14
+Aug 25 06:16:03.815456 info EIPU-0 ileitp[6666]:  main_loop: loop_count : 53940, packet_num : 3449244, idle_count : 24
+Aug 25 06:16:08.824948 info EIPU-0 ileitp[6666]:  main_loop: loop_count : 54122, packet_num : 3462976, idle_count : 7
+
+
+[root@EIPU-0(KVMCluster) /root]
+# gprof /root/ileitp
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total
+ time   seconds   seconds    calls   s/call   s/call  name
+ 60.32    321.83   321.83        3   107.28   121.54  dpm_evm_dispatcher_loop
+ 10.26    376.57    54.74                             main
+  8.53    422.08    45.51                             virtio_recv_pkts
+  5.37    450.71    28.63 40807263     0.00     0.00  dpm_evm_send_data
+  3.70    470.44    19.73                             dpm_alloc_mem
+  2.82    485.50    15.06                             dpm_free
+  1.31    492.49     6.99                             virtio_xmit_pkts
+  1.13    498.52     6.04 11405085     0.00     0.00  arp_get_entry
+  1.08    504.31     5.79 20763772     0.00     0.00  rt_lookup
+  0.97    509.48     5.17 14632480     0.00     0.00  eitp_udp_output
+  0.51    512.18     2.70 50739554     0.00     0.00  dpm_evm_receive_data
+  0.45    514.56     2.38 14406267     0.00     0.00  fastdist_send
+  0.27    516.00     1.44                             virtio_dev_cq_start
+  0.22    517.18     1.18  4964665     0.00     0.00  p_gtp_main
+  0.21    518.28     1.10  8618036     0.00     0.00  eitp_udp_input
+  0.20    519.33     1.06 10125755     0.00     0.00  fastdist_process_fastdist_packet
+  0.17    520.23     0.90 14675927     0.00     0.00  gtp_ul_handler
+  0.15    521.05     0.82  9269206     0.00     0.00  rte_pktmbuf_free
+  0.15    521.83     0.78  8920420     0.00     0.00  gtp_dl_evm_dispatch
+  0.11    522.43     0.60  2550109     0.00     0.00  p_egress_pkt_out_main
+  0.11    523.03     0.60  8820434     0.00     0.00  gtp_dpm_dl_handle_send
+  0.11    523.62     0.59 21549556     0.00     0.00  ether_output
+  0.10    524.16     0.55  8316609     0.00     0.00  udp_ip2grp
+
+DL-TEID    Status RAB-STATE  Local IP        Remote IP       UL-TEID    VRF-ID Downlink  Uplink    Relocation Buffered
+---------- ------ ---------- --------------- --------------- ---------- ------ --------- --------- ---------- --------
+0xBED00001 WORK   Active     192.168.220.123 192.168.220.100 0x8        0      0/4762589 0/4757423 0/0        0
+0xBED00002 WORK   Active     192.168.220.123 192.168.220.100 0x8        0      0/4762625 0/4757230 0/0        0
+0xBED00003 WORK   Active     192.168.220.123 192.168.220.100 0x8        0      0/4762683 0/4757397 0/0        0
+0xBED00004 WORK   Active     192.168.220.123 192.168.220.100 0x8        0      0/4762672 0/4757424 0/0        0
+0xBED00005 WORK   Active     192.168.220.123 192.168.220.100 0x8        0      0/4763096 0/4757901 0/0        0
+0xBED00006 WORK   Active     192.168.220.123 192.168.220.100 0x8        0      0/4763181 0/4757768 0/0        0
+0xBED00007 WORK   Active     192.168.220.123 192.168.220.100 0x8        0      0/4763206 0/4757933 0/0        0
+0xBED00008 WORK   Active     192.168.220.123 192.168.220.100 0x8        0      0/4763048 0/4757821 0/0        0
+0xBED00009 WORK   Active     192.168.220.123 192.168.220.100 0x8        0      0/4762498 0/4757305 0/0        0
+0xBED0000A WORK   Active     192.168.220.123 192.168.220.100 0x8        0      0/4762377 0/4756964 0/0        0
+0xBED0000B WORK   Active     192.168.220.123 192.168.220.100 0x8        0      0/4762294 0/4757053 0/0        0
+0xBED0000C WORK   Active     192.168.220.123 192.168.220.100 0x8        0      0/4762463 0/4757258 0/0        0
+
+</pre>
+
+</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-2-2-3">Related documents<br/>
+<ul>
+<li id="sec-1-1-2-2-3-1">Testing reports<br/>
+<a href="http://10.159.24.136/materials/nsn_intel_workshop/Intel_vSwitch_Update_NSN_April2014.pdf">http://10.159.24.136/materials/nsn_intel_workshop/Intel_vSwitch_Update_NSN_April2014.pdf</a>
+
+<p>
+<a href="http://10.159.24.136/materials/DPDK/inteldpdkvswitchperformancefigures0.10.0.pdf">http://10.159.24.136/materials/DPDK/inteldpdkvswitchperformancefigures0.10.0.pdf</a>
+</p>
+<p>
+<a href="http://10.159.24.136/materials/DPDK/DPDK_performance.pdf">http://10.159.24.136/materials/DPDK/DPDK_performance.pdf</a>
+</p>
+<p>
+<a href="http://10.159.24.136/materials/DPDK/6WIND_test_report_arch.pdf">http://10.159.24.136/materials/DPDK/6WIND_test_report_arch.pdf</a>
+</p></li>
+</ul>
+<ul>
+<li id="sec-1-1-2-2-3-2">Tunning guide<br/>
+<a href="http://www.vmware.com/pdf/Perf_Best_Practices_vSphere5.5.pdf">http://www.vmware.com/pdf/Perf_Best_Practices_vSphere5.5.pdf</a>
+
+<p>
+<a href="http://www.dasher.com/blog/will-hyper-threading-improve-processing-performance/">http://www.dasher.com/blog/will-hyper-threading-improve-processing-performance/</a>
+</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-3" class="outline-4">
+<h4 id="sec-1-1-3">Current open issues</h4>
+<div class="outline-text-4" id="text-1-1-3">
+
+<ol>
+<li>To take virtio in use, virtio_net.ko and virtio_blk.ko need to be
+   added into ramdisk file(initrd). then the two kernel module can be
+   loaded at very early phase during kernel startup. This need to be
+   done by FP, because the initrd file is delivered by FP package.
+</li>
+<li>In the guest OS, we are using windriver4.3, it is too old for the
+   Ivybridge, we need to upgrade the operating system to get better
+   performance in the guest environment. we will do some testing to
+   see, how much benifit we would get from the upgrade.
+</li>
+<li>In the DPDK lib, only primiary process is allowed to initilize the
+   port. we need to deploy two DPDK applications on TUPU and LBPU,
+   one is for dmxmsg daemon, the other is for fastpath
+   processing. the two process need to initilize different port, I
+   have discussed this with intel guys, there might be some
+   limitation for the interrupt handling if we deploy two process and
+   each process initilize their own port.
+</li>
+<li>currently, the performance in our lab is far behind the report
+   from intel. with the configuration OVDK(HOST)+vhost+virtio, for
+   standalone l2fwd testing, traffic path is
+   IXIA&ndash;&gt;OVDK&ndash;&gt;L2FWD&ndash;&gt;OVDK&ndash;&gt;IXIA, in our lab, we got 3.7MPPS, in
+   intel lab, it's 7.43MPPS. 
+</li>
+</ol>
+
+<p>This problem is fixed, now we got 8M PPS, it's better than the report
+from Intel
+</p><ol>
+<li>With single core for EITP, we got the best performance, if we
+   split UL and DL with different core.performance is worse, the
+   difference is 890KPPS to 530KPPS. We need more analysis for the problem
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2014-08-28T22:27+0800</p>
+<p class="author">Author: Kevin Gao</p>
+<p class="email"><a href="mailto:leijia.gao@nsn.com">leijia.gao@nsn.com</a></p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>
